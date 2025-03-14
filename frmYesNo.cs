@@ -145,7 +145,8 @@ namespace thepos2
                     {
                         if (mObj["resultCode"].ToString() == "200")
                         {
-
+                            MessageBox.Show("알림톡 발송되었습니다.", "thepos");
+                            return;
                         }
                         else
                         {
