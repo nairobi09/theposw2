@@ -24,7 +24,7 @@ namespace thepos2
             public String value;
             public String memo;
         }
-        Setup[] listSetup = new Setup[13];
+        Setup[] listSetup = new Setup[14];
 
 
         bool isAdd = false;
@@ -34,7 +34,6 @@ namespace thepos2
         {
             InitializeComponent();
 
-            initialize_font();
             initialize_the();
 
             Setup setupItem = new Setup();
@@ -52,54 +51,25 @@ namespace thepos2
 
             setupItem.code = "VanTID"; setupItem.name = "결제밴 T-ID"; setupItem.value = ""; setupItem.memo = "미입력시 밴결제모듈내 입력된 T-ID로 설정됩니다.\r\nKovan의 경우 필수입력항목입니다."; listSetup[7] = setupItem;
 
-            setupItem.code = "CouponChPM"; setupItem.name = "플레이스엠 업체코드(CMS)"; setupItem.value = ""; setupItem.memo = ""; listSetup[8] = setupItem;
+            setupItem.code = "CouponChPM"; setupItem.name = "인증 업체코드(CMS)"; setupItem.value = ""; setupItem.memo = ""; listSetup[8] = setupItem;
 
 
             // 키오스크 대문화면(대기화면)
             setupItem.code = "WaitingDisplay"; setupItem.name = "대기화면 사용여부"; setupItem.value = ""; setupItem.memo = ""; listSetup[9] = setupItem;
-            setupItem.code = "WaitingSliderSecond"; setupItem.name = "슬라이드 전환시간(초)"; setupItem.value = ""; setupItem.memo = ""; listSetup[10] = setupItem;
+            setupItem.code = "WaitingDisplayImage"; setupItem.name = "대기화면 이미지"; setupItem.value = ""; setupItem.memo = "1080*1920 jpg"; listSetup[10] = setupItem;
             setupItem.code = "WaitingSecond"; setupItem.name = "대기화면 전환시간(초)"; setupItem.value = ""; setupItem.memo = ""; listSetup[11] = setupItem;
 
 
             // 키오스크 본화면
             setupItem.code = "KioskLogoImage"; setupItem.name = "화면 상단이미지"; setupItem.value = ""; setupItem.memo = "1080*120 jpg"; listSetup[12] = setupItem;
 
+            // 언어
+            setupItem.code = "MultiLanguage"; setupItem.name = "다국어지원"; setupItem.value = ""; setupItem.memo = ""; listSetup[13] = setupItem;
+
 
             reload_setup_pos();
         }
 
-
-
-        private void initialize_font()
-        {
-            /*
-            lblTitle.Font = font10;
-            lvwList.Font = font10;
-
-            lblSiteNameTitle.Font = font10;
-            lblPosNoTitle.Font = font10;
-
-            lblSiteName.Font = font10;
-            lblPosNo.Font = font10;
-
-            lblNameTitle.Font = font10;
-            lblName.Font = font10;
-
-            lblValueTitle.Font = font10;
-            lblValue.Font = font10;
-
-            lblValueTitle2.Font = font10;
-            cbValue.Font = font10;
-            tbValue.Font = font10;
-            lblMemo.Font = font10;
-
-            btnAdd.Font = font10;
-
-            btnLoad.Font = font10;
-            btnSave.Font = font10;
-            */
-
-        }
 
         private void initialize_the()
         {
@@ -242,7 +212,7 @@ namespace thepos2
                 tbValue.Visible = true;
 
             }
-            else if (code == listSetup[9].code) // 대기화면 사용여부
+            else if (code == listSetup[9].code | code == listSetup[13].code) // 대기화면 사용여부, 다국어
             {
                 cbValue.Visible = true;
 
@@ -250,12 +220,12 @@ namespace thepos2
                 cbValue.Items.Add("N");
                 cbValue.Items.Add("Y");
             }
-            else if (code == listSetup[10].code | code == listSetup[11].code)  //초
+            else if (code == listSetup[11].code)  //초
             {
                 tbValue.Visible = true;
 
             }
-            else if (code == listSetup[12].code)
+            else if (code == listSetup[10].code | code == listSetup[12].code)
             {
                 panelImage.Visible = true;
 
@@ -366,7 +336,7 @@ namespace thepos2
                 else if (lvwList.Items[i].Tag.ToString() == "CouponChPM") mCouponChPM = lvwList.Items[i].SubItems[1].Text;
 
                 else if (lvwList.Items[i].Tag.ToString() == "WaitingDisplay") mWaitingDisplay = lvwList.Items[i].SubItems[1].Text;
-                else if (lvwList.Items[i].Tag.ToString() == "WaitingSliderSecond") mWaitingSliderSecond = convert_number(lvwList.Items[i].SubItems[1].Text);
+                else if (lvwList.Items[i].Tag.ToString() == "WaitingDisplayImage") mWaitingDisplayImage = lvwList.Items[i].SubItems[1].Text;
                 else if (lvwList.Items[i].Tag.ToString() == "WaitingSecond") mWaitingSecond = convert_number(lvwList.Items[i].SubItems[1].Text);
 
                 else if (lvwList.Items[i].Tag.ToString() == "kioskLogoImage") mKioskLogoImage = lvwList.Items[i].SubItems[1].Text;
@@ -407,7 +377,6 @@ namespace thepos2
                     pbImage.Image.Save(ms, pbImage.Image.RawFormat);
                     tbValue.Text = Convert.ToBase64String(ms.ToArray());
                 }
-
             }
         }
 

@@ -399,7 +399,7 @@
             this.btnJP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnJP.ForeColor = System.Drawing.Color.DarkSlateBlue;
             this.btnJP.Image = ((System.Drawing.Image)(resources.GetObject("btnJP.Image")));
-            this.btnJP.Location = new System.Drawing.Point(207, 9);
+            this.btnJP.Location = new System.Drawing.Point(203, 5);
             this.btnJP.Margin = new System.Windows.Forms.Padding(0);
             this.btnJP.Name = "btnJP";
             this.btnJP.Size = new System.Drawing.Size(61, 41);
@@ -413,7 +413,7 @@
             this.btnCH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCH.ForeColor = System.Drawing.Color.DarkSlateBlue;
             this.btnCH.Image = ((System.Drawing.Image)(resources.GetObject("btnCH.Image")));
-            this.btnCH.Location = new System.Drawing.Point(141, 9);
+            this.btnCH.Location = new System.Drawing.Point(137, 5);
             this.btnCH.Margin = new System.Windows.Forms.Padding(0);
             this.btnCH.Name = "btnCH";
             this.btnCH.Size = new System.Drawing.Size(61, 41);
@@ -427,7 +427,7 @@
             this.btnEN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEN.ForeColor = System.Drawing.Color.DarkSlateBlue;
             this.btnEN.Image = ((System.Drawing.Image)(resources.GetObject("btnEN.Image")));
-            this.btnEN.Location = new System.Drawing.Point(75, 9);
+            this.btnEN.Location = new System.Drawing.Point(71, 5);
             this.btnEN.Margin = new System.Windows.Forms.Padding(0);
             this.btnEN.Name = "btnEN";
             this.btnEN.Size = new System.Drawing.Size(61, 41);
@@ -441,7 +441,7 @@
             this.btnKR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKR.ForeColor = System.Drawing.Color.DarkSlateBlue;
             this.btnKR.Image = ((System.Drawing.Image)(resources.GetObject("btnKR.Image")));
-            this.btnKR.Location = new System.Drawing.Point(9, 9);
+            this.btnKR.Location = new System.Drawing.Point(5, 5);
             this.btnKR.Margin = new System.Windows.Forms.Padding(0);
             this.btnKR.Name = "btnKR";
             this.btnKR.Size = new System.Drawing.Size(61, 41);
@@ -543,6 +543,7 @@
             // 
             // pbLogo
             // 
+            this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
             this.pbLogo.Location = new System.Drawing.Point(0, 0);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(1080, 120);
@@ -624,10 +625,10 @@
             this.lblGoodsAmt11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblGoodsAmt11.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsAmt11.ForeColor = System.Drawing.Color.Blue;
-            this.lblGoodsAmt11.Location = new System.Drawing.Point(40, 276);
+            this.lblGoodsAmt11.Location = new System.Drawing.Point(40, 273);
             this.lblGoodsAmt11.Margin = new System.Windows.Forms.Padding(0);
             this.lblGoodsAmt11.Name = "lblGoodsAmt11";
-            this.lblGoodsAmt11.Size = new System.Drawing.Size(161, 21);
+            this.lblGoodsAmt11.Size = new System.Drawing.Size(161, 24);
             this.lblGoodsAmt11.TabIndex = 2;
             this.lblGoodsAmt11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -639,7 +640,7 @@
             this.lblGoodsName11.Location = new System.Drawing.Point(3, 240);
             this.lblGoodsName11.Margin = new System.Windows.Forms.Padding(0);
             this.lblGoodsName11.Name = "lblGoodsName11";
-            this.lblGoodsName11.Size = new System.Drawing.Size(234, 34);
+            this.lblGoodsName11.Size = new System.Drawing.Size(234, 33);
             this.lblGoodsName11.TabIndex = 1;
             this.lblGoodsName11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -712,10 +713,10 @@
             this.lblGoodsAmt6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblGoodsAmt6.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsAmt6.ForeColor = System.Drawing.Color.Blue;
-            this.lblGoodsAmt6.Location = new System.Drawing.Point(40, 276);
+            this.lblGoodsAmt6.Location = new System.Drawing.Point(40, 273);
             this.lblGoodsAmt6.Margin = new System.Windows.Forms.Padding(0);
             this.lblGoodsAmt6.Name = "lblGoodsAmt6";
-            this.lblGoodsAmt6.Size = new System.Drawing.Size(161, 21);
+            this.lblGoodsAmt6.Size = new System.Drawing.Size(161, 24);
             this.lblGoodsAmt6.TabIndex = 2;
             this.lblGoodsAmt6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -727,7 +728,7 @@
             this.lblGoodsName6.Location = new System.Drawing.Point(3, 240);
             this.lblGoodsName6.Margin = new System.Windows.Forms.Padding(0);
             this.lblGoodsName6.Name = "lblGoodsName6";
-            this.lblGoodsName6.Size = new System.Drawing.Size(234, 34);
+            this.lblGoodsName6.Size = new System.Drawing.Size(234, 33);
             this.lblGoodsName6.TabIndex = 1;
             this.lblGoodsName6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -786,10 +787,10 @@
             this.lblGoodsAmt2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblGoodsAmt2.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsAmt2.ForeColor = System.Drawing.Color.Blue;
-            this.lblGoodsAmt2.Location = new System.Drawing.Point(40, 276);
+            this.lblGoodsAmt2.Location = new System.Drawing.Point(40, 273);
             this.lblGoodsAmt2.Margin = new System.Windows.Forms.Padding(0);
             this.lblGoodsAmt2.Name = "lblGoodsAmt2";
-            this.lblGoodsAmt2.Size = new System.Drawing.Size(161, 21);
+            this.lblGoodsAmt2.Size = new System.Drawing.Size(161, 24);
             this.lblGoodsAmt2.TabIndex = 2;
             this.lblGoodsAmt2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -801,7 +802,7 @@
             this.lblGoodsName2.Location = new System.Drawing.Point(3, 240);
             this.lblGoodsName2.Margin = new System.Windows.Forms.Padding(0);
             this.lblGoodsName2.Name = "lblGoodsName2";
-            this.lblGoodsName2.Size = new System.Drawing.Size(234, 34);
+            this.lblGoodsName2.Size = new System.Drawing.Size(234, 33);
             this.lblGoodsName2.TabIndex = 1;
             this.lblGoodsName2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -860,10 +861,10 @@
             this.lblGoodsAmt1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblGoodsAmt1.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsAmt1.ForeColor = System.Drawing.Color.Blue;
-            this.lblGoodsAmt1.Location = new System.Drawing.Point(40, 276);
+            this.lblGoodsAmt1.Location = new System.Drawing.Point(40, 273);
             this.lblGoodsAmt1.Margin = new System.Windows.Forms.Padding(0);
             this.lblGoodsAmt1.Name = "lblGoodsAmt1";
-            this.lblGoodsAmt1.Size = new System.Drawing.Size(161, 21);
+            this.lblGoodsAmt1.Size = new System.Drawing.Size(161, 24);
             this.lblGoodsAmt1.TabIndex = 2;
             this.lblGoodsAmt1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -875,7 +876,7 @@
             this.lblGoodsName1.Location = new System.Drawing.Point(3, 240);
             this.lblGoodsName1.Margin = new System.Windows.Forms.Padding(0);
             this.lblGoodsName1.Name = "lblGoodsName1";
-            this.lblGoodsName1.Size = new System.Drawing.Size(234, 34);
+            this.lblGoodsName1.Size = new System.Drawing.Size(234, 33);
             this.lblGoodsName1.TabIndex = 1;
             this.lblGoodsName1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -934,10 +935,10 @@
             this.lblGoodsAmt3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblGoodsAmt3.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsAmt3.ForeColor = System.Drawing.Color.Blue;
-            this.lblGoodsAmt3.Location = new System.Drawing.Point(40, 276);
+            this.lblGoodsAmt3.Location = new System.Drawing.Point(40, 273);
             this.lblGoodsAmt3.Margin = new System.Windows.Forms.Padding(0);
             this.lblGoodsAmt3.Name = "lblGoodsAmt3";
-            this.lblGoodsAmt3.Size = new System.Drawing.Size(161, 21);
+            this.lblGoodsAmt3.Size = new System.Drawing.Size(161, 24);
             this.lblGoodsAmt3.TabIndex = 2;
             this.lblGoodsAmt3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -949,7 +950,7 @@
             this.lblGoodsName3.Location = new System.Drawing.Point(3, 240);
             this.lblGoodsName3.Margin = new System.Windows.Forms.Padding(0);
             this.lblGoodsName3.Name = "lblGoodsName3";
-            this.lblGoodsName3.Size = new System.Drawing.Size(234, 34);
+            this.lblGoodsName3.Size = new System.Drawing.Size(234, 33);
             this.lblGoodsName3.TabIndex = 1;
             this.lblGoodsName3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1008,10 +1009,10 @@
             this.lblGoodsAmt8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblGoodsAmt8.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsAmt8.ForeColor = System.Drawing.Color.Blue;
-            this.lblGoodsAmt8.Location = new System.Drawing.Point(40, 276);
+            this.lblGoodsAmt8.Location = new System.Drawing.Point(40, 273);
             this.lblGoodsAmt8.Margin = new System.Windows.Forms.Padding(0);
             this.lblGoodsAmt8.Name = "lblGoodsAmt8";
-            this.lblGoodsAmt8.Size = new System.Drawing.Size(161, 21);
+            this.lblGoodsAmt8.Size = new System.Drawing.Size(161, 24);
             this.lblGoodsAmt8.TabIndex = 2;
             this.lblGoodsAmt8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -1023,7 +1024,7 @@
             this.lblGoodsName8.Location = new System.Drawing.Point(3, 240);
             this.lblGoodsName8.Margin = new System.Windows.Forms.Padding(0);
             this.lblGoodsName8.Name = "lblGoodsName8";
-            this.lblGoodsName8.Size = new System.Drawing.Size(234, 34);
+            this.lblGoodsName8.Size = new System.Drawing.Size(234, 33);
             this.lblGoodsName8.TabIndex = 1;
             this.lblGoodsName8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1082,10 +1083,10 @@
             this.lblGoodsAmt9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblGoodsAmt9.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsAmt9.ForeColor = System.Drawing.Color.Blue;
-            this.lblGoodsAmt9.Location = new System.Drawing.Point(40, 276);
+            this.lblGoodsAmt9.Location = new System.Drawing.Point(40, 273);
             this.lblGoodsAmt9.Margin = new System.Windows.Forms.Padding(0);
             this.lblGoodsAmt9.Name = "lblGoodsAmt9";
-            this.lblGoodsAmt9.Size = new System.Drawing.Size(161, 21);
+            this.lblGoodsAmt9.Size = new System.Drawing.Size(161, 24);
             this.lblGoodsAmt9.TabIndex = 2;
             this.lblGoodsAmt9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -1097,7 +1098,7 @@
             this.lblGoodsName9.Location = new System.Drawing.Point(3, 240);
             this.lblGoodsName9.Margin = new System.Windows.Forms.Padding(0);
             this.lblGoodsName9.Name = "lblGoodsName9";
-            this.lblGoodsName9.Size = new System.Drawing.Size(234, 34);
+            this.lblGoodsName9.Size = new System.Drawing.Size(234, 33);
             this.lblGoodsName9.TabIndex = 1;
             this.lblGoodsName9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1156,10 +1157,10 @@
             this.lblGoodsAmt10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblGoodsAmt10.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsAmt10.ForeColor = System.Drawing.Color.Blue;
-            this.lblGoodsAmt10.Location = new System.Drawing.Point(40, 276);
+            this.lblGoodsAmt10.Location = new System.Drawing.Point(40, 273);
             this.lblGoodsAmt10.Margin = new System.Windows.Forms.Padding(0);
             this.lblGoodsAmt10.Name = "lblGoodsAmt10";
-            this.lblGoodsAmt10.Size = new System.Drawing.Size(161, 21);
+            this.lblGoodsAmt10.Size = new System.Drawing.Size(161, 24);
             this.lblGoodsAmt10.TabIndex = 2;
             this.lblGoodsAmt10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -1171,7 +1172,7 @@
             this.lblGoodsName10.Location = new System.Drawing.Point(3, 240);
             this.lblGoodsName10.Margin = new System.Windows.Forms.Padding(0);
             this.lblGoodsName10.Name = "lblGoodsName10";
-            this.lblGoodsName10.Size = new System.Drawing.Size(234, 34);
+            this.lblGoodsName10.Size = new System.Drawing.Size(234, 33);
             this.lblGoodsName10.TabIndex = 1;
             this.lblGoodsName10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1230,10 +1231,10 @@
             this.lblGoodsAmt0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblGoodsAmt0.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsAmt0.ForeColor = System.Drawing.Color.Blue;
-            this.lblGoodsAmt0.Location = new System.Drawing.Point(40, 276);
+            this.lblGoodsAmt0.Location = new System.Drawing.Point(40, 273);
             this.lblGoodsAmt0.Margin = new System.Windows.Forms.Padding(0);
             this.lblGoodsAmt0.Name = "lblGoodsAmt0";
-            this.lblGoodsAmt0.Size = new System.Drawing.Size(161, 21);
+            this.lblGoodsAmt0.Size = new System.Drawing.Size(161, 24);
             this.lblGoodsAmt0.TabIndex = 2;
             this.lblGoodsAmt0.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -1245,7 +1246,7 @@
             this.lblGoodsName0.Location = new System.Drawing.Point(3, 240);
             this.lblGoodsName0.Margin = new System.Windows.Forms.Padding(0);
             this.lblGoodsName0.Name = "lblGoodsName0";
-            this.lblGoodsName0.Size = new System.Drawing.Size(234, 34);
+            this.lblGoodsName0.Size = new System.Drawing.Size(234, 33);
             this.lblGoodsName0.TabIndex = 1;
             this.lblGoodsName0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1304,10 +1305,10 @@
             this.lblGoodsAmt4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblGoodsAmt4.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsAmt4.ForeColor = System.Drawing.Color.Blue;
-            this.lblGoodsAmt4.Location = new System.Drawing.Point(40, 276);
+            this.lblGoodsAmt4.Location = new System.Drawing.Point(40, 273);
             this.lblGoodsAmt4.Margin = new System.Windows.Forms.Padding(0);
             this.lblGoodsAmt4.Name = "lblGoodsAmt4";
-            this.lblGoodsAmt4.Size = new System.Drawing.Size(161, 21);
+            this.lblGoodsAmt4.Size = new System.Drawing.Size(161, 24);
             this.lblGoodsAmt4.TabIndex = 2;
             this.lblGoodsAmt4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -1319,7 +1320,7 @@
             this.lblGoodsName4.Location = new System.Drawing.Point(3, 240);
             this.lblGoodsName4.Margin = new System.Windows.Forms.Padding(0);
             this.lblGoodsName4.Name = "lblGoodsName4";
-            this.lblGoodsName4.Size = new System.Drawing.Size(234, 34);
+            this.lblGoodsName4.Size = new System.Drawing.Size(234, 33);
             this.lblGoodsName4.TabIndex = 1;
             this.lblGoodsName4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1378,10 +1379,10 @@
             this.lblGoodsAmt5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblGoodsAmt5.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsAmt5.ForeColor = System.Drawing.Color.Blue;
-            this.lblGoodsAmt5.Location = new System.Drawing.Point(40, 276);
+            this.lblGoodsAmt5.Location = new System.Drawing.Point(40, 273);
             this.lblGoodsAmt5.Margin = new System.Windows.Forms.Padding(0);
             this.lblGoodsAmt5.Name = "lblGoodsAmt5";
-            this.lblGoodsAmt5.Size = new System.Drawing.Size(161, 21);
+            this.lblGoodsAmt5.Size = new System.Drawing.Size(161, 24);
             this.lblGoodsAmt5.TabIndex = 2;
             this.lblGoodsAmt5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -1393,7 +1394,7 @@
             this.lblGoodsName5.Location = new System.Drawing.Point(3, 240);
             this.lblGoodsName5.Margin = new System.Windows.Forms.Padding(0);
             this.lblGoodsName5.Name = "lblGoodsName5";
-            this.lblGoodsName5.Size = new System.Drawing.Size(234, 34);
+            this.lblGoodsName5.Size = new System.Drawing.Size(234, 33);
             this.lblGoodsName5.TabIndex = 1;
             this.lblGoodsName5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1452,10 +1453,10 @@
             this.lblGoodsAmt7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblGoodsAmt7.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsAmt7.ForeColor = System.Drawing.Color.Blue;
-            this.lblGoodsAmt7.Location = new System.Drawing.Point(40, 276);
+            this.lblGoodsAmt7.Location = new System.Drawing.Point(40, 273);
             this.lblGoodsAmt7.Margin = new System.Windows.Forms.Padding(0);
             this.lblGoodsAmt7.Name = "lblGoodsAmt7";
-            this.lblGoodsAmt7.Size = new System.Drawing.Size(161, 21);
+            this.lblGoodsAmt7.Size = new System.Drawing.Size(161, 24);
             this.lblGoodsAmt7.TabIndex = 2;
             this.lblGoodsAmt7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -1467,7 +1468,7 @@
             this.lblGoodsName7.Location = new System.Drawing.Point(3, 240);
             this.lblGoodsName7.Margin = new System.Windows.Forms.Padding(0);
             this.lblGoodsName7.Name = "lblGoodsName7";
-            this.lblGoodsName7.Size = new System.Drawing.Size(234, 34);
+            this.lblGoodsName7.Size = new System.Drawing.Size(234, 33);
             this.lblGoodsName7.TabIndex = 1;
             this.lblGoodsName7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1488,9 +1489,9 @@
             this.panelLang.Controls.Add(this.btnJP);
             this.panelLang.Controls.Add(this.btnEN);
             this.panelLang.Controls.Add(this.btnCH);
-            this.panelLang.Location = new System.Drawing.Point(769, 35);
+            this.panelLang.Location = new System.Drawing.Point(771, 39);
             this.panelLang.Name = "panelLang";
-            this.panelLang.Size = new System.Drawing.Size(278, 59);
+            this.panelLang.Size = new System.Drawing.Size(270, 51);
             this.panelLang.TabIndex = 71;
             this.panelLang.Visible = false;
             // 
@@ -1506,6 +1507,7 @@
             // 
             // picSlide
             // 
+            this.picSlide.Image = ((System.Drawing.Image)(resources.GetObject("picSlide.Image")));
             this.picSlide.Location = new System.Drawing.Point(0, 0);
             this.picSlide.Name = "picSlide";
             this.picSlide.Size = new System.Drawing.Size(1080, 1920);
@@ -1530,7 +1532,6 @@
             this.btnCoupon.TabStop = false;
             this.btnCoupon.Text = "쿠폰가져오기";
             this.btnCoupon.UseVisualStyleBackColor = false;
-            this.btnCoupon.Visible = false;
             this.btnCoupon.Click += new System.EventHandler(this.btnCoupon_Click);
             // 
             // frmSales

@@ -42,8 +42,9 @@ namespace thepos2
         {
             InitializeComponent();
 
-            initialize_font();
+
             initialize_the();
+            initialize_font();
 
             goodsItem = goods_item;
 
@@ -64,10 +65,6 @@ namespace thepos2
         }
 
 
-        private void initialize_font()
-        {
-
-        }
 
         private void initialize_the()
         {
@@ -180,6 +177,31 @@ namespace thepos2
         }
 
 
+        private void initialize_font()
+        {
+            lblTitle.Font = font12;
+            lblGoodsInfo.Font = font14;
+            lblCntDn.Font = font14;
+            lblCnt.Font = font14;
+            lblCntUp.Font = font14;
+            lblAmount.Font = font14;
+
+
+            for (int i = 0; i < 6; i++)
+            {
+                mLblOptionName[i].Font = font14;
+
+                for (int k = 0; k < 4; k++)
+                {
+                    mRbOptionItemName[i, k].Font = font12;
+                    mLblOrderItemAmt[i, k].Font = font11;
+                }
+            }
+
+            btnCancel.Font = font12;
+            btnOK.Font = font12;
+
+        }
 
         private void frmOrderOption_Shown(object sender, EventArgs e)
         {
@@ -324,6 +346,11 @@ namespace thepos2
                     {
                         mLblOrderItemAmt[option_dsp_idx, item_dsp_idx].Visible = true;
                         mLblOrderItemAmt[option_dsp_idx, item_dsp_idx].Text = "+ " + mTempOptionItem[k].option_item_amt.ToString("N0");
+                    }
+                    else if (mTempOptionItem[k].option_item_amt < 0)
+                    {
+                        mLblOrderItemAmt[option_dsp_idx, item_dsp_idx].Visible = true;
+                        mLblOrderItemAmt[option_dsp_idx, item_dsp_idx].Text = "" + mTempOptionItem[k].option_item_amt.ToString("N0");
                     }
                     else
                     {

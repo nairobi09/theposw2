@@ -149,7 +149,7 @@
             this.lblOrder1Item3Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder1Item3Amt.Location = new System.Drawing.Point(622, 93);
             this.lblOrder1Item3Amt.Name = "lblOrder1Item3Amt";
-            this.lblOrder1Item3Amt.Size = new System.Drawing.Size(110, 16);
+            this.lblOrder1Item3Amt.Size = new System.Drawing.Size(110, 18);
             this.lblOrder1Item3Amt.TabIndex = 16;
             this.lblOrder1Item3Amt.Text = "\\";
             this.lblOrder1Item3Amt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -159,7 +159,7 @@
             // 
             this.rbOption1Item3Name.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbOption1Item3Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbOption1Item3Name.Location = new System.Drawing.Point(624, 27);
+            this.rbOption1Item3Name.Location = new System.Drawing.Point(624, 25);
             this.rbOption1Item3Name.Name = "rbOption1Item3Name";
             this.rbOption1Item3Name.Size = new System.Drawing.Size(110, 66);
             this.rbOption1Item3Name.TabIndex = 15;
@@ -181,7 +181,7 @@
             this.lblOrder1Item2Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder1Item2Amt.Location = new System.Drawing.Point(499, 94);
             this.lblOrder1Item2Amt.Name = "lblOrder1Item2Amt";
-            this.lblOrder1Item2Amt.Size = new System.Drawing.Size(110, 15);
+            this.lblOrder1Item2Amt.Size = new System.Drawing.Size(110, 17);
             this.lblOrder1Item2Amt.TabIndex = 11;
             this.lblOrder1Item2Amt.Text = "\\";
             this.lblOrder1Item2Amt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -193,7 +193,7 @@
             this.lblOrder1Item1Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder1Item1Amt.Location = new System.Drawing.Point(365, 94);
             this.lblOrder1Item1Amt.Name = "lblOrder1Item1Amt";
-            this.lblOrder1Item1Amt.Size = new System.Drawing.Size(110, 15);
+            this.lblOrder1Item1Amt.Size = new System.Drawing.Size(110, 17);
             this.lblOrder1Item1Amt.TabIndex = 10;
             this.lblOrder1Item1Amt.Text = "\\";
             this.lblOrder1Item1Amt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -205,7 +205,7 @@
             this.lblOrder1Item0Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder1Item0Amt.Location = new System.Drawing.Point(235, 94);
             this.lblOrder1Item0Amt.Name = "lblOrder1Item0Amt";
-            this.lblOrder1Item0Amt.Size = new System.Drawing.Size(110, 15);
+            this.lblOrder1Item0Amt.Size = new System.Drawing.Size(110, 17);
             this.lblOrder1Item0Amt.TabIndex = 9;
             this.lblOrder1Item0Amt.Text = "\\";
             this.lblOrder1Item0Amt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -215,7 +215,7 @@
             // 
             this.rbOption1Item2Name.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbOption1Item2Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbOption1Item2Name.Location = new System.Drawing.Point(499, 27);
+            this.rbOption1Item2Name.Location = new System.Drawing.Point(499, 25);
             this.rbOption1Item2Name.Name = "rbOption1Item2Name";
             this.rbOption1Item2Name.Size = new System.Drawing.Size(110, 66);
             this.rbOption1Item2Name.TabIndex = 7;
@@ -227,7 +227,7 @@
             // 
             this.rbOption1Item1Name.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbOption1Item1Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbOption1Item1Name.Location = new System.Drawing.Point(367, 27);
+            this.rbOption1Item1Name.Location = new System.Drawing.Point(367, 25);
             this.rbOption1Item1Name.Name = "rbOption1Item1Name";
             this.rbOption1Item1Name.Size = new System.Drawing.Size(110, 66);
             this.rbOption1Item1Name.TabIndex = 6;
@@ -239,7 +239,7 @@
             // 
             this.rbOption1Item0Name.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbOption1Item0Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbOption1Item0Name.Location = new System.Drawing.Point(235, 27);
+            this.rbOption1Item0Name.Location = new System.Drawing.Point(235, 25);
             this.rbOption1Item0Name.Name = "rbOption1Item0Name";
             this.rbOption1Item0Name.Size = new System.Drawing.Size(110, 66);
             this.rbOption1Item0Name.TabIndex = 5;
@@ -263,7 +263,7 @@
             this.lblOrder2Item2Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder2Item2Amt.Location = new System.Drawing.Point(496, 94);
             this.lblOrder2Item2Amt.Name = "lblOrder2Item2Amt";
-            this.lblOrder2Item2Amt.Size = new System.Drawing.Size(110, 15);
+            this.lblOrder2Item2Amt.Size = new System.Drawing.Size(110, 17);
             this.lblOrder2Item2Amt.TabIndex = 11;
             this.lblOrder2Item2Amt.Text = "\\";
             this.lblOrder2Item2Amt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -302,7 +302,7 @@
             this.lblOrder0Item3Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder0Item3Amt.Location = new System.Drawing.Point(622, 153);
             this.lblOrder0Item3Amt.Name = "lblOrder0Item3Amt";
-            this.lblOrder0Item3Amt.Size = new System.Drawing.Size(110, 16);
+            this.lblOrder0Item3Amt.Size = new System.Drawing.Size(110, 18);
             this.lblOrder0Item3Amt.TabIndex = 15;
             this.lblOrder0Item3Amt.Text = "\\";
             this.lblOrder0Item3Amt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -312,7 +312,7 @@
             // 
             this.rbOption0Item3Name.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbOption0Item3Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbOption0Item3Name.Location = new System.Drawing.Point(623, 87);
+            this.rbOption0Item3Name.Location = new System.Drawing.Point(623, 85);
             this.rbOption0Item3Name.Name = "rbOption0Item3Name";
             this.rbOption0Item3Name.Size = new System.Drawing.Size(110, 66);
             this.rbOption0Item3Name.TabIndex = 14;
@@ -334,7 +334,7 @@
             this.lblOrder0Item2Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder0Item2Amt.Location = new System.Drawing.Point(494, 154);
             this.lblOrder0Item2Amt.Name = "lblOrder0Item2Amt";
-            this.lblOrder0Item2Amt.Size = new System.Drawing.Size(110, 15);
+            this.lblOrder0Item2Amt.Size = new System.Drawing.Size(110, 17);
             this.lblOrder0Item2Amt.TabIndex = 10;
             this.lblOrder0Item2Amt.Text = "\\";
             this.lblOrder0Item2Amt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -346,7 +346,7 @@
             this.lblOrder0Item1Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder0Item1Amt.Location = new System.Drawing.Point(362, 154);
             this.lblOrder0Item1Amt.Name = "lblOrder0Item1Amt";
-            this.lblOrder0Item1Amt.Size = new System.Drawing.Size(110, 15);
+            this.lblOrder0Item1Amt.Size = new System.Drawing.Size(110, 17);
             this.lblOrder0Item1Amt.TabIndex = 9;
             this.lblOrder0Item1Amt.Text = "\\";
             this.lblOrder0Item1Amt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -358,7 +358,7 @@
             this.lblOrder0Item0Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder0Item0Amt.Location = new System.Drawing.Point(232, 154);
             this.lblOrder0Item0Amt.Name = "lblOrder0Item0Amt";
-            this.lblOrder0Item0Amt.Size = new System.Drawing.Size(110, 15);
+            this.lblOrder0Item0Amt.Size = new System.Drawing.Size(110, 17);
             this.lblOrder0Item0Amt.TabIndex = 8;
             this.lblOrder0Item0Amt.Text = "\\";
             this.lblOrder0Item0Amt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -368,7 +368,7 @@
             // 
             this.rbOption0Item2Name.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbOption0Item2Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbOption0Item2Name.Location = new System.Drawing.Point(496, 87);
+            this.rbOption0Item2Name.Location = new System.Drawing.Point(496, 85);
             this.rbOption0Item2Name.Name = "rbOption0Item2Name";
             this.rbOption0Item2Name.Size = new System.Drawing.Size(110, 66);
             this.rbOption0Item2Name.TabIndex = 7;
@@ -380,7 +380,7 @@
             // 
             this.rbOption0Item1Name.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbOption0Item1Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbOption0Item1Name.Location = new System.Drawing.Point(365, 87);
+            this.rbOption0Item1Name.Location = new System.Drawing.Point(365, 85);
             this.rbOption0Item1Name.Name = "rbOption0Item1Name";
             this.rbOption0Item1Name.Size = new System.Drawing.Size(110, 67);
             this.rbOption0Item1Name.TabIndex = 6;
@@ -392,7 +392,7 @@
             // 
             this.rbOption0Item0Name.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbOption0Item0Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbOption0Item0Name.Location = new System.Drawing.Point(235, 87);
+            this.rbOption0Item0Name.Location = new System.Drawing.Point(235, 85);
             this.rbOption0Item0Name.Name = "rbOption0Item0Name";
             this.rbOption0Item0Name.Size = new System.Drawing.Size(110, 67);
             this.rbOption0Item0Name.TabIndex = 5;
@@ -508,7 +508,7 @@
             this.lblOrder5Item3Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder5Item3Amt.Location = new System.Drawing.Point(624, 94);
             this.lblOrder5Item3Amt.Name = "lblOrder5Item3Amt";
-            this.lblOrder5Item3Amt.Size = new System.Drawing.Size(110, 16);
+            this.lblOrder5Item3Amt.Size = new System.Drawing.Size(110, 18);
             this.lblOrder5Item3Amt.TabIndex = 16;
             this.lblOrder5Item3Amt.Text = "\\";
             this.lblOrder5Item3Amt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -518,7 +518,7 @@
             // 
             this.rbOption5Item3Name.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbOption5Item3Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbOption5Item3Name.Location = new System.Drawing.Point(625, 27);
+            this.rbOption5Item3Name.Location = new System.Drawing.Point(625, 25);
             this.rbOption5Item3Name.Name = "rbOption5Item3Name";
             this.rbOption5Item3Name.Size = new System.Drawing.Size(110, 66);
             this.rbOption5Item3Name.TabIndex = 15;
@@ -540,7 +540,7 @@
             this.lblOrder5Item2Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder5Item2Amt.Location = new System.Drawing.Point(500, 94);
             this.lblOrder5Item2Amt.Name = "lblOrder5Item2Amt";
-            this.lblOrder5Item2Amt.Size = new System.Drawing.Size(110, 15);
+            this.lblOrder5Item2Amt.Size = new System.Drawing.Size(110, 17);
             this.lblOrder5Item2Amt.TabIndex = 11;
             this.lblOrder5Item2Amt.Text = "\\";
             this.lblOrder5Item2Amt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -552,7 +552,7 @@
             this.lblOrder5Item1Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder5Item1Amt.Location = new System.Drawing.Point(368, 94);
             this.lblOrder5Item1Amt.Name = "lblOrder5Item1Amt";
-            this.lblOrder5Item1Amt.Size = new System.Drawing.Size(110, 15);
+            this.lblOrder5Item1Amt.Size = new System.Drawing.Size(110, 17);
             this.lblOrder5Item1Amt.TabIndex = 10;
             this.lblOrder5Item1Amt.Text = "\\";
             this.lblOrder5Item1Amt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -564,7 +564,7 @@
             this.lblOrder5Item0Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder5Item0Amt.Location = new System.Drawing.Point(236, 94);
             this.lblOrder5Item0Amt.Name = "lblOrder5Item0Amt";
-            this.lblOrder5Item0Amt.Size = new System.Drawing.Size(110, 15);
+            this.lblOrder5Item0Amt.Size = new System.Drawing.Size(110, 17);
             this.lblOrder5Item0Amt.TabIndex = 9;
             this.lblOrder5Item0Amt.Text = "\\";
             this.lblOrder5Item0Amt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -574,7 +574,7 @@
             // 
             this.rbOption5Item2Name.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbOption5Item2Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbOption5Item2Name.Location = new System.Drawing.Point(500, 27);
+            this.rbOption5Item2Name.Location = new System.Drawing.Point(500, 25);
             this.rbOption5Item2Name.Name = "rbOption5Item2Name";
             this.rbOption5Item2Name.Size = new System.Drawing.Size(110, 66);
             this.rbOption5Item2Name.TabIndex = 7;
@@ -586,7 +586,7 @@
             // 
             this.rbOption5Item1Name.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbOption5Item1Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbOption5Item1Name.Location = new System.Drawing.Point(368, 27);
+            this.rbOption5Item1Name.Location = new System.Drawing.Point(368, 25);
             this.rbOption5Item1Name.Name = "rbOption5Item1Name";
             this.rbOption5Item1Name.Size = new System.Drawing.Size(110, 66);
             this.rbOption5Item1Name.TabIndex = 6;
@@ -598,7 +598,7 @@
             // 
             this.rbOption5Item0Name.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbOption5Item0Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbOption5Item0Name.Location = new System.Drawing.Point(236, 27);
+            this.rbOption5Item0Name.Location = new System.Drawing.Point(236, 25);
             this.rbOption5Item0Name.Name = "rbOption5Item0Name";
             this.rbOption5Item0Name.Size = new System.Drawing.Size(110, 66);
             this.rbOption5Item0Name.TabIndex = 5;
@@ -655,7 +655,7 @@
             this.lblOrder4Item3Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder4Item3Amt.Location = new System.Drawing.Point(624, 94);
             this.lblOrder4Item3Amt.Name = "lblOrder4Item3Amt";
-            this.lblOrder4Item3Amt.Size = new System.Drawing.Size(110, 16);
+            this.lblOrder4Item3Amt.Size = new System.Drawing.Size(110, 18);
             this.lblOrder4Item3Amt.TabIndex = 16;
             this.lblOrder4Item3Amt.Text = "\\";
             this.lblOrder4Item3Amt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -665,7 +665,7 @@
             // 
             this.rbOption4Item3Name.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbOption4Item3Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbOption4Item3Name.Location = new System.Drawing.Point(625, 27);
+            this.rbOption4Item3Name.Location = new System.Drawing.Point(625, 25);
             this.rbOption4Item3Name.Name = "rbOption4Item3Name";
             this.rbOption4Item3Name.Size = new System.Drawing.Size(110, 66);
             this.rbOption4Item3Name.TabIndex = 15;
@@ -687,7 +687,7 @@
             this.lblOrder4Item2Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder4Item2Amt.Location = new System.Drawing.Point(500, 94);
             this.lblOrder4Item2Amt.Name = "lblOrder4Item2Amt";
-            this.lblOrder4Item2Amt.Size = new System.Drawing.Size(110, 15);
+            this.lblOrder4Item2Amt.Size = new System.Drawing.Size(110, 17);
             this.lblOrder4Item2Amt.TabIndex = 11;
             this.lblOrder4Item2Amt.Text = "\\";
             this.lblOrder4Item2Amt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -699,7 +699,7 @@
             this.lblOrder4Item1Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder4Item1Amt.Location = new System.Drawing.Point(368, 94);
             this.lblOrder4Item1Amt.Name = "lblOrder4Item1Amt";
-            this.lblOrder4Item1Amt.Size = new System.Drawing.Size(110, 15);
+            this.lblOrder4Item1Amt.Size = new System.Drawing.Size(110, 17);
             this.lblOrder4Item1Amt.TabIndex = 10;
             this.lblOrder4Item1Amt.Text = "\\";
             this.lblOrder4Item1Amt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -711,7 +711,7 @@
             this.lblOrder4Item0Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder4Item0Amt.Location = new System.Drawing.Point(236, 94);
             this.lblOrder4Item0Amt.Name = "lblOrder4Item0Amt";
-            this.lblOrder4Item0Amt.Size = new System.Drawing.Size(110, 15);
+            this.lblOrder4Item0Amt.Size = new System.Drawing.Size(110, 17);
             this.lblOrder4Item0Amt.TabIndex = 9;
             this.lblOrder4Item0Amt.Text = "\\";
             this.lblOrder4Item0Amt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -721,7 +721,7 @@
             // 
             this.rbOption4Item2Name.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbOption4Item2Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbOption4Item2Name.Location = new System.Drawing.Point(500, 27);
+            this.rbOption4Item2Name.Location = new System.Drawing.Point(500, 25);
             this.rbOption4Item2Name.Name = "rbOption4Item2Name";
             this.rbOption4Item2Name.Size = new System.Drawing.Size(110, 66);
             this.rbOption4Item2Name.TabIndex = 7;
@@ -733,7 +733,7 @@
             // 
             this.rbOption4Item1Name.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbOption4Item1Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbOption4Item1Name.Location = new System.Drawing.Point(368, 27);
+            this.rbOption4Item1Name.Location = new System.Drawing.Point(368, 25);
             this.rbOption4Item1Name.Name = "rbOption4Item1Name";
             this.rbOption4Item1Name.Size = new System.Drawing.Size(110, 66);
             this.rbOption4Item1Name.TabIndex = 6;
@@ -745,7 +745,7 @@
             // 
             this.rbOption4Item0Name.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbOption4Item0Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbOption4Item0Name.Location = new System.Drawing.Point(236, 27);
+            this.rbOption4Item0Name.Location = new System.Drawing.Point(236, 25);
             this.rbOption4Item0Name.Name = "rbOption4Item0Name";
             this.rbOption4Item0Name.Size = new System.Drawing.Size(110, 66);
             this.rbOption4Item0Name.TabIndex = 5;
@@ -845,7 +845,7 @@
             this.lblOrder3Item3Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder3Item3Amt.Location = new System.Drawing.Point(623, 94);
             this.lblOrder3Item3Amt.Name = "lblOrder3Item3Amt";
-            this.lblOrder3Item3Amt.Size = new System.Drawing.Size(110, 16);
+            this.lblOrder3Item3Amt.Size = new System.Drawing.Size(110, 18);
             this.lblOrder3Item3Amt.TabIndex = 16;
             this.lblOrder3Item3Amt.Text = "\\";
             this.lblOrder3Item3Amt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -855,7 +855,7 @@
             // 
             this.rbOption3Item3Name.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbOption3Item3Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbOption3Item3Name.Location = new System.Drawing.Point(623, 27);
+            this.rbOption3Item3Name.Location = new System.Drawing.Point(623, 25);
             this.rbOption3Item3Name.Name = "rbOption3Item3Name";
             this.rbOption3Item3Name.Size = new System.Drawing.Size(110, 66);
             this.rbOption3Item3Name.TabIndex = 15;
@@ -877,7 +877,7 @@
             this.lblOrder3Item2Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder3Item2Amt.Location = new System.Drawing.Point(498, 94);
             this.lblOrder3Item2Amt.Name = "lblOrder3Item2Amt";
-            this.lblOrder3Item2Amt.Size = new System.Drawing.Size(110, 15);
+            this.lblOrder3Item2Amt.Size = new System.Drawing.Size(110, 17);
             this.lblOrder3Item2Amt.TabIndex = 11;
             this.lblOrder3Item2Amt.Text = "\\";
             this.lblOrder3Item2Amt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -889,7 +889,7 @@
             this.lblOrder3Item1Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder3Item1Amt.Location = new System.Drawing.Point(366, 94);
             this.lblOrder3Item1Amt.Name = "lblOrder3Item1Amt";
-            this.lblOrder3Item1Amt.Size = new System.Drawing.Size(110, 15);
+            this.lblOrder3Item1Amt.Size = new System.Drawing.Size(110, 17);
             this.lblOrder3Item1Amt.TabIndex = 10;
             this.lblOrder3Item1Amt.Text = "\\";
             this.lblOrder3Item1Amt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -901,7 +901,7 @@
             this.lblOrder3Item0Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder3Item0Amt.Location = new System.Drawing.Point(234, 94);
             this.lblOrder3Item0Amt.Name = "lblOrder3Item0Amt";
-            this.lblOrder3Item0Amt.Size = new System.Drawing.Size(110, 15);
+            this.lblOrder3Item0Amt.Size = new System.Drawing.Size(110, 17);
             this.lblOrder3Item0Amt.TabIndex = 9;
             this.lblOrder3Item0Amt.Text = "\\";
             this.lblOrder3Item0Amt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -911,7 +911,7 @@
             // 
             this.rbOption3Item2Name.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbOption3Item2Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbOption3Item2Name.Location = new System.Drawing.Point(498, 27);
+            this.rbOption3Item2Name.Location = new System.Drawing.Point(498, 25);
             this.rbOption3Item2Name.Name = "rbOption3Item2Name";
             this.rbOption3Item2Name.Size = new System.Drawing.Size(110, 66);
             this.rbOption3Item2Name.TabIndex = 7;
@@ -923,7 +923,7 @@
             // 
             this.rbOption3Item1Name.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbOption3Item1Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbOption3Item1Name.Location = new System.Drawing.Point(366, 27);
+            this.rbOption3Item1Name.Location = new System.Drawing.Point(366, 25);
             this.rbOption3Item1Name.Name = "rbOption3Item1Name";
             this.rbOption3Item1Name.Size = new System.Drawing.Size(110, 66);
             this.rbOption3Item1Name.TabIndex = 6;
@@ -935,7 +935,7 @@
             // 
             this.rbOption3Item0Name.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbOption3Item0Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbOption3Item0Name.Location = new System.Drawing.Point(234, 27);
+            this.rbOption3Item0Name.Location = new System.Drawing.Point(234, 25);
             this.rbOption3Item0Name.Name = "rbOption3Item0Name";
             this.rbOption3Item0Name.Size = new System.Drawing.Size(110, 66);
             this.rbOption3Item0Name.TabIndex = 5;
@@ -977,7 +977,7 @@
             this.lblOrder2Item3Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder2Item3Amt.Location = new System.Drawing.Point(623, 93);
             this.lblOrder2Item3Amt.Name = "lblOrder2Item3Amt";
-            this.lblOrder2Item3Amt.Size = new System.Drawing.Size(110, 16);
+            this.lblOrder2Item3Amt.Size = new System.Drawing.Size(110, 18);
             this.lblOrder2Item3Amt.TabIndex = 16;
             this.lblOrder2Item3Amt.Text = "\\";
             this.lblOrder2Item3Amt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -987,7 +987,7 @@
             // 
             this.rbOption2Item3Name.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbOption2Item3Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbOption2Item3Name.Location = new System.Drawing.Point(623, 27);
+            this.rbOption2Item3Name.Location = new System.Drawing.Point(623, 25);
             this.rbOption2Item3Name.Name = "rbOption2Item3Name";
             this.rbOption2Item3Name.Size = new System.Drawing.Size(110, 66);
             this.rbOption2Item3Name.TabIndex = 15;
@@ -1001,7 +1001,7 @@
             this.lblOrder2Item1Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder2Item1Amt.Location = new System.Drawing.Point(364, 94);
             this.lblOrder2Item1Amt.Name = "lblOrder2Item1Amt";
-            this.lblOrder2Item1Amt.Size = new System.Drawing.Size(110, 15);
+            this.lblOrder2Item1Amt.Size = new System.Drawing.Size(110, 17);
             this.lblOrder2Item1Amt.TabIndex = 10;
             this.lblOrder2Item1Amt.Text = "\\";
             this.lblOrder2Item1Amt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1013,7 +1013,7 @@
             this.lblOrder2Item0Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder2Item0Amt.Location = new System.Drawing.Point(234, 94);
             this.lblOrder2Item0Amt.Name = "lblOrder2Item0Amt";
-            this.lblOrder2Item0Amt.Size = new System.Drawing.Size(110, 15);
+            this.lblOrder2Item0Amt.Size = new System.Drawing.Size(110, 17);
             this.lblOrder2Item0Amt.TabIndex = 9;
             this.lblOrder2Item0Amt.Text = "\\";
             this.lblOrder2Item0Amt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1023,7 +1023,7 @@
             // 
             this.rbOption2Item2Name.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbOption2Item2Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbOption2Item2Name.Location = new System.Drawing.Point(498, 27);
+            this.rbOption2Item2Name.Location = new System.Drawing.Point(498, 25);
             this.rbOption2Item2Name.Name = "rbOption2Item2Name";
             this.rbOption2Item2Name.Size = new System.Drawing.Size(110, 66);
             this.rbOption2Item2Name.TabIndex = 7;
@@ -1035,7 +1035,7 @@
             // 
             this.rbOption2Item1Name.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbOption2Item1Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbOption2Item1Name.Location = new System.Drawing.Point(366, 27);
+            this.rbOption2Item1Name.Location = new System.Drawing.Point(366, 25);
             this.rbOption2Item1Name.Name = "rbOption2Item1Name";
             this.rbOption2Item1Name.Size = new System.Drawing.Size(110, 66);
             this.rbOption2Item1Name.TabIndex = 6;
@@ -1047,7 +1047,7 @@
             // 
             this.rbOption2Item0Name.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbOption2Item0Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbOption2Item0Name.Location = new System.Drawing.Point(234, 27);
+            this.rbOption2Item0Name.Location = new System.Drawing.Point(234, 25);
             this.rbOption2Item0Name.Name = "rbOption2Item0Name";
             this.rbOption2Item0Name.Size = new System.Drawing.Size(110, 66);
             this.rbOption2Item0Name.TabIndex = 5;

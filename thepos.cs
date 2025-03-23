@@ -20,6 +20,19 @@ namespace thepos2
 {
     public class thepos
     {
+        public static Font font14bold;
+
+        public static Font font11;
+        public static Font font12;
+        public static Font font14;
+        public static Font font16;
+        public static Font font20;
+        public static Font font24;
+
+        public static PrivateFontCollection fontCollection = new PrivateFontCollection();
+
+
+
 
         // //////////////////////////////////////////////////////////////////////////////////////////////////
         //
@@ -518,19 +531,13 @@ namespace thepos2
 
         //
         public static String mWaitingDisplay = "";  // 대기화면 사용여부
-        public static String mWaitingImageSlide0 = ""; // 슬라이드이미지1
-        public static String mWaitingImageSlide1 = ""; // 슬라이드이미지2
-        public static String mWaitingImageSlide2 = ""; // 슬라이드이미지3
-        public static String mWaitingImageSlide3 = ""; // 슬라이드이미지4
-        public static String mWaitingImageSlide4 = ""; // 슬라이드이미지5
-        public static int mWaitingSliderSecond = -1;         //  슬라이드 전환시간(초)
-        public static String mWaitingImageBottom = "";       // 대기화면이미지 하단
+        public static String mWaitingDisplayImage = "";         //  대기화면 이미지
         public static int mWaitingSecond = -1;             //  대기화면 전환시간(초)
 
         public static String mKioskLogoImage = "";       // 키오스크 본화면 상단로고
 
+        public static String mMultiLanguage = "";
 
-        public int mSliderCnt = 0;
 
 
 
