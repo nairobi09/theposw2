@@ -1538,7 +1538,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1080, 1917);
+            this.ClientSize = new System.Drawing.Size(1080, 1920);
             this.Controls.Add(this.panelWelcome);
             this.Controls.Add(this.panelLang);
             this.Controls.Add(this.lvwOrderItem);

@@ -24,7 +24,7 @@ namespace thepos2
             public String value;
             public String memo;
         }
-        Setup[] listSetup = new Setup[14];
+        Setup[] listSetup = new Setup[16];
 
 
         bool isAdd = false;
@@ -65,6 +65,15 @@ namespace thepos2
 
             // 언어
             setupItem.code = "MultiLanguage"; setupItem.name = "다국어지원"; setupItem.value = ""; setupItem.memo = ""; listSetup[13] = setupItem;
+
+            // 온라인쿠폰 인증전용 키오스크
+            setupItem.code = "KioskType"; setupItem.name = "키오스크유형"; setupItem.value = ""; setupItem.memo = ""; listSetup[14] = setupItem;
+
+
+            //
+            setupItem.code = "CouponDisplayImage"; setupItem.name = "인증화면 이미지"; setupItem.value = ""; setupItem.memo = "1080*1920 jpg"; listSetup[15] = setupItem;
+
+            
 
 
             reload_setup_pos();
@@ -225,7 +234,7 @@ namespace thepos2
                 tbValue.Visible = true;
 
             }
-            else if (code == listSetup[10].code | code == listSetup[12].code)
+            else if (code == listSetup[10].code | code == listSetup[12].code | code == listSetup[15].code)
             {
                 panelImage.Visible = true;
 
@@ -249,6 +258,14 @@ namespace thepos2
                 {
                     pbImage.Image = null;
                 }
+            }
+            else if (code == listSetup[14].code) // 키오스크 유형 : 범용 or 인증전용
+            {
+                cbValue.Visible = true;
+
+                cbValue.Items.Clear();
+                cbValue.Items.Add("범용");
+                cbValue.Items.Add("인증전용");
             }
 
 
@@ -340,6 +357,9 @@ namespace thepos2
                 else if (lvwList.Items[i].Tag.ToString() == "WaitingSecond") mWaitingSecond = convert_number(lvwList.Items[i].SubItems[1].Text);
 
                 else if (lvwList.Items[i].Tag.ToString() == "kioskLogoImage") mKioskLogoImage = lvwList.Items[i].SubItems[1].Text;
+                else if (lvwList.Items[i].Tag.ToString() == "MultiLanguage") mMultiLanguage = lvwList.Items[i].SubItems[1].Text;
+                else if (lvwList.Items[i].Tag.ToString() == "kioskType") mKioskType = lvwList.Items[i].SubItems[1].Text;
+                else if (lvwList.Items[i].Tag.ToString() == "CouponDisplayImage") mCouponDisplayImage = lvwList.Items[i].SubItems[1].Text;
             }
 
         }

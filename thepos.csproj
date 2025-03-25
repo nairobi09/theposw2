@@ -97,6 +97,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCoupon1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCoupon1.Designer.cs">
+      <DependentUpon>frmCoupon1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCoupon2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCoupon2.Designer.cs">
+      <DependentUpon>frmCoupon2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCoupon3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCoupon3.Designer.cs">
+      <DependentUpon>frmCoupon3.cs</DependentUpon>
+    </Compile>
     <Compile Include="van\PM\couponPM.cs" />
     <Compile Include="frmCoupon.cs">
       <SubType>Form</SubType>
@@ -165,8 +183,17 @@
     <Compile Include="van\KCP\paymentKCP.cs" />
     <Compile Include="van\KOVAN\paymentKovan.cs" />
     <Compile Include="van\Nice\paymentNice.cs" />
+    <EmbeddedResource Include="frmCoupon1.resx">
+      <DependentUpon>frmCoupon1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCoupon2.resx">
+      <DependentUpon>frmCoupon2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCoupon.resx">
       <DependentUpon>frmCoupon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCoupon3.resx">
+      <DependentUpon>frmCoupon3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDevAdmin.resx">
       <DependentUpon>frmDevAdmin.cs</DependentUpon>
