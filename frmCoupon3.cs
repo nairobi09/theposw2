@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static thepos2.ClsWin32Api;
 using static thepos2.thepos;
 
 namespace theposw2
@@ -20,7 +21,13 @@ namespace theposw2
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            
+
+
+            this.DialogResult = DialogResult.OK;
+
             this.Close();
+            
         }
     }
 }

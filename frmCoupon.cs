@@ -49,33 +49,6 @@ namespace thepos2
             frm.ShowDialog();
         }
 
-        private void timerWelcome_Tick(object sender, EventArgs e)
-        {
-            change_waiting();
-        }
-
-        private void change_waiting()
-        {
-            if (mWaitingDisplay != "Y")
-            {
-                return;
-            }
-
-
-
-            // 떠있는 창있으면 강제 Close
-            for (int i = Application.OpenForms.Count - 1; i >= 0; i += -1)
-            {
-                if (Application.OpenForms[i].Name != "frmSales" & Application.OpenForms[i].Name != "frmLogin")
-                {
-                    Application.OpenForms[i].Close();
-                }
-            }
-
-
-
-            timerWelcome.Enabled = false;
-        }
 
         private void pbGate1_Click(object sender, EventArgs e)
         {
@@ -97,13 +70,8 @@ namespace thepos2
                 m1.Font = new System.Drawing.Font("내기기설정", 20F);
                 m1.Click += (senders, es) =>
                 {
-                    // 설정창은 타임아웃 없다.
-                    timerWelcome.Enabled = false;
-
-
                     frmSetupPos frm = new frmSetupPos();
                     frm.ShowDialog();
-
                 };
 
 

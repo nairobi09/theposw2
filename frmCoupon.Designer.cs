@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCoupon));
             this.btnOK = new System.Windows.Forms.Button();
             this.pbGate1 = new System.Windows.Forms.PictureBox();
-            this.timerWelcome = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbGate1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,10 +59,6 @@
             this.pbGate1.TabStop = false;
             this.pbGate1.Click += new System.EventHandler(this.pbGate1_Click);
             // 
-            // timerWelcome
-            // 
-            this.timerWelcome.Tick += new System.EventHandler(this.timerWelcome_Tick);
-            // 
             // frmCoupon
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -85,6 +79,5 @@
 
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.PictureBox pbGate1;
-        private System.Windows.Forms.Timer timerWelcome;
     }
 }

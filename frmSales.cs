@@ -387,7 +387,6 @@ namespace thepos2
             //fontCollection.AddFontFile("Font\\TossProductSansTTF-Medium.ttf");
             fontCollection.AddFontFile("Font\\SpoqaHanSansNeo-Medium.ttf");
 
-
             font11 = new Font(fontCollection.Families[0], 11f);
             font12 = new Font(fontCollection.Families[0], 12f);
             font14 = new Font(fontCollection.Families[0], 14f);
@@ -976,9 +975,9 @@ namespace thepos2
             DescribedTaskRenderer renderer = new DescribedTaskRenderer();
             renderer.DescriptionAspectName = "option_name_description";
 
-            renderer.TitleFont = new Font("굴림", 16, FontStyle.Bold);
-            renderer.DescriptionFont = new Font("굴림", 12, FontStyle.Regular);
-            //renderer.DescriptionColor = Color.Gray;
+            renderer.TitleFont = new Font("맑은 고딕", 16, FontStyle.Bold);
+            renderer.DescriptionFont = new Font("맑은 고딕", 10, FontStyle.Regular);
+
             renderer.ImageTextSpace = 0;
             renderer.TitleDescriptionSpace = 0;
 
@@ -992,9 +991,9 @@ namespace thepos2
             DescribedTaskRenderer renderer = new DescribedTaskRenderer();
             renderer.DescriptionAspectName = "option_amt_description";
 
-            renderer.TitleFont = new Font("굴림", 16, FontStyle.Bold);
-            renderer.DescriptionFont = new Font("굴림", 12, FontStyle.Regular);
-            //renderer.DescriptionColor = Color.Gray;
+            renderer.TitleFont = new Font("맑은 고딕", 16, FontStyle.Bold);
+            renderer.DescriptionFont = new Font("맑은 고딕", 10, FontStyle.Regular);
+
             renderer.ImageTextSpace = 0;
             renderer.TitleDescriptionSpace = 0;
 
