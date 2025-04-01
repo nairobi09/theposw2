@@ -34,8 +34,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblText2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblText1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblText1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -56,20 +56,20 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("굴림", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(375, 480);
+            this.label1.Location = new System.Drawing.Point(360, 763);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(216, 48);
+            this.label1.Size = new System.Drawing.Size(253, 54);
             this.label1.TabIndex = 3;
             this.label1.Text = "발권완료";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 600);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 480);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1000, 140);
@@ -99,16 +99,6 @@
             this.panel1.Size = new System.Drawing.Size(835, 466);
             this.panel1.TabIndex = 13;
             // 
-            // lblText1
-            // 
-            this.lblText1.Font = new System.Drawing.Font("굴림", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblText1.Location = new System.Drawing.Point(103, 70);
-            this.lblText1.Name = "lblText1";
-            this.lblText1.Size = new System.Drawing.Size(616, 75);
-            this.lblText1.TabIndex = 13;
-            this.lblText1.Text = "티켓발권이 완료되었습니다.";
-            this.lblText1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
@@ -118,6 +108,16 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
+            // 
+            // lblText1
+            // 
+            this.lblText1.Font = new System.Drawing.Font("굴림", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblText1.Location = new System.Drawing.Point(103, 70);
+            this.lblText1.Name = "lblText1";
+            this.lblText1.Size = new System.Drawing.Size(616, 75);
+            this.lblText1.TabIndex = 13;
+            this.lblText1.Text = "티켓발권이 완료되었습니다.";
+            this.lblText1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmCoupon3
             // 
@@ -137,7 +137,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

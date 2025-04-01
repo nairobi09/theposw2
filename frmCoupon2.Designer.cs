@@ -34,8 +34,8 @@
             this.btnPrev = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnHome = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSelect = new System.Windows.Forms.Button();
+            this.btnUnselect = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lvwCoupon = new BrightIdeasSoftware.ObjectListView();
             this.lv_coupon = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -63,7 +63,7 @@
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.Font = new System.Drawing.Font("굴림", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnPrev.Image = ((System.Drawing.Image)(resources.GetObject("btnPrev.Image")));
-            this.btnPrev.Location = new System.Drawing.Point(49, 464);
+            this.btnPrev.Location = new System.Drawing.Point(50, 650);
             this.btnPrev.Margin = new System.Windows.Forms.Padding(0);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(90, 90);
@@ -83,42 +83,42 @@
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("굴림", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
-            this.btnHome.Location = new System.Drawing.Point(860, 464);
+            this.btnHome.Location = new System.Drawing.Point(861, 650);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(90, 90);
             this.btnHome.TabIndex = 7;
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // button1
+            // btnSelect
             // 
-            this.button1.BackColor = System.Drawing.Color.DimGray;
-            this.button1.Font = new System.Drawing.Font("굴림", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(141, 1550);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 150);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "전체\r\n선택";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSelect.BackColor = System.Drawing.Color.DimGray;
+            this.btnSelect.Font = new System.Drawing.Font("굴림", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSelect.ForeColor = System.Drawing.Color.White;
+            this.btnSelect.Location = new System.Drawing.Point(141, 1550);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(180, 150);
+            this.btnSelect.TabIndex = 8;
+            this.btnSelect.Text = "전체\r\n선택";
+            this.btnSelect.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnUnselect
             // 
-            this.button2.BackColor = System.Drawing.Color.DimGray;
-            this.button2.Font = new System.Drawing.Font("굴림", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(327, 1550);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(180, 150);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "전체\r\n해제";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnUnselect.BackColor = System.Drawing.Color.DimGray;
+            this.btnUnselect.Font = new System.Drawing.Font("굴림", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnUnselect.ForeColor = System.Drawing.Color.White;
+            this.btnUnselect.Location = new System.Drawing.Point(327, 1550);
+            this.btnUnselect.Name = "btnUnselect";
+            this.btnUnselect.Size = new System.Drawing.Size(180, 150);
+            this.btnUnselect.TabIndex = 9;
+            this.btnUnselect.Text = "전체\r\n해제";
+            this.btnUnselect.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 600);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 480);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1000, 140);
@@ -179,7 +179,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("굴림", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(379, 490);
+            this.label1.Location = new System.Drawing.Point(380, 676);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(216, 48);
             this.label1.TabIndex = 3;
@@ -192,8 +192,8 @@
             this.ClientSize = new System.Drawing.Size(1000, 1800);
             this.Controls.Add(this.lvwCoupon);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnUnselect);
+            this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPrev);
@@ -215,8 +215,8 @@
         private System.Windows.Forms.Button btnPrev;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSelect;
+        private System.Windows.Forms.Button btnUnselect;
         private System.Windows.Forms.PictureBox pictureBox1;
         private BrightIdeasSoftware.ObjectListView lvwCoupon;
         private BrightIdeasSoftware.OLVColumn lv_coupon;

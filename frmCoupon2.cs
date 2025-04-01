@@ -56,8 +56,9 @@ namespace thepos2
 
             initialize_the();
 
+            initialize_font();
 
-            
+
 
 
             lvwCoupon.Items.Clear();
@@ -101,6 +102,17 @@ namespace thepos2
 
 
         }
+
+        private void initialize_font()
+        {
+
+            btnSelect.Font = font20bold;
+            btnUnselect.Font = font20bold;
+
+            btnOK.Font = font30bold;
+
+        }
+
 
         public DescribedTaskRenderer rendererCoupon()
         {

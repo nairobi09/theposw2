@@ -23,9 +23,6 @@ namespace thepos2
             InitializeComponent();
 
 
-
-
-
             // 기본 대기화면
             if (mCouponDisplayImage.Length > 0)
             {
@@ -42,6 +39,8 @@ namespace thepos2
                 }
             }
         }
+
+
 
         private void btnOK_Click(object sender, EventArgs e)
         {

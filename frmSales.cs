@@ -383,32 +383,7 @@ namespace thepos2
 
         private void initialize_font()
         {
-            //fontCollection.AddFontFile("Font\\Pretendard-Medium.ttf");
-            //fontCollection.AddFontFile("Font\\TossProductSansTTF-Medium.ttf");
-            fontCollection.AddFontFile("Font\\SpoqaHanSansNeo-Medium.ttf");
 
-            font11 = new Font(fontCollection.Families[0], 11f);
-            font12 = new Font(fontCollection.Families[0], 12f);
-            font14 = new Font(fontCollection.Families[0], 14f);
-            font16 = new Font(fontCollection.Families[0], 16f);
-            font20 = new Font(fontCollection.Families[0], 20f);
-            font24 = new Font(fontCollection.Families[0], 24f);
-
-            /*
-            font5 = new Font(fontCollection.Families[0], 5f);
-            font8 = new Font(fontCollection.Families[0], 8f);
-            font9 = new Font(fontCollection.Families[0], 9f);
-            font10 = new Font(fontCollection.Families[0], 10f);
-            font10bold = new Font(fontCollection.Families[0], 10f, FontStyle.Bold);
-            font12 = new Font(fontCollection.Families[0], 12f);
-            font12bold = new Font(fontCollection.Families[0], 12f, FontStyle.Bold);
-            font13 = new Font(fontCollection.Families[0], 12f);
-            font14 = new Font(fontCollection.Families[0], 14f);
-            
-            font16 = new Font(fontCollection.Families[0], 16f);
-            font20 = new Font(fontCollection.Families[0], 20f);
-            font24 = new Font(fontCollection.Families[0], 24f);
-            */
 
 
             btnGroupPrev.Font = font20;

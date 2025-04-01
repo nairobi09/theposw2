@@ -27,9 +27,13 @@ namespace thepos2
         public static Font font14;
         public static Font font16;
         public static Font font20;
+        public static Font font20bold;
         public static Font font24;
 
         public static Font font30;
+        public static Font font30bold;
+
+        public static Font font40bold;
 
         public static PrivateFontCollection fontCollection = new PrivateFontCollection();
 

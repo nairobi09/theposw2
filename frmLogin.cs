@@ -27,9 +27,28 @@ namespace thepos2
         {
             InitializeComponent();
 
+            init_font();
+
             initialize_the();
 
         }
+
+
+        private void init_font()
+        {
+            fontCollection.AddFontFile("Font\\SpoqaHanSansNeo-Medium.ttf");
+
+            font11 = new Font(fontCollection.Families[0], 11f);
+            font12 = new Font(fontCollection.Families[0], 12f);
+            font14 = new Font(fontCollection.Families[0], 14f);
+            font16 = new Font(fontCollection.Families[0], 16f);
+            font20 = new Font(fontCollection.Families[0], 20f);
+            font20bold = new Font(fontCollection.Families[0], 20f, FontStyle.Bold);
+            font24 = new Font(fontCollection.Families[0], 24f);
+            font30bold = new Font(fontCollection.Families[0], 30f, FontStyle.Bold);
+            font40bold = new Font(fontCollection.Families[0], 40f, FontStyle.Bold);
+        }
+
 
         private void initialize_the()
         {

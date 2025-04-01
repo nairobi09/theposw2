@@ -19,8 +19,14 @@ namespace thepos2
         {
             InitializeComponent();
 
-            //initialize_font();
+            initialize_font();
 
+            initialize_the();
+
+        }
+
+        private void initialize_the()
+        { 
             btn1.Click += (sender, args) => ClickedKey("1");
             btn2.Click += (sender, args) => ClickedKey("2");
             btn3.Click += (sender, args) => ClickedKey("3");
@@ -70,15 +76,14 @@ namespace thepos2
 
         private void initialize_font()
         {
-            fontCollection.AddFontFile("Font\\SpoqaHanSansNeo-Medium.ttf");
+            btnCouponImage.Font = font20bold;
+            btnCouponNo.Font = font20bold;
 
-            font11 = new Font(fontCollection.Families[0], 11f);
-            font12 = new Font(fontCollection.Families[0], 12f);
-            font14 = new Font(fontCollection.Families[0], 14f);
-            font16 = new Font(fontCollection.Families[0], 16f);
-            font20 = new Font(fontCollection.Families[0], 20f);
-            font24 = new Font(fontCollection.Families[0], 24f);
-            font30 = new Font(fontCollection.Families[0], 30f);
+            lblCouponImageText.Font = font20;
+
+            lblCouponInput.Font = font30bold;
+
+            btnOK.Font = font30bold;
 
         }
 
