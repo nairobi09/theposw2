@@ -104,6 +104,12 @@ namespace thepos2
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+
+            String ss = tbCouponNo.Text;
+
+
+
+
             frmCoupon2 frm = new frmCoupon2();
 
             DialogResult ret = frm.ShowDialog();

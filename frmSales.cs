@@ -3286,7 +3286,7 @@ namespace thepos2
 
 
 
-            frmCoupon fForm = new frmCoupon();
+            frmCoupon1 fForm = new frmCoupon1();
             ret = fForm.ShowDialog();
 
             if (ret == DialogResult.Yes)

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using theposw2;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static thepos2.thepos;
 
 namespace thepos2
@@ -18,36 +19,9 @@ namespace thepos2
 
 
 
-
-
-
-
     public partial class frmCoupon2 : Form
     {
 
-
-        public struct CouponItem
-        {
-
-            public String lv_coupon;
-            public String coupon_description;
-
-            public bool lv_checked;
-
-
-            public int coupon_cnt;
-            public String coupon_no;
-            public String coupon_name;
-            public String cus_no;
-            public String ustate;
-            public String is_usage;
-
-
-
-
-
-        }
-        public static List<CouponItem> mCouponItemList = new List<CouponItem>();
 
 
         public frmCoupon2()
@@ -63,43 +37,30 @@ namespace thepos2
 
             lvwCoupon.Items.Clear();
 
-            mCouponItemList.Clear();
 
 
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 3; i++)
             {
-                CouponItem couponItem = new CouponItem();
-
-                couponItem.coupon_no = "202503000" + i;
-                couponItem.coupon_name = "입장권 성인 일반" + i;
-                couponItem.coupon_cnt = i;
-                couponItem.cus_no = "010-0000-1111";
-                couponItem.ustate = "";
-                couponItem.is_usage = "";
-
-                couponItem.lv_coupon = couponItem.coupon_no;
-                couponItem.coupon_description = couponItem.coupon_name + " / " + couponItem.coupon_cnt + "";
-
-                couponItem.lv_checked = false;
-
-
-                
-                mCouponItemList.Add(couponItem);
-
+                ListViewItem item = new ListViewItem("", 1);
+                item.SubItems.Add("1000-0000-0001");
+                item.SubItems.Add("C_성인_일반 / @25 / 1");
+                lvwCoupon.Items.Add(item);
             }
 
-            
-            lvwCoupon.SetObjects(mCouponItemList);
+            for (int i = 0; i < 4; i++)
+            {
+                ListViewItem item = new ListViewItem("", 0);
+                item.SubItems.Add("1000-0000-0001");
+                item.SubItems.Add("C_성인_일반 / @25 / 1");
+                lvwCoupon.Items.Add(item);
+            }
+
 
         }
 
 
         private void initialize_the()
         {
-
-            this.lv_coupon.Renderer = rendererCoupon();
-
-
 
         }
 
@@ -114,27 +75,6 @@ namespace thepos2
         }
 
 
-        public DescribedTaskRenderer rendererCoupon()
-        {
-            DescribedTaskRenderer renderer = new DescribedTaskRenderer();
-            renderer.DescriptionAspectName = "coupon_description";
-
-            renderer.TitleColor = Color.Blue;
-            renderer.TitleFont = new Font("맑은 고딕", 14, FontStyle.Regular);
-            renderer.TitleDescriptionSpace = 0;
-
-
-            renderer.DescriptionColor = Color.Black;
-            renderer.DescriptionFont = new Font("맑은 고딕", 20, FontStyle.Bold);
-            
-
-            //renderer.ImageTextSpace = 0;
-            
-
-            //renderer.UseGdiTextRendering = false;
-
-            return (renderer);
-        }
 
 
 
@@ -173,6 +113,26 @@ namespace thepos2
         private void lvwCoupon_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < lvwCoupon.Items.Count; i++)
+            {
+
+
+            }
+
+            
+
+        }
+
+        private void btnUnselect_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < lvwCoupon.Items.Count; i++)
+            {
+
+            }
         }
 
 
