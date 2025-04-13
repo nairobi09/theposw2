@@ -51,7 +51,7 @@ namespace thepos2
 
             setupItem.code = "VanTID"; setupItem.name = "결제밴 T-ID"; setupItem.value = ""; setupItem.memo = "미입력시 밴결제모듈내 입력된 T-ID로 설정됩니다.\r\nKovan의 경우 필수입력항목입니다."; listSetup[7] = setupItem;
 
-            setupItem.code = "CouponChPM"; setupItem.name = "인증 업체코드(CMS)"; setupItem.value = ""; setupItem.memo = ""; listSetup[8] = setupItem;
+            setupItem.code = "CouponMID"; setupItem.name = "온라인쿠폰 가맹점번호(MID)"; setupItem.value = ""; setupItem.memo = ""; listSetup[8] = setupItem;
 
 
             // 키오스크 대문화면(대기화면)
@@ -350,7 +350,7 @@ namespace thepos2
                 else if (lvwList.Items[i].Tag.ToString() == "TicketPrinterPort") mTicketPrinterPort = lvwList.Items[i].SubItems[1].Text;
                 else if (lvwList.Items[i].Tag.ToString() == "TicketPrinterSpeed") mTicketPrinterSpeed = lvwList.Items[i].SubItems[1].Text;
                 else if (lvwList.Items[i].Tag.ToString() == "VanTID") mVanTID = lvwList.Items[i].SubItems[1].Text;
-                else if (lvwList.Items[i].Tag.ToString() == "CouponChPM") mCouponChPM = lvwList.Items[i].SubItems[1].Text;
+                else if (lvwList.Items[i].Tag.ToString() == "CouponMID") mCouponMID = lvwList.Items[i].SubItems[1].Text;
 
                 else if (lvwList.Items[i].Tag.ToString() == "WaitingDisplay") mWaitingDisplay = lvwList.Items[i].SubItems[1].Text;
                 else if (lvwList.Items[i].Tag.ToString() == "WaitingDisplayImage") mWaitingDisplayImage = lvwList.Items[i].SubItems[1].Text;

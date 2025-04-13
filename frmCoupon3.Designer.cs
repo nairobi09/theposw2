@@ -44,9 +44,9 @@
             // btnOK
             // 
             this.btnOK.BackColor = System.Drawing.Color.Red;
-            this.btnOK.Font = new System.Drawing.Font("굴림", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnOK.Font = new System.Drawing.Font("맑은 고딕", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnOK.ForeColor = System.Drawing.Color.White;
-            this.btnOK.Location = new System.Drawing.Point(328, 1515);
+            this.btnOK.Location = new System.Drawing.Point(348, 1515);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(350, 150);
             this.btnOK.TabIndex = 1;
@@ -56,11 +56,11 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("굴림", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(360, 763);
+            this.label1.Location = new System.Drawing.Point(385, 737);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 54);
+            this.label1.Size = new System.Drawing.Size(253, 78);
             this.label1.TabIndex = 3;
             this.label1.Text = "발권완료";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -69,7 +69,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 480);
+            this.pictureBox1.Location = new System.Drawing.Point(20, 480);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1000, 140);
@@ -79,7 +79,7 @@
             // lblText2
             // 
             this.lblText2.BackColor = System.Drawing.Color.Transparent;
-            this.lblText2.Font = new System.Drawing.Font("굴림", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblText2.Font = new System.Drawing.Font("맑은 고딕", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblText2.ForeColor = System.Drawing.Color.Red;
             this.lblText2.Location = new System.Drawing.Point(36, 167);
             this.lblText2.Name = "lblText2";
@@ -94,7 +94,7 @@
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.lblText1);
             this.panel1.Controls.Add(this.lblText2);
-            this.panel1.Location = new System.Drawing.Point(74, 907);
+            this.panel1.Location = new System.Drawing.Point(94, 907);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(835, 466);
             this.panel1.TabIndex = 13;
@@ -111,7 +111,7 @@
             // 
             // lblText1
             // 
-            this.lblText1.Font = new System.Drawing.Font("굴림", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblText1.Font = new System.Drawing.Font("맑은 고딕", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblText1.Location = new System.Drawing.Point(103, 70);
             this.lblText1.Name = "lblText1";
             this.lblText1.Size = new System.Drawing.Size(616, 75);
@@ -123,7 +123,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(1000, 1800);
+            this.ClientSize = new System.Drawing.Size(1040, 1880);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);

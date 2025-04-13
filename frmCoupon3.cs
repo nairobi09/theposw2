@@ -18,18 +18,8 @@ namespace theposw2
         {
             InitializeComponent();
 
-            initialize_font();
         }
 
-        private void initialize_font()
-        {
-
-            lblText1.Font = font20bold;
-            lblText2.Font = font40bold;
-
-            btnOK.Font = font30bold;
-
-        }
 
 
         private void btnOK_Click(object sender, EventArgs e)

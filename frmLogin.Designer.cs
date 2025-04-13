@@ -63,7 +63,7 @@
             // lblPW
             // 
             this.lblPW.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblPW.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblPW.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblPW.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblPW.Location = new System.Drawing.Point(50, 190);
             this.lblPW.Name = "lblPW";
@@ -75,7 +75,7 @@
             // lblID
             // 
             this.lblID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblID.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblID.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblID.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblID.Location = new System.Drawing.Point(50, 135);
             this.lblID.Name = "lblID";
@@ -89,6 +89,7 @@
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.tbID);
             this.panel4.Controls.Add(this.label1);
+            this.panel4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.panel4.Location = new System.Drawing.Point(129, 135);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(174, 48);
@@ -98,12 +99,12 @@
             // 
             this.tbID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
             this.tbID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbID.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbID.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.tbID.ForeColor = System.Drawing.Color.Gold;
-            this.tbID.Location = new System.Drawing.Point(10, 13);
+            this.tbID.Location = new System.Drawing.Point(10, 9);
             this.tbID.MaxLength = 4;
             this.tbID.Name = "tbID";
-            this.tbID.Size = new System.Drawing.Size(156, 23);
+            this.tbID.Size = new System.Drawing.Size(156, 27);
             this.tbID.TabIndex = 38;
             this.tbID.TabStop = false;
             this.tbID.Text = "1120";
@@ -128,6 +129,7 @@
             this.panelKeyDisplayWhite.BackColor = System.Drawing.Color.White;
             this.panelKeyDisplayWhite.Controls.Add(this.tbPW);
             this.panelKeyDisplayWhite.Controls.Add(this.lblKeyDisplayXX);
+            this.panelKeyDisplayWhite.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.panelKeyDisplayWhite.Location = new System.Drawing.Point(129, 189);
             this.panelKeyDisplayWhite.Name = "panelKeyDisplayWhite";
             this.panelKeyDisplayWhite.Size = new System.Drawing.Size(174, 48);
@@ -137,13 +139,13 @@
             // 
             this.tbPW.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
             this.tbPW.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbPW.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbPW.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.tbPW.ForeColor = System.Drawing.Color.Gold;
-            this.tbPW.Location = new System.Drawing.Point(10, 13);
+            this.tbPW.Location = new System.Drawing.Point(10, 11);
             this.tbPW.MaxLength = 4;
             this.tbPW.Name = "tbPW";
             this.tbPW.PasswordChar = '*';
-            this.tbPW.Size = new System.Drawing.Size(156, 23);
+            this.tbPW.Size = new System.Drawing.Size(156, 27);
             this.tbPW.TabIndex = 38;
             this.tbPW.TabStop = false;
             this.tbPW.Text = "4089";
@@ -178,6 +180,7 @@
             this.panelNumpad.Controls.Add(this.btnKey8);
             this.panelNumpad.Controls.Add(this.btnKey7);
             this.panelNumpad.Controls.Add(this.btnKeyClear);
+            this.panelNumpad.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.panelNumpad.Location = new System.Drawing.Point(384, 131);
             this.panelNumpad.Margin = new System.Windows.Forms.Padding(30);
             this.panelNumpad.Name = "panelNumpad";
@@ -260,7 +263,7 @@
             // 
             this.btnKeyLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
             this.btnKeyLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKeyLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnKeyLogin.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnKeyLogin.ForeColor = System.Drawing.Color.White;
             this.btnKeyLogin.Location = new System.Drawing.Point(0, 211);
             this.btnKeyLogin.Name = "btnKeyLogin";
@@ -372,10 +375,11 @@
             // btnReqSupport
             // 
             this.btnReqSupport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReqSupport.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnReqSupport.ForeColor = System.Drawing.Color.DarkGray;
-            this.btnReqSupport.Location = new System.Drawing.Point(146, 337);
+            this.btnReqSupport.Location = new System.Drawing.Point(160, 337);
             this.btnReqSupport.Name = "btnReqSupport";
-            this.btnReqSupport.Size = new System.Drawing.Size(157, 53);
+            this.btnReqSupport.Size = new System.Drawing.Size(92, 53);
             this.btnReqSupport.TabIndex = 45;
             this.btnReqSupport.TabStop = false;
             this.btnReqSupport.Text = "원격지원";
@@ -386,7 +390,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(63)))), ((int)(((byte)(87)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnClose.ForeColor = System.Drawing.Color.DarkGray;
             this.btnClose.Location = new System.Drawing.Point(514, 26);
             this.btnClose.Name = "btnClose";
@@ -399,7 +403,7 @@
             // 
             // lblCallCenterNo
             // 
-            this.lblCallCenterNo.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblCallCenterNo.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblCallCenterNo.ForeColor = System.Drawing.Color.LightGray;
             this.lblCallCenterNo.Location = new System.Drawing.Point(47, 42);
             this.lblCallCenterNo.Name = "lblCallCenterNo";
@@ -412,10 +416,11 @@
             // btnPos
             // 
             this.btnPos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPos.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnPos.ForeColor = System.Drawing.Color.DarkGray;
             this.btnPos.Location = new System.Drawing.Point(50, 337);
             this.btnPos.Name = "btnPos";
-            this.btnPos.Size = new System.Drawing.Size(90, 53);
+            this.btnPos.Size = new System.Drawing.Size(104, 53);
             this.btnPos.TabIndex = 49;
             this.btnPos.TabStop = false;
             this.btnPos.Text = "기기등록신청";
@@ -436,6 +441,7 @@
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panelKeyDisplayWhite);
+            this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogin";

@@ -134,7 +134,6 @@
             this.panelWelcome = new System.Windows.Forms.Panel();
             this.picSlide = new System.Windows.Forms.PictureBox();
             this.timerWelcome = new System.Windows.Forms.Timer(this.components);
-            this.btnCoupon = new System.Windows.Forms.Button();
             this.tableLayoutPanelGoodsGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lvwOrderItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -243,7 +242,7 @@
             this.rbGroup4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rbGroup4.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkOrange;
             this.rbGroup4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbGroup4.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbGroup4.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbGroup4.Location = new System.Drawing.Point(679, 3);
             this.rbGroup4.Name = "rbGroup4";
             this.rbGroup4.Size = new System.Drawing.Size(164, 86);
@@ -259,7 +258,7 @@
             this.rbGroup3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rbGroup3.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkOrange;
             this.rbGroup3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbGroup3.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbGroup3.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbGroup3.Location = new System.Drawing.Point(510, 3);
             this.rbGroup3.Name = "rbGroup3";
             this.rbGroup3.Size = new System.Drawing.Size(163, 86);
@@ -275,7 +274,7 @@
             this.rbGroup2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rbGroup2.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkOrange;
             this.rbGroup2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbGroup2.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbGroup2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbGroup2.Location = new System.Drawing.Point(341, 3);
             this.rbGroup2.Name = "rbGroup2";
             this.rbGroup2.Size = new System.Drawing.Size(163, 86);
@@ -291,7 +290,7 @@
             this.rbGroup1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rbGroup1.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkOrange;
             this.rbGroup1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbGroup1.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbGroup1.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbGroup1.Location = new System.Drawing.Point(172, 3);
             this.rbGroup1.Name = "rbGroup1";
             this.rbGroup1.Size = new System.Drawing.Size(163, 86);
@@ -307,7 +306,7 @@
             this.rbGroup0.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rbGroup0.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkOrange;
             this.rbGroup0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbGroup0.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbGroup0.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbGroup0.Location = new System.Drawing.Point(3, 3);
             this.rbGroup0.Name = "rbGroup0";
             this.rbGroup0.Size = new System.Drawing.Size(163, 86);
@@ -353,7 +352,7 @@
             // 
             this.btnPay.BackColor = System.Drawing.Color.Blue;
             this.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPay.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnPay.Font = new System.Drawing.Font("맑은 고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnPay.ForeColor = System.Drawing.Color.White;
             this.btnPay.Location = new System.Drawing.Point(793, 1443);
             this.btnPay.Name = "btnPay";
@@ -368,7 +367,7 @@
             // 
             this.lblAmountTitle.BackColor = System.Drawing.Color.White;
             this.lblAmountTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblAmountTitle.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblAmountTitle.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblAmountTitle.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblAmountTitle.Location = new System.Drawing.Point(794, 1259);
             this.lblAmountTitle.Margin = new System.Windows.Forms.Padding(0);
@@ -383,7 +382,7 @@
             // 
             this.lblAmount.BackColor = System.Drawing.Color.White;
             this.lblAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblAmount.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblAmount.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblAmount.ForeColor = System.Drawing.Color.Blue;
             this.lblAmount.Location = new System.Drawing.Point(794, 1310);
             this.lblAmount.Margin = new System.Windows.Forms.Padding(0);
@@ -470,7 +469,7 @@
             this.lv_cnt_up,
             this.lv_cnt_del});
             this.lvwOrderItem.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lvwOrderItem.Font = new System.Drawing.Font("굴림", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lvwOrderItem.Font = new System.Drawing.Font("맑은 고딕", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lvwOrderItem.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lvwOrderItem.GridLines = true;
             this.lvwOrderItem.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -491,7 +490,7 @@
             // lv_name
             // 
             this.lv_name.AspectName = "lv_goods_name";
-            this.lv_name.CellPadding = new System.Drawing.Rectangle(0, 26, 0, 0);
+            this.lv_name.CellPadding = new System.Drawing.Rectangle(0, 25, 0, 0);
             this.lv_name.Text = "상품명";
             this.lv_name.Width = 234;
             this.lv_name.WordWrap = true;
@@ -499,7 +498,7 @@
             // lv_amt
             // 
             this.lv_amt.AspectName = "lv_amt";
-            this.lv_amt.CellPadding = new System.Drawing.Rectangle(0, 26, 0, 0);
+            this.lv_amt.CellPadding = new System.Drawing.Rectangle(0, 25, 0, 0);
             this.lv_amt.Text = "단가";
             this.lv_amt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.lv_amt.Width = 100;
@@ -507,7 +506,6 @@
             // lv_cnt
             // 
             this.lv_cnt.AspectName = "lv_cnt";
-            this.lv_cnt.CellPadding = new System.Drawing.Rectangle(0, -5, 0, 0);
             this.lv_cnt.Text = "수량";
             this.lv_cnt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.lv_cnt.Width = 70;
@@ -515,7 +513,6 @@
             // lv_net_amount
             // 
             this.lv_net_amount.AspectName = "lv_net_amount";
-            this.lv_net_amount.CellPadding = new System.Drawing.Rectangle(0, -5, 0, 0);
             this.lv_net_amount.Text = "금액";
             this.lv_net_amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.lv_net_amount.Width = 120;
@@ -524,14 +521,14 @@
             // 
             this.lv_cnt_dn.AspectName = "lv_cnt_dn";
             this.lv_cnt_dn.IsButton = true;
-            this.lv_cnt_dn.Text = "-";
+            this.lv_cnt_dn.Text = "‒";
             this.lv_cnt_dn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lv_cnt_up
             // 
             this.lv_cnt_up.AspectName = "lv_cnt_up";
             this.lv_cnt_up.IsButton = true;
-            this.lv_cnt_up.Text = "+";
+            this.lv_cnt_up.Text = "⧾";
             this.lv_cnt_up.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lv_cnt_del
@@ -623,7 +620,7 @@
             // lblGoodsAmt11
             // 
             this.lblGoodsAmt11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblGoodsAmt11.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGoodsAmt11.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsAmt11.ForeColor = System.Drawing.Color.Blue;
             this.lblGoodsAmt11.Location = new System.Drawing.Point(40, 273);
             this.lblGoodsAmt11.Margin = new System.Windows.Forms.Padding(0);
@@ -635,7 +632,7 @@
             // lblGoodsName11
             // 
             this.lblGoodsName11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblGoodsName11.Font = new System.Drawing.Font("굴림", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGoodsName11.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsName11.ForeColor = System.Drawing.Color.Black;
             this.lblGoodsName11.Location = new System.Drawing.Point(3, 240);
             this.lblGoodsName11.Margin = new System.Windows.Forms.Padding(0);
@@ -711,7 +708,7 @@
             // lblGoodsAmt6
             // 
             this.lblGoodsAmt6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblGoodsAmt6.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGoodsAmt6.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsAmt6.ForeColor = System.Drawing.Color.Blue;
             this.lblGoodsAmt6.Location = new System.Drawing.Point(40, 273);
             this.lblGoodsAmt6.Margin = new System.Windows.Forms.Padding(0);
@@ -723,7 +720,7 @@
             // lblGoodsName6
             // 
             this.lblGoodsName6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblGoodsName6.Font = new System.Drawing.Font("굴림", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGoodsName6.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsName6.ForeColor = System.Drawing.Color.Black;
             this.lblGoodsName6.Location = new System.Drawing.Point(3, 240);
             this.lblGoodsName6.Margin = new System.Windows.Forms.Padding(0);
@@ -785,7 +782,7 @@
             // lblGoodsAmt2
             // 
             this.lblGoodsAmt2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblGoodsAmt2.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGoodsAmt2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsAmt2.ForeColor = System.Drawing.Color.Blue;
             this.lblGoodsAmt2.Location = new System.Drawing.Point(40, 273);
             this.lblGoodsAmt2.Margin = new System.Windows.Forms.Padding(0);
@@ -797,7 +794,7 @@
             // lblGoodsName2
             // 
             this.lblGoodsName2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblGoodsName2.Font = new System.Drawing.Font("굴림", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGoodsName2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsName2.ForeColor = System.Drawing.Color.Black;
             this.lblGoodsName2.Location = new System.Drawing.Point(3, 240);
             this.lblGoodsName2.Margin = new System.Windows.Forms.Padding(0);
@@ -859,7 +856,7 @@
             // lblGoodsAmt1
             // 
             this.lblGoodsAmt1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblGoodsAmt1.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGoodsAmt1.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsAmt1.ForeColor = System.Drawing.Color.Blue;
             this.lblGoodsAmt1.Location = new System.Drawing.Point(40, 273);
             this.lblGoodsAmt1.Margin = new System.Windows.Forms.Padding(0);
@@ -871,7 +868,7 @@
             // lblGoodsName1
             // 
             this.lblGoodsName1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblGoodsName1.Font = new System.Drawing.Font("굴림", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGoodsName1.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsName1.ForeColor = System.Drawing.Color.Black;
             this.lblGoodsName1.Location = new System.Drawing.Point(3, 240);
             this.lblGoodsName1.Margin = new System.Windows.Forms.Padding(0);
@@ -933,7 +930,7 @@
             // lblGoodsAmt3
             // 
             this.lblGoodsAmt3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblGoodsAmt3.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGoodsAmt3.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsAmt3.ForeColor = System.Drawing.Color.Blue;
             this.lblGoodsAmt3.Location = new System.Drawing.Point(40, 273);
             this.lblGoodsAmt3.Margin = new System.Windows.Forms.Padding(0);
@@ -945,7 +942,7 @@
             // lblGoodsName3
             // 
             this.lblGoodsName3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblGoodsName3.Font = new System.Drawing.Font("굴림", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGoodsName3.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsName3.ForeColor = System.Drawing.Color.Black;
             this.lblGoodsName3.Location = new System.Drawing.Point(3, 240);
             this.lblGoodsName3.Margin = new System.Windows.Forms.Padding(0);
@@ -1007,7 +1004,7 @@
             // lblGoodsAmt8
             // 
             this.lblGoodsAmt8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblGoodsAmt8.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGoodsAmt8.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsAmt8.ForeColor = System.Drawing.Color.Blue;
             this.lblGoodsAmt8.Location = new System.Drawing.Point(40, 273);
             this.lblGoodsAmt8.Margin = new System.Windows.Forms.Padding(0);
@@ -1019,7 +1016,7 @@
             // lblGoodsName8
             // 
             this.lblGoodsName8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblGoodsName8.Font = new System.Drawing.Font("굴림", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGoodsName8.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsName8.ForeColor = System.Drawing.Color.Black;
             this.lblGoodsName8.Location = new System.Drawing.Point(3, 240);
             this.lblGoodsName8.Margin = new System.Windows.Forms.Padding(0);
@@ -1081,7 +1078,7 @@
             // lblGoodsAmt9
             // 
             this.lblGoodsAmt9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblGoodsAmt9.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGoodsAmt9.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsAmt9.ForeColor = System.Drawing.Color.Blue;
             this.lblGoodsAmt9.Location = new System.Drawing.Point(40, 273);
             this.lblGoodsAmt9.Margin = new System.Windows.Forms.Padding(0);
@@ -1093,7 +1090,7 @@
             // lblGoodsName9
             // 
             this.lblGoodsName9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblGoodsName9.Font = new System.Drawing.Font("굴림", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGoodsName9.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsName9.ForeColor = System.Drawing.Color.Black;
             this.lblGoodsName9.Location = new System.Drawing.Point(3, 240);
             this.lblGoodsName9.Margin = new System.Windows.Forms.Padding(0);
@@ -1155,7 +1152,7 @@
             // lblGoodsAmt10
             // 
             this.lblGoodsAmt10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblGoodsAmt10.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGoodsAmt10.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsAmt10.ForeColor = System.Drawing.Color.Blue;
             this.lblGoodsAmt10.Location = new System.Drawing.Point(40, 273);
             this.lblGoodsAmt10.Margin = new System.Windows.Forms.Padding(0);
@@ -1167,7 +1164,7 @@
             // lblGoodsName10
             // 
             this.lblGoodsName10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblGoodsName10.Font = new System.Drawing.Font("굴림", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGoodsName10.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsName10.ForeColor = System.Drawing.Color.Black;
             this.lblGoodsName10.Location = new System.Drawing.Point(3, 240);
             this.lblGoodsName10.Margin = new System.Windows.Forms.Padding(0);
@@ -1229,7 +1226,7 @@
             // lblGoodsAmt0
             // 
             this.lblGoodsAmt0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblGoodsAmt0.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGoodsAmt0.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsAmt0.ForeColor = System.Drawing.Color.Blue;
             this.lblGoodsAmt0.Location = new System.Drawing.Point(40, 273);
             this.lblGoodsAmt0.Margin = new System.Windows.Forms.Padding(0);
@@ -1241,7 +1238,7 @@
             // lblGoodsName0
             // 
             this.lblGoodsName0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblGoodsName0.Font = new System.Drawing.Font("굴림", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGoodsName0.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsName0.ForeColor = System.Drawing.Color.Black;
             this.lblGoodsName0.Location = new System.Drawing.Point(3, 240);
             this.lblGoodsName0.Margin = new System.Windows.Forms.Padding(0);
@@ -1303,7 +1300,7 @@
             // lblGoodsAmt4
             // 
             this.lblGoodsAmt4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblGoodsAmt4.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGoodsAmt4.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsAmt4.ForeColor = System.Drawing.Color.Blue;
             this.lblGoodsAmt4.Location = new System.Drawing.Point(40, 273);
             this.lblGoodsAmt4.Margin = new System.Windows.Forms.Padding(0);
@@ -1315,7 +1312,7 @@
             // lblGoodsName4
             // 
             this.lblGoodsName4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblGoodsName4.Font = new System.Drawing.Font("굴림", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGoodsName4.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsName4.ForeColor = System.Drawing.Color.Black;
             this.lblGoodsName4.Location = new System.Drawing.Point(3, 240);
             this.lblGoodsName4.Margin = new System.Windows.Forms.Padding(0);
@@ -1377,7 +1374,7 @@
             // lblGoodsAmt5
             // 
             this.lblGoodsAmt5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblGoodsAmt5.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGoodsAmt5.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsAmt5.ForeColor = System.Drawing.Color.Blue;
             this.lblGoodsAmt5.Location = new System.Drawing.Point(40, 273);
             this.lblGoodsAmt5.Margin = new System.Windows.Forms.Padding(0);
@@ -1389,7 +1386,7 @@
             // lblGoodsName5
             // 
             this.lblGoodsName5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblGoodsName5.Font = new System.Drawing.Font("굴림", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGoodsName5.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsName5.ForeColor = System.Drawing.Color.Black;
             this.lblGoodsName5.Location = new System.Drawing.Point(3, 240);
             this.lblGoodsName5.Margin = new System.Windows.Forms.Padding(0);
@@ -1451,7 +1448,7 @@
             // lblGoodsAmt7
             // 
             this.lblGoodsAmt7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblGoodsAmt7.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGoodsAmt7.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsAmt7.ForeColor = System.Drawing.Color.Blue;
             this.lblGoodsAmt7.Location = new System.Drawing.Point(40, 273);
             this.lblGoodsAmt7.Margin = new System.Windows.Forms.Padding(0);
@@ -1463,7 +1460,7 @@
             // lblGoodsName7
             // 
             this.lblGoodsName7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblGoodsName7.Font = new System.Drawing.Font("굴림", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGoodsName7.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsName7.ForeColor = System.Drawing.Color.Black;
             this.lblGoodsName7.Location = new System.Drawing.Point(3, 240);
             this.lblGoodsName7.Margin = new System.Windows.Forms.Padding(0);
@@ -1519,21 +1516,6 @@
             // 
             this.timerWelcome.Tick += new System.EventHandler(this.timerWelcome_Tick);
             // 
-            // btnCoupon
-            // 
-            this.btnCoupon.BackColor = System.Drawing.Color.White;
-            this.btnCoupon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCoupon.Font = new System.Drawing.Font("굴림", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnCoupon.ForeColor = System.Drawing.Color.Black;
-            this.btnCoupon.Location = new System.Drawing.Point(402, 1177);
-            this.btnCoupon.Name = "btnCoupon";
-            this.btnCoupon.Size = new System.Drawing.Size(241, 60);
-            this.btnCoupon.TabIndex = 73;
-            this.btnCoupon.TabStop = false;
-            this.btnCoupon.Text = "쿠폰가져오기";
-            this.btnCoupon.UseVisualStyleBackColor = false;
-            this.btnCoupon.Click += new System.EventHandler(this.btnCoupon_Click);
-            // 
             // frmSales
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1552,7 +1534,6 @@
             this.Controls.Add(this.btnGroupPrev);
             this.Controls.Add(this.GoodsLayoutPanel);
             this.Controls.Add(this.pbLogo);
-            this.Controls.Add(this.btnCoupon);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -1723,7 +1704,6 @@
         private System.Windows.Forms.Label lblNotice5;
         private System.Windows.Forms.Label lblNotice7;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnCoupon;
     }
 }
 

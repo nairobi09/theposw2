@@ -44,7 +44,6 @@ namespace thepos2
 
 
             initialize_the();
-            initialize_font();
 
             goodsItem = goods_item;
 
@@ -176,32 +175,6 @@ namespace thepos2
 
         }
 
-
-        private void initialize_font()
-        {
-            lblTitle.Font = font12;
-            lblGoodsInfo.Font = font14;
-            lblCntDn.Font = font14;
-            lblCnt.Font = font14;
-            lblCntUp.Font = font14;
-            lblAmount.Font = font14;
-
-
-            for (int i = 0; i < 6; i++)
-            {
-                mLblOptionName[i].Font = font14;
-
-                for (int k = 0; k < 4; k++)
-                {
-                    mRbOptionItemName[i, k].Font = font12;
-                    mLblOrderItemAmt[i, k].Font = font11;
-                }
-            }
-
-            btnCancel.Font = font12;
-            btnOK.Font = font12;
-
-        }
 
         private void frmOrderOption_Shown(object sender, EventArgs e)
         {

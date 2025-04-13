@@ -27,27 +27,10 @@ namespace thepos2
         {
             InitializeComponent();
 
-            init_font();
-
             initialize_the();
 
         }
 
-
-        private void init_font()
-        {
-            fontCollection.AddFontFile("Font\\SpoqaHanSansNeo-Medium.ttf");
-
-            font11 = new Font(fontCollection.Families[0], 11f);
-            font12 = new Font(fontCollection.Families[0], 12f);
-            font14 = new Font(fontCollection.Families[0], 14f);
-            font16 = new Font(fontCollection.Families[0], 16f);
-            font20 = new Font(fontCollection.Families[0], 20f);
-            font20bold = new Font(fontCollection.Families[0], 20f, FontStyle.Bold);
-            font24 = new Font(fontCollection.Families[0], 24f);
-            font30bold = new Font(fontCollection.Families[0], 30f, FontStyle.Bold);
-            font40bold = new Font(fontCollection.Families[0], 40f, FontStyle.Bold);
-        }
 
 
         private void initialize_the()
@@ -258,7 +241,7 @@ namespace thepos2
         private void btnReqSupport_Click(object sender, EventArgs e)
         {
             //원격지원
-            System.Diagnostics.Process.Start("https://367.co.kr/112/");
+            System.Diagnostics.Process.Start("http://786.co.kr");
         }
 
         //
@@ -469,23 +452,21 @@ namespace thepos2
                             mGoodsItem[i].goods_name[3] = arr[i]["goodsNameJp"].ToString();
 
                             mGoodsItem[i].goods_notice = arr[i]["goodsNotice"].ToString();
-
                             mGoodsItem[i].badges_id = arr[i]["badgesId"].ToString();
-
-                            mGoodsItem[i].image_path = arr[i]["imagePath"].ToString();
 
                             mGoodsItem[i].shop_code = arr[i]["shopCode"].ToString();
                             mGoodsItem[i].amt = int.Parse(arr[i]["amt"].ToString());
+                            mGoodsItem[i].online_coupon = arr[i]["onlineCoupon"].ToString();
                             mGoodsItem[i].ticket = arr[i]["ticketYn"].ToString();
                             mGoodsItem[i].taxfree = arr[i]["taxFree"].ToString();
                             mGoodsItem[i].cutout = arr[i]["cutout"].ToString();
                             mGoodsItem[i].soldout = arr[i]["soldout"].ToString();
                             mGoodsItem[i].allim = arr[i]["allim"].ToString();
-
                             mGoodsItem[i].column = int.Parse(arr[i]["locateX"].ToString());  // 배치순번
-
                             mGoodsItem[i].option_template_id = arr[i]["optionTemplateId"].ToString();
+                            mGoodsItem[i].coupon_link_no = arr[i]["couponLinkNo"].ToString();
 
+                            mGoodsItem[i].image_path = arr[i]["imagePath"].ToString();
 
                             // 면세상픔은 상품명앞에 *을 붙인다.
                             if (mGoodsItem[i].taxfree == "1")
@@ -693,7 +674,7 @@ namespace thepos2
                             else if (arr[i]["setupCode"].ToString() == "PosType") mPosType = arr[i]["setupValue"].ToString();
                             else if (arr[i]["setupCode"].ToString() == "VanTID") mVanTID = arr[i]["setupValue"].ToString();
 
-                            else if (arr[i]["setupCode"].ToString() == "CouponChPM") mCouponChPM = arr[i]["setupValue"].ToString();
+                            else if (arr[i]["setupCode"].ToString() == "CouponMID") mCouponMID = arr[i]["setupValue"].ToString();
 
 
 

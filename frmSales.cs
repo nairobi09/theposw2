@@ -102,8 +102,6 @@ namespace thepos2
 
             initialize_the();
 
-            initialize_font();
-
 
             // 데이터 로드 및 초기화 작업, 기초원장 리로드도 동일하게
             init_reload();
@@ -339,8 +337,6 @@ namespace thepos2
 
             this.lv_name.Renderer = rendererName();
             this.lv_amt.Renderer = rendererAmt();
-            this.lv_cnt_dn.Renderer = rendererButtons();
-
 
 
             //?? 리스트뷰 컬럼명
@@ -380,52 +376,6 @@ namespace thepos2
 
         }
 
-
-        private void initialize_font()
-        {
-
-
-
-            btnGroupPrev.Font = font20;
-            btnGroupNext.Font = font20;
-            btnGoodsPrev.Font = font20;
-            btnGoodsNext.Font = font20;
-
-
-            // 그룹
-            for (int i = 0; i < mRbGroup.Length; i++)
-            {
-                mRbGroup[i].Font = font14;
-            }
-
-            // 상품명
-            for (int i = 0; i < mLblName.Length; i++)
-            {
-                mLblName[i].Font = font14;
-            }
-
-            // 상품단가
-            for (int i = 0; i < mLblAmt.Length; i++)
-            {
-                mLblAmt[i].Font = font14;
-            }
-
-            // Notice
-            for (int i = 0; i < mLblNotice.Length; i++)
-            {
-                mLblNotice[i].Font = font11;
-            }
-
-
-            lvwOrderItem.Font = font16;
-
-            lblAmountTitle.Font = font12;
-            lblAmount.Font = font24;
-            btnPay.Font = font20;
-
-
-
-        }
 
 
         private void display_goodsgroup(int group_page_no)
@@ -817,30 +767,20 @@ namespace thepos2
         private void ClickedGoodsItem(int goods_index)
         {
             //
-            if (mPayMode == "Coupon")
+            // 온라인 쿠폰 인증 화면
+            if (mGoodsItem[goods_index].online_coupon  == "Y")
             {
-                if (mOrderItemList.Count > 0)
-                {
-                    DialogResult ret = MessageBox.Show("화면의 주문목록을 삭제하고 새로 진행하겠습니까?", "thepos", MessageBoxButtons.OKCancel);
+                frmCoupon1 fForm = new frmCoupon1();
+                fForm.ShowDialog();
 
-                    if (ret == DialogResult.OK)
-                    {
-                        //
-                        mOrderItemList.Clear();
-                        lvwOrderItem.SetObjects(mOrderItemList);
-                        ReCalculateAmount();
-                    }
-                    else if (ret == DialogResult.Cancel)
-                    {
-                        return;
-                    }
-                }
+                return;
             }
+            
 
 
 
 
-
+            //
             mOrderOptionItemList.Clear();
 
             int order_cnt = 1;
@@ -950,9 +890,9 @@ namespace thepos2
             DescribedTaskRenderer renderer = new DescribedTaskRenderer();
             renderer.DescriptionAspectName = "option_name_description";
 
-            renderer.TitleFont = new Font("맑은 고딕", 16, FontStyle.Bold);
-            renderer.DescriptionFont = new Font("맑은 고딕", 10, FontStyle.Regular);
-
+            renderer.TitleFont = new Font(lvwOrderItem.Font.FontFamily, 16, FontStyle.Bold);
+            renderer.DescriptionFont = new Font(lvwOrderItem.Font.FontFamily, 11, FontStyle.Regular);
+            renderer.DescriptionColor = Color.Blue;
             renderer.ImageTextSpace = 0;
             renderer.TitleDescriptionSpace = 0;
 
@@ -966,25 +906,13 @@ namespace thepos2
             DescribedTaskRenderer renderer = new DescribedTaskRenderer();
             renderer.DescriptionAspectName = "option_amt_description";
 
-            renderer.TitleFont = new Font("맑은 고딕", 16, FontStyle.Bold);
-            renderer.DescriptionFont = new Font("맑은 고딕", 10, FontStyle.Regular);
-
+            renderer.TitleFont = new Font(lvwOrderItem.Font.FontFamily, 16, FontStyle.Bold);
+            renderer.DescriptionFont = new Font(lvwOrderItem.Font.FontFamily, 11, FontStyle.Regular);
+            renderer.DescriptionColor = Color.Blue;
             renderer.ImageTextSpace = 0;
             renderer.TitleDescriptionSpace = 0;
 
             renderer.UseGdiTextRendering = false;
-
-            return (renderer);
-        }
-
-
-        public ColumnButtonRenderer rendererButtons()
-        {
-            ColumnButtonRenderer renderer = new ColumnButtonRenderer();
-
-
-
-
 
             return (renderer);
         }
@@ -1053,8 +981,8 @@ namespace thepos2
             }
 
             //
-            orderItem.lv_cnt_dn = "-";
-            orderItem.lv_cnt_up = "+";
+            orderItem.lv_cnt_dn = "‒";
+            orderItem.lv_cnt_up = "⧾";
             orderItem.lv_cnt_del = "x";
 
         }
@@ -3078,6 +3006,7 @@ namespace thepos2
                 ToolStripMenuItem m0 = new ToolStripMenuItem("v1.02K");
                 ToolStripMenuItem m1 = new ToolStripMenuItem("내기기설정");
                 ToolStripMenuItem m2 = new ToolStripMenuItem("기초원장 리로드");
+                ToolStripMenuItem m4 = new ToolStripMenuItem("원격지원");
                 ToolStripMenuItem m3 = new ToolStripMenuItem("종료");
 
                 m0.Font = new System.Drawing.Font("v1.02K", 12F);
@@ -3107,6 +3036,15 @@ namespace thepos2
                     timerWelcome.Enabled = true;
                 };
 
+                m4.Font = new System.Drawing.Font("원격지원", 20F);
+                m4.Click += (senders, es) =>
+                {
+                    //원격지원
+                    System.Diagnostics.Process.Start("http://786.co.kr");
+
+                    timerWelcome.Enabled = false;
+                };
+
                 m3.Font = new System.Drawing.Font("종료", 20F);
                 m3.Click += (senders, es) =>
                 {
@@ -3117,6 +3055,7 @@ namespace thepos2
                 m.Items.Add(m0);
                 m.Items.Add(m1);
                 m.Items.Add(m2);
+                m.Items.Add(m4);
                 m.Items.Add(m3);
 
 
@@ -3262,117 +3201,6 @@ namespace thepos2
             timerWelcome.Start();
         }
 
-        private void btnCoupon_Click(object sender, EventArgs e)
-        {
-            DialogResult ret;
-
-            //
-            if (mOrderItemList.Count > 0)
-            {
-                ret = MessageBox.Show("진행중인 주문목록이 있습니다. 삭제하고 진행하겠습니까?", "thepos", MessageBoxButtons.OKCancel);
-
-                if (ret == DialogResult.OK)
-                {
-                    //
-                    mOrderItemList.Clear();
-                    lvwOrderItem.SetObjects(mOrderItemList);
-                    ReCalculateAmount();
-                }
-                else if(ret == DialogResult.Cancel)
-                {
-                    return;
-                }
-            }
-
-
-
-            frmCoupon1 fForm = new frmCoupon1();
-            ret = fForm.ShowDialog();
-
-            if (ret == DialogResult.Yes)
-            {
-                mOrderItemList.Clear();
-
-
-                String g_code = mCertOrders[0].menu_code;
-
-                if (mCertOrders[0].menu_code == "1234")
-                {
-                    g_code = "100001";
-                }
-
-
-                int goods_index = get_goods_index(g_code);
-
-
-                mOrderOptionItemList.Clear();
-
-
-                MemOrderItem orderItem = new MemOrderItem();
-
-                //
-                orderItem.option_name_description = "";   // 리스트뷰 상품항목 아랫줄에 표시
-                orderItem.option_amt_description = "";    // 리스트뷰 단가항목 아랫줄에 표시
-
-
-
-                // DB저장후에  : orderItem.optionNo 이 생김...
-
-                orderItem.option_name_description = mCertOrders[0].coupon_no;
-                orderItem.option_amt = 0;
-
-                orderItem.option_amt_description = "";
-
-
-                //
-                orderItem.option_item_cnt = 0;
-                orderItem.option_no = "";
-                orderItem.orderOptionItemList = mOrderOptionItemList.ToList();  // ToList() : 리스트 복사, 참조가 아니고..
-
-                orderItem.order_no = mOrderItemList.Count + 1;
-                orderItem.goods_code = mGoodsItem[goods_index].goods_code.ToString();
-                orderItem.goods_name = mGoodsItem[goods_index].goods_name[mLanguageNo];
-
-                orderItem.ticket = mGoodsItem[goods_index].ticket;
-                orderItem.taxfree = mGoodsItem[goods_index].taxfree;
-
-
-                orderItem.cnt = mCertOrders[0].qty;
-
-                orderItem.amt = mGoodsItem[goods_index].amt;
-                //orderItem.option_amt    // 위에서 세팅
-
-                orderItem.dcr_type = "";
-                orderItem.dcr_des = "";
-                orderItem.dcr_value = 0;
-                orderItem.shop_code = mGoodsItem[goods_index].shop_code;
-
-                orderItem.coupon_no = mCertOrders[0].coupon_no;
-
-
-                //
-                replace_mem_order_item(ref orderItem, "add");
-
-                mOrderItemList.Add(orderItem);
-                lvwOrderItem.SetObjects(mOrderItemList);
-
-                lvwOrderItem.Items[lvwOrderItem.Items.Count - 1].EnsureVisible();
-
-
-                ReCalculateAmount();
-
-                //
-                mPayMode = "Coupon";
-                btnPay.Text = "쿠폰사용\r\n(발권)";
-
-
-
-                // 타이머 리셋
-                reset_timer_waiting();
-
-            }
-        }
-
 
         private void btnPay_Click(object sender, EventArgs e)
         {
@@ -3426,7 +3254,7 @@ namespace thepos2
                 String t_coupon_no = mOrderItemList[0].coupon_no;
 
 
-                couponPM p = new couponPM();
+                couponTM p = new couponTM();
                 if (p.requestPmCertAuth(t_coupon_no) == 0)
                 {
                     // 쿠폰 주문 발권
@@ -3629,16 +3457,18 @@ namespace thepos2
                         {
                             ticket_seq++;
 
-                            if (mTicketMedia == "BC")  // 띠지
+                            if (mTicketMedia == "BC")  // 영수증
                             {
-                                // 티켓번호 + 2자리로 변경
-                                //t_ticket_no = mTheNo + ticket_seq.ToString("000");
+                                t_ticket_no = mTheNo + ticket_seq.ToString("00");
+                            }
+                            else if (mTicketMedia == "TG")  // 띠지
+                            {
                                 t_ticket_no = mTheNo + ticket_seq.ToString("00");
                             }
                             else  // 팔찌
                             {
                                 //? 팔찌이면 스케너 입력로직 필요
-                                MessageBox.Show("스캐너 팔찌 입력입니다... ");
+                                MessageBox.Show("스캐너 팔찌 입력을 할 수 없습니다... ");
 
                                 //t_ticket_no = "";  //? 스캐너로 읽어서 여기에...   theno + 팔찌번호?
                                 t_ticket_no = mTheNo + ticket_seq.ToString("00");  //? 임시
@@ -3691,9 +3521,13 @@ namespace thepos2
 
                             //
                             // 에러발생에 대비해서 인쇄출력은 가능한 마지막에 순서...
-                            if (mTicketMedia == "BC")  // 띠지
+                            if (mTicketMedia == "BC")  // 영수증
                             {
                                 print_ticket(t_ticket_no, orderItem.goods_code);
+                            }
+                            else if (mTicketMedia == "TG")  // 띠지
+                            {
+                                MessageBox.Show("띠지 출력을 할 수 없습니다... ");
                             }
                         }
                     }

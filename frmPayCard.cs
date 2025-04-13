@@ -235,15 +235,6 @@ namespace thepos2
 
                 this.Close();
 
-        /*
-            }
-
-
-
-
-
-        */
-
 
 
         }

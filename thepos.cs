@@ -20,24 +20,6 @@ namespace thepos2
 {
     public class thepos
     {
-        public static Font font14bold;
-
-        public static Font font11;
-        public static Font font12;
-        public static Font font14;
-        public static Font font16;
-        public static Font font20;
-        public static Font font20bold;
-        public static Font font24;
-
-        public static Font font30;
-        public static Font font30bold;
-
-        public static Font font40bold;
-
-        public static PrivateFontCollection fontCollection = new PrivateFontCollection();
-
-
 
 
         // //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -204,6 +186,7 @@ namespace thepos2
             public string badges_id;
             public string image_path;
             public int amt;
+            public String online_coupon;
             public String ticket; // 일반상품 0. 티켓상품 1
             public String taxfree; // 과세품 0, 면세품 1
             public String shop_code;
@@ -215,6 +198,7 @@ namespace thepos2
             public int columnspan;
             public int rowspan;
             public String option_template_id;
+            public String coupon_link_no;
         }
         public static GoodsItem[] mGoodsItem;
 
@@ -532,7 +516,7 @@ namespace thepos2
         public static String mVanTID = "";    // 결제밴 T-ID
 
         // 앞으로 쿠폰 채널 
-        public static String mCouponChPM = "";   // 플레이스엠 쿠폰 채널 부여 번호      "3590";
+        public static String mCouponMID = "";   // 플레이스엠 쿠폰 채널 부여 번호      "3590";
 
 
         //

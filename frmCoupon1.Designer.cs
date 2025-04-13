@@ -37,7 +37,7 @@
             this.btnCouponImage = new System.Windows.Forms.Button();
             this.btnCouponNo = new System.Windows.Forms.Button();
             this.panelCouponNo = new System.Windows.Forms.Panel();
-            this.lblCouponInput = new System.Windows.Forms.Label();
+            this.lblCouponText = new System.Windows.Forms.Label();
             this.btn7 = new System.Windows.Forms.Button();
             this.btnU = new System.Windows.Forms.Button();
             this.btn8 = new System.Windows.Forms.Button();
@@ -79,7 +79,7 @@
             this.btnZ = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.panelCouponImage = new System.Windows.Forms.Panel();
-            this.tbCouponNo = new System.Windows.Forms.TextBox();
+            this.tbCouponScan = new System.Windows.Forms.TextBox();
             this.lblCouponImageText = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -94,7 +94,7 @@
             this.btnOK.FlatAppearance.BorderSize = 0;
             this.btnOK.Font = new System.Drawing.Font("맑은 고딕", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnOK.ForeColor = System.Drawing.Color.White;
-            this.btnOK.Location = new System.Drawing.Point(325, 1550);
+            this.btnOK.Location = new System.Drawing.Point(345, 1550);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(350, 150);
             this.btnOK.TabIndex = 0;
@@ -108,7 +108,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(335, 666);
+            this.label1.Location = new System.Drawing.Point(362, 666);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(316, 65);
             this.label1.TabIndex = 2;
@@ -118,8 +118,9 @@
             // 
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("굴림", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
             this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
-            this.btnHome.Location = new System.Drawing.Point(861, 650);
+            this.btnHome.Location = new System.Drawing.Point(881, 650);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(90, 90);
             this.btnHome.TabIndex = 9;
@@ -131,8 +132,9 @@
             // 
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.Font = new System.Drawing.Font("굴림", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnPrev.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
             this.btnPrev.Image = ((System.Drawing.Image)(resources.GetObject("btnPrev.Image")));
-            this.btnPrev.Location = new System.Drawing.Point(50, 650);
+            this.btnPrev.Location = new System.Drawing.Point(70, 650);
             this.btnPrev.Margin = new System.Windows.Forms.Padding(0);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(90, 90);
@@ -145,7 +147,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 480);
+            this.pictureBox1.Location = new System.Drawing.Point(20, 480);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1000, 140);
@@ -158,7 +160,7 @@
             this.btnCouponImage.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btnCouponImage.Font = new System.Drawing.Font("맑은 고딕", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCouponImage.ForeColor = System.Drawing.Color.Red;
-            this.btnCouponImage.Location = new System.Drawing.Point(104, 816);
+            this.btnCouponImage.Location = new System.Drawing.Point(124, 816);
             this.btnCouponImage.Name = "btnCouponImage";
             this.btnCouponImage.Size = new System.Drawing.Size(388, 89);
             this.btnCouponImage.TabIndex = 11;
@@ -173,7 +175,7 @@
             this.btnCouponNo.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btnCouponNo.Font = new System.Drawing.Font("맑은 고딕", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCouponNo.ForeColor = System.Drawing.Color.Gray;
-            this.btnCouponNo.Location = new System.Drawing.Point(507, 816);
+            this.btnCouponNo.Location = new System.Drawing.Point(527, 816);
             this.btnCouponNo.Name = "btnCouponNo";
             this.btnCouponNo.Size = new System.Drawing.Size(388, 89);
             this.btnCouponNo.TabIndex = 11;
@@ -186,7 +188,7 @@
             // 
             this.panelCouponNo.BackColor = System.Drawing.Color.Black;
             this.panelCouponNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelCouponNo.Controls.Add(this.lblCouponInput);
+            this.panelCouponNo.Controls.Add(this.lblCouponText);
             this.panelCouponNo.Controls.Add(this.btn7);
             this.panelCouponNo.Controls.Add(this.btnU);
             this.panelCouponNo.Controls.Add(this.btn8);
@@ -227,23 +229,23 @@
             this.panelCouponNo.Controls.Add(this.btnX);
             this.panelCouponNo.Controls.Add(this.btnZ);
             this.panelCouponNo.Controls.Add(this.btnClear);
-            this.panelCouponNo.Location = new System.Drawing.Point(50, 950);
+            this.panelCouponNo.Location = new System.Drawing.Point(70, 950);
             this.panelCouponNo.Name = "panelCouponNo";
             this.panelCouponNo.Size = new System.Drawing.Size(900, 550);
             this.panelCouponNo.TabIndex = 12;
             // 
-            // lblCouponInput
+            // lblCouponText
             // 
-            this.lblCouponInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
-            this.lblCouponInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCouponInput.Font = new System.Drawing.Font("맑은 고딕", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblCouponInput.ForeColor = System.Drawing.Color.White;
-            this.lblCouponInput.Location = new System.Drawing.Point(154, 78);
-            this.lblCouponInput.Margin = new System.Windows.Forms.Padding(0);
-            this.lblCouponInput.Name = "lblCouponInput";
-            this.lblCouponInput.Size = new System.Drawing.Size(564, 97);
-            this.lblCouponInput.TabIndex = 53;
-            this.lblCouponInput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCouponText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
+            this.lblCouponText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblCouponText.Font = new System.Drawing.Font("맑은 고딕", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblCouponText.ForeColor = System.Drawing.Color.White;
+            this.lblCouponText.Location = new System.Drawing.Point(154, 78);
+            this.lblCouponText.Margin = new System.Windows.Forms.Padding(0);
+            this.lblCouponText.Name = "lblCouponText";
+            this.lblCouponText.Size = new System.Drawing.Size(564, 97);
+            this.lblCouponText.TabIndex = 53;
+            this.lblCouponText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn7
             // 
@@ -815,24 +817,23 @@
             // 
             this.panelCouponImage.BackColor = System.Drawing.Color.White;
             this.panelCouponImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelCouponImage.Controls.Add(this.tbCouponNo);
+            this.panelCouponImage.Controls.Add(this.tbCouponScan);
             this.panelCouponImage.Controls.Add(this.lblCouponImageText);
             this.panelCouponImage.Controls.Add(this.pictureBox2);
-            this.panelCouponImage.Location = new System.Drawing.Point(49, 950);
+            this.panelCouponImage.Location = new System.Drawing.Point(69, 950);
             this.panelCouponImage.Name = "panelCouponImage";
             this.panelCouponImage.Size = new System.Drawing.Size(900, 550);
             this.panelCouponImage.TabIndex = 54;
             // 
-            // tbCouponNo
+            // tbCouponScan
             // 
-            this.tbCouponNo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbCouponNo.ForeColor = System.Drawing.Color.White;
-            this.tbCouponNo.Location = new System.Drawing.Point(361, 24);
-            this.tbCouponNo.Name = "tbCouponNo";
-            this.tbCouponNo.Size = new System.Drawing.Size(152, 16);
-            this.tbCouponNo.TabIndex = 0;
-            this.tbCouponNo.TextChanged += new System.EventHandler(this.tbCouponNo_TextChanged);
-            this.tbCouponNo.LostFocus += new System.EventHandler(this.tbCouponNo_LostFocus);
+            this.tbCouponScan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbCouponScan.ForeColor = System.Drawing.Color.White;
+            this.tbCouponScan.Location = new System.Drawing.Point(361, 24);
+            this.tbCouponScan.Name = "tbCouponScan";
+            this.tbCouponScan.Size = new System.Drawing.Size(152, 16);
+            this.tbCouponScan.TabIndex = 0;
+            this.tbCouponScan.LostFocus += new System.EventHandler(this.tbCouponScan_LostFocus);
             // 
             // lblCouponImageText
             // 
@@ -859,7 +860,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(1000, 1800);
+            this.ClientSize = new System.Drawing.Size(1040, 1880);
             this.Controls.Add(this.btnCouponNo);
             this.Controls.Add(this.btnCouponImage);
             this.Controls.Add(this.pictureBox1);
@@ -934,10 +935,10 @@
         private System.Windows.Forms.Button btn1;
         private System.Windows.Forms.Button btn2;
         private System.Windows.Forms.Button btn3;
-        private System.Windows.Forms.Label lblCouponInput;
+        private System.Windows.Forms.Label lblCouponText;
         private System.Windows.Forms.Panel panelCouponImage;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblCouponImageText;
-        private System.Windows.Forms.TextBox tbCouponNo;
+        private System.Windows.Forms.TextBox tbCouponScan;
     }
 }

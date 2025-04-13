@@ -62,6 +62,7 @@ namespace thepos2
 
                 ToolStripMenuItem m0 = new ToolStripMenuItem("v1.02K");
                 ToolStripMenuItem m1 = new ToolStripMenuItem("내기기설정");
+                ToolStripMenuItem m4 = new ToolStripMenuItem("원격지원");
                 ToolStripMenuItem m3 = new ToolStripMenuItem("종료");
 
                 m0.Font = new System.Drawing.Font("v1.02K", 12F);
@@ -71,6 +72,14 @@ namespace thepos2
                 {
                     frmSetupPos frm = new frmSetupPos();
                     frm.ShowDialog();
+                };
+
+                
+                m4.Font = new System.Drawing.Font("내기기설정", 20F);
+                m4.Click += (senders, es) =>
+                {
+                    //원격지원
+                    System.Diagnostics.Process.Start("http://786.co.kr");
                 };
 
 
@@ -83,6 +92,7 @@ namespace thepos2
 
                 m.Items.Add(m0);
                 m.Items.Add(m1);
+                m.Items.Add(m4);
                 m.Items.Add(m3);
 
 

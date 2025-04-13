@@ -15,14 +15,17 @@ namespace thepos2
     public partial class frmCoupon1 : Form
     {
 
+        string inputMode = "Image";
+
+
         public frmCoupon1()
         {
             InitializeComponent();
 
-            initialize_font();
-
             initialize_the();
 
+            tbCouponScan.Text = "";
+            tbCouponScan.Focus();
         }
 
         private void initialize_the()
@@ -74,19 +77,6 @@ namespace thepos2
         }
 
 
-        private void initialize_font()
-        {
-            btnCouponImage.Font = font20bold;
-            btnCouponNo.Font = font20bold;
-
-            lblCouponImageText.Font = font20;
-
-            lblCouponInput.Font = font30bold;
-
-            btnOK.Font = font30bold;
-
-        }
-
 
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -105,26 +95,63 @@ namespace thepos2
         private void btnOK_Click(object sender, EventArgs e)
         {
 
-            String ss = tbCouponNo.Text;
+            String t_coupon_no = "";
+
+            if (inputMode == "Image")
+            {
+                if (tbCouponScan.Text == "")
+                {
+                    return;
+                }
+
+                t_coupon_no = tbCouponScan.Text;
+            }
+            else  //Text
+            {
+                if (lblCouponText.Text == "")
+                {
+                    return;
+                }
+
+                t_coupon_no = lblCouponText.Text;
+            }
+
+            //
+
+            couponTM p = new couponTM();
+            int ret = p.requestPmCertView(t_coupon_no);
+
+            if (ret == 0)
+            {
+                if (mObj["result"].ToString() == "1000")
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("오류\n\n" + mObj["msg"].ToString(), "thepos");
+                    return;
+                }
+            }
 
 
 
+            frmCoupon2 frm = new frmCoupon2(mObj);
 
-            frmCoupon2 frm = new frmCoupon2();
+            DialogResult res = frm.ShowDialog();
 
-            DialogResult ret = frm.ShowDialog();
-
-            if (ret == DialogResult.OK)
+            if (res == DialogResult.OK)
             {
                 this.DialogResult = DialogResult.OK;
 
                 this.Close();
             }
-            else if(ret == DialogResult.Cancel)
+            else if(res == DialogResult.Cancel)
             {
-
+                //
+                tbCouponScan.Text = "";
+                tbCouponScan.Focus();
             }
-
 
         }
 
@@ -132,39 +159,39 @@ namespace thepos2
         {
             if (sKey == "BS")
             {
-                if (lblCouponInput.Text.Length > 0)
+                if (lblCouponText.Text.Length > 0)
                 {
-                    lblCouponInput.Text = lblCouponInput.Text.Substring(0, lblCouponInput.Text.Length - 1);
+                    lblCouponText.Text = lblCouponText.Text.Substring(0, lblCouponText.Text.Length - 1);
                 }
             }
             else if (sKey == "Clear")
             {
-                lblCouponInput.Text = "";
+                lblCouponText.Text = "";
             }
             else
             {
-                lblCouponInput.Text += sKey;
+                lblCouponText.Text += sKey;
             }
         }
 
-        private void tbCouponNo_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void tbCouponNo_LostFocus(object sender, EventArgs e)
+        private void tbCouponScan_LostFocus(object sender, EventArgs e)
         {
-            tbCouponNo.Focus();
+            tbCouponScan.Focus();
         }
 
         private void btnCouponImage_Click(object sender, EventArgs e)
         {
-
             btnCouponImage.ForeColor = Color.Red;
             btnCouponNo.ForeColor = Color.Gray;
 
             panelCouponImage.Visible = true;
             panelCouponNo.Visible = false;
+
+            tbCouponScan.Text = "";
+            tbCouponScan.Focus();
+
+            inputMode = "Image";
         }
 
         private void btnCouponNo_Click(object sender, EventArgs e)
@@ -174,6 +201,8 @@ namespace thepos2
 
             panelCouponImage.Visible = false;
             panelCouponNo.Visible = true;
+
+            inputMode = "Text";
         }
     }
 }
