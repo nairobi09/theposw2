@@ -3544,7 +3544,7 @@ namespace thepos2
         public static void print_ticket(String t_ticket_no, String t_goods_code)
         {
 
-            if (mTicketPrinterPort.Trim().Length == 0)
+            if (mBillPrinterPort.Trim().Length == 0)
             {
                 MessageBox.Show("티켓프린터 미설정으로 티켓출력불가.", "thepos");
                 return;
@@ -3592,8 +3592,6 @@ namespace thepos2
 
                 BytesValue = PrintExtensions.AddBytes(BytesValue, obj.BarCode.Code128(t_ticket_no));
                 //BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
-                BytesValue = PrintExtensions.AddBytes(BytesValue, Encoding.Default.GetBytes(t_ticket_no));
-                //BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Alignment.Left());
 
 
                 BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
@@ -3611,20 +3609,35 @@ namespace thepos2
 
                 BytesValue = PrintExtensions.AddBytes(BytesValue, CutPage());
 
-                //
-                PrintExtensions.Print(BytesValue, mTicketPrinterPort);
+                try
+                {
+                    SerialPort mySerialPort = new SerialPort();
+                    mySerialPort.PortName = mBillPrinterPort;
+                    mySerialPort.BaudRate = convert_number(mBillPrinterSpeed);
+                    mySerialPort.Parity = Parity.None;
+                    mySerialPort.StopBits = StopBits.One;
+                    mySerialPort.DataBits = 8;
+                    mySerialPort.Handshake = Handshake.None;
 
+                    mySerialPort.Open();
+
+                    mySerialPort.Write(BytesValue, 0, BytesValue.Length);
+                    mySerialPort.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("영수증프린터 출력 오류.\r\n" + ex.Message);
+                    return;
+                }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("티켓프린터 인쇄중 에러.\r\n" + ex.Message);  // 파일이 이미 있으므로 만들 수 없습니다.
+                MessageBox.Show("티켓 출력 오류.\r\n헬프데스크로 문의바랍니다.");  // 파일이 이미 있으므로 만들 수 없습니다.
                 return;
             }
-
         }
-
-
 
         public static void add_thepos_log(String level, String name, String content)
         {
@@ -3661,6 +3674,10 @@ namespace thepos2
 
         }
 
+        private void btnTestPay_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

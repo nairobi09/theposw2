@@ -531,7 +531,9 @@ namespace thepos2
         public static String mKioskType = "";
 
         // 인증 대문화면
-        public static String mCouponDisplayImage = "";         
+        public static String mCouponDisplayImage = "";
+
+        public static String mPayMode = "";
 
 
 

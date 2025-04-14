@@ -92,9 +92,21 @@ namespace thepos2
             this.Close();
         }
 
+
+
+        private void tbCouponScan_KeyDown(object sender, KeyEventArgs e)
+        {
+            String t_coupon_no = "";
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                t_coupon_no = tbCouponScan.Text;
+            }
+        }
+
+
         private void btnOK_Click(object sender, EventArgs e)
         {
-
             String t_coupon_no = "";
 
             if (inputMode == "Image")
@@ -116,8 +128,13 @@ namespace thepos2
                 t_coupon_no = lblCouponText.Text;
             }
 
+            request_tm_sert(t_coupon_no);
+
+        }
             //
 
+        private void request_tm_sert(String t_coupon_no)
+        { 
             couponTM p = new couponTM();
             int ret = p.requestPmCertView(t_coupon_no);
 
@@ -133,7 +150,6 @@ namespace thepos2
                     return;
                 }
             }
-
 
 
             frmCoupon2 frm = new frmCoupon2(mObj);
@@ -204,5 +220,7 @@ namespace thepos2
 
             inputMode = "Text";
         }
+
+
     }
 }

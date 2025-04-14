@@ -104,6 +104,8 @@ namespace thepos2
 
         private void btnKeyLogin_Click(object sender, EventArgs e)
         {
+            mPayMode = "";
+
             // 
             if (tbID.Text == "1120" & tbPW.Text == "4089")
             {
@@ -113,12 +115,12 @@ namespace thepos2
 
                 if (ret == DialogResult.OK)  // Real
                 {
-
+                    
                 }
                 else if (ret == DialogResult.Yes) // TEST
                 {
                     //lblIsTest.Visible = true;
-
+                    mPayMode = "Test";
                 }
                 else
                 {

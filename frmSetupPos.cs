@@ -71,7 +71,7 @@ namespace thepos2
 
 
             //
-            setupItem.code = "CouponDisplayImage"; setupItem.name = "인증화면 이미지"; setupItem.value = ""; setupItem.memo = "1080*1920 jpg"; listSetup[15] = setupItem;
+            setupItem.code = "CouponDisplayImage"; setupItem.name = "쿠폰인증 대문이미지"; setupItem.value = ""; setupItem.memo = "1080*1920 jpg"; listSetup[15] = setupItem;
 
             
 

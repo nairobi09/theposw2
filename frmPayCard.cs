@@ -110,12 +110,18 @@ namespace thepos2
             btnClose.Text = mLangCloseArr[mLanguageNo];
 
 
+            if (mPayMode == "Test")
+            {
+                btnPayRequest.Text = "테스트 결제";
+            }
+
+
 
         }
 
-
         private void btnPayRequest_Click(object sender, EventArgs e)
         {
+
             String t할부 = "00";
 
 
@@ -155,87 +161,93 @@ namespace thepos2
 
 
 
-
-            // 리뷰시에만 별로로 마킹...
-            /*
-             * 
-             * 
-
-            if (requestCardAuth(tAmount, tFreeAmount, tTaxAmount, tTax, tServiceAmt, install, is_cup, out mPaymentCard) != 0)
+            // 실환경에서만 결제요청하고, 테스트모드에서는 그냥 PASS
+            if (mPayMode != "Test")
             {
-                add_thepos_log("Error", "requestCardAuth", mErrorMsg);
-                MessageBox.Show(mErrorMsg, "thepos");
+                if (requestCardAuth(tAmount, tFreeAmount, tTaxAmount, tTax, tServiceAmt, install, is_cup, out mPaymentCard) != 0)
+                {
+                    add_thepos_log("Error", "requestCardAuth", mErrorMsg);
+                    MessageBox.Show(mErrorMsg, "thepos");
+
+                    return;
+                }
             }
-            else
+
+
+
+            //정상승인
+            int order_cnt = 0;
+
+
+            // 리스트뷰 -> 메모리배열 생성 : [ 업장코드로 정렬 + 업장주문번호 부여 ]
+            set_shop_order_no_on_orderitem();
+
+
+            // orders, orderItem 
+            order_cnt = SaveOrder("");  // order. orderitem  ->  업장주문서 출력은 제외
+            if (order_cnt == -1)
             {
+                return; // 재로그인 요구
+            }
+
+
+            //  payment
+            if (!SavePayment(1, "Card", netAmount, 0))
+            {
+                return;
+            }
+
+            // 서버저장 paymentCard
+            mPaymentCard.site_id = mSiteId;
+            mPaymentCard.biz_dt = mBizDate;
+            mPaymentCard.pos_no = mPosNo;
+            mPaymentCard.the_no = mTheNo;
+            mPaymentCard.ref_no = mRefNo;
+            mPaymentCard.pay_date = get_today_date();
+            mPaymentCard.pay_time = get_today_time();
+            mPaymentCard.pay_type = "C1";       // 결제구분 : , 카드결제(C1), 임의등록(C0)
+            mPaymentCard.tran_type = "A";       // 승인 A 취소 C
+            mPaymentCard.pay_class = mPayClass;
+            mPaymentCard.ticket_no = "";
+            mPaymentCard.pay_seq = 1;
+            mPaymentCard.sign_path = "";
+            mPaymentCard.is_cancel = "";
+            mPaymentCard.van_code = mVanCode;
+            mPaymentCard.is_cup = is_cup;
+
+            // 밴에서 응답으로 받은건 payChannel 모듈에서 세팅
+            if (!SavePaymentCard_Server(mPaymentCard))
+            {
+                return;
+            }
 
 
 
-            */
-
-                //정상승인
-                int order_cnt = 0;
-
-
-                // 리스트뷰 -> 메모리배열 생성 : [ 업장코드로 정렬 + 업장주문번호 부여 ]
-                set_shop_order_no_on_orderitem();
-
-
-                // orders, orderItem 
-                order_cnt = SaveOrder("");  // order. orderitem  ->  업장주문서 출력은 제외
-                if (order_cnt == -1)
-                {
-                    return; // 재로그인 요구
-                }
-
-
-                //  payment
-                if (!SavePayment(1, "Card", netAmount, 0))
-                {
-                    return;
-                }
-
-                // 서버저장 paymentCard
-                mPaymentCard.site_id = mSiteId;
-                mPaymentCard.biz_dt = mBizDate;
-                mPaymentCard.pos_no = mPosNo;
-                mPaymentCard.the_no = mTheNo;
-                mPaymentCard.ref_no = mRefNo;
-                mPaymentCard.pay_date = get_today_date();
-                mPaymentCard.pay_time = get_today_time();
-                mPaymentCard.pay_type = "C1";       // 결제구분 : , 카드결제(C1), 임의등록(C0)
-                mPaymentCard.tran_type = "A";       // 승인 A 취소 C
-                mPaymentCard.pay_class = mPayClass;
-                mPaymentCard.ticket_no = "";
-                mPaymentCard.pay_seq = 1;
-                mPaymentCard.sign_path = "";
-                mPaymentCard.is_cancel = "";
-                mPaymentCard.van_code = mVanCode;
-                mPaymentCard.is_cup = is_cup;
-
-                // 밴에서 응답으로 받은건 payChannel 모듈에서 세팅
-                if (!SavePaymentCard_Server(mPaymentCard))
-                {
-                    return;
-                }
-
-
-                // 주문서 출력
-                String[] order_no_arr = print_order(ref shopOrderPackList);
+            // 티켓 저장
+            int ticket_cnt = SaveTicketFlow("", mPayClass, "", 0);
 
 
 
 
 
-                // 영수증 출력
-                print_bill(mTheNo, "A", "", "01000", true, order_no_arr); // card
+            // 주문서 출력
+            String[] order_no_arr = print_order(ref shopOrderPackList);
 
 
-                DialogResult = DialogResult.OK;
-
-                this.Close();
 
 
+            // 모달창
+            //  - 알림톡 발송 기능
+            //  - 영수증 출력여부 물어보기
+            // 영수증 출력
+            print_bill(mTheNo, "A", "", "01000", true, order_no_arr); // card
+
+
+            DialogResult = DialogResult.OK;
+
+            this.Close();
+
+            
 
         }
 

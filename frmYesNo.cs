@@ -165,15 +165,6 @@ namespace thepos2
 
 
 
-
-
-
-
-
-
-
-
-
         }
 
 
