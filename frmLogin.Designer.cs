@@ -107,7 +107,6 @@
             this.tbID.Size = new System.Drawing.Size(156, 27);
             this.tbID.TabIndex = 38;
             this.tbID.TabStop = false;
-            this.tbID.Text = "1120";
             this.tbID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbID.Click += new System.EventHandler(this.tbID_Click);
             // 
@@ -148,7 +147,6 @@
             this.tbPW.Size = new System.Drawing.Size(156, 27);
             this.tbPW.TabIndex = 38;
             this.tbPW.TabStop = false;
-            this.tbPW.Text = "4089";
             this.tbPW.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbPW.Click += new System.EventHandler(this.tbPW_Click);
             // 
