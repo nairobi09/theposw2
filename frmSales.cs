@@ -1224,7 +1224,7 @@ namespace thepos2
             {
                 for (int i = 0; i < mOrderItemList.Count; i++)
                 {
-                    if (isExistOrderPrinter(mOrderItemList[i].shop_code) & mOrderItemList[i].ticket != "Y")
+                    if (mOrderItemList[i].dcr_des != "E")
                     {
                         shop_code_list.Add(mOrderItemList[i].shop_code);
                     }
@@ -1680,7 +1680,6 @@ namespace thepos2
 
             if (orderItemArr.Length == 0)
                 return return_order_no_arr;
-
 
 
 
