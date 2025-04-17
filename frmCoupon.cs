@@ -42,21 +42,27 @@ namespace thepos2
 
 
 
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            frmCoupon1 frm = new frmCoupon1();
-            frm.ShowDialog();
-        }
 
 
-        private void pbGate1_Click(object sender, EventArgs e)
+        private void pbGate1_MouseClick(object sender, MouseEventArgs e)
         {
+
+            if (e.Y > 100)
+            {
+                frmCoupon1 frm = new frmCoupon1();
+                frm.ShowDialog();
+
+                return;
+            }
+
+
+
+
+
             sysadmin_pw_patern += "1";
-
 
             if (sysadmin_pw_patern.Length >= 4)
             {
-
 
                 ContextMenuStrip m = new ContextMenuStrip();
 
@@ -74,7 +80,7 @@ namespace thepos2
                     frm.ShowDialog();
                 };
 
-                
+
                 m4.Font = new System.Drawing.Font("내기기설정", 20F);
                 m4.Click += (senders, es) =>
                 {

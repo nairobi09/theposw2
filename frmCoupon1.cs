@@ -15,9 +15,6 @@ namespace thepos2
     public partial class frmCoupon1 : Form
     {
 
-        string inputMode = "Image";
-
-
         public frmCoupon1()
         {
             InitializeComponent();
@@ -96,39 +93,26 @@ namespace thepos2
 
         private void tbCouponScan_KeyDown(object sender, KeyEventArgs e)
         {
-            String t_coupon_no = "";
-
             if (e.KeyCode == Keys.Enter)
             {
-                t_coupon_no = tbCouponScan.Text;
+                tbCouponScan.Enabled = false;
+
+                request_tm_sert(tbCouponScan.Text);
+
+                tbCouponScan.Enabled = true;
             }
         }
 
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            String t_coupon_no = "";
 
-            if (inputMode == "Image")
+            if (lblCouponText.Text == "")
             {
-                if (tbCouponScan.Text == "")
-                {
-                    return;
-                }
-
-                t_coupon_no = tbCouponScan.Text;
-            }
-            else  //Text
-            {
-                if (lblCouponText.Text == "")
-                {
-                    return;
-                }
-
-                t_coupon_no = lblCouponText.Text;
+                return;
             }
 
-            request_tm_sert(t_coupon_no);
+            request_tm_sert(lblCouponText.Text);
 
         }
             //
@@ -150,10 +134,14 @@ namespace thepos2
                     return;
                 }
             }
+            else
+            {
+                MessageBox.Show("오류\n\n" + mErrorMsg, "thepos");
+                return;
+            }
 
 
             frmCoupon2 frm = new frmCoupon2(mObj);
-
             DialogResult res = frm.ShowDialog();
 
             if (res == DialogResult.OK)
@@ -207,7 +195,6 @@ namespace thepos2
             tbCouponScan.Text = "";
             tbCouponScan.Focus();
 
-            inputMode = "Image";
         }
 
         private void btnCouponNo_Click(object sender, EventArgs e)
@@ -218,7 +205,6 @@ namespace thepos2
             panelCouponImage.Visible = false;
             panelCouponNo.Visible = true;
 
-            inputMode = "Text";
         }
 
 

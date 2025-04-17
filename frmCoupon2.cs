@@ -143,7 +143,15 @@ namespace thepos2
 
             if (is_pass == "Y")
             {
-                couponItem.image_ticket = "ticket_on";
+                if (ustate_code != "2")
+                {
+                    couponItem.image_ticket = "ticket_off";
+                }
+                else
+                {
+                    couponItem.image_ticket = "ticket_on";
+                }
+                    
             }
             else
             {

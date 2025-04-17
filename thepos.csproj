@@ -26,7 +26,7 @@
     <InstallUrl>http://thepos.co.kr/setup/theposw2/</InstallUrl>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -63,7 +63,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -98,6 +98,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAllimOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAllimOR.Designer.cs">
+      <DependentUpon>frmAllimOR.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCoupon1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,9 @@
     <Compile Include="van\KCP\paymentKCP.cs" />
     <Compile Include="van\KOVAN\paymentKovan.cs" />
     <Compile Include="van\Nice\paymentNice.cs" />
+    <EmbeddedResource Include="frmAllimOR.resx">
+      <DependentUpon>frmAllimOR.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCoupon1.resx">
       <DependentUpon>frmCoupon1.cs</DependentUpon>
     </EmbeddedResource>

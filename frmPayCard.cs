@@ -223,10 +223,8 @@ namespace thepos2
 
 
 
-            // 티켓 저장
+            // 티켓 저장/출력
             int ticket_cnt = SaveTicketFlow("", mPayClass, "", 0);
-
-
 
 
 
@@ -235,10 +233,34 @@ namespace thepos2
 
 
 
+            // 알림톡 발송
+            if (mAllimYn == "Y")   // 알림톡 사용여부
+            {
+                // 알림톡 보내기 위한 알림상품이 있는지 검사
+                String is_allim = "";
 
-            // 모달창
-            //  - 알림톡 발송 기능
-            //  - 영수증 출력여부 물어보기
+                for (int i = 0; i < shopOrderPackList.Count; i++)
+                {
+                    for (int j = 0; j < shopOrderPackList[i].orderPackList.Count; j++)
+                    {
+                        if (shopOrderPackList[i].orderPackList[j].allim == "Y")
+                        {
+                            is_allim = "Y";
+                        }
+                    }
+                }
+
+                if (is_allim == "Y")
+                {
+                    frmAllimOR fAllim = new frmAllimOR(shopOrderPackList);
+                    fAllim.ShowDialog();
+                }
+            }
+
+
+
+
+
             // 영수증 출력
             print_bill(mTheNo, "A", "", "01000", true, order_no_arr); // card
 

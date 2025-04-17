@@ -145,6 +145,7 @@
             this.lvwCoupon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lvwCoupon.CellEditUseWholeCell = false;
             this.lvwCoupon.CellPadding = new System.Drawing.Rectangle(3, 3, 3, 3);
+            this.lvwCoupon.CheckBoxes = true;
             this.lvwCoupon.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.coupon_bar});
             this.lvwCoupon.CopySelectionOnControlCUsesDragSource = false;

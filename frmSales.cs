@@ -2135,10 +2135,8 @@ namespace thepos2
             if (isQuestion == true)
             {
                 frmYesNo fYesNo = new frmYesNo(order_no_arr, shopOrderPackList);
-                var resultPrintBill = fYesNo.ShowDialog();
-
-                // 영수증 출력여부
-                if (resultPrintBill == DialogResult.Yes)
+                var result = fYesNo.ShowDialog();
+                if (result == DialogResult.Yes)
                 {
 
                 }
@@ -2146,10 +2144,7 @@ namespace thepos2
                 {
                     return;
                 }
-
             }
-
-
 
 
             String headerBill = "";
@@ -2198,6 +2193,7 @@ namespace thepos2
                 else
                 {
                     BytesValue = PrintExtensions.AddBytes(BytesValue, mByteLogoImage);
+                    BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
                 }
 
 
@@ -3520,9 +3516,11 @@ namespace thepos2
 
                             //
                             // 에러발생에 대비해서 인쇄출력은 가능한 마지막에 순서...
+                            // "", "BC", "RF", "TG" };
+                            // "", "영수증", "팔찌", "띠지" };
                             if (mTicketMedia == "BC")  // 영수증
                             {
-                                print_ticket(t_ticket_no, orderItem.goods_code);
+                                print_ticket(t_ticket_no, orderItem.goods_code, orderItem.coupon_no);
                             }
                             else if (mTicketMedia == "TG")  // 띠지
                             {
@@ -3540,8 +3538,10 @@ namespace thepos2
         }
 
 
-        public static void print_ticket(String t_ticket_no, String t_goods_code)
+        public static void print_ticket(String t_ticket_no, String t_goods_code, String t_coupon_no)
         {
+
+            // 티켓을 영수증에 출력
 
             if (mBillPrinterPort.Trim().Length == 0)
             {
@@ -3553,7 +3553,15 @@ namespace thepos2
             try
             {
                 const string ESC = "\u001B";
+                const string GS = "\u001D";
                 const string InitializePrinter = ESC + "@";
+
+                const string BoldOn = ESC + "E" + "\u0001";
+                const string BoldOff = ESC + "E" + "\0";
+                const string DoubleOn = GS + "!" + "\u0011";  // 2x sized text (double-high + double-wide)
+                const string DoubleOff = GS + "!" + "\0";
+
+
 
                 PrinterUtility.EscPosEpsonCommands.EscPosEpson obj = new PrinterUtility.EscPosEpsonCommands.EscPosEpson();
 
@@ -3569,14 +3577,32 @@ namespace thepos2
                 BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Alignment.Center());
 
 
+                //
                 String strPrint = mSiteName;
                 BytesValue = PrintExtensions.AddBytes(BytesValue, Encoding.Default.GetBytes(strPrint));
-                BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
+
+
                 BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
 
-                strPrint = get_goods_name(t_goods_code);
+                strPrint = "------------------------------------------";
                 BytesValue = PrintExtensions.AddBytes(BytesValue, Encoding.Default.GetBytes(strPrint));
 
+
+                BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
+                BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
+
+
+
+                //
+                BytesValue = PrintExtensions.AddBytes(BytesValue, BoldOn);
+                BytesValue = PrintExtensions.AddBytes(BytesValue, DoubleOn);
+                strPrint = get_goods_name(t_goods_code);
+                BytesValue = PrintExtensions.AddBytes(BytesValue, Encoding.Default.GetBytes(strPrint));
+                BytesValue = PrintExtensions.AddBytes(BytesValue, DoubleOff);
+                BytesValue = PrintExtensions.AddBytes(BytesValue, BoldOff);
+
+
+                BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
                 BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
 
                 strPrint = mBizDate.Substring(0, 4) + "-" + mBizDate.Substring(4, 2) + "-" + mBizDate.Substring(6, 2);
@@ -3584,21 +3610,25 @@ namespace thepos2
 
                 BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
                 BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
+
+
+
+                if ((t_coupon_no + "").Length > 0)
+                {
+                    strPrint = "쿠폰번호 : " + t_coupon_no;
+                    BytesValue = PrintExtensions.AddBytes(BytesValue, Encoding.Default.GetBytes(strPrint));
+                }
+
+
+
+                BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
                 BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
 
 
-                // 티켓번호 :  바코드, str
-
+                // 티켓번호 :  바코드
                 BytesValue = PrintExtensions.AddBytes(BytesValue, obj.BarCode.Code128(t_ticket_no));
-                //BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
 
 
-                BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
-                BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
-                BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
-                BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
-                BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
-                BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
                 BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
                 BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
                 BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
