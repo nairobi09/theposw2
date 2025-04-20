@@ -33,6 +33,10 @@
             this.tbValue = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panelImage = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnX = new System.Windows.Forms.Button();
+            this.pbImage = new System.Windows.Forms.PictureBox();
             this.lblNameTitle = new System.Windows.Forms.Label();
             this.cbValue = new System.Windows.Forms.ComboBox();
             this.lblValueTitle = new System.Windows.Forms.Label();
@@ -54,15 +58,14 @@
             this.lvwList = new System.Windows.Forms.ListView();
             this.ischange = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnClose = new System.Windows.Forms.Button();
-            this.panelImage = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnX = new System.Windows.Forms.Button();
-            this.pbImage = new System.Windows.Forms.PictureBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.panelMultiText = new System.Windows.Forms.Panel();
+            this.tbMultiValue = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panelImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panelMultiText.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblMemo
@@ -102,6 +105,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.panelMultiText);
             this.panel2.Controls.Add(this.panelImage);
             this.panel2.Controls.Add(this.lblMemo);
             this.panel2.Controls.Add(this.tbValue);
@@ -116,6 +120,52 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(251, 413);
             this.panel2.TabIndex = 52;
+            // 
+            // panelImage
+            // 
+            this.panelImage.Controls.Add(this.label2);
+            this.panelImage.Controls.Add(this.btnX);
+            this.panelImage.Controls.Add(this.pbImage);
+            this.panelImage.Location = new System.Drawing.Point(17, 109);
+            this.panelImage.Name = "panelImage";
+            this.panelImage.Size = new System.Drawing.Size(220, 159);
+            this.panelImage.TabIndex = 49;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(132, 123);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(22, 12);
+            this.label2.TabIndex = 63;
+            this.label2.Text = "jpg";
+            // 
+            // btnX
+            // 
+            this.btnX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnX.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnX.ForeColor = System.Drawing.Color.DimGray;
+            this.btnX.Location = new System.Drawing.Point(172, 119);
+            this.btnX.Name = "btnX";
+            this.btnX.Size = new System.Drawing.Size(33, 30);
+            this.btnX.TabIndex = 61;
+            this.btnX.TabStop = false;
+            this.btnX.Text = "X";
+            this.btnX.UseVisualStyleBackColor = true;
+            this.btnX.Click += new System.EventHandler(this.btnX_Click);
+            // 
+            // pbImage
+            // 
+            this.pbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbImage.Location = new System.Drawing.Point(19, 9);
+            this.pbImage.Name = "pbImage";
+            this.pbImage.Size = new System.Drawing.Size(186, 103);
+            this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbImage.TabIndex = 62;
+            this.pbImage.TabStop = false;
+            this.pbImage.Click += new System.EventHandler(this.pbImage_Click);
             // 
             // lblNameTitle
             // 
@@ -173,12 +223,11 @@
             // 
             // lblValue
             // 
-            this.lblValue.AutoSize = true;
             this.lblValue.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblValue.ForeColor = System.Drawing.Color.Black;
             this.lblValue.Location = new System.Drawing.Point(80, 42);
             this.lblValue.Name = "lblValue";
-            this.lblValue.Size = new System.Drawing.Size(14, 14);
+            this.lblValue.Size = new System.Drawing.Size(157, 14);
             this.lblValue.TabIndex = 41;
             this.lblValue.Text = "_";
             // 
@@ -358,55 +407,28 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // panelImage
-            // 
-            this.panelImage.Controls.Add(this.label2);
-            this.panelImage.Controls.Add(this.btnX);
-            this.panelImage.Controls.Add(this.pbImage);
-            this.panelImage.Location = new System.Drawing.Point(17, 109);
-            this.panelImage.Name = "panelImage";
-            this.panelImage.Size = new System.Drawing.Size(220, 159);
-            this.panelImage.TabIndex = 49;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(132, 123);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(22, 12);
-            this.label2.TabIndex = 63;
-            this.label2.Text = "jpg";
-            // 
-            // btnX
-            // 
-            this.btnX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnX.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnX.ForeColor = System.Drawing.Color.DimGray;
-            this.btnX.Location = new System.Drawing.Point(172, 119);
-            this.btnX.Name = "btnX";
-            this.btnX.Size = new System.Drawing.Size(33, 30);
-            this.btnX.TabIndex = 61;
-            this.btnX.TabStop = false;
-            this.btnX.Text = "X";
-            this.btnX.UseVisualStyleBackColor = true;
-            this.btnX.Click += new System.EventHandler(this.btnX_Click);
-            // 
-            // pbImage
-            // 
-            this.pbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbImage.Location = new System.Drawing.Point(19, 9);
-            this.pbImage.Name = "pbImage";
-            this.pbImage.Size = new System.Drawing.Size(186, 103);
-            this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbImage.TabIndex = 62;
-            this.pbImage.TabStop = false;
-            this.pbImage.Click += new System.EventHandler(this.pbImage_Click);
-            // 
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog1";
+            // 
+            // panelMultiText
+            // 
+            this.panelMultiText.Controls.Add(this.tbMultiValue);
+            this.panelMultiText.Location = new System.Drawing.Point(12, 96);
+            this.panelMultiText.Name = "panelMultiText";
+            this.panelMultiText.Size = new System.Drawing.Size(225, 178);
+            this.panelMultiText.TabIndex = 52;
+            this.panelMultiText.Visible = false;
+            // 
+            // tbMultiValue
+            // 
+            this.tbMultiValue.Font = new System.Drawing.Font("굴림", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbMultiValue.Location = new System.Drawing.Point(0, 0);
+            this.tbMultiValue.Multiline = true;
+            this.tbMultiValue.Name = "tbMultiValue";
+            this.tbMultiValue.Size = new System.Drawing.Size(217, 174);
+            this.tbMultiValue.TabIndex = 0;
+            this.tbMultiValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // frmSetupPos
             // 
@@ -425,11 +447,13 @@
             this.Text = "frmSetupPos";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panelImage.ResumeLayout(false);
             this.panelImage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panelMultiText.ResumeLayout(false);
+            this.panelMultiText.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -466,5 +490,7 @@
         private System.Windows.Forms.Button btnX;
         private System.Windows.Forms.PictureBox pbImage;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Panel panelMultiText;
+        private System.Windows.Forms.TextBox tbMultiValue;
     }
 }

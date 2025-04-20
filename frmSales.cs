@@ -3569,8 +3569,6 @@ namespace thepos2
 
                 BytesValue = PrintExtensions.AddBytes(BytesValue, InitializePrinter);
 
-
-                BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
                 BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
 
 
@@ -3601,9 +3599,20 @@ namespace thepos2
                 BytesValue = PrintExtensions.AddBytes(BytesValue, DoubleOff);
                 BytesValue = PrintExtensions.AddBytes(BytesValue, BoldOff);
 
+                BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
+                BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
+                BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
 
-                BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
-                BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
+
+                if (false)
+                {
+                    strPrint = "- 1 매 - ";
+                    BytesValue = PrintExtensions.AddBytes(BytesValue, Encoding.Default.GetBytes(strPrint));
+
+                    BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
+                    BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
+                }
+
 
                 strPrint = mBizDate.Substring(0, 4) + "-" + mBizDate.Substring(4, 2) + "-" + mBizDate.Substring(6, 2);
                 BytesValue = PrintExtensions.AddBytes(BytesValue, Encoding.Default.GetBytes(strPrint));
@@ -3617,16 +3626,31 @@ namespace thepos2
                 {
                     strPrint = "쿠폰번호 : " + t_coupon_no;
                     BytesValue = PrintExtensions.AddBytes(BytesValue, Encoding.Default.GetBytes(strPrint));
+
+                    BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
+                    BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
                 }
-
-
-
-                BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
-                BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
 
 
                 // 티켓번호 :  바코드
                 BytesValue = PrintExtensions.AddBytes(BytesValue, obj.BarCode.Code128(t_ticket_no));
+
+
+                BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
+                BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
+
+
+
+                // 티켓 추가 텍스트                
+                if (mTicketAddText != "")
+                {
+                    strPrint = "------------------------------------------";
+                    BytesValue = PrintExtensions.AddBytes(BytesValue, Encoding.Default.GetBytes(strPrint));
+                    BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
+                    BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
+
+                    BytesValue = PrintExtensions.AddBytes(BytesValue, Encoding.Default.GetBytes(mTicketAddText));
+                }
 
 
                 BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());

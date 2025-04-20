@@ -518,6 +518,8 @@ namespace thepos2
         // 앞으로 쿠폰 채널 
         public static String mCouponMID = "";   // 플레이스엠 쿠폰 채널 부여 번호      "3590";
 
+        public static String mTicketAddText = "";
+
 
         //
         public static String mWaitingDisplay = "";  // 대기화면 사용여부

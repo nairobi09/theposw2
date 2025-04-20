@@ -24,7 +24,7 @@ namespace thepos2
             public String value;
             public String memo;
         }
-        Setup[] listSetup = new Setup[16];
+        Setup[] listSetup = new Setup[17];
 
 
         bool isAdd = false;
@@ -73,7 +73,9 @@ namespace thepos2
             //
             setupItem.code = "CouponDisplayImage"; setupItem.name = "쿠폰인증 대문이미지"; setupItem.value = ""; setupItem.memo = "1080*1920 jpg"; listSetup[15] = setupItem;
 
-            
+            // 티켓출력물 추가 텍스트
+            setupItem.code = "TicketAddText"; setupItem.name = "티켓출력물 추가텍스트"; setupItem.value = ""; setupItem.memo = ""; listSetup[16] = setupItem;
+
 
 
             reload_setup_pos();
@@ -159,7 +161,7 @@ namespace thepos2
             cbValue.Visible = false;
             tbValue.Visible = false;
             panelImage.Visible = false;
-
+            panelMultiText.Visible = false;
 
 
             cbValue.SelectedIndex = -1;
@@ -267,6 +269,13 @@ namespace thepos2
                 cbValue.Items.Add("범용");
                 cbValue.Items.Add("인증전용");
             }
+            else if (code == listSetup[16].code)
+            {
+                panelMultiText.Visible = true;
+
+                tbMultiValue.Text = lblValue.Text;
+
+            }
 
 
         }
@@ -276,6 +285,11 @@ namespace thepos2
             if (cbValue.Visible)
             {
                 lvwList.SelectedItems[0].SubItems[2].Text = cbValue.Text;
+                lvwList.SelectedItems[0].SubItems[4].Text = "변경";
+            }
+            else if (tbMultiValue.Visible)
+            {
+                lvwList.SelectedItems[0].SubItems[2].Text = tbMultiValue.Text;
                 lvwList.SelectedItems[0].SubItems[4].Text = "변경";
             }
             else
@@ -360,6 +374,8 @@ namespace thepos2
                 else if (lvwList.Items[i].Tag.ToString() == "MultiLanguage") mMultiLanguage = lvwList.Items[i].SubItems[1].Text;
                 else if (lvwList.Items[i].Tag.ToString() == "kioskType") mKioskType = lvwList.Items[i].SubItems[1].Text;
                 else if (lvwList.Items[i].Tag.ToString() == "CouponDisplayImage") mCouponDisplayImage = lvwList.Items[i].SubItems[1].Text;
+
+                else if (lvwList.Items[i].Tag.ToString() == "TicketAddText") mTicketAddText = lvwList.Items[i].SubItems[1].Text;
             }
 
         }
