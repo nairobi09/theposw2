@@ -53,6 +53,7 @@
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(350, 150);
             this.btnOK.TabIndex = 0;
+            this.btnOK.TabStop = false;
             this.btnOK.Text = "쿠폰사용\r\n발권";
             this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -68,6 +69,7 @@
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(90, 90);
             this.btnPrev.TabIndex = 2;
+            this.btnPrev.TabStop = false;
             this.btnPrev.UseVisualStyleBackColor = true;
             this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
@@ -88,6 +90,7 @@
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(90, 90);
             this.btnHome.TabIndex = 7;
+            this.btnHome.TabStop = false;
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
@@ -100,6 +103,7 @@
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(180, 150);
             this.btnSelect.TabIndex = 8;
+            this.btnSelect.TabStop = false;
             this.btnSelect.Text = "전체\r\n선택";
             this.btnSelect.UseVisualStyleBackColor = false;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
@@ -113,6 +117,7 @@
             this.btnUnselect.Name = "btnUnselect";
             this.btnUnselect.Size = new System.Drawing.Size(180, 150);
             this.btnUnselect.TabIndex = 9;
+            this.btnUnselect.TabStop = false;
             this.btnUnselect.Text = "전체\r\n해제";
             this.btnUnselect.UseVisualStyleBackColor = false;
             this.btnUnselect.Click += new System.EventHandler(this.btnUnselect_Click);

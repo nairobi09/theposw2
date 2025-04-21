@@ -184,6 +184,7 @@ namespace thepos2
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+
             if (mCouponItemList.Count == 0)
             {
                 return;

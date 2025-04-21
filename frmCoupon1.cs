@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -95,11 +97,19 @@ namespace thepos2
         {
             if (e.KeyCode == Keys.Enter)
             {
-                tbCouponScan.Enabled = false;
+                e.Handled = true;
+                e.SuppressKeyPress = true;
 
-                request_tm_sert(tbCouponScan.Text);
+                
+                String cpn = tbCouponScan.Text;
+                
+                tbCouponScan.Clear();
 
-                tbCouponScan.Enabled = true;
+
+                request_tm_sert(cpn);
+
+                
+                tbCouponScan.Focus();
             }
         }
 
@@ -115,10 +125,12 @@ namespace thepos2
             request_tm_sert(lblCouponText.Text);
 
         }
-            //
+
+
 
         private void request_tm_sert(String t_coupon_no)
         { 
+            
             couponTM p = new couponTM();
             int ret = p.requestPmCertView(t_coupon_no);
 
@@ -126,6 +138,29 @@ namespace thepos2
             {
                 if (mObj["result"].ToString() == "1000")
                 {
+                    // 다음 화면에서 에러날지 미리 해본다..
+                    try
+                    {
+                        String data = mObj["info"].ToString();
+                        JObject info = JObject.Parse(data);
+
+                        string coupon_no = info["barcode_no"].ToString();
+                        string ustate_code = info["ustate"].ToString();
+                        string coupon_name = info["cusitem"].ToString();
+                        string coupon_link_no = info["cusitemId"].ToString();   // 상품코드 매칭용   TM + 0000
+
+                        string cus_nm = info["cusnm"].ToString();
+                        string cus_hp = info["cushp"].ToString();
+                        string exp_date = info["expdate"].ToString();
+
+                        string state = info["state"].ToString();
+                        string ch_name = info["cuschnm"].ToString();
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show("쿠폰조회중에 오류가 발생했습니다.\r\n" + e.Message + "\r\n\r\n관리자에게 문의바랍니다.", "오류");
+                        return;
+                    }
 
                 }
                 else
@@ -139,7 +174,7 @@ namespace thepos2
                 MessageBox.Show("오류\n\n" + mErrorMsg, "thepos");
                 return;
             }
-
+            
 
             frmCoupon2 frm = new frmCoupon2(mObj);
             DialogResult res = frm.ShowDialog();
@@ -207,6 +242,9 @@ namespace thepos2
 
         }
 
-
+        private void tbCouponScan_Leave(object sender, EventArgs e)
+        {
+            tbCouponScan.Focus();
+        }
     }
 }
