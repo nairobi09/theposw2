@@ -73,12 +73,14 @@ namespace thepos2
             string ch_name = info["cuschnm"].ToString();
 
 
-            // (1: 사용, 2: 미사용)
+            // (0:취소 1: 사용, 2: 미사용)
             String ustate_name = "";
             if (ustate_code == "2")
                 ustate_name = "사용가능";
             else if (ustate_code == "1")
-                ustate_name = "기사용쿠폰";
+                ustate_name = "기사용티켓";
+            else if (ustate_code == "0")
+                ustate_name = "취소티켓";
             else
                 ustate_name = "";
 
@@ -333,12 +335,13 @@ namespace thepos2
 
             mPaymentCert.ticket_no = ticketNo;
             mPaymentCert.pay_seq = 1; // 
-            mPaymentCert.tran_date = "";
+            mPaymentCert.tran_date = get_today_date() + get_today_time();
             mPaymentCert.amount = mNetAmount;    // 결제금액
             mPaymentCert.coupon_no = mOrderItemList[0].coupon_no;   //?  쿠폰인증 멀티 발권가능하도록 할것인가?
             mPaymentCert.is_cancel = "";         // 취소여부
             mPaymentCert.van_code = "TM";        // TM : 테이블메니저
-
+            mPaymentCert.cnt = mOrderItemList[0].cnt;
+            mPaymentCert.coupon_link_no = mCouponItemList[0].coupon_link_no;
 
             // 결제 항목 저장
             if (!SavePaymentCert_Server(mPaymentCert))
@@ -408,7 +411,10 @@ namespace thepos2
 
             parameters["couponNo"] = mPaymentCert.coupon_no;
             parameters["isCancel"] = mPaymentCert.is_cancel;
-            parameters["vanCode"] = mPaymentCert.van_code; ;
+            parameters["vanCode"] = mPaymentCert.van_code;
+
+            parameters["couponLinkNo"] = mPaymentCert.coupon_link_no;
+            parameters["cnt"] = mPaymentCert.cnt + "";
 
             if (mRequestPost("paymentCert", parameters))
             {

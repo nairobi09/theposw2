@@ -280,6 +280,7 @@ namespace thepos2
 
             public String coupon_no;
 
+
             public String lv_memo;
         }
         public static List<MemOrderItem> mOrderItemList = new List<MemOrderItem>();
@@ -419,6 +420,10 @@ namespace thepos2
             public String coupon_no;    // 
             public String is_cancel;    // 취소여부
             public String van_code;
+
+            public int cnt;
+            public String coupon_link_no;
+
         }
         public static List<PaymentCert> mPaymentCerts = new List<PaymentCert>();
 

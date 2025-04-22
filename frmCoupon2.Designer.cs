@@ -177,7 +177,7 @@
             this.coupon_bar.AspectName = "coupon_bar";
             this.coupon_bar.CellPadding = new System.Drawing.Rectangle(0, 16, 0, 0);
             this.coupon_bar.ImageAspectName = "image_ticket";
-            this.coupon_bar.Text = "쿠폰";
+            this.coupon_bar.Text = "　";
             this.coupon_bar.Width = 900;
             this.coupon_bar.WordWrap = true;
             // 
