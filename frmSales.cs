@@ -3199,6 +3199,12 @@ namespace thepos2
 
         private void btnPay_Click(object sender, EventArgs e)
         {
+
+
+            // 샘플 티켓 출력용 - 테스트
+            //print_ticket("2501202504180186171301", "100004", "6976680442186471");
+
+
             // 타이머 리셋
             reset_timer_waiting();
 
@@ -3604,7 +3610,7 @@ namespace thepos2
                 BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
 
 
-                if (false)
+                if (true)
                 {
                     strPrint = "- 1 매 - ";
                     BytesValue = PrintExtensions.AddBytes(BytesValue, Encoding.Default.GetBytes(strPrint));

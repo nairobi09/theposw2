@@ -836,7 +836,7 @@
             this.tbCouponScan.TabIndex = 0;
             this.tbCouponScan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbCouponScan.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbCouponScan_KeyDown);
-            this.tbCouponScan.LostFocus += new System.EventHandler(this.tbCouponScan_LostFocus);
+            this.tbCouponScan.Leave += new System.EventHandler(this.tbCouponScan_Leave);
             // 
             // lblCouponImageText
             // 
