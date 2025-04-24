@@ -450,7 +450,7 @@ namespace thepos2
 
             for (int i = 0; i < mOrderItemList.Count; i++)
             {
-                if (isExistOrderPrinter(mOrderItemList[i].shop_code) & mOrderItemList[i].ticket != "Y")
+                if (mOrderItemList[i].dcr_des != "E")  // 키오스크는 전체할인이 없지만...
                 {
                     shop_code_list.Add(mOrderItemList[i].shop_code);
                 }
@@ -473,7 +473,7 @@ namespace thepos2
             {
                 for (int k = 0; k < order_no_list.Count; k++)
                 {
-                    if (mOrderItemList[i].shop_code == shop_code_list[k] & mOrderItemList[i].ticket != "Y")
+                    if (mOrderItemList[i].shop_code == shop_code_list[k])
                     {
                         MemOrderItem orderItem = mOrderItemList[i];
                         orderItem.shop_order_no = order_no_list[k];
