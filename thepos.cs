@@ -13,7 +13,7 @@ using System.Xml.Linq;
 using System.Drawing;
 using System.Drawing.Text;
 using static thepos2.frmSales;
-
+using System.Security.Policy;
 
 
 namespace thepos2
@@ -103,7 +103,10 @@ namespace thepos2
         public static HttpClientHandler handler = new HttpClientHandler();
         public static HttpClient mHttpClient;
 
-        public static String mBaseUri = "http://211.45.170.55:8080/";
+
+        //??
+        public static String mBaseUri = "http://211.42.156.219:8080/";     // Test
+        //public static String mBaseUri = "http://211.45.170.55:8080/";    // Real
         public static String uri_real = "http://211.45.170.55:8080/";
         public static String uri_test = "http://211.42.156.219:8080/";
 
@@ -542,6 +545,11 @@ namespace thepos2
 
         public static String mPayMode = "";
 
+        // 로그
+        public static int mAppLogLevel = 1;
+        // log_input :  1(info), 2(error만)   >=  app_log_level :  1(ALL), 2(ERROR), 3(NONE)
+
+
 
 
         public static String get_MMddHHmm(String d, String t)
@@ -954,6 +962,42 @@ namespace thepos2
             {
                 MessageBox.Show("시스템오류\n\n" + mErrorMsg, "thepos");
                 return false;
+            }
+
+        }
+
+        public static void thepos_app_log(int log_input, String form_name, String form_action, string form_memo)
+        {
+            //  log_input
+            //  1 : info - 정상, 추가정보
+            //  2 : error - 에러
+
+            //  mLogLevel 
+            // 1 : ALL
+            // 2 : ERROR
+            // 3 : NONE
+
+
+
+            if (log_input >= mAppLogLevel)
+            {
+                try
+                {
+                    Dictionary<string, string> parameters = new Dictionary<string, string>();
+                    parameters["logDate"] = get_today_date();
+                    parameters["logTime"] = get_today_time();
+                    parameters["siteId"] = mSiteId;
+                    parameters["posNo"] = mPosNo;
+                    parameters["formName"] = form_name;
+                    parameters["formAction"] = form_action;
+                    parameters["formMemo"] = form_memo;
+
+                    mRequestPost("theposAppLog", parameters);  // 에러검증없음
+                }
+                catch (Exception e)
+                {
+                    //
+                }
             }
 
         }

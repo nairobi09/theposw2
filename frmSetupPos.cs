@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using static System.Net.Mime.MediaTypeNames;
 using static thepos2.thepos;
 
@@ -24,7 +25,7 @@ namespace thepos2
             public String value;
             public String memo;
         }
-        Setup[] listSetup = new Setup[17];
+        Setup[] listSetup = new Setup[18];
 
 
         bool isAdd = false;
@@ -35,6 +36,11 @@ namespace thepos2
             InitializeComponent();
 
             initialize_the();
+
+
+            //
+            thepos_app_log(1, this.Name, "Open", "");
+
 
             Setup setupItem = new Setup();
 
@@ -76,9 +82,12 @@ namespace thepos2
             // 티켓출력물 추가 텍스트
             setupItem.code = "TicketAddText"; setupItem.name = "티켓출력물 추가텍스트"; setupItem.value = ""; setupItem.memo = ""; listSetup[16] = setupItem;
 
-
+            // 로그레벨 
+            setupItem.code = "AppLogLevel"; setupItem.name = "로그레벨"; setupItem.value = ""; setupItem.memo = ""; listSetup[17] = setupItem;
 
             reload_setup_pos();
+
+
         }
 
 
@@ -276,7 +285,15 @@ namespace thepos2
                 tbMultiValue.Text = lblValue.Text;
 
             }
+            else if (code == listSetup[17].code)
+            {
+                cbValue.Visible = true;
 
+                cbValue.Items.Clear();
+                cbValue.Items.Add("ALL");
+                cbValue.Items.Add("ERROR");
+                cbValue.Items.Add("NONE");
+            }
 
         }
 
@@ -371,6 +388,18 @@ namespace thepos2
                 else if (lvwList.Items[i].Tag.ToString() == "CouponDisplayImage") mCouponDisplayImage = lvwList.Items[i].SubItems[1].Text;
 
                 else if (lvwList.Items[i].Tag.ToString() == "TicketAddText") mTicketAddText = lvwList.Items[i].SubItems[1].Text;
+
+                else if (lvwList.Items[i].Tag.ToString() == "AppLogLevel")
+                {
+                    //  mLogLevel -  1: ALL  2: ERROR  3: NONE
+                    String t_level = lvwList.Items[i].SubItems[1].Text;
+
+                    if (t_level == "ALL") mAppLogLevel = 1;
+                    else if (t_level == "ERROR") mAppLogLevel = 2;
+                    else if (t_level == "NONE") mAppLogLevel = 3;
+                    else mAppLogLevel = 3;
+
+                }
             }
 
         }
@@ -382,6 +411,9 @@ namespace thepos2
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            //
+            thepos_app_log(1, this.Name, "Close", "");
+
             Close();
         }
 

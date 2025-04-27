@@ -26,16 +26,16 @@ namespace thepos2
         public frmLogin()
         {
             InitializeComponent();
-
             initialize_the();
 
+            //
+            thepos_app_log(1, this.Name, "Open", "mac=" + mMacAddr);
         }
 
 
 
         private void initialize_the()
         {
-
             btnKey1.Click += (sender, args) => ClickedKey("1");
             btnKey2.Click += (sender, args) => ClickedKey("2");
             btnKey3.Click += (sender, args) => ClickedKey("3");
@@ -52,16 +52,12 @@ namespace thepos2
             mTbKeyDisplayController = tbID;
 
 
-
             try
             {
                 // 기동시 MAC값 구하기 및 보관
-
                 var nics = NetworkInterface.GetAllNetworkInterfaces();
                 var selectedNic = nics.First();
                 mMacAddr = selectedNic.GetPhysicalAddress().ToString();
-
-
 
             }
             catch
@@ -146,15 +142,26 @@ namespace thepos2
                         mUserID = tbID.Text;
                         mUserName = mObj["userName"].ToString();
                         mPosNo = mObj["posNo"].ToString();
+
+                        //
+                        thepos_app_log(1, this.Name, "login", "성공");
                     }
                     else
                     {
+                        //
+                        thepos_app_log(2, this.Name, "login", "로그인오류. " + mObj["resultMsg"].ToString());
+
+                        //
                         MessageBox.Show("로그인오류\n\n" + mObj["resultMsg"].ToString(), "thepos");
                         return;
                     }
                 }
                 else
                 {
+                    //
+                    thepos_app_log(2, this.Name, "login", "시스템오류. " + mErrorMsg);
+
+                    //
                     MessageBox.Show("시스템오류\n\n" + mErrorMsg, "thepos");
                     return;
                 }
@@ -172,16 +179,26 @@ namespace thepos2
                 if (biz_status == "A")   // A영업중 F영업마감
                 {
                     mBizDate = biz_date;
+
+                    //
+                    thepos_app_log(1,this.Name, "get_bizdate_status", "성공. biz_status=" + biz_status + ", biz_date=" + biz_date);
                 }
                 else if (biz_status == "F" | biz_status == "Y")  // 마감 
                 {
                     //? 개시화면으로 이동?
+
+                    //
+                    thepos_app_log(1, this.Name, "get_bizdate_status", "실패. 영업개시전입니다. 영업개시 입력후 다시 로그인바랍니다. biz_status=" + biz_status);
+
                     MessageBox.Show("영업개시전입니다.\n영업개시 입력후 다시 로그인바랍니다.", "thepos");
                     return;
                 }
             }
             else
             {
+                //
+                thepos_app_log(2, this.Name, "get_bizdate_status", "실패. 개시마감관리 오류. 서버에서 정보를 읽어오지 못했습니다.");
+
                 MessageBox.Show("개시마감관리 오류\n서버에서 정보를 읽어오지 못했습니다.", "thepos");
                 return;
             }
@@ -242,11 +259,13 @@ namespace thepos2
 
         private void btnReqSupport_Click(object sender, EventArgs e)
         {
+            //
+            thepos_app_log(1, this.Name, "call ReqSupport", "");
+
             //원격지원
             System.Diagnostics.Process.Start("http://786.co.kr");
         }
 
-        //
 
         private void sync_data_server_to_memory()
         {
@@ -679,8 +698,6 @@ namespace thepos2
                             else if (arr[i]["setupCode"].ToString() == "CouponMID") mCouponMID = arr[i]["setupValue"].ToString();
 
 
-
-
                             //
                             else if (arr[i]["setupCode"].ToString() == "WaitingDisplay") mWaitingDisplay = arr[i]["setupValue"].ToString();
                             else if (arr[i]["setupCode"].ToString() == "WaitingDisplayImage") mWaitingDisplayImage = arr[i]["setupValue"].ToString();
@@ -703,6 +720,17 @@ namespace thepos2
                             else if (arr[i]["setupCode"].ToString() == "CouponDisplayImage") mCouponDisplayImage = arr[i]["setupValue"].ToString();
 
                             else if (arr[i]["setupCode"].ToString() == "TicketAddText") mTicketAddText = arr[i]["setupValue"].ToString();
+
+                            else if (arr[i]["setupCode"].ToString() == "AppLogLevel")
+                            {
+                                //  mLogLevel -  1: ALL  2: ERROR  3: NONE
+                                String t_level = arr[i]["setupValue"].ToString();
+
+                                if (t_level == "ALL") mAppLogLevel = 1;
+                                else if (t_level == "ERROR") mAppLogLevel = 2;
+                                else if (t_level == "NONE") mAppLogLevel = 3;
+                                else mAppLogLevel = 3;
+                            }
 
                         }
                     }

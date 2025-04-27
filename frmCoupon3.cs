@@ -20,17 +20,30 @@ namespace theposw2
 
             timerHome_reset();
 
+            //
+            thepos_app_log(1, this.Name, "Open", "");
+
         }
 
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            //
+            thepos_app_log(1, this.Name, "btnOK", "");
+
+            timerHome.Enabled = false;
+
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
         private void timerHome_Tick(object sender, EventArgs e)
         {
+            //
+            thepos_app_log(1, this.Name, "timeout toHome", "");
+
+            timerHome.Enabled = false;
+
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

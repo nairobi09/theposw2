@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Deployment.Application;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -33,19 +36,23 @@ namespace thepos2
                     ms.Write(imgBytes, 0, imgBytes.Length);
                     pbGate1.Image = System.Drawing.Image.FromStream(ms, true);
                 }
-                catch
+                catch(Exception ex)
                 {
-
+                    //
+                    thepos_app_log(2, this.Name, "mCouponDisplayImage", ex.Message);
                 }
             }
+
+            thepos_app_log(1, this.Name, "Open", "");
+
         }
-
-
 
 
 
         private void pbGate1_MouseClick(object sender, MouseEventArgs e)
         {
+
+
 
             if (e.Y > 100)
             {
@@ -64,11 +71,15 @@ namespace thepos2
             if (sysadmin_pw_patern.Length >= 4)
             {
 
+                //
+                thepos_app_log(1, this.Name, "GateImage 4-click", "");
+
+
                 ContextMenuStrip m = new ContextMenuStrip();
 
-                ToolStripMenuItem m0 = new ToolStripMenuItem("v1.02K");
+                ToolStripMenuItem m0 = new ToolStripMenuItem("theposw2");
                 ToolStripMenuItem m1 = new ToolStripMenuItem("내기기설정");
-                ToolStripMenuItem m4 = new ToolStripMenuItem("원격지원");
+                ToolStripMenuItem m2 = new ToolStripMenuItem("원격지원");
                 ToolStripMenuItem m3 = new ToolStripMenuItem("종료");
 
                 m0.Font = new System.Drawing.Font("v1.02K", 12F);
@@ -81,9 +92,12 @@ namespace thepos2
                 };
 
 
-                m4.Font = new System.Drawing.Font("내기기설정", 20F);
-                m4.Click += (senders, es) =>
+                m2.Font = new System.Drawing.Font("원격지원", 20F);
+                m2.Click += (senders, es) =>
                 {
+                    //
+                    thepos_app_log(1, this.Name, "원격지원", "");
+
                     //원격지원
                     System.Diagnostics.Process.Start("http://786.co.kr");
                 };
@@ -92,13 +106,16 @@ namespace thepos2
                 m3.Font = new System.Drawing.Font("종료", 20F);
                 m3.Click += (senders, es) =>
                 {
+                    //
+                    thepos_app_log(1, this.Name, "Close", "");
+
                     this.Close();
                 };
 
 
                 m.Items.Add(m0);
                 m.Items.Add(m1);
-                m.Items.Add(m4);
+                m.Items.Add(m2);
                 m.Items.Add(m3);
 
 
