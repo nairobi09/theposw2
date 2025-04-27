@@ -39,6 +39,7 @@
             this.lvwCoupon = new BrightIdeasSoftware.ObjectListView();
             this.coupon_bar = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.tbCouponScan = new System.Windows.Forms.TextBox();
+            this.timerHome = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lvwCoupon)).BeginInit();
             this.SuspendLayout();
@@ -169,6 +170,10 @@
             this.tbCouponScan.Text = "123";
             this.tbCouponScan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // timerHome
+            // 
+            this.timerHome.Tick += new System.EventHandler(this.timerHome_Tick);
+            // 
             // frmCoupon2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -203,5 +208,6 @@
         private BrightIdeasSoftware.ObjectListView lvwCoupon;
         private BrightIdeasSoftware.OLVColumn coupon_bar;
         private System.Windows.Forms.TextBox tbCouponScan;
+        private System.Windows.Forms.Timer timerHome;
     }
 }

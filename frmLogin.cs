@@ -684,7 +684,15 @@ namespace thepos2
                             //
                             else if (arr[i]["setupCode"].ToString() == "WaitingDisplay") mWaitingDisplay = arr[i]["setupValue"].ToString();
                             else if (arr[i]["setupCode"].ToString() == "WaitingDisplayImage") mWaitingDisplayImage = arr[i]["setupValue"].ToString();
-                            else if (arr[i]["setupCode"].ToString() == "WaitingSecond") mWaitingSecond = convert_number(arr[i]["setupValue"].ToString());
+                            else if (arr[i]["setupCode"].ToString() == "WaitingSecond")
+                            {
+                                mWaitingSecond = convert_number(arr[i]["setupValue"].ToString());
+
+                                if (mWaitingSecond == -1)
+                                {
+                                    mWaitingSecond = 30;  // 기본 1분
+                                }
+                            }
 
                             else if (arr[i]["setupCode"].ToString() == "KioskLogoImage") mKioskLogoImage = arr[i]["setupValue"].ToString();
 

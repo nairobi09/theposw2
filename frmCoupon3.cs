@@ -18,19 +18,28 @@ namespace theposw2
         {
             InitializeComponent();
 
-        }
+            timerHome_reset();
 
+        }
 
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            
-
-
             this.DialogResult = DialogResult.OK;
-
             this.Close();
-            
+        }
+
+        private void timerHome_Tick(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void timerHome_reset()
+        {
+            timerHome.Enabled = false;
+            timerHome.Enabled = true;
+            timerHome.Interval = 1000 * mWaitingSecond;
         }
     }
 }

@@ -17,11 +17,6 @@ using static thepos2.frmSales;
 namespace thepos2
 {
 
-    // ▲ △ ◀ ◁ ▶ ▷ ▼ ▽
-
-
-
-
     public partial class frmCoupon2 : Form
     {
         public struct coupon
@@ -41,7 +36,6 @@ namespace thepos2
             public String goods_name;
             public int goods_amt;
 
-
         }
         public List<coupon> mCouponItemList = new List<coupon>();
 
@@ -54,7 +48,6 @@ namespace thepos2
             InitializeComponent();
 
 
-
             String data = mObj["info"].ToString();
             JObject info = JObject.Parse(data);
 
@@ -62,13 +55,10 @@ namespace thepos2
             string ustate_code = info["ustate"].ToString();
             string coupon_name = info["cusitem"].ToString();
             string coupon_link_no = info["cusitemId"].ToString();   // 상품코드 매칭용   TM + 0000
-
             string qty = "1";
-
             string cus_nm = info["cusnm"].ToString();
             string cus_hp = info["cushp"].ToString();
             string exp_date = info["expdate"].ToString();
-
             string state = info["state"].ToString();
             string ch_name = info["cuschnm"].ToString();
 
@@ -85,11 +75,8 @@ namespace thepos2
                 ustate_name = "";
 
 
-
-
             //
             this.coupon_bar.Renderer = rendererCoupon();
-
 
 
             // 쿠폰 -> 상품 매칭
@@ -120,14 +107,9 @@ namespace thepos2
                 goods_name = mGoodsItem[link_goods_idx].goods_name[0];
             }
 
-
-                
-            
             
             coupon couponItem = new coupon();
-
             couponItem.is_pass = is_pass;  // 매칭상품코드 찾기
-
             couponItem.coupon_no = coupon_no;
             couponItem.coupon_name = coupon_name;
             couponItem.coupon_cnt = 1;
@@ -135,10 +117,8 @@ namespace thepos2
             couponItem.ustate_code = ustate_code;
             couponItem.ustate_name = ustate_name;
             couponItem.coupon_link_no = coupon_link_no;
-
             couponItem.goods_amt = goods_amt;
             couponItem.goods_name = goods_name;
-
             couponItem.coupon_bar = goods_name + " / @" + goods_amt + " / " + couponItem.coupon_cnt;
             couponItem.coupon_description = ustate_name + " / " + coupon_no + " / " + coupon_name + " / " + exp_date;
 
@@ -153,7 +133,6 @@ namespace thepos2
                 {
                     couponItem.image_ticket = "ticket_on";
                 }
-                    
             }
             else
             {
@@ -162,8 +141,11 @@ namespace thepos2
 
             mCouponItemList.Add(couponItem);
             lvwCoupon.SetObjects(mCouponItemList);
-        }
 
+
+            //
+            timerHome_reset();
+        }
 
 
         public DescribedTaskRenderer rendererCoupon()
@@ -187,6 +169,10 @@ namespace thepos2
         private void btnOK_Click(object sender, EventArgs e)
         {
 
+            //
+            timerHome_reset();
+
+
             if (mCouponItemList.Count == 0)
             {
                 return;
@@ -194,17 +180,17 @@ namespace thepos2
 
             if (mCouponItemList[0].ustate_code != "2")  // 2 사용가능 
             {
-                MessageBox.Show("이쿠폰은 사용할 수 없습니다.", "사용불가");
+                tpMessageBox tpMessageBox = new tpMessageBox("이쿠폰은 사용할 수 없습니다.");
+                tpMessageBox.ShowDialog();
                 return;
             }
 
             if (mCouponItemList[0].is_pass != "Y")
             {
-                MessageBox.Show("쿠폰에 해당하는 상품정보를 찾을수 없습니다.\r\n관리자 문의 바랍니다.", "사용불가");
+                tpMessageBox tpMessageBox = new tpMessageBox("쿠폰에 해당하는 상품정보를 찾을수 없습니다.\r\n관리자 문의 바랍니다.");
+                tpMessageBox.ShowDialog();
                 return;
             }
-
-
 
 
 
@@ -221,15 +207,12 @@ namespace thepos2
             {
                 if (mObj["result"].ToString() == "1000")
                 {
-
                     // 
                     order_pay_cert(t_coupon_no, link_goods_idx);
 
 
-
-
-
-
+                    // 타이머 중지
+                    timerHome.Enabled = false;
 
 
                     //
@@ -241,7 +224,8 @@ namespace thepos2
                 }
                 else
                 {
-                    MessageBox.Show("오류\n\n" + mObj["msg"].ToString(), "thepos");
+                    tpMessageBox tpMessageBox = new tpMessageBox("오류\n\n" + mObj["msg"].ToString());
+                    tpMessageBox.ShowDialog();
                     return;
                 }
             }
@@ -345,11 +329,10 @@ namespace thepos2
             mPaymentCert.coupon_link_no = mCouponItemList[0].coupon_link_no;
 
             // 결제 항목 저장
-            if (!SavePaymentCert_Server(mPaymentCert))
+            if (!SavePaymentCert(mPaymentCert))
             {
                 return;
             }
-
 
 
 
@@ -379,7 +362,7 @@ namespace thepos2
 
 
             // 영수증 출력
-            print_bill(mTheNo, "A", "", "00001", true, order_no_from_to); // cert
+            //print_bill(mTheNo, "A", "", "00001", true, order_no_from_to); // cert
 
 
 
@@ -389,7 +372,7 @@ namespace thepos2
         }
 
 
-        private bool SavePaymentCert_Server(PaymentCert mPaymentCert)
+        private bool SavePaymentCert(PaymentCert mPaymentCert)
         {
             Dictionary<string, string> parameters = new Dictionary<string, string>();
             parameters.Clear();
@@ -425,13 +408,15 @@ namespace thepos2
                 }
                 else
                 {
-                    MessageBox.Show("오류 paymentCert\n\n" + mObj["resultMsg"].ToString(), "thepos");
+                    tpMessageBox tpMessageBox = new tpMessageBox("오류 paymentCert\n\n" + mObj["resultMsg"].ToString());
+                    tpMessageBox.ShowDialog();
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("시스템오류 paymentCert\n\n" + mErrorMsg, "thepos");
+                tpMessageBox tpMessageBox = new tpMessageBox("시스템오류 paymentCert\n\n" + mErrorMsg);
+                tpMessageBox.ShowDialog();
                 return false;
             }
 
@@ -481,35 +466,34 @@ namespace thepos2
                     }
                 }
             }
-
-
         }
 
         private static String get_new_order_no()
         {
             String order_no = "";
 
-            // 서버모드만 로컬모드 없다.
+
+            String sUrl = "orderNo?siteId=" + mSiteId + "&bizDt=" + mBizDate;
+            if (mRequestGet(sUrl))
             {
-                String sUrl = "orderNo?siteId=" + mSiteId + "&bizDt=" + mBizDate;
-                if (mRequestGet(sUrl))
+                if (mObj["resultCode"].ToString() == "200")
                 {
-                    if (mObj["resultCode"].ToString() == "200")
-                    {
-                        String data = mObj["orderNo"].ToString();
-                        JArray arr = JArray.Parse(data);
-                        order_no = convert_number(arr[0]["orderNo"].ToString()).ToString("0000");
-                    }
-                    else
-                    {
-                        MessageBox.Show("데이터 오류. orderNo\n\n" + mObj["resultMsg"].ToString(), "thepos");
-                    }
+                    String data = mObj["orderNo"].ToString();
+                    JArray arr = JArray.Parse(data);
+                    order_no = convert_number(arr[0]["orderNo"].ToString()).ToString("0000");
                 }
                 else
                 {
-                    MessageBox.Show("시스템오류. orderNo\n\n" + mErrorMsg, "thepos");
+                    tpMessageBox tpMessageBox = new tpMessageBox("데이터 오류. orderNo\n\n" + mObj["resultMsg"].ToString());
+                    tpMessageBox.ShowDialog();
                 }
             }
+            else
+            {
+                tpMessageBox tpMessageBox = new tpMessageBox("시스템오류. orderNo\n\n" + mErrorMsg);
+                tpMessageBox.ShowDialog();
+            }
+
 
             //
             return order_no;
@@ -521,14 +505,12 @@ namespace thepos2
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
-
             this.Close();
         }
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
-
             this.Close();
         }
 
@@ -553,5 +535,17 @@ namespace thepos2
 
         }
 
-    }
+        private void timerHome_Tick(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void timerHome_reset()
+        {
+            timerHome.Enabled = false;
+            timerHome.Enabled = true;
+            timerHome.Interval = 1000 * mWaitingSecond;
+        }
+        }
 }

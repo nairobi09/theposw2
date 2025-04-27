@@ -8,7 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
+using theposw2;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static thepos2.thepos;
 
@@ -25,7 +27,11 @@ namespace thepos2
 
             tbCouponScan.Text = "";
             tbCouponScan.Focus();
+
+            //
+            timerHome_reset();
         }
+
 
         private void initialize_the()
         { 
@@ -80,14 +86,12 @@ namespace thepos2
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
-
             this.Close();
         }
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
-
             this.Close();
         }
 
@@ -95,6 +99,10 @@ namespace thepos2
 
         private void tbCouponScan_KeyDown(object sender, KeyEventArgs e)
         {
+            //
+            timerHome_reset();
+
+
             if (e.KeyCode == Keys.Enter)
             {
                 e.Handled = true;
@@ -116,6 +124,9 @@ namespace thepos2
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            //
+            timerHome_reset();
+
 
             if (lblCouponText.Text == "")
             {
@@ -158,23 +169,32 @@ namespace thepos2
                     }
                     catch (Exception e)
                     {
-                        MessageBox.Show("쿠폰조회중에 오류가 발생했습니다.\r\n" + e.Message + "\r\n\r\n관리자에게 문의바랍니다.", "오류");
+                        tpMessageBox tpMessageBox = new tpMessageBox("쿠폰조회중에 오류가 발생했습니다.\r\n" + e.Message + "\r\n\r\n관리자에게 문의바랍니다.");
+                        tpMessageBox.ShowDialog();
                         return;
                     }
 
                 }
                 else
                 {
-                    MessageBox.Show("오류\n\n" + mObj["msg"].ToString(), "thepos");
+                    //MessageBox.Show("오류\n\n" + mObj["msg"].ToString(), "thepos");
+                    tpMessageBox tpMessageBox = new tpMessageBox(mObj["msg"].ToString());
+                    tpMessageBox.ShowDialog();
                     return;
                 }
             }
             else
             {
-                MessageBox.Show("오류\n\n" + mErrorMsg, "thepos");
+                //MessageBox.Show("오류\n\n" + mErrorMsg, "thepos");
+                tpMessageBox tpMessageBox = new tpMessageBox(mErrorMsg);
+                tpMessageBox.ShowDialog();
                 return;
             }
             
+
+            // 타이머 중지
+            timerHome.Enabled = false;
+
 
             frmCoupon2 frm = new frmCoupon2(mObj);
             DialogResult res = frm.ShowDialog();
@@ -182,7 +202,6 @@ namespace thepos2
             if (res == DialogResult.OK)
             {
                 this.DialogResult = DialogResult.OK;
-
                 this.Close();
             }
             else if(res == DialogResult.Cancel)
@@ -190,6 +209,9 @@ namespace thepos2
                 //
                 tbCouponScan.Text = "";
                 tbCouponScan.Focus();
+
+                // 
+                timerHome_reset();
             }
 
         }
@@ -221,6 +243,9 @@ namespace thepos2
 
         private void btnCouponImage_Click(object sender, EventArgs e)
         {
+            //
+            timerHome_reset();
+
             btnCouponImage.ForeColor = Color.Red;
             btnCouponNo.ForeColor = Color.Gray;
 
@@ -234,6 +259,9 @@ namespace thepos2
 
         private void btnCouponNo_Click(object sender, EventArgs e)
         {
+            //
+            timerHome_reset();
+
             btnCouponImage.ForeColor = Color.Gray;
             btnCouponNo.ForeColor = Color.Red;
 
@@ -245,6 +273,19 @@ namespace thepos2
         private void tbCouponScan_Leave(object sender, EventArgs e)
         {
             tbCouponScan.Focus();
+        }
+
+        private void timerHome_Tick(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void timerHome_reset()
+        {
+            timerHome.Enabled = false;
+            timerHome.Enabled = true;
+            timerHome.Interval = 1000 * mWaitingSecond;
         }
     }
 }

@@ -42,7 +42,6 @@ namespace thepos2
                 mErrorMsg = ex.Message;
                 return -1;
             }
-
         }
 
 

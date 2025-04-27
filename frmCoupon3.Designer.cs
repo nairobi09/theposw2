@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCoupon3));
             this.btnOK = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -36,6 +37,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblText1 = new System.Windows.Forms.Label();
+            this.timerHome = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -120,6 +122,10 @@
             this.lblText1.Text = "티켓발권이 완료되었습니다.";
             this.lblText1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // timerHome
+            // 
+            this.timerHome.Tick += new System.EventHandler(this.timerHome_Tick);
+            // 
             // frmCoupon3
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -150,5 +156,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblText1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Timer timerHome;
     }
 }

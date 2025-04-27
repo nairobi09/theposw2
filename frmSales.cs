@@ -3582,7 +3582,7 @@ namespace thepos2
 
 
                 //
-                String strPrint = mSiteName;
+                String strPrint = mSiteAlias;
                 BytesValue = PrintExtensions.AddBytes(BytesValue, Encoding.Default.GetBytes(strPrint));
 
 
@@ -3612,8 +3612,12 @@ namespace thepos2
 
                 if (true)
                 {
+                    BytesValue = PrintExtensions.AddBytes(BytesValue, BoldOn);
+                    BytesValue = PrintExtensions.AddBytes(BytesValue, DoubleOn);
                     strPrint = "- 1 매 - ";
                     BytesValue = PrintExtensions.AddBytes(BytesValue, Encoding.Default.GetBytes(strPrint));
+                    BytesValue = PrintExtensions.AddBytes(BytesValue, DoubleOff);
+                    BytesValue = PrintExtensions.AddBytes(BytesValue, BoldOff);
 
                     BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
                     BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());

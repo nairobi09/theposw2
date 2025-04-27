@@ -122,6 +122,12 @@
     <Compile Include="frmCoupon3.Designer.cs">
       <DependentUpon>frmCoupon3.cs</DependentUpon>
     </Compile>
+    <Compile Include="tpMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tpMessageBox.Designer.cs">
+      <DependentUpon>tpMessageBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="van\PM\couponTM.cs" />
     <Compile Include="frmCoupon.cs">
       <SubType>Form</SubType>
@@ -239,6 +245,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="tpMessageBox.resx">
+      <DependentUpon>tpMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
