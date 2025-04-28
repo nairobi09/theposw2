@@ -28,6 +28,11 @@ namespace thepos2
         //
 
         // //////////////////////////////////////////////////////////////////////////////////////////
+
+        public static String mAppVersion = "2025-0002";
+
+
+
         // 사이트 설정값
         public static String mSiteId = "";
         public static String mSiteName;         // 매장명

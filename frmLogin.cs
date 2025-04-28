@@ -29,7 +29,7 @@ namespace thepos2
             initialize_the();
 
             //
-            thepos_app_log(1, this.Name, "Open", "mac=" + mMacAddr);
+            thepos_app_log(1, this.Name, "Open", "appVersion=" + mAppVersion + ", mac=" + mMacAddr);
         }
 
 

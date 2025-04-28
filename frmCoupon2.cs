@@ -570,5 +570,5 @@ namespace thepos2
             timerHome.Enabled = true;
             timerHome.Interval = 1000 * mWaitingSecond;
         }
-        }
+    }
 }
