@@ -291,6 +291,7 @@ namespace thepos2
 
                 cbValue.Items.Clear();
                 cbValue.Items.Add("ALL");
+                cbValue.Items.Add("IMPORTANT"); // 로그인 로그아웃 종료
                 cbValue.Items.Add("ERROR");
                 cbValue.Items.Add("NONE");
             }
@@ -395,9 +396,10 @@ namespace thepos2
                     String t_level = lvwList.Items[i].SubItems[1].Text;
 
                     if (t_level == "ALL") mAppLogLevel = 1;
-                    else if (t_level == "ERROR") mAppLogLevel = 2;
-                    else if (t_level == "NONE") mAppLogLevel = 3;
-                    else mAppLogLevel = 3;
+                    else if (t_level == "IMPORTANT") mAppLogLevel = 2;                    
+                    else if (t_level == "ERROR") mAppLogLevel = 3;
+                    else if (t_level == "NONE") mAppLogLevel = 4;
+                    else mAppLogLevel = 4;
 
                 }
             }

@@ -405,9 +405,9 @@
             this.lblCallCenterNo.ForeColor = System.Drawing.Color.LightGray;
             this.lblCallCenterNo.Location = new System.Drawing.Point(47, 42);
             this.lblCallCenterNo.Name = "lblCallCenterNo";
-            this.lblCallCenterNo.Size = new System.Drawing.Size(313, 22);
+            this.lblCallCenterNo.Size = new System.Drawing.Size(256, 22);
             this.lblCallCenterNo.TabIndex = 48;
-            this.lblCallCenterNo.Text = "고객지원 1522-9926";
+            this.lblCallCenterNo.Text = "포스콜센터 1522-8616";
             this.lblCallCenterNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblCallCenterNo.Click += new System.EventHandler(this.lblCallCenterNo_Click);
             // 

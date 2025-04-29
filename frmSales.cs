@@ -3551,6 +3551,9 @@ namespace thepos2
 
             if (mBillPrinterPort.Trim().Length == 0)
             {
+                //
+                thepos_app_log(3, "ticket", "print_ticket()", "티켓프린터 미설정으로 티켓출력불가.");
+
                 MessageBox.Show("티켓프린터 미설정으로 티켓출력불가.", "thepos");
                 return;
             }
@@ -3612,12 +3615,12 @@ namespace thepos2
 
                 if (true)
                 {
-                    BytesValue = PrintExtensions.AddBytes(BytesValue, BoldOn);
+                    //BytesValue = PrintExtensions.AddBytes(BytesValue, BoldOn);
                     BytesValue = PrintExtensions.AddBytes(BytesValue, DoubleOn);
-                    strPrint = "- 1 매 - ";
+                    strPrint = "- 1 매 -";
                     BytesValue = PrintExtensions.AddBytes(BytesValue, Encoding.Default.GetBytes(strPrint));
                     BytesValue = PrintExtensions.AddBytes(BytesValue, DoubleOff);
-                    BytesValue = PrintExtensions.AddBytes(BytesValue, BoldOff);
+                    //BytesValue = PrintExtensions.AddBytes(BytesValue, BoldOff);
 
                     BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
                     BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
@@ -3687,9 +3690,15 @@ namespace thepos2
                     mySerialPort.Write(BytesValue, 0, BytesValue.Length);
                     mySerialPort.Close();
 
+                    //
+                    thepos_app_log(1, "ticket", "print_ticket()", "정상 출력 완료.");
+
                 }
                 catch (Exception ex)
                 {
+                    //
+                    thepos_app_log(3, "ticket", "print_ticket()", "영수증프린터 출력 오류. " + ex.Message);
+
                     MessageBox.Show("영수증프린터 출력 오류.\r\n" + ex.Message);
                     return;
                 }
@@ -3697,6 +3706,9 @@ namespace thepos2
             }
             catch (Exception ex)
             {
+                //
+                thepos_app_log(3, "ticket", "print_ticket()", "티켓 출력 오류. 헬프데스크로 문의바랍니다.. " + ex.Message);
+
                 MessageBox.Show("티켓 출력 오류.\r\n헬프데스크로 문의바랍니다.");  // 파일이 이미 있으므로 만들 수 없습니다.
                 return;
             }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCoupon1));
             this.btnOK = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -83,7 +82,6 @@
             this.tbCouponScan = new System.Windows.Forms.TextBox();
             this.lblCouponImageText = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.timerHome = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelCouponNo.SuspendLayout();
             this.panelCouponImage.SuspendLayout();
@@ -861,11 +859,6 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // timerHome
-            // 
-            this.timerHome.Enabled = true;
-            this.timerHome.Tick += new System.EventHandler(this.timerHome_Tick);
-            // 
             // frmCoupon1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -949,6 +942,5 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblCouponImageText;
         private System.Windows.Forms.TextBox tbCouponScan;
-        public System.Windows.Forms.Timer timerHome;
     }
 }

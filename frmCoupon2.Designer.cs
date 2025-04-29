@@ -38,8 +38,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lvwCoupon = new BrightIdeasSoftware.ObjectListView();
             this.coupon_bar = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.tbCouponScan = new System.Windows.Forms.TextBox();
-            this.timerHome = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lvwCoupon)).BeginInit();
             this.SuspendLayout();
@@ -158,28 +156,11 @@
             this.coupon_bar.Width = 900;
             this.coupon_bar.WordWrap = true;
             // 
-            // tbCouponScan
-            // 
-            this.tbCouponScan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
-            this.tbCouponScan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbCouponScan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
-            this.tbCouponScan.Location = new System.Drawing.Point(161, 1857);
-            this.tbCouponScan.Name = "tbCouponScan";
-            this.tbCouponScan.Size = new System.Drawing.Size(729, 14);
-            this.tbCouponScan.TabIndex = 0;
-            this.tbCouponScan.Text = "123";
-            this.tbCouponScan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // timerHome
-            // 
-            this.timerHome.Tick += new System.EventHandler(this.timerHome_Tick);
-            // 
             // frmCoupon2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(1040, 1880);
-            this.Controls.Add(this.tbCouponScan);
             this.Controls.Add(this.lvwCoupon);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnHome);
@@ -207,7 +188,5 @@
         private System.Windows.Forms.Label label1;
         private BrightIdeasSoftware.ObjectListView lvwCoupon;
         private BrightIdeasSoftware.OLVColumn coupon_bar;
-        private System.Windows.Forms.TextBox tbCouponScan;
-        private System.Windows.Forms.Timer timerHome;
     }
 }

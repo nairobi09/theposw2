@@ -39,7 +39,7 @@ namespace thepos2
                 catch(Exception ex)
                 {
                     //
-                    thepos_app_log(2, this.Name, "mCouponDisplayImage", ex.Message);
+                    thepos_app_log(3, this.Name, "mCouponDisplayImage", ex.Message);
                 }
             }
 
@@ -51,19 +51,15 @@ namespace thepos2
 
         private void pbGate1_MouseClick(object sender, MouseEventArgs e)
         {
-
-
-
             if (e.Y > 100)
             {
                 frmCoupon1 frm = new frmCoupon1();
                 frm.ShowDialog();
 
+                thepos_app_log(1, this.Name, "Return", "");
+
                 return;
             }
-
-
-
 
 
             sysadmin_pw_patern += "1";
@@ -77,7 +73,7 @@ namespace thepos2
 
                 ContextMenuStrip m = new ContextMenuStrip();
 
-                ToolStripMenuItem m0 = new ToolStripMenuItem("theposw2");
+                ToolStripMenuItem m0 = new ToolStripMenuItem("tpw2_" + mAppVersion);
                 ToolStripMenuItem m1 = new ToolStripMenuItem("내기기설정");
                 ToolStripMenuItem m2 = new ToolStripMenuItem("원격지원");
                 ToolStripMenuItem m3 = new ToolStripMenuItem("종료");
@@ -107,7 +103,7 @@ namespace thepos2
                 m3.Click += (senders, es) =>
                 {
                     //
-                    thepos_app_log(1, this.Name, "Close", "");
+                    thepos_app_log(2, this.Name, "Close", "");
 
                     this.Close();
                 };

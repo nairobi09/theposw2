@@ -47,21 +47,21 @@ namespace thepos2
                     mPosNo = mObj["posNo"].ToString();
 
                     //
-                    thepos_app_log(1, this.Name, "login", "성공");
+                    thepos_app_log(2, this.Name, "login", "성공");
 
                     Close();
                 }
                 else
                 {
                     //
-                    thepos_app_log(2, this.Name, "login", "로그인오류. " + mObj["resultMsg"].ToString());
+                    thepos_app_log(3, this.Name, "login", "로그인오류. " + mObj["resultMsg"].ToString());
                     MessageBox.Show("로그인오류\n\n" + mObj["resultMsg"].ToString(), "thepos");
                 }
             }
             else
             {
                 //
-                thepos_app_log(2, this.Name, "login", "로그인오류. " + mObj["resultMsg"].ToString());
+                thepos_app_log(3, this.Name, "login", "로그인오류. " + mObj["resultMsg"].ToString());
                 MessageBox.Show("시스템오류\n\n" + mErrorMsg, "thepos");
             }
         }
@@ -100,7 +100,7 @@ namespace thepos2
                 else
                 {
                     //
-                    thepos_app_log(2, this.Name, "login", "로그인오류. " + mObj["resultMsg"].ToString());
+                    thepos_app_log(3, this.Name, "login", "로그인오류. " + mObj["resultMsg"].ToString());
 
                     MessageBox.Show("로그인오류\n\n" + mObj["resultMsg"].ToString(), "thepos");
                     return;
@@ -109,7 +109,7 @@ namespace thepos2
             else
             {
                 //
-                thepos_app_log(2, this.Name, "login", "시스템오류. " + mErrorMsg);
+                thepos_app_log(3, this.Name, "login", "시스템오류. " + mErrorMsg);
 
                 MessageBox.Show("시스템오류\n\n" + mErrorMsg, "thepos");
                 return;

@@ -40,7 +40,7 @@ namespace theposw2
         private void timerHome_Tick(object sender, EventArgs e)
         {
             //
-            thepos_app_log(1, this.Name, "timeout toHome", "");
+            thepos_app_log(1, this.Name, "timeout toHome", mWaitingSecond + "초");
 
             timerHome.Enabled = false;
 

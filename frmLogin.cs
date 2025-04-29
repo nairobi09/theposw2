@@ -28,8 +28,18 @@ namespace thepos2
             InitializeComponent();
             initialize_the();
 
+
+            // 시작이 1회성 세팅. 이후 로그인 이후 다시 세팅
+
+#if DEBUG
+    mBaseUri = uri_test;
+#else
+    mBaseUri = uri_real;
+#endif
+
+
             //
-            thepos_app_log(1, this.Name, "Open", "appVersion=" + mAppVersion + ", mac=" + mMacAddr);
+            thepos_app_log(2, this.Name, "Open", "appVersion=TPW2-" + mAppVersion + ", mac=" + mMacAddr);
         }
 
 
@@ -144,22 +154,24 @@ namespace thepos2
                         mPosNo = mObj["posNo"].ToString();
 
                         //
-                        thepos_app_log(1, this.Name, "login", "성공");
+                        thepos_app_log(2, this.Name, "login", "성공");
                     }
                     else
                     {
-                        //
-                        thepos_app_log(2, this.Name, "login", "로그인오류. " + mObj["resultMsg"].ToString());
+                        String msg = mObj["resultMsg"].ToString();
 
                         //
-                        MessageBox.Show("로그인오류\n\n" + mObj["resultMsg"].ToString(), "thepos");
+                        thepos_app_log(3, this.Name, "login", "로그인오류. " + msg);
+
+                        //
+                        MessageBox.Show("로그인오류\n\n" + msg, "thepos");
                         return;
                     }
                 }
                 else
                 {
                     //
-                    thepos_app_log(2, this.Name, "login", "시스템오류. " + mErrorMsg);
+                    thepos_app_log(3, this.Name, "login", "시스템오류. " + mErrorMsg);
 
                     //
                     MessageBox.Show("시스템오류\n\n" + mErrorMsg, "thepos");
@@ -181,14 +193,14 @@ namespace thepos2
                     mBizDate = biz_date;
 
                     //
-                    thepos_app_log(1,this.Name, "get_bizdate_status", "성공. biz_status=" + biz_status + ", biz_date=" + biz_date);
+                    thepos_app_log(2,this.Name, "get_bizdate_status", "biz_status=" + biz_status + ", biz_date=" + biz_date);
                 }
                 else if (biz_status == "F" | biz_status == "Y")  // 마감 
                 {
                     //? 개시화면으로 이동?
 
                     //
-                    thepos_app_log(1, this.Name, "get_bizdate_status", "실패. 영업개시전입니다. 영업개시 입력후 다시 로그인바랍니다. biz_status=" + biz_status);
+                    thepos_app_log(3, this.Name, "get_bizdate_status", "실패. 영업개시전입니다. 영업개시 입력후 다시 로그인바랍니다. biz_status=" + biz_status);
 
                     MessageBox.Show("영업개시전입니다.\n영업개시 입력후 다시 로그인바랍니다.", "thepos");
                     return;
@@ -197,7 +209,7 @@ namespace thepos2
             else
             {
                 //
-                thepos_app_log(2, this.Name, "get_bizdate_status", "실패. 개시마감관리 오류. 서버에서 정보를 읽어오지 못했습니다.");
+                thepos_app_log(3, this.Name, "get_bizdate_status", "실패. 개시마감관리 오류. 서버에서 정보를 읽어오지 못했습니다.");
 
                 MessageBox.Show("개시마감관리 오류\n서버에서 정보를 읽어오지 못했습니다.", "thepos");
                 return;
@@ -248,6 +260,9 @@ namespace thepos2
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            //
+            thepos_app_log(2, this.Name, "Close", "");
+
             this.Close();
         }
 
@@ -260,7 +275,7 @@ namespace thepos2
         private void btnReqSupport_Click(object sender, EventArgs e)
         {
             //
-            thepos_app_log(1, this.Name, "call ReqSupport", "");
+            thepos_app_log(1, this.Name, "call 원격지원", "");
 
             //원격지원
             System.Diagnostics.Process.Start("http://786.co.kr");
@@ -727,9 +742,10 @@ namespace thepos2
                                 String t_level = arr[i]["setupValue"].ToString();
 
                                 if (t_level == "ALL") mAppLogLevel = 1;
-                                else if (t_level == "ERROR") mAppLogLevel = 2;
-                                else if (t_level == "NONE") mAppLogLevel = 3;
-                                else mAppLogLevel = 3;
+                                else if (t_level == "IMPORTANT") mAppLogLevel = 2;
+                                else if (t_level == "ERROR") mAppLogLevel = 3;
+                                else if (t_level == "NONE") mAppLogLevel = 4;
+                                else mAppLogLevel = 4;
                             }
 
                         }

@@ -29,9 +29,6 @@ namespace thepos2
             tbCouponScan.Focus();
 
             //
-            timerHome_reset();
-
-            //
             thepos_app_log(1, this.Name, "Open", "");
         }
 
@@ -88,9 +85,6 @@ namespace thepos2
 
         private void tbCouponScan_KeyDown(object sender, KeyEventArgs e)
         {
-            //
-            timerHome_reset();
-
 
             if (e.KeyCode == Keys.Enter)
             {
@@ -103,7 +97,7 @@ namespace thepos2
                 tbCouponScan.Clear();
 
 
-                request_tm_sert(cpn);
+                request_tm_cert(cpn);
 
                 
                 tbCouponScan.Focus();
@@ -113,10 +107,7 @@ namespace thepos2
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            //
-            timerHome_reset();
-
-
+ 
             if (lblCouponText.Text == "")
             {
                 return;
@@ -159,7 +150,7 @@ namespace thepos2
                     catch (Exception e)
                     {
                         //
-                        thepos_app_log(2, this.Name, "requestPmCertView()", "쿠폰조회중에 오류가 발생했습니다. " + e.Message);
+                        thepos_app_log(3, this.Name, "requestPmCertView()", "쿠폰조회중에 오류가 발생했습니다. " + e.Message);
 
                         tpMessageBox tpMessageBox = new tpMessageBox("쿠폰조회중에 오류가 발생했습니다.\r\n" + e.Message + "\r\n\r\n관리자에게 문의바랍니다.");
                         tpMessageBox.ShowDialog();
@@ -169,10 +160,12 @@ namespace thepos2
                 }
                 else
                 {
-                    //
-                    thepos_app_log(2, this.Name, "requestPmCertView()", mObj["msg"].ToString());
+                    String msg = mObj["msg"].ToString();
 
-                    tpMessageBox tpMessageBox = new tpMessageBox(mObj["msg"].ToString());
+                    // 
+                    thepos_app_log(3, this.Name, "requestPmCertView()", msg + " coupon_no=" + t_coupon_no);
+
+                    tpMessageBox tpMessageBox = new tpMessageBox(msg);
                     tpMessageBox.ShowDialog();
                     return;
                 }
@@ -180,16 +173,17 @@ namespace thepos2
             else
             {
                 //
-                thepos_app_log(2, this.Name, "requestPmCertView()", mErrorMsg);
+                thepos_app_log(3, this.Name, "requestPmCertView()", mErrorMsg);
 
                 tpMessageBox tpMessageBox = new tpMessageBox(mErrorMsg);
                 tpMessageBox.ShowDialog();
                 return;
             }
-            
 
-            // 타이머 중지
-            timerHome.Enabled = false;
+
+            //
+            thepos_app_log(1, this.Name, "requestPmCertView()", "정상. coupon_no=" + t_coupon_no);
+
 
 
             frmCoupon2 frm = new frmCoupon2(mObj);
@@ -206,8 +200,9 @@ namespace thepos2
                 tbCouponScan.Text = "";
                 tbCouponScan.Focus();
 
-                // 
-                timerHome_reset();
+                //
+                lblCouponText.Text = "";
+
             }
 
         }
@@ -239,8 +234,6 @@ namespace thepos2
 
         private void btnCouponImage_Click(object sender, EventArgs e)
         {
-            //
-            timerHome_reset();
 
             btnCouponImage.ForeColor = Color.Red;
             btnCouponNo.ForeColor = Color.Gray;
@@ -251,18 +244,23 @@ namespace thepos2
             tbCouponScan.Text = "";
             tbCouponScan.Focus();
 
+
+            //
+            thepos_app_log(1, this.Name, "click btnCouponImage", "");
+
         }
 
         private void btnCouponNo_Click(object sender, EventArgs e)
         {
-            //
-            timerHome_reset();
 
             btnCouponImage.ForeColor = Color.Gray;
             btnCouponNo.ForeColor = Color.Red;
 
             panelCouponImage.Visible = false;
             panelCouponNo.Visible = true;
+
+            //
+            thepos_app_log(1, this.Name, "click btnCouponNo", "");
 
         }
 
@@ -277,8 +275,6 @@ namespace thepos2
             //
             thepos_app_log(1, this.Name, "click toHome", "");
 
-            timerHome.Enabled = false;
-
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
@@ -288,28 +284,10 @@ namespace thepos2
             //
             thepos_app_log(1, this.Name, "click toPrev", "");
 
-            timerHome.Enabled = false;
-
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
-        private void timerHome_Tick(object sender, EventArgs e)
-        {
-            //
-            thepos_app_log(1, this.Name, "timeout toHome", "");
 
-            timerHome.Enabled = false;
-
-            this.DialogResult = DialogResult.OK;
-            this.Close();
-        }
-
-        private void timerHome_reset()
-        {
-            timerHome.Enabled = false;
-            timerHome.Enabled = true;
-            timerHome.Interval = 1000 * mWaitingSecond;
-        }
     }
 }

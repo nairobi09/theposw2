@@ -103,10 +103,6 @@ namespace thepos2
                 is_pass = "N";
                 goods_amt = 0;
                 goods_name = "[쿠폰사용 불가]";
-
-                //
-                thepos_app_log(2, this.Name, "상품매칭못함", "[쿠폰사용 불가] coupon_link_no=" + coupon_link_no);
-
             }
             else
             {
@@ -137,24 +133,28 @@ namespace thepos2
                 if (ustate_code != "2")
                 {
                     couponItem.image_ticket = "ticket_off";
+                    //
+                    thepos_app_log(3, this.Name, "쿠폰조회", couponItem.coupon_bar);
+                    thepos_app_log(3, this.Name, "쿠폰조회", couponItem.coupon_description);
                 }
                 else
                 {
                     couponItem.image_ticket = "ticket_on";
+                    //
+                    thepos_app_log(1, this.Name, "쿠폰조회", couponItem.coupon_bar);
+                    thepos_app_log(1, this.Name, "쿠폰조회", couponItem.coupon_description);
                 }
             }
             else
             {
                 couponItem.image_ticket = "ticket_off";
+                //
+                thepos_app_log(3, this.Name, "쿠폰조회", couponItem.coupon_bar);
+                thepos_app_log(3, this.Name, "쿠폰조회", couponItem.coupon_description);
             }
 
             mCouponItemList.Add(couponItem);
             lvwCoupon.SetObjects(mCouponItemList);
-
-
-            //
-            timerHome_reset();
-
 
 
         }
@@ -180,9 +180,8 @@ namespace thepos2
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-
             //
-            timerHome_reset();
+            thepos_app_log(1, this.Name, "btnOK", "");
 
 
             if (mCouponItemList.Count == 0)
@@ -193,9 +192,9 @@ namespace thepos2
             if (mCouponItemList[0].ustate_code != "2")  // 2 사용가능 
             {
                 //
-                thepos_app_log(1, this.Name, "btnOK", "이쿠폰은 사용할 수 없습니다.");
+                thepos_app_log(3, this.Name, "btnOK", "이 쿠폰은 사용할 수 없습니다.");
 
-                tpMessageBox tpMessageBox = new tpMessageBox("이쿠폰은 사용할 수 없습니다.");
+                tpMessageBox tpMessageBox = new tpMessageBox("이 쿠폰은 사용할 수 없습니다.");
                 tpMessageBox.ShowDialog();
                 return;
             }
@@ -203,7 +202,7 @@ namespace thepos2
             if (mCouponItemList[0].is_pass != "Y")
             {
                 //
-                thepos_app_log(1, this.Name, "btnOK", "쿠폰에 해당하는 상품정보를 찾을수 없습니다. 관리자 문의 바랍니다.");
+                thepos_app_log(3, this.Name, "btnOK", "쿠폰에 해당하는 상품정보를 찾을수 없습니다. 관리자 문의 바랍니다.");
 
                 tpMessageBox tpMessageBox = new tpMessageBox("쿠폰에 해당하는 상품정보를 찾을수 없습니다.\r\n관리자 문의 바랍니다.");
                 tpMessageBox.ShowDialog();
@@ -225,12 +224,12 @@ namespace thepos2
             {
                 if (mObj["result"].ToString() == "1000")
                 {
+                    //
+                    thepos_app_log(1, this.Name, "requestPmCertAuth()", "정상. coupon_no=" + t_coupon_no);
+
+
                     // 
                     order_pay_cert(t_coupon_no, link_goods_idx);
-
-
-                    // 타이머 중지
-                    timerHome.Enabled = false;
 
 
                     //
@@ -242,10 +241,12 @@ namespace thepos2
                 }
                 else
                 {
-                    //
-                    thepos_app_log(2, this.Name, "requestPmCertAuth()", "오류" + mObj["msg"].ToString());
+                    String msg = mObj["msg"].ToString();
 
-                    tpMessageBox tpMessageBox = new tpMessageBox("오류\n\n" + mObj["msg"].ToString());
+                    //
+                    thepos_app_log(3, this.Name, "requestPmCertAuth()", "오류" + msg + " coupon_no=" + t_coupon_no);
+
+                    tpMessageBox tpMessageBox = new tpMessageBox("오류\n\n" + msg);
                     tpMessageBox.ShowDialog();
                     return;
                 }
@@ -253,7 +254,7 @@ namespace thepos2
             else
             {
                 //
-                thepos_app_log(2, this.Name, "requestPmCertAuth()", mErrorMsg);
+                thepos_app_log(3, this.Name, "requestPmCertAuth()", mErrorMsg);
 
                 tpMessageBox tpMessageBox = new tpMessageBox(mErrorMsg);
                 tpMessageBox.ShowDialog();
@@ -380,6 +381,7 @@ namespace thepos2
 
             // 주문서 출력 : 업장용 + 고객용
             // 주문서 출력
+            /* 동춘서커스는 영수증 출력 안함.
             String[] order_no_from_to = new String[2];
 
             order_no_from_to[0] = "";
@@ -391,9 +393,9 @@ namespace thepos2
             order_no_from_to = print_order(ref shopOrderPackList);
 
 
-            // 영수증 출력
-            //print_bill(mTheNo, "A", "", "00001", true, order_no_from_to); // cert
-
+            // 영수증 출력 - 제외
+            print_bill(mTheNo, "A", "", "00001", true, order_no_from_to); // cert
+            */
 
 
             //
@@ -535,8 +537,6 @@ namespace thepos2
             //
             thepos_app_log(1, this.Name, "click toHome", "");
 
-            timerHome.Enabled = false;
-
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
@@ -546,29 +546,9 @@ namespace thepos2
             //
             thepos_app_log(1, this.Name, "click toPrev", "");
 
-            timerHome.Enabled = false;
-
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
-
-        private void timerHome_Tick(object sender, EventArgs e)
-        {
-            //
-            thepos_app_log(1, this.Name, "timeout toHome", "");
-
-            timerHome.Enabled = false;
-
-            this.DialogResult = DialogResult.OK;
-            this.Close();
-        }
-
-        private void timerHome_reset()
-        {
-            timerHome.Enabled = false;
-            timerHome.Enabled = true;
-            timerHome.Interval = 1000 * mWaitingSecond;
-        }
     }
 }

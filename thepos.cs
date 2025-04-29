@@ -22,15 +22,19 @@ namespace thepos2
     {
 
 
+        // 배포시 버전관리 - 로그와 연동
+
+        public static String mAppVersion = "2025-002";
+
+
+
+
+
         // //////////////////////////////////////////////////////////////////////////////////////////////////
         //
         // 로그인후 다운로드되어야할 환경값들
         //
-
         // //////////////////////////////////////////////////////////////////////////////////////////
-
-        public static String mAppVersion = "2025-0002";
-
 
 
         // 사이트 설정값
@@ -110,8 +114,7 @@ namespace thepos2
 
 
         //??
-        public static String mBaseUri = "http://211.42.156.219:8080/";     // Test
-        //public static String mBaseUri = "http://211.45.170.55:8080/";    // Real
+        public static String mBaseUri = "";
         public static String uri_real = "http://211.45.170.55:8080/";
         public static String uri_test = "http://211.42.156.219:8080/";
 
@@ -974,30 +977,39 @@ namespace thepos2
         public static void thepos_app_log(int log_input, String form_name, String form_action, string form_memo)
         {
             //  log_input
-            //  1 : info - 정상, 추가정보
-            //  2 : error - 에러
+            //  1 : 단순로그
+            //  2 : 로그인 등
+            //  3 : error - 에러
 
             //  mLogLevel 
             // 1 : ALL
-            // 2 : ERROR
-            // 3 : NONE
-
-
+            // 2 : INFO  - 로그인 로그아웃 종료
+            // 3 : ERROR
+            // 4 : NONE
 
             if (log_input >= mAppLogLevel)
             {
                 try
                 {
+                    String sUrl = "theposAppLog";
+
                     Dictionary<string, string> parameters = new Dictionary<string, string>();
                     parameters["logDate"] = get_today_date();
                     parameters["logTime"] = get_today_time();
+                    parameters["logLevel"] = log_input + "";
                     parameters["siteId"] = mSiteId;
                     parameters["posNo"] = mPosNo;
                     parameters["formName"] = form_name;
                     parameters["formAction"] = form_action;
                     parameters["formMemo"] = form_memo;
 
-                    mRequestPost("theposAppLog", parameters);  // 에러검증없음
+                    var json = JsonConvert.SerializeObject(parameters);
+                    var data = new StringContent(json, Encoding.UTF8, "application/json");
+                    var response = mHttpClient.PostAsync(mBaseUri + sUrl, data).Result;
+
+                    var responseContent = response.Content;
+                    string responseString = responseContent.ReadAsStringAsync().Result;
+
                 }
                 catch (Exception e)
                 {
