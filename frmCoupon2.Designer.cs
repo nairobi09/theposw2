@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lvwCoupon = new BrightIdeasSoftware.ObjectListView();
             this.coupon_bar = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lvwCoupon)).BeginInit();
             this.SuspendLayout();
@@ -156,11 +157,23 @@
             this.coupon_bar.Width = 900;
             this.coupon_bar.WordWrap = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("굴림", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
+            this.textBox1.Location = new System.Drawing.Point(240, 1865);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(486, 10);
+            this.textBox1.TabIndex = 0;
+            // 
             // frmCoupon2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(1040, 1880);
+            this.ClientSize = new System.Drawing.Size(1080, 1920);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lvwCoupon);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnHome);
@@ -188,5 +201,6 @@
         private System.Windows.Forms.Label label1;
         private BrightIdeasSoftware.ObjectListView lvwCoupon;
         private BrightIdeasSoftware.OLVColumn coupon_bar;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
