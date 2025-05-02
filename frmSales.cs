@@ -3615,20 +3615,19 @@ namespace thepos2
 
                 if (true)
                 {
-                    //BytesValue = PrintExtensions.AddBytes(BytesValue, BoldOn);
                     BytesValue = PrintExtensions.AddBytes(BytesValue, DoubleOn);
                     strPrint = "- 1 매 -";
                     BytesValue = PrintExtensions.AddBytes(BytesValue, Encoding.Default.GetBytes(strPrint));
                     BytesValue = PrintExtensions.AddBytes(BytesValue, DoubleOff);
-                    //BytesValue = PrintExtensions.AddBytes(BytesValue, BoldOff);
 
                     BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
                     BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
                 }
 
-
+                BytesValue = PrintExtensions.AddBytes(BytesValue, DoubleOn);
                 strPrint = mBizDate.Substring(0, 4) + "-" + mBizDate.Substring(4, 2) + "-" + mBizDate.Substring(6, 2);
                 BytesValue = PrintExtensions.AddBytes(BytesValue, Encoding.Default.GetBytes(strPrint));
+                BytesValue = PrintExtensions.AddBytes(BytesValue, DoubleOff);
 
                 BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
                 BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());

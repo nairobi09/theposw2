@@ -555,7 +555,7 @@ namespace thepos2
 
         // 로그
         public static int mAppLogLevel = 1;
-        // log_input :  1(info), 2(error만)   >=  app_log_level :  1(ALL), 2(ERROR), 3(NONE)
+        // log_input :  1(info), 2(IMPORTANT), 3(error만)   >=  app_log_level :  1(ALL), 2(IMPORTANT), 3(ERROR), 4(NONE)
 
 
 
