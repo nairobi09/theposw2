@@ -103,7 +103,7 @@ namespace thepos2
                 m3.Click += (senders, es) =>
                 {
                     //
-                    thepos_app_log(2, this.Name, "Close", "");
+                    thepos_app_log(2, this.Name, "Close", "appVersion=TPW2-" + mAppVersion + ", mac=" + mMacAddr);
 
                     this.Close();
                 };

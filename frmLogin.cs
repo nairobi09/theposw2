@@ -83,6 +83,8 @@ namespace thepos2
             mHttpClient = new HttpClient(handler);
 
 
+
+
         }
 
 
@@ -154,7 +156,7 @@ namespace thepos2
                         mPosNo = mObj["posNo"].ToString();
 
                         //
-                        thepos_app_log(2, this.Name, "login", "성공");
+                        thepos_app_log(2, this.Name, "login", "appVersion=TPW2-" + mAppVersion + ", mac=" + mMacAddr);
                     }
                     else
                     {
@@ -216,13 +218,19 @@ namespace thepos2
             }
 
 
+            //
             sync_data_server_to_memory();
+
+
+            // 쿠폰인증
+            mHttpClientCoupon = new HttpClient();
+            mHttpClientCoupon.DefaultRequestHeaders.TryAddWithoutValidation("authorization", mCouponMID);  // 최초 한번
+
+
+
 
             // 
             this.Hide();
-
-
-
 
 
             if (mKioskType.Equals("인증전용"))

@@ -218,14 +218,14 @@ namespace thepos2
 
             //
             couponTM p = new couponTM();
-            int ret = p.requestPmCertAuth(t_coupon_no);
+            int ret = p.requestTmCertAuth(t_coupon_no);
 
             if (ret == 0)
             {
                 if (mObj["result"].ToString() == "1000")
                 {
                     //
-                    thepos_app_log(1, this.Name, "requestPmCertAuth()", "정상. coupon_no=" + t_coupon_no);
+                    thepos_app_log(1, this.Name, "requestTmCertAuth()", "정상. coupon_no=" + t_coupon_no);
 
 
                     // 
@@ -244,7 +244,8 @@ namespace thepos2
                     String msg = mObj["msg"].ToString();
 
                     //
-                    thepos_app_log(3, this.Name, "requestPmCertAuth()", "오류" + msg + " coupon_no=" + t_coupon_no);
+                    thepos_app_log(3, this.Name, "requestTmCertAuth()", "오류 " + msg + " coupon_no=" + t_coupon_no);
+                    
 
                     tpMessageBox tpMessageBox = new tpMessageBox("오류\n\n" + msg);
                     tpMessageBox.ShowDialog();
@@ -254,7 +255,7 @@ namespace thepos2
             else
             {
                 //
-                thepos_app_log(3, this.Name, "requestPmCertAuth()", mErrorMsg);
+                thepos_app_log(3, this.Name, "requestTmCertAuth()", mErrorMsg);
 
                 tpMessageBox tpMessageBox = new tpMessageBox(mErrorMsg);
                 tpMessageBox.ShowDialog();
@@ -498,6 +499,9 @@ namespace thepos2
                     }
                 }
             }
+
+
+
         }
 
         private static String get_new_order_no()
@@ -516,14 +520,14 @@ namespace thepos2
                 }
                 else
                 {
-                    tpMessageBox tpMessageBox = new tpMessageBox("데이터 오류. orderNo\n\n" + mObj["resultMsg"].ToString());
-                    tpMessageBox.ShowDialog();
+                    //tpMessageBox tpMessageBox = new tpMessageBox("데이터 오류. orderNo\n\n" + mObj["resultMsg"].ToString());
+                    //tpMessageBox.ShowDialog();
                 }
             }
             else
             {
-                tpMessageBox tpMessageBox = new tpMessageBox("시스템오류. orderNo\n\n" + mErrorMsg);
-                tpMessageBox.ShowDialog();
+                //tpMessageBox tpMessageBox = new tpMessageBox("시스템오류. orderNo\n\n" + mErrorMsg);
+                //tpMessageBox.ShowDialog();
             }
 
 

@@ -1109,8 +1109,6 @@ namespace thepos2
             {
                 error_msg = e.Message;
 
-                add_thepos_log("Error", "CATCH isPreCheck()", e.Message);
-
                 return false;
             }
 
@@ -1213,7 +1211,7 @@ namespace thepos2
         }
 
 
-        public static void set_shop_order_no_on_orderitem()
+        public static bool set_shop_order_no_on_orderitem()
         {
 
             List<String> shop_code_list = new List<String>();
@@ -1256,8 +1254,14 @@ namespace thepos2
             }
             catch (Exception e) 
             {
-                add_thepos_log("Error", "CATCH set_shop_order_no_on_orderitem()", e.Message);
+                thepos_app_log(3, "frmSales", "set_shop_order_no_on_orderitem()", e.Message);
+
+
+
+                return false;
             }
+
+            return true;
 
 
         }
@@ -1291,12 +1295,11 @@ namespace thepos2
             }
             catch(Exception e) 
             {
-                add_thepos_log("Error", "CATCH get_new_order_no()", e.Message);
+                thepos_app_log(1, "frmSales", "get_new_order_no()", e.Message);
 
                 return order_no;
             }
 
-            
         }
 
 
@@ -1327,23 +1330,20 @@ namespace thepos2
                     }
                     else
                     {
-                        add_thepos_log("Error", "POST-1 orders", mObj["resultMsg"].ToString());
-
                         MessageBox.Show("오류 order\n\n" + mObj["resultMsg"].ToString(), "thepos");
                         return -1;
                     }
                 }
                 else
                 {
-                    add_thepos_log("Error", "POST-2 orders", mErrorMsg);
-
                     MessageBox.Show("시스템오류\n\n" + mErrorMsg, "thepos");
                     return -1;
                 }
             }
             catch (Exception e) 
             {
-                add_thepos_log("Error", "CATCH POST orders", e.Message);
+                thepos_app_log(1, "frmSales", "SaveOrder() orders", e.Message);
+
                 return -1;
             }
 
@@ -1414,7 +1414,7 @@ namespace thepos2
             }
             catch (Exception e)
             {
-                add_thepos_log("Error", "CATCH POST orderShop", e.Message);
+                thepos_app_log(1, "frmSales", "SaveOrder() orderShop", e.Message);
                 return -1;
             }
 
@@ -1477,21 +1477,19 @@ namespace thepos2
                         }
                         else
                         {
-                            add_thepos_log("Error", "POST-1 orderItem", mObj["resultMsg"].ToString());
                             MessageBox.Show("오류 orderItem\n\n" + mObj["resultMsg"].ToString(), "thepos");
                             return -1;
                         }
                     }
                     else
                     {
-                        add_thepos_log("Error", "POST-2 orderItem", mErrorMsg);
                         MessageBox.Show("시스템오류\n\n" + mErrorMsg, "thepos");
                         return -1;
                     }
                 }
                 catch (Exception e) 
                 {
-                    add_thepos_log("Error", "CATCH POST orderItem", e.Message);
+                    thepos_app_log(1, "frmSales", "SaveOrder() orderItem", e.Message);
                     return -1;
                 }
 
@@ -1542,21 +1540,19 @@ namespace thepos2
                             }
                             else
                             {
-                                add_thepos_log("Error", "POST-1 orderOptionItem", mObj["resultMsg"].ToString());
                                 MessageBox.Show("오류 orderOptionItem\n\n" + mObj["resultMsg"].ToString(), "thepos");
                                 return -1;
                             }
                         }
                         else
                         {
-                            add_thepos_log("Error", "POST-2 orderOptionItem", mErrorMsg);
                             MessageBox.Show("시스템오류\n\n" + mErrorMsg, "thepos");
                             return -1;
                         }
                     }
                     catch (Exception e) 
                     {
-                        add_thepos_log("Error", "CATCH POST orderOptionItem", e.Message);
+                        thepos_app_log(1, "frmSales", "SaveOrder() orderOptionItem", e.Message);
                         return -1;
                     }
 
@@ -1615,21 +1611,19 @@ namespace thepos2
                     }
                     else
                     {
-                        add_thepos_log("Error", "POST-1 payment", mObj["resultMsg"].ToString());
                         MessageBox.Show("오류 payment\n\n" + mObj["resultMsg"].ToString(), "thepos");
                         return false;
                     }
                 }
                 else
                 {
-                    add_thepos_log("Error", "POST-2 payment", mErrorMsg);
                     MessageBox.Show("시스템오류 payment\n\n" + mErrorMsg, "thepos");
                     return false;
                 }
             }
             catch (Exception e) 
             {
-                add_thepos_log("Error", "CATCH POST payment", e.Message);
+                thepos_app_log(1, "frmSales", "SavePayment()", e.Message);
                 return false;
             }
 
@@ -1891,8 +1885,6 @@ namespace thepos2
             }
             catch (Exception e)
             {
-                add_thepos_log("Error", "CATCH print_order_str() step1", e.Message);
-
                 MessageBox.Show("주문서 출력 오류. \r\n 카운터로 문의바랍니다.");
                 return;
             }
@@ -2068,8 +2060,6 @@ namespace thepos2
             }
             catch (Exception e) 
             {
-                add_thepos_log("Error", "CATCH print_order_str() step2", e.Message);
-
                 MessageBox.Show("주문서 전달 오류. \r\n 카운터로 필히 확인바랍니다.");
                 return;
             }
@@ -2161,8 +2151,6 @@ namespace thepos2
             }
             catch (Exception e) 
             {
-                add_thepos_log("Error", "generateBill()", e.Message);
-
                 MessageBox.Show("영수증 출력 오류.\r\n카운터로 문의바랍니다..\r\n" + e.Message);
                 return;
             }
@@ -2226,8 +2214,6 @@ namespace thepos2
             }
             catch (Exception e)
             {
-                add_thepos_log("Error", "PrintExtensions", e.Message);
-
                 MessageBox.Show("영수증 출력 오류.\r\n카운터로 문의바랍니다.");  // 파일이 이미 있으므로 만들 수 없습니다.
                 return;
             }
@@ -2251,8 +2237,6 @@ namespace thepos2
             }
             catch (Exception e)
             {
-                add_thepos_log("Error", "serialPort.Write()", e.Message);
-
                 MessageBox.Show("영수증 출력 오류.\r\n카운터로 문의바랍니다..\r\n" + e.Message);
                 return;
             }
@@ -3231,8 +3215,6 @@ namespace thepos2
             // 영업일자 등 선체크 
             if (!isPreCheck(out String error_msg))
             {
-                add_thepos_log("Error", "preCheck", error_msg);
-
                 MessageBox.Show(error_msg, "thepos");
                 return;
             }
@@ -3256,7 +3238,7 @@ namespace thepos2
 
 
                 couponTM p = new couponTM();
-                if (p.requestPmCertAuth(t_coupon_no) == 0)
+                if (p.requestTmCertAuth(t_coupon_no) == 0)
                 {
                     // 쿠폰 주문 발권
 
@@ -3273,7 +3255,11 @@ namespace thepos2
 
 
                     // 리스트뷰 -> 메모리배열 생성 : [ 업장코드로 정렬 + 업장주문번호 부여 ]
-                    set_shop_order_no_on_orderitem();
+                    if (!set_shop_order_no_on_orderitem())
+                    {
+                        //?? 주문번호 없이 진행하고, 오류는 별도로 모니터링할까?
+                        //return;
+                    }
 
 
 
@@ -3713,45 +3699,6 @@ namespace thepos2
             }
         }
 
-        public static void add_thepos_log(String level, String name, String content)
-        {
-            try
-            {
-                string dir = @"C:\thepos";
-                if (Exists(dir))
-                {
-                    
-                }
-                else
-                {
-                    CreateDirectory(dir);
-                }
-
-
-                String date_time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-
-
-                if (level == "-")
-                {
-                    File.AppendAllText(@"c:\thepos\log." + mBizDate, "------------------------------------------------------------" + Environment.NewLine);
-                }
-                else
-                {
-                    File.AppendAllText(@"c:\thepos\log." + mBizDate, date_time + " " + level + " " + name + " " + content + Environment.NewLine);
-                }
-                
-            }
-            catch
-            { 
-                
-            }
-
-        }
-
-        private void btnTestPay_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 

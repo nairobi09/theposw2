@@ -17,7 +17,7 @@ namespace thepos2
         String TM_URL = "https://gateway.ticketmanager.ai/";
 
 
-        public int requestPmCertView(String tCouponNo)
+        public int requestTmCertView(String tCouponNo)
         {
             var baseAddress = new Uri(TM_URL);
 
@@ -28,10 +28,13 @@ namespace thepos2
 
                 var json = JsonConvert.SerializeObject(parameters);
                 var data = new StringContent(json, Encoding.UTF8, "application/json");
-                mHttpClient.DefaultRequestHeaders.TryAddWithoutValidation("authorization", mCouponMID);
-                var response = mHttpClient.PostAsync(TM_URL + "extra/ticket/v1/info", data).Result;
+                //mHttpClientCoupon.DefaultRequestHeaders.TryAddWithoutValidation("authorization", mCouponMID);  // 최초에 한번만..
+                var response = mHttpClientCoupon.PostAsync(TM_URL + "extra/ticket/v1/info", data).Result;
                 var responseContent = response.Content;
                 string responseString = responseContent.ReadAsStringAsync().Result;
+
+                //
+                thepos_app_log(1, "tm", "requestTmCertView()", "response=" + responseString);
 
                 mObj = JObject.Parse(responseString);
 
@@ -46,7 +49,7 @@ namespace thepos2
 
 
 
-        public int requestPmCertAuth(String tCouponNo)
+        public int requestTmCertAuth(String tCouponNo)
         {
             var baseAddress = new Uri(TM_URL);
 
@@ -57,10 +60,15 @@ namespace thepos2
 
                 var json = JsonConvert.SerializeObject(parameters);
                 var data = new StringContent(json, Encoding.UTF8, "application/json");
-                mHttpClient.DefaultRequestHeaders.TryAddWithoutValidation("authorization", mCouponMID);
-                var response = mHttpClient.PostAsync(TM_URL + "extra/ticket/v1/use", data).Result;
+                //mHttpClientCoupon.DefaultRequestHeaders.TryAddWithoutValidation("authorization", mCouponMID);  // 최초에 한번만..
+                var response = mHttpClientCoupon.PostAsync(TM_URL + "extra/ticket/v1/use", data).Result;
                 var responseContent = response.Content;
                 string responseString = responseContent.ReadAsStringAsync().Result;
+
+
+                //
+                thepos_app_log(1, "tm", "requestTmCertAuth()", "response=" + responseString);
+
 
                 mObj = JObject.Parse(responseString);
 

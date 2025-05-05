@@ -166,7 +166,6 @@ namespace thepos2
             {
                 if (requestCardAuth(tAmount, tFreeAmount, tTaxAmount, tTax, tServiceAmt, install, is_cup, out mPaymentCard) != 0)
                 {
-                    add_thepos_log("Error", "requestCardAuth", mErrorMsg);
                     MessageBox.Show(mErrorMsg, "thepos");
 
                     return;
@@ -327,21 +326,19 @@ namespace thepos2
                     }
                     else
                     {
-                        add_thepos_log("Error", "POST-1 paymentCard", mObj["resultMsg"].ToString());
                         MessageBox.Show("오류 paymentCard\n\n" + mObj["resultMsg"].ToString(), "thepos");
                         return false;
                     }
                 }
                 else 
                 {
-                    add_thepos_log("Error", "POST-2 paymentCard", mErrorMsg);
                     MessageBox.Show("시스템오류 paymentCard\n\n" + mErrorMsg, "thepos");
                     return false;
                 }
             }
             catch (Exception e) 
             {
-                add_thepos_log("Error", "CATCH POST paymentCard", e.Message);
+                MessageBox.Show("시스템오류 paymentCard\n\n" + e.Message, "thepos");
                 return false;
             }
 

@@ -82,10 +82,12 @@
             this.tbCouponScan = new System.Windows.Forms.TextBox();
             this.lblCouponImageText = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelCouponNo.SuspendLayout();
             this.panelCouponImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOK
@@ -165,7 +167,7 @@
             this.btnCouponImage.Size = new System.Drawing.Size(388, 89);
             this.btnCouponImage.TabIndex = 11;
             this.btnCouponImage.TabStop = false;
-            this.btnCouponImage.Text = "쿠폰이미지(QR-CODE)";
+            this.btnCouponImage.Text = "쿠폰바코드";
             this.btnCouponImage.UseVisualStyleBackColor = false;
             this.btnCouponImage.Click += new System.EventHandler(this.btnCouponImage_Click);
             // 
@@ -818,6 +820,7 @@
             // 
             this.panelCouponImage.BackColor = System.Drawing.Color.White;
             this.panelCouponImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCouponImage.Controls.Add(this.pictureBox3);
             this.panelCouponImage.Controls.Add(this.tbCouponScan);
             this.panelCouponImage.Controls.Add(this.lblCouponImageText);
             this.panelCouponImage.Controls.Add(this.pictureBox2);
@@ -840,24 +843,34 @@
             // 
             // lblCouponImageText
             // 
-            this.lblCouponImageText.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblCouponImageText.ForeColor = System.Drawing.Color.Black;
-            this.lblCouponImageText.Location = new System.Drawing.Point(134, 95);
+            this.lblCouponImageText.Font = new System.Drawing.Font("맑은 고딕", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblCouponImageText.ForeColor = System.Drawing.Color.Red;
+            this.lblCouponImageText.Location = new System.Drawing.Point(141, 130);
             this.lblCouponImageText.Name = "lblCouponImageText";
-            this.lblCouponImageText.Size = new System.Drawing.Size(627, 45);
+            this.lblCouponImageText.Size = new System.Drawing.Size(627, 80);
             this.lblCouponImageText.TabIndex = 3;
-            this.lblCouponImageText.Text = "쿠폰이미지를 스캐너에 인식해주세요";
+            this.lblCouponImageText.Text = "바코드를 스캐너에 인식해주세요";
             this.lblCouponImageText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(296, 213);
+            this.pictureBox2.Location = new System.Drawing.Point(296, 284);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(300, 300);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(400, 613);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 15;
+            this.pictureBox3.TabStop = false;
             // 
             // frmCoupon1
             // 
@@ -882,6 +895,7 @@
             this.panelCouponImage.ResumeLayout(false);
             this.panelCouponImage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -942,5 +956,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblCouponImageText;
         private System.Windows.Forms.TextBox tbCouponScan;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

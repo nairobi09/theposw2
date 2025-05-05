@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static thepos2.thepos;
 using static thepos2.frmSales;
+using static thepos2.ClsWin32Api;
 
 namespace thepos2
 {
@@ -115,7 +116,7 @@ namespace thepos2
 
                     mErrorMsg = "NICE VCAT 오류.";
 
-                    add_thepos_log("Error", "NICEVCAT()", mErrorMsg + " ret=" + ret);
+                    thepos_app_log(3, "paymentNice", "requestNiceCardAuth()", mErrorMsg + " ret=" + ret);
 
                     return -1;
                 }
@@ -178,7 +179,7 @@ namespace thepos2
             }
             catch (Exception e) 
             {
-                add_thepos_log("Error", "CATCH requestNiceCardAuth", e.Message);
+                thepos_app_log(3, "paymentNice", "requestNiceCardAuth()", e.Message);
 
                 mErrorMsg = e.Message;
                 return -1;

@@ -24,7 +24,7 @@ namespace thepos2
 
         // 배포시 버전관리 - 로그와 연동
 
-        public static String mAppVersion = "2025-002";
+        public static String mAppVersion = "2025-005";
 
 
 
@@ -111,6 +111,8 @@ namespace thepos2
         public static CookieContainer cookies = new CookieContainer();
         public static HttpClientHandler handler = new HttpClientHandler();
         public static HttpClient mHttpClient;
+
+        public static HttpClient mHttpClientCoupon;
 
 
         //??
@@ -532,7 +534,7 @@ namespace thepos2
         public static String mVanTID = "";    // 결제밴 T-ID
 
         // 앞으로 쿠폰 채널 
-        public static String mCouponMID = "";   // 플레이스엠 쿠폰 채널 부여 번호      "3590";
+        public static String mCouponMID = "";   // 
 
         public static String mTicketAddText = "";
 
@@ -1007,8 +1009,8 @@ namespace thepos2
                     var data = new StringContent(json, Encoding.UTF8, "application/json");
                     var response = mHttpClient.PostAsync(mBaseUri + sUrl, data).Result;
 
-                    var responseContent = response.Content;
-                    string responseString = responseContent.ReadAsStringAsync().Result;
+                    //var responseContent = response.Content;
+                    //string responseString = responseContent.ReadAsStringAsync().Result;
 
                 }
                 catch (Exception e)
