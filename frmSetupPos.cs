@@ -400,7 +400,6 @@ namespace thepos2
                     else if (t_level == "ERROR") mAppLogLevel = 3;
                     else if (t_level == "NONE") mAppLogLevel = 4;
                     else mAppLogLevel = 4;
-
                 }
             }
 

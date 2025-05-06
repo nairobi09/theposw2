@@ -3300,7 +3300,7 @@ namespace thepos2
 
 
                     // 밴에서 응답으로 받은건 payChannel 모듈에서 세팅
-                    if (!SavePaymentCert_Server(mPaymentCert))
+                    if (!SavePaymentCert(mPaymentCert))
                     {
                         return;
                     }
@@ -3374,7 +3374,7 @@ namespace thepos2
         }
 
 
-        private bool SavePaymentCert_Server(PaymentCert mPaymentCert)
+        private bool SavePaymentCert(PaymentCert mPaymentCert)
         {
             Dictionary<string, string> parameters = new Dictionary<string, string>();
             parameters.Clear();

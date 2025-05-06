@@ -61,7 +61,7 @@ namespace thepos2
             else
             {
                 //
-                thepos_app_log(3, this.Name, "login", "로그인오류. " + mObj["resultMsg"].ToString());
+                thepos_app_log(3, this.Name, "login", "시스템오류. " + mErrorMsg);
                 MessageBox.Show("시스템오류\n\n" + mErrorMsg, "thepos");
             }
         }
