@@ -57,7 +57,7 @@
             this.btnPayRequest.BackColor = System.Drawing.Color.Blue;
             this.btnPayRequest.FlatAppearance.BorderSize = 0;
             this.btnPayRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPayRequest.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnPayRequest.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnPayRequest.ForeColor = System.Drawing.Color.White;
             this.btnPayRequest.Location = new System.Drawing.Point(262, 341);
             this.btnPayRequest.Name = "btnPayRequest";
@@ -95,7 +95,7 @@
             // rbCUP
             // 
             this.rbCUP.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbCUP.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbCUP.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbCUP.Location = new System.Drawing.Point(215, 0);
             this.rbCUP.Name = "rbCUP";
             this.rbCUP.Size = new System.Drawing.Size(117, 53);
@@ -108,7 +108,7 @@
             // 
             this.rbCredit.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbCredit.Checked = true;
-            this.rbCredit.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbCredit.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbCredit.Location = new System.Drawing.Point(0, 0);
             this.rbCredit.Name = "rbCredit";
             this.rbCredit.Size = new System.Drawing.Size(209, 53);
@@ -134,7 +134,7 @@
             // 
             this.rbInstall00.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbInstall00.Checked = true;
-            this.rbInstall00.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbInstall00.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbInstall00.Location = new System.Drawing.Point(0, 0);
             this.rbInstall00.Name = "rbInstall00";
             this.rbInstall00.Size = new System.Drawing.Size(103, 53);
@@ -147,7 +147,7 @@
             // rbInstall03
             // 
             this.rbInstall03.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbInstall03.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbInstall03.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbInstall03.Location = new System.Drawing.Point(109, 0);
             this.rbInstall03.Name = "rbInstall03";
             this.rbInstall03.Size = new System.Drawing.Size(70, 53);
@@ -159,7 +159,7 @@
             // rbInstall06
             // 
             this.rbInstall06.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbInstall06.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbInstall06.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbInstall06.Location = new System.Drawing.Point(185, 0);
             this.rbInstall06.Name = "rbInstall06";
             this.rbInstall06.Size = new System.Drawing.Size(70, 53);
@@ -171,7 +171,7 @@
             // rbInstall12
             // 
             this.rbInstall12.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbInstall12.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbInstall12.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbInstall12.Location = new System.Drawing.Point(261, 0);
             this.rbInstall12.Name = "rbInstall12";
             this.rbInstall12.Size = new System.Drawing.Size(70, 53);
@@ -185,7 +185,7 @@
             this.lblNetAmount.BackColor = System.Drawing.Color.White;
             this.lblNetAmount.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblNetAmount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblNetAmount.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblNetAmount.Font = new System.Drawing.Font("맑은 고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblNetAmount.ForeColor = System.Drawing.Color.Blue;
             this.lblNetAmount.Location = new System.Drawing.Point(0, 36);
             this.lblNetAmount.Margin = new System.Windows.Forms.Padding(0);
@@ -198,7 +198,7 @@
             // lblMethodTitle
             // 
             this.lblMethodTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblMethodTitle.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblMethodTitle.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblMethodTitle.ForeColor = System.Drawing.Color.DarkSlateBlue;
             this.lblMethodTitle.Location = new System.Drawing.Point(23, 231);
             this.lblMethodTitle.Margin = new System.Windows.Forms.Padding(0);
@@ -211,7 +211,7 @@
             // lblInstallTitle
             // 
             this.lblInstallTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblInstallTitle.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblInstallTitle.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblInstallTitle.ForeColor = System.Drawing.Color.DarkSlateBlue;
             this.lblInstallTitle.Location = new System.Drawing.Point(23, 162);
             this.lblInstallTitle.Margin = new System.Windows.Forms.Padding(0);
@@ -225,7 +225,7 @@
             // 
             this.lblAmountTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblAmountTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblAmountTitle.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblAmountTitle.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblAmountTitle.ForeColor = System.Drawing.Color.Black;
             this.lblAmountTitle.Location = new System.Drawing.Point(0, 0);
             this.lblAmountTitle.Margin = new System.Windows.Forms.Padding(0);
@@ -240,7 +240,7 @@
             this.btnClose.BackColor = System.Drawing.Color.DimGray;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Location = new System.Drawing.Point(116, 341);
             this.btnClose.Name = "btnClose";

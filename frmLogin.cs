@@ -112,6 +112,8 @@ namespace thepos2
 
         private void btnKeyLogin_Click(object sender, EventArgs e)
         {
+            mIsDevLogin = "";
+
             mPayMode = "";
 
             // 
@@ -123,10 +125,14 @@ namespace thepos2
 
                 if (ret == DialogResult.OK)  // Real
                 {
-                    
+                    //
+                    mIsDevLogin = "Y";  // 개발자 로그인은 로그를 남기지 않기위해
                 }
                 else if (ret == DialogResult.Yes) // TEST
                 {
+                    //
+                    mIsDevLogin = "Y";  // 개발자 로그인은 로그를 남기지 않기위해
+
                     //lblIsTest.Visible = true;
                     mPayMode = "Test";
                 }

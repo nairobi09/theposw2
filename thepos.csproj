@@ -128,7 +128,7 @@
     <Compile Include="tpMessageBox.Designer.cs">
       <DependentUpon>tpMessageBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="van\PM\couponTM.cs" />
+    <Compile Include="van\TM\couponTM.cs" />
     <Compile Include="frmCoupon.cs">
       <SubType>Form</SubType>
     </Compile>

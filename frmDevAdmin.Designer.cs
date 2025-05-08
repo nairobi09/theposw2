@@ -34,11 +34,13 @@
             this.cbTest = new System.Windows.Forms.CheckBox();
             this.tbPosNo = new System.Windows.Forms.TextBox();
             this.tbSiteID = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnLoginDev
             // 
-            this.btnLoginDev.Location = new System.Drawing.Point(94, 13);
+            this.btnLoginDev.Location = new System.Drawing.Point(130, 59);
             this.btnLoginDev.Margin = new System.Windows.Forms.Padding(4);
             this.btnLoginDev.Name = "btnLoginDev";
             this.btnLoginDev.Size = new System.Drawing.Size(70, 25);
@@ -49,7 +51,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(94, 40);
+            this.btnLogin.Location = new System.Drawing.Point(130, 86);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(70, 25);
@@ -60,7 +62,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(94, 67);
+            this.btnClose.Location = new System.Drawing.Point(130, 113);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(70, 25);
@@ -75,7 +77,7 @@
             this.cbTest.Checked = true;
             this.cbTest.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbTest.ForeColor = System.Drawing.Color.LightGray;
-            this.cbTest.Location = new System.Drawing.Point(13, 65);
+            this.cbTest.Location = new System.Drawing.Point(49, 111);
             this.cbTest.Margin = new System.Windows.Forms.Padding(4);
             this.cbTest.Name = "cbTest";
             this.cbTest.Size = new System.Drawing.Size(56, 16);
@@ -88,7 +90,7 @@
             this.tbPosNo.BackColor = System.Drawing.Color.DarkGray;
             this.tbPosNo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbPosNo.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tbPosNo.Location = new System.Drawing.Point(13, 35);
+            this.tbPosNo.Location = new System.Drawing.Point(49, 81);
             this.tbPosNo.Margin = new System.Windows.Forms.Padding(4);
             this.tbPosNo.Name = "tbPosNo";
             this.tbPosNo.Size = new System.Drawing.Size(68, 15);
@@ -99,17 +101,39 @@
             this.tbSiteID.BackColor = System.Drawing.Color.DarkGray;
             this.tbSiteID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbSiteID.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tbSiteID.Location = new System.Drawing.Point(13, 13);
+            this.tbSiteID.Location = new System.Drawing.Point(49, 59);
             this.tbSiteID.Margin = new System.Windows.Forms.Padding(4);
             this.tbSiteID.Name = "tbSiteID";
             this.tbSiteID.Size = new System.Drawing.Size(68, 15);
             this.tbSiteID.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Gold;
+            this.label2.Location = new System.Drawing.Point(11, 177);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(189, 12);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "DevLogin은 앱로그를 남기지 않음";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Gold;
+            this.label1.Location = new System.Drawing.Point(143, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 12);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "DevLogin";
+            // 
             // frmDevAdmin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(63)))), ((int)(((byte)(87)))));
-            this.ClientSize = new System.Drawing.Size(180, 100);
+            this.ClientSize = new System.Drawing.Size(250, 210);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLoginDev);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnClose);
@@ -134,5 +158,7 @@
         private System.Windows.Forms.CheckBox cbTest;
         public System.Windows.Forms.TextBox tbPosNo;
         public System.Windows.Forms.TextBox tbSiteID;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

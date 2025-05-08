@@ -407,7 +407,7 @@
             this.lblCallCenterNo.Name = "lblCallCenterNo";
             this.lblCallCenterNo.Size = new System.Drawing.Size(256, 22);
             this.lblCallCenterNo.TabIndex = 48;
-            this.lblCallCenterNo.Text = "포스콜센터 1522-8616";
+            this.lblCallCenterNo.Text = "포스 콜센터 1522-8616";
             this.lblCallCenterNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblCallCenterNo.Click += new System.EventHandler(this.lblCallCenterNo_Click);
             // 

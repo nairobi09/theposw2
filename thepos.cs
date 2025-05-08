@@ -559,7 +559,8 @@ namespace thepos2
         public static int mAppLogLevel = 1;
         // log_input :  1(info), 2(IMPORTANT), 3(error만)   >=  app_log_level :  1(ALL), 2(IMPORTANT), 3(ERROR), 4(NONE)
 
-
+        //
+        public static String mIsDevLogin = "";
 
 
         public static String get_MMddHHmm(String d, String t)
@@ -989,6 +990,17 @@ namespace thepos2
             // 3 : ERROR
             // 4 : NONE
 
+
+
+            // 개발자로그인은 앱로그를 안남긴다.
+            if (mIsDevLogin == "Y")
+            {
+                return;
+            }
+
+
+
+            //
             if (log_input >= mAppLogLevel)
             {
                 try
