@@ -25,6 +25,10 @@ namespace thepos2
         {
             InitializeComponent();
 
+            //
+            thepos_app_log(1, this.Name, "Open", "");
+
+
 
             // 기본 대기화면
             if (mCouponDisplayImage.Length > 0)
@@ -42,9 +46,6 @@ namespace thepos2
                     thepos_app_log(3, this.Name, "mCouponDisplayImage", ex.Message);
                 }
             }
-
-            thepos_app_log(1, this.Name, "Open", "");
-
         }
 
 
@@ -102,7 +103,7 @@ namespace thepos2
                 };
 
 
-                m3.Font = new System.Drawing.Font("종료", 40F);
+                m3.Font = new System.Drawing.Font("종료", 30F);
                 m3.Click += (senders, es) =>
                 {
                     //

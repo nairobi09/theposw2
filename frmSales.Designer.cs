@@ -469,7 +469,7 @@
             this.lv_cnt_up,
             this.lv_cnt_del});
             this.lvwOrderItem.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lvwOrderItem.Font = new System.Drawing.Font("맑은 고딕", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lvwOrderItem.Font = new System.Drawing.Font("맑은 고딕", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lvwOrderItem.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lvwOrderItem.GridLines = true;
             this.lvwOrderItem.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;

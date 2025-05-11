@@ -47,7 +47,7 @@ namespace thepos2
                     mPosNo = mObj["posNo"].ToString();
 
                     //
-                    thepos_app_log(2, this.Name, "login", "성공");
+                    thepos_app_log(2, this.Name, "login", "appVersion=" + mAppVersion + ", mac=" + mMacAddr);
 
                     Close();
                 }
@@ -95,7 +95,7 @@ namespace thepos2
                     mPosNo = mObj["posNo"].ToString();
 
                     //
-                    thepos_app_log(1, this.Name, "login", "성공");
+                    thepos_app_log(1, this.Name, "login", "appVersion=" + mAppVersion + ", mac=" + mMacAddr);
                 }
                 else
                 {

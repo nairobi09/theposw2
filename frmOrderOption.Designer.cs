@@ -145,7 +145,7 @@
             // 
             // lblOrder1Item3Amt
             // 
-            this.lblOrder1Item3Amt.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOrder1Item3Amt.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrder1Item3Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder1Item3Amt.Location = new System.Drawing.Point(622, 93);
             this.lblOrder1Item3Amt.Name = "lblOrder1Item3Amt";
@@ -158,7 +158,7 @@
             // rbOption1Item3Name
             // 
             this.rbOption1Item3Name.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOption1Item3Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbOption1Item3Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbOption1Item3Name.Location = new System.Drawing.Point(624, 25);
             this.rbOption1Item3Name.Name = "rbOption1Item3Name";
             this.rbOption1Item3Name.Size = new System.Drawing.Size(110, 66);
@@ -177,7 +177,7 @@
             // 
             // lblOrder1Item2Amt
             // 
-            this.lblOrder1Item2Amt.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOrder1Item2Amt.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrder1Item2Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder1Item2Amt.Location = new System.Drawing.Point(499, 94);
             this.lblOrder1Item2Amt.Name = "lblOrder1Item2Amt";
@@ -189,7 +189,7 @@
             // 
             // lblOrder1Item1Amt
             // 
-            this.lblOrder1Item1Amt.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOrder1Item1Amt.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrder1Item1Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder1Item1Amt.Location = new System.Drawing.Point(365, 94);
             this.lblOrder1Item1Amt.Name = "lblOrder1Item1Amt";
@@ -201,7 +201,7 @@
             // 
             // lblOrder1Item0Amt
             // 
-            this.lblOrder1Item0Amt.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOrder1Item0Amt.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrder1Item0Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder1Item0Amt.Location = new System.Drawing.Point(235, 94);
             this.lblOrder1Item0Amt.Name = "lblOrder1Item0Amt";
@@ -214,7 +214,7 @@
             // rbOption1Item2Name
             // 
             this.rbOption1Item2Name.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOption1Item2Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbOption1Item2Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbOption1Item2Name.Location = new System.Drawing.Point(499, 25);
             this.rbOption1Item2Name.Name = "rbOption1Item2Name";
             this.rbOption1Item2Name.Size = new System.Drawing.Size(110, 66);
@@ -226,7 +226,7 @@
             // rbOption1Item1Name
             // 
             this.rbOption1Item1Name.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOption1Item1Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbOption1Item1Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbOption1Item1Name.Location = new System.Drawing.Point(367, 25);
             this.rbOption1Item1Name.Name = "rbOption1Item1Name";
             this.rbOption1Item1Name.Size = new System.Drawing.Size(110, 66);
@@ -238,7 +238,7 @@
             // rbOption1Item0Name
             // 
             this.rbOption1Item0Name.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOption1Item0Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbOption1Item0Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbOption1Item0Name.Location = new System.Drawing.Point(235, 25);
             this.rbOption1Item0Name.Name = "rbOption1Item0Name";
             this.rbOption1Item0Name.Size = new System.Drawing.Size(110, 66);
@@ -249,7 +249,7 @@
             // 
             // lblOption1Name
             // 
-            this.lblOption1Name.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOption1Name.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOption1Name.Location = new System.Drawing.Point(25, 35);
             this.lblOption1Name.Name = "lblOption1Name";
             this.lblOption1Name.Size = new System.Drawing.Size(184, 50);
@@ -259,7 +259,7 @@
             // 
             // lblOrder2Item2Amt
             // 
-            this.lblOrder2Item2Amt.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOrder2Item2Amt.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrder2Item2Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder2Item2Amt.Location = new System.Drawing.Point(496, 94);
             this.lblOrder2Item2Amt.Name = "lblOrder2Item2Amt";
@@ -298,7 +298,7 @@
             // 
             // lblOrder0Item3Amt
             // 
-            this.lblOrder0Item3Amt.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOrder0Item3Amt.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrder0Item3Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder0Item3Amt.Location = new System.Drawing.Point(622, 153);
             this.lblOrder0Item3Amt.Name = "lblOrder0Item3Amt";
@@ -311,7 +311,7 @@
             // rbOption0Item3Name
             // 
             this.rbOption0Item3Name.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOption0Item3Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbOption0Item3Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbOption0Item3Name.Location = new System.Drawing.Point(623, 85);
             this.rbOption0Item3Name.Name = "rbOption0Item3Name";
             this.rbOption0Item3Name.Size = new System.Drawing.Size(110, 66);
@@ -330,7 +330,7 @@
             // 
             // lblOrder0Item2Amt
             // 
-            this.lblOrder0Item2Amt.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOrder0Item2Amt.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrder0Item2Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder0Item2Amt.Location = new System.Drawing.Point(494, 154);
             this.lblOrder0Item2Amt.Name = "lblOrder0Item2Amt";
@@ -342,7 +342,7 @@
             // 
             // lblOrder0Item1Amt
             // 
-            this.lblOrder0Item1Amt.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOrder0Item1Amt.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrder0Item1Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder0Item1Amt.Location = new System.Drawing.Point(362, 154);
             this.lblOrder0Item1Amt.Name = "lblOrder0Item1Amt";
@@ -354,7 +354,7 @@
             // 
             // lblOrder0Item0Amt
             // 
-            this.lblOrder0Item0Amt.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOrder0Item0Amt.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrder0Item0Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder0Item0Amt.Location = new System.Drawing.Point(232, 154);
             this.lblOrder0Item0Amt.Name = "lblOrder0Item0Amt";
@@ -367,7 +367,7 @@
             // rbOption0Item2Name
             // 
             this.rbOption0Item2Name.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOption0Item2Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbOption0Item2Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbOption0Item2Name.Location = new System.Drawing.Point(496, 85);
             this.rbOption0Item2Name.Name = "rbOption0Item2Name";
             this.rbOption0Item2Name.Size = new System.Drawing.Size(110, 66);
@@ -379,7 +379,7 @@
             // rbOption0Item1Name
             // 
             this.rbOption0Item1Name.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOption0Item1Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbOption0Item1Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbOption0Item1Name.Location = new System.Drawing.Point(365, 85);
             this.rbOption0Item1Name.Name = "rbOption0Item1Name";
             this.rbOption0Item1Name.Size = new System.Drawing.Size(110, 67);
@@ -391,7 +391,7 @@
             // rbOption0Item0Name
             // 
             this.rbOption0Item0Name.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOption0Item0Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbOption0Item0Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbOption0Item0Name.Location = new System.Drawing.Point(235, 85);
             this.rbOption0Item0Name.Name = "rbOption0Item0Name";
             this.rbOption0Item0Name.Size = new System.Drawing.Size(110, 67);
@@ -402,7 +402,7 @@
             // 
             // lblOption0Name
             // 
-            this.lblOption0Name.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOption0Name.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOption0Name.Location = new System.Drawing.Point(22, 95);
             this.lblOption0Name.Name = "lblOption0Name";
             this.lblOption0Name.Size = new System.Drawing.Size(184, 50);
@@ -414,7 +414,7 @@
             // 
             this.btnCancel.BackColor = System.Drawing.Color.White;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.MidnightBlue;
             this.btnCancel.Location = new System.Drawing.Point(226, 928);
             this.btnCancel.Name = "btnCancel";
@@ -429,7 +429,7 @@
             // 
             this.btnOK.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOK.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOK.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOK.ForeColor = System.Drawing.Color.White;
             this.btnOK.Location = new System.Drawing.Point(377, 927);
             this.btnOK.Name = "btnOK";
@@ -443,11 +443,11 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTitle.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblTitle.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblTitle.Location = new System.Drawing.Point(333, 17);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(75, 16);
+            this.lblTitle.Size = new System.Drawing.Size(74, 21);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "옵션선택";
             // 
@@ -504,7 +504,7 @@
             // 
             // lblOrder5Item3Amt
             // 
-            this.lblOrder5Item3Amt.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOrder5Item3Amt.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrder5Item3Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder5Item3Amt.Location = new System.Drawing.Point(624, 94);
             this.lblOrder5Item3Amt.Name = "lblOrder5Item3Amt";
@@ -517,7 +517,7 @@
             // rbOption5Item3Name
             // 
             this.rbOption5Item3Name.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOption5Item3Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbOption5Item3Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbOption5Item3Name.Location = new System.Drawing.Point(625, 25);
             this.rbOption5Item3Name.Name = "rbOption5Item3Name";
             this.rbOption5Item3Name.Size = new System.Drawing.Size(110, 66);
@@ -536,7 +536,7 @@
             // 
             // lblOrder5Item2Amt
             // 
-            this.lblOrder5Item2Amt.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOrder5Item2Amt.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrder5Item2Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder5Item2Amt.Location = new System.Drawing.Point(500, 94);
             this.lblOrder5Item2Amt.Name = "lblOrder5Item2Amt";
@@ -548,7 +548,7 @@
             // 
             // lblOrder5Item1Amt
             // 
-            this.lblOrder5Item1Amt.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOrder5Item1Amt.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrder5Item1Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder5Item1Amt.Location = new System.Drawing.Point(368, 94);
             this.lblOrder5Item1Amt.Name = "lblOrder5Item1Amt";
@@ -560,7 +560,7 @@
             // 
             // lblOrder5Item0Amt
             // 
-            this.lblOrder5Item0Amt.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOrder5Item0Amt.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrder5Item0Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder5Item0Amt.Location = new System.Drawing.Point(236, 94);
             this.lblOrder5Item0Amt.Name = "lblOrder5Item0Amt";
@@ -573,7 +573,7 @@
             // rbOption5Item2Name
             // 
             this.rbOption5Item2Name.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOption5Item2Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbOption5Item2Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbOption5Item2Name.Location = new System.Drawing.Point(500, 25);
             this.rbOption5Item2Name.Name = "rbOption5Item2Name";
             this.rbOption5Item2Name.Size = new System.Drawing.Size(110, 66);
@@ -585,7 +585,7 @@
             // rbOption5Item1Name
             // 
             this.rbOption5Item1Name.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOption5Item1Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbOption5Item1Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbOption5Item1Name.Location = new System.Drawing.Point(368, 25);
             this.rbOption5Item1Name.Name = "rbOption5Item1Name";
             this.rbOption5Item1Name.Size = new System.Drawing.Size(110, 66);
@@ -597,7 +597,7 @@
             // rbOption5Item0Name
             // 
             this.rbOption5Item0Name.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOption5Item0Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbOption5Item0Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbOption5Item0Name.Location = new System.Drawing.Point(236, 25);
             this.rbOption5Item0Name.Name = "rbOption5Item0Name";
             this.rbOption5Item0Name.Size = new System.Drawing.Size(110, 66);
@@ -608,7 +608,7 @@
             // 
             // lblOption5Name
             // 
-            this.lblOption5Name.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOption5Name.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOption5Name.Location = new System.Drawing.Point(22, 35);
             this.lblOption5Name.Name = "lblOption5Name";
             this.lblOption5Name.Size = new System.Drawing.Size(184, 50);
@@ -651,7 +651,7 @@
             // 
             // lblOrder4Item3Amt
             // 
-            this.lblOrder4Item3Amt.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOrder4Item3Amt.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrder4Item3Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder4Item3Amt.Location = new System.Drawing.Point(624, 94);
             this.lblOrder4Item3Amt.Name = "lblOrder4Item3Amt";
@@ -664,7 +664,7 @@
             // rbOption4Item3Name
             // 
             this.rbOption4Item3Name.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOption4Item3Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbOption4Item3Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbOption4Item3Name.Location = new System.Drawing.Point(625, 25);
             this.rbOption4Item3Name.Name = "rbOption4Item3Name";
             this.rbOption4Item3Name.Size = new System.Drawing.Size(110, 66);
@@ -683,7 +683,7 @@
             // 
             // lblOrder4Item2Amt
             // 
-            this.lblOrder4Item2Amt.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOrder4Item2Amt.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrder4Item2Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder4Item2Amt.Location = new System.Drawing.Point(500, 94);
             this.lblOrder4Item2Amt.Name = "lblOrder4Item2Amt";
@@ -695,7 +695,7 @@
             // 
             // lblOrder4Item1Amt
             // 
-            this.lblOrder4Item1Amt.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOrder4Item1Amt.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrder4Item1Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder4Item1Amt.Location = new System.Drawing.Point(368, 94);
             this.lblOrder4Item1Amt.Name = "lblOrder4Item1Amt";
@@ -707,7 +707,7 @@
             // 
             // lblOrder4Item0Amt
             // 
-            this.lblOrder4Item0Amt.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOrder4Item0Amt.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrder4Item0Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder4Item0Amt.Location = new System.Drawing.Point(236, 94);
             this.lblOrder4Item0Amt.Name = "lblOrder4Item0Amt";
@@ -720,7 +720,7 @@
             // rbOption4Item2Name
             // 
             this.rbOption4Item2Name.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOption4Item2Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbOption4Item2Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbOption4Item2Name.Location = new System.Drawing.Point(500, 25);
             this.rbOption4Item2Name.Name = "rbOption4Item2Name";
             this.rbOption4Item2Name.Size = new System.Drawing.Size(110, 66);
@@ -732,7 +732,7 @@
             // rbOption4Item1Name
             // 
             this.rbOption4Item1Name.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOption4Item1Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbOption4Item1Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbOption4Item1Name.Location = new System.Drawing.Point(368, 25);
             this.rbOption4Item1Name.Name = "rbOption4Item1Name";
             this.rbOption4Item1Name.Size = new System.Drawing.Size(110, 66);
@@ -744,7 +744,7 @@
             // rbOption4Item0Name
             // 
             this.rbOption4Item0Name.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOption4Item0Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbOption4Item0Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbOption4Item0Name.Location = new System.Drawing.Point(236, 25);
             this.rbOption4Item0Name.Name = "rbOption4Item0Name";
             this.rbOption4Item0Name.Size = new System.Drawing.Size(110, 66);
@@ -755,7 +755,7 @@
             // 
             // lblOption4Name
             // 
-            this.lblOption4Name.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOption4Name.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOption4Name.Location = new System.Drawing.Point(22, 35);
             this.lblOption4Name.Name = "lblOption4Name";
             this.lblOption4Name.Size = new System.Drawing.Size(184, 50);
@@ -765,7 +765,7 @@
             // 
             // lblGoodsInfo
             // 
-            this.lblGoodsInfo.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGoodsInfo.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGoodsInfo.Location = new System.Drawing.Point(5, 68);
             this.lblGoodsInfo.Name = "lblGoodsInfo";
             this.lblGoodsInfo.Size = new System.Drawing.Size(241, 40);
@@ -777,10 +777,10 @@
             // 
             this.lblCntUp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblCntUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblCntUp.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblCntUp.Location = new System.Drawing.Point(405, 68);
+            this.lblCntUp.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblCntUp.Location = new System.Drawing.Point(405, 64);
             this.lblCntUp.Name = "lblCntUp";
-            this.lblCntUp.Size = new System.Drawing.Size(50, 41);
+            this.lblCntUp.Size = new System.Drawing.Size(50, 47);
             this.lblCntUp.TabIndex = 13;
             this.lblCntUp.Text = "+";
             this.lblCntUp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -790,10 +790,10 @@
             // 
             this.lblCntDn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblCntDn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblCntDn.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblCntDn.Location = new System.Drawing.Point(285, 68);
+            this.lblCntDn.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblCntDn.Location = new System.Drawing.Point(285, 64);
             this.lblCntDn.Name = "lblCntDn";
-            this.lblCntDn.Size = new System.Drawing.Size(50, 41);
+            this.lblCntDn.Size = new System.Drawing.Size(50, 47);
             this.lblCntDn.TabIndex = 13;
             this.lblCntDn.Text = "-";
             this.lblCntDn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -801,7 +801,7 @@
             // 
             // lblAmount
             // 
-            this.lblAmount.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblAmount.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblAmount.ForeColor = System.Drawing.Color.Blue;
             this.lblAmount.Location = new System.Drawing.Point(602, 75);
             this.lblAmount.Name = "lblAmount";
@@ -812,7 +812,7 @@
             // 
             // lblCnt
             // 
-            this.lblCnt.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblCnt.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblCnt.ForeColor = System.Drawing.Color.Blue;
             this.lblCnt.Location = new System.Drawing.Point(351, 68);
             this.lblCnt.Name = "lblCnt";
@@ -841,7 +841,7 @@
             // 
             // lblOrder3Item3Amt
             // 
-            this.lblOrder3Item3Amt.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOrder3Item3Amt.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrder3Item3Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder3Item3Amt.Location = new System.Drawing.Point(623, 94);
             this.lblOrder3Item3Amt.Name = "lblOrder3Item3Amt";
@@ -854,7 +854,7 @@
             // rbOption3Item3Name
             // 
             this.rbOption3Item3Name.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOption3Item3Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbOption3Item3Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbOption3Item3Name.Location = new System.Drawing.Point(623, 25);
             this.rbOption3Item3Name.Name = "rbOption3Item3Name";
             this.rbOption3Item3Name.Size = new System.Drawing.Size(110, 66);
@@ -873,7 +873,7 @@
             // 
             // lblOrder3Item2Amt
             // 
-            this.lblOrder3Item2Amt.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOrder3Item2Amt.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrder3Item2Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder3Item2Amt.Location = new System.Drawing.Point(498, 94);
             this.lblOrder3Item2Amt.Name = "lblOrder3Item2Amt";
@@ -885,7 +885,7 @@
             // 
             // lblOrder3Item1Amt
             // 
-            this.lblOrder3Item1Amt.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOrder3Item1Amt.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrder3Item1Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder3Item1Amt.Location = new System.Drawing.Point(366, 94);
             this.lblOrder3Item1Amt.Name = "lblOrder3Item1Amt";
@@ -897,7 +897,7 @@
             // 
             // lblOrder3Item0Amt
             // 
-            this.lblOrder3Item0Amt.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOrder3Item0Amt.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrder3Item0Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder3Item0Amt.Location = new System.Drawing.Point(234, 94);
             this.lblOrder3Item0Amt.Name = "lblOrder3Item0Amt";
@@ -910,7 +910,7 @@
             // rbOption3Item2Name
             // 
             this.rbOption3Item2Name.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOption3Item2Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbOption3Item2Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbOption3Item2Name.Location = new System.Drawing.Point(498, 25);
             this.rbOption3Item2Name.Name = "rbOption3Item2Name";
             this.rbOption3Item2Name.Size = new System.Drawing.Size(110, 66);
@@ -922,7 +922,7 @@
             // rbOption3Item1Name
             // 
             this.rbOption3Item1Name.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOption3Item1Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbOption3Item1Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbOption3Item1Name.Location = new System.Drawing.Point(366, 25);
             this.rbOption3Item1Name.Name = "rbOption3Item1Name";
             this.rbOption3Item1Name.Size = new System.Drawing.Size(110, 66);
@@ -934,7 +934,7 @@
             // rbOption3Item0Name
             // 
             this.rbOption3Item0Name.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOption3Item0Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbOption3Item0Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbOption3Item0Name.Location = new System.Drawing.Point(234, 25);
             this.rbOption3Item0Name.Name = "rbOption3Item0Name";
             this.rbOption3Item0Name.Size = new System.Drawing.Size(110, 66);
@@ -945,7 +945,7 @@
             // 
             // lblOption3Name
             // 
-            this.lblOption3Name.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOption3Name.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOption3Name.Location = new System.Drawing.Point(21, 35);
             this.lblOption3Name.Name = "lblOption3Name";
             this.lblOption3Name.Size = new System.Drawing.Size(184, 50);
@@ -973,7 +973,7 @@
             // 
             // lblOrder2Item3Amt
             // 
-            this.lblOrder2Item3Amt.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOrder2Item3Amt.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrder2Item3Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder2Item3Amt.Location = new System.Drawing.Point(623, 93);
             this.lblOrder2Item3Amt.Name = "lblOrder2Item3Amt";
@@ -986,7 +986,7 @@
             // rbOption2Item3Name
             // 
             this.rbOption2Item3Name.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOption2Item3Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbOption2Item3Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbOption2Item3Name.Location = new System.Drawing.Point(623, 25);
             this.rbOption2Item3Name.Name = "rbOption2Item3Name";
             this.rbOption2Item3Name.Size = new System.Drawing.Size(110, 66);
@@ -997,7 +997,7 @@
             // 
             // lblOrder2Item1Amt
             // 
-            this.lblOrder2Item1Amt.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOrder2Item1Amt.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrder2Item1Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder2Item1Amt.Location = new System.Drawing.Point(364, 94);
             this.lblOrder2Item1Amt.Name = "lblOrder2Item1Amt";
@@ -1009,7 +1009,7 @@
             // 
             // lblOrder2Item0Amt
             // 
-            this.lblOrder2Item0Amt.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOrder2Item0Amt.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrder2Item0Amt.ForeColor = System.Drawing.Color.Blue;
             this.lblOrder2Item0Amt.Location = new System.Drawing.Point(234, 94);
             this.lblOrder2Item0Amt.Name = "lblOrder2Item0Amt";
@@ -1022,7 +1022,7 @@
             // rbOption2Item2Name
             // 
             this.rbOption2Item2Name.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOption2Item2Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbOption2Item2Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbOption2Item2Name.Location = new System.Drawing.Point(498, 25);
             this.rbOption2Item2Name.Name = "rbOption2Item2Name";
             this.rbOption2Item2Name.Size = new System.Drawing.Size(110, 66);
@@ -1034,7 +1034,7 @@
             // rbOption2Item1Name
             // 
             this.rbOption2Item1Name.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOption2Item1Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbOption2Item1Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbOption2Item1Name.Location = new System.Drawing.Point(366, 25);
             this.rbOption2Item1Name.Name = "rbOption2Item1Name";
             this.rbOption2Item1Name.Size = new System.Drawing.Size(110, 66);
@@ -1046,7 +1046,7 @@
             // rbOption2Item0Name
             // 
             this.rbOption2Item0Name.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOption2Item0Name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbOption2Item0Name.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbOption2Item0Name.Location = new System.Drawing.Point(234, 25);
             this.rbOption2Item0Name.Name = "rbOption2Item0Name";
             this.rbOption2Item0Name.Size = new System.Drawing.Size(110, 66);
@@ -1057,7 +1057,7 @@
             // 
             // lblOption2Name
             // 
-            this.lblOption2Name.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOption2Name.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOption2Name.Location = new System.Drawing.Point(23, 35);
             this.lblOption2Name.Name = "lblOption2Name";
             this.lblOption2Name.Size = new System.Drawing.Size(184, 50);

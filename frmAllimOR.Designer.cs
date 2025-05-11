@@ -57,7 +57,7 @@
             // 
             // lblTitle
             // 
-            this.lblTitle.Font = new System.Drawing.Font("굴림", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTitle.Font = new System.Drawing.Font("맑은 고딕", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblTitle.ForeColor = System.Drawing.Color.Black;
             this.lblTitle.Location = new System.Drawing.Point(285, 23);
             this.lblTitle.Name = "lblTitle";
@@ -68,7 +68,7 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(211, 112);
             this.label1.Name = "label1";
@@ -82,19 +82,19 @@
             this.tbTelNo.BackColor = System.Drawing.Color.Gold;
             this.tbTelNo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbTelNo.CausesValidation = false;
-            this.tbTelNo.Font = new System.Drawing.Font("굴림", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbTelNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.tbTelNo.HideSelection = false;
-            this.tbTelNo.Location = new System.Drawing.Point(341, 159);
+            this.tbTelNo.Location = new System.Drawing.Point(337, 159);
             this.tbTelNo.MaxLength = 8;
             this.tbTelNo.Name = "tbTelNo";
-            this.tbTelNo.Size = new System.Drawing.Size(194, 43);
+            this.tbTelNo.Size = new System.Drawing.Size(194, 42);
             this.tbTelNo.TabIndex = 0;
             // 
             // btnOK
             // 
             this.btnOK.BackColor = System.Drawing.Color.Black;
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOK.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnOK.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnOK.ForeColor = System.Drawing.Color.White;
             this.btnOK.Location = new System.Drawing.Point(392, 479);
             this.btnOK.Name = "btnOK";
@@ -109,7 +109,7 @@
             this.btnNo.BackColor = System.Drawing.Color.White;
             this.btnNo.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNo.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnNo.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnNo.ForeColor = System.Drawing.Color.Black;
             this.btnNo.Location = new System.Drawing.Point(275, 479);
             this.btnNo.Name = "btnNo";
@@ -121,10 +121,10 @@
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("굴림", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(232, 160);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(209, 160);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 36);
+            this.label2.Size = new System.Drawing.Size(133, 39);
             this.label2.TabIndex = 61;
             this.label2.Text = "010-";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

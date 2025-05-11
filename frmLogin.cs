@@ -39,7 +39,7 @@ namespace thepos2
 
 
             //
-            thepos_app_log(2, this.Name, "Open", "appVersion=TPW2-" + mAppVersion + ", mac=" + mMacAddr);
+            thepos_app_log(2, "theposw2", "start...", "appVersion=TPW2-" + mAppVersion + ", mac=" + mMacAddr);
         }
 
 
@@ -114,7 +114,7 @@ namespace thepos2
         {
             mIsDevLogin = "";
 
-            mPayMode = "";
+            mIsTestPayMode = "";
 
             // 
             if (tbID.Text == "1120" & tbPW.Text == "4089")
@@ -134,7 +134,7 @@ namespace thepos2
                     mIsDevLogin = "Y";  // 개발자 로그인은 로그를 남기지 않기위해
 
                     //lblIsTest.Visible = true;
-                    mPayMode = "Test";
+                    mIsTestPayMode = "Test";
                 }
                 else
                 {

@@ -110,9 +110,9 @@ namespace thepos2
             btnClose.Text = mLangCloseArr[mLanguageNo];
 
 
-            if (mPayMode == "Test")
+            if (mIsTestPayMode == "Test")
             {
-                btnPayRequest.Text = "테스트 결제";
+                btnPayRequest.Text = "결제\r\n테스트(SKIP)";
             }
 
 
@@ -161,11 +161,14 @@ namespace thepos2
 
 
 
-            // 실환경에서만 결제요청하고, 테스트모드에서는 그냥 PASS
-            if (mPayMode != "Test")
+            // 테스트모드에서는 그냥 PASS
+            if (mIsTestPayMode != "Test")
             {
                 if (requestCardAuth(tAmount, tFreeAmount, tTaxAmount, tTax, tServiceAmt, install, is_cup, out mPaymentCard) != 0)
                 {
+                    //
+                    thepos_app_log(3, this.Name, "requestCardAuth()", mErrorMsg);
+
                     MessageBox.Show(mErrorMsg, "thepos");
 
                     return;

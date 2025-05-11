@@ -553,14 +553,17 @@ namespace thepos2
         // 인증 대문화면
         public static String mCouponDisplayImage = "";
 
-        public static String mPayMode = "";
+
 
         // 로그
         public static int mAppLogLevel = 1;
         // log_input :  1(info), 2(IMPORTANT), 3(error만)   >=  app_log_level :  1(ALL), 2(IMPORTANT), 3(ERROR), 4(NONE)
 
         //
-        public static String mIsDevLogin = "";
+        public static String mIsDevLogin = "";  
+
+
+        public static String mIsTestPayMode = "";   // TEST LOGIN
 
 
         public static String get_MMddHHmm(String d, String t)
@@ -995,7 +998,15 @@ namespace thepos2
             // 개발자로그인은 앱로그를 안남긴다.
             if (mIsDevLogin == "Y")
             {
-                return;
+                if (mIsTestPayMode == "Test")
+                {
+                    //
+
+                }
+                else
+                {
+                    return;
+                }
             }
 
 

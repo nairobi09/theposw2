@@ -48,6 +48,7 @@
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(240, 100);
             this.btnOK.TabIndex = 0;
+            this.btnOK.TabStop = false;
             this.btnOK.Text = "닫기";
             this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);

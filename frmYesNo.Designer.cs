@@ -88,9 +88,9 @@
             // 
             this.lblOrderNo2.Font = new System.Drawing.Font("맑은 고딕", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrderNo2.ForeColor = System.Drawing.Color.White;
-            this.lblOrderNo2.Location = new System.Drawing.Point(119, 424);
+            this.lblOrderNo2.Location = new System.Drawing.Point(80, 416);
             this.lblOrderNo2.Name = "lblOrderNo2";
-            this.lblOrderNo2.Size = new System.Drawing.Size(154, 57);
+            this.lblOrderNo2.Size = new System.Drawing.Size(166, 57);
             this.lblOrderNo2.TabIndex = 46;
             this.lblOrderNo2.Text = "0003";
             this.lblOrderNo2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -100,7 +100,7 @@
             // 
             this.lblFromToChar.Font = new System.Drawing.Font("굴림", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblFromToChar.ForeColor = System.Drawing.Color.White;
-            this.lblFromToChar.Location = new System.Drawing.Point(148, 402);
+            this.lblFromToChar.Location = new System.Drawing.Point(128, 397);
             this.lblFromToChar.Name = "lblFromToChar";
             this.lblFromToChar.Size = new System.Drawing.Size(65, 20);
             this.lblFromToChar.TabIndex = 46;
@@ -115,10 +115,10 @@
             this.btnNo.Font = new System.Drawing.Font("맑은 고딕", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnNo.ForeColor = System.Drawing.Color.White;
             this.btnNo.Image = ((System.Drawing.Image)(resources.GetObject("btnNo.Image")));
-            this.btnNo.Location = new System.Drawing.Point(501, 320);
+            this.btnNo.Location = new System.Drawing.Point(501, 324);
             this.btnNo.Name = "btnNo";
             this.btnNo.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.btnNo.Size = new System.Drawing.Size(142, 118);
+            this.btnNo.Size = new System.Drawing.Size(142, 146);
             this.btnNo.TabIndex = 45;
             this.btnNo.Text = "안함";
             this.btnNo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -132,10 +132,10 @@
             this.btnYes.Font = new System.Drawing.Font("맑은 고딕", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnYes.ForeColor = System.Drawing.Color.White;
             this.btnYes.Image = ((System.Drawing.Image)(resources.GetObject("btnYes.Image")));
-            this.btnYes.Location = new System.Drawing.Point(359, 320);
+            this.btnYes.Location = new System.Drawing.Point(359, 324);
             this.btnYes.Name = "btnYes";
             this.btnYes.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.btnYes.Size = new System.Drawing.Size(136, 118);
+            this.btnYes.Size = new System.Drawing.Size(136, 146);
             this.btnYes.TabIndex = 44;
             this.btnYes.Text = "출력";
             this.btnYes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;

@@ -382,7 +382,7 @@ namespace thepos2
 
             // 주문서 출력 : 업장용 + 고객용
             // 주문서 출력
-            /* 동춘서커스는 영수증 출력 안함.
+            /* 쿠폰인증/티켓교환은 교환권,영수증 출력 안함.
             String[] order_no_from_to = new String[2];
 
             order_no_from_to[0] = "";
