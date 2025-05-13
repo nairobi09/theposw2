@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -34,7 +35,19 @@ namespace thepos2
 
 
         private void initialize_the()
-        { 
+        {
+
+            //
+            //   스캐너에서 영문자 인식오류 발생 대응.
+            //
+            //  .NET 입력 처리에 IME 설정 고려
+            //  만약 IME를 통해 한글 입력 등이 간섭된다면 IME를 꺼보는 것도 방법입니다.
+            //  IME나 시스템 구성 요소 누락 (LTSB에서 자주 발생)
+            //
+            InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
+
+
+
             btn1.Click += (sender, args) => ClickedKey("1");
             btn2.Click += (sender, args) => ClickedKey("2");
             btn3.Click += (sender, args) => ClickedKey("3");

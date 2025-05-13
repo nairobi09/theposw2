@@ -24,7 +24,7 @@ namespace thepos2
 
         // 배포시 버전관리 - 로그와 연동
 
-        public static String mAppVersion = "2025-006";
+        public static String mAppVersion = "2025-007";
 
 
 
