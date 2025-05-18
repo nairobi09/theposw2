@@ -40,13 +40,9 @@
             this.rbGroup0 = new System.Windows.Forms.RadioButton();
             this.btnGoodsNext = new System.Windows.Forms.Button();
             this.btnGoodsPrev = new System.Windows.Forms.Button();
-            this.btnPay = new System.Windows.Forms.Button();
+            this.btnPayCard = new System.Windows.Forms.Button();
             this.lblAmountTitle = new System.Windows.Forms.Label();
             this.lblAmount = new System.Windows.Forms.Label();
-            this.btnJP = new System.Windows.Forms.Button();
-            this.btnCH = new System.Windows.Forms.Button();
-            this.btnEN = new System.Windows.Forms.Button();
-            this.btnKR = new System.Windows.Forms.Button();
             this.lvwOrderItem = new BrightIdeasSoftware.ObjectListView();
             this.lv_name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.lv_amt = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -55,128 +51,133 @@
             this.lv_cnt_dn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.lv_cnt_up = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.lv_cnt_del = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.GoodsLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.p11 = new System.Windows.Forms.Panel();
             this.lblNotice11 = new System.Windows.Forms.Label();
-            this.pbBadges11 = new System.Windows.Forms.PictureBox();
             this.lblGoodsAmt11 = new System.Windows.Forms.Label();
             this.lblGoodsName11 = new System.Windows.Forms.Label();
-            this.pbGoods11 = new System.Windows.Forms.PictureBox();
             this.p6 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNotice6 = new System.Windows.Forms.Label();
-            this.pbBadges6 = new System.Windows.Forms.PictureBox();
             this.lblGoodsAmt6 = new System.Windows.Forms.Label();
             this.lblGoodsName6 = new System.Windows.Forms.Label();
-            this.pbGoods6 = new System.Windows.Forms.PictureBox();
             this.p2 = new System.Windows.Forms.Panel();
             this.lblNotice2 = new System.Windows.Forms.Label();
-            this.pbBadges2 = new System.Windows.Forms.PictureBox();
             this.lblGoodsAmt2 = new System.Windows.Forms.Label();
             this.lblGoodsName2 = new System.Windows.Forms.Label();
-            this.pbGoods2 = new System.Windows.Forms.PictureBox();
             this.p1 = new System.Windows.Forms.Panel();
             this.lblNotice1 = new System.Windows.Forms.Label();
-            this.pbBadges1 = new System.Windows.Forms.PictureBox();
             this.lblGoodsAmt1 = new System.Windows.Forms.Label();
             this.lblGoodsName1 = new System.Windows.Forms.Label();
-            this.pbGoods1 = new System.Windows.Forms.PictureBox();
             this.p3 = new System.Windows.Forms.Panel();
             this.lblNotice3 = new System.Windows.Forms.Label();
-            this.pbBadges3 = new System.Windows.Forms.PictureBox();
             this.lblGoodsAmt3 = new System.Windows.Forms.Label();
             this.lblGoodsName3 = new System.Windows.Forms.Label();
-            this.pbGoods3 = new System.Windows.Forms.PictureBox();
             this.p8 = new System.Windows.Forms.Panel();
             this.lblNotice8 = new System.Windows.Forms.Label();
-            this.pbBadges8 = new System.Windows.Forms.PictureBox();
             this.lblGoodsAmt8 = new System.Windows.Forms.Label();
             this.lblGoodsName8 = new System.Windows.Forms.Label();
-            this.pbGoods8 = new System.Windows.Forms.PictureBox();
             this.p9 = new System.Windows.Forms.Panel();
             this.lblNotice9 = new System.Windows.Forms.Label();
-            this.pbBadges9 = new System.Windows.Forms.PictureBox();
             this.lblGoodsAmt9 = new System.Windows.Forms.Label();
             this.lblGoodsName9 = new System.Windows.Forms.Label();
-            this.pbGoods9 = new System.Windows.Forms.PictureBox();
             this.p10 = new System.Windows.Forms.Panel();
             this.lblNotice10 = new System.Windows.Forms.Label();
-            this.pbBadges10 = new System.Windows.Forms.PictureBox();
             this.lblGoodsAmt10 = new System.Windows.Forms.Label();
             this.lblGoodsName10 = new System.Windows.Forms.Label();
-            this.pbGoods10 = new System.Windows.Forms.PictureBox();
             this.p0 = new System.Windows.Forms.Panel();
             this.lblNotice0 = new System.Windows.Forms.Label();
-            this.pbBadges0 = new System.Windows.Forms.PictureBox();
             this.lblGoodsAmt0 = new System.Windows.Forms.Label();
             this.lblGoodsName0 = new System.Windows.Forms.Label();
-            this.pbGoods0 = new System.Windows.Forms.PictureBox();
             this.p4 = new System.Windows.Forms.Panel();
             this.lblNotice4 = new System.Windows.Forms.Label();
-            this.pbBadges4 = new System.Windows.Forms.PictureBox();
             this.lblGoodsAmt4 = new System.Windows.Forms.Label();
             this.lblGoodsName4 = new System.Windows.Forms.Label();
-            this.pbGoods4 = new System.Windows.Forms.PictureBox();
             this.p5 = new System.Windows.Forms.Panel();
             this.lblNotice5 = new System.Windows.Forms.Label();
-            this.pbBadges5 = new System.Windows.Forms.PictureBox();
             this.lblGoodsAmt5 = new System.Windows.Forms.Label();
             this.lblGoodsName5 = new System.Windows.Forms.Label();
-            this.pbGoods5 = new System.Windows.Forms.PictureBox();
             this.p7 = new System.Windows.Forms.Panel();
             this.lblNotice7 = new System.Windows.Forms.Label();
-            this.pbBadges7 = new System.Windows.Forms.PictureBox();
             this.lblGoodsAmt7 = new System.Windows.Forms.Label();
             this.lblGoodsName7 = new System.Windows.Forms.Label();
-            this.pbGoods7 = new System.Windows.Forms.PictureBox();
             this.panelLang = new System.Windows.Forms.Panel();
             this.panelWelcome = new System.Windows.Forms.Panel();
-            this.picSlide = new System.Windows.Forms.PictureBox();
             this.timerWelcome = new System.Windows.Forms.Timer(this.components);
+            this.btnPayKakao = new System.Windows.Forms.Button();
+            this.picSlide = new System.Windows.Forms.PictureBox();
+            this.btnKR = new System.Windows.Forms.Button();
+            this.btnJP = new System.Windows.Forms.Button();
+            this.btnEN = new System.Windows.Forms.Button();
+            this.btnCH = new System.Windows.Forms.Button();
+            this.pbBadges11 = new System.Windows.Forms.PictureBox();
+            this.pbGoods11 = new System.Windows.Forms.PictureBox();
+            this.pbBadges6 = new System.Windows.Forms.PictureBox();
+            this.pbGoods6 = new System.Windows.Forms.PictureBox();
+            this.pbBadges2 = new System.Windows.Forms.PictureBox();
+            this.pbGoods2 = new System.Windows.Forms.PictureBox();
+            this.pbBadges1 = new System.Windows.Forms.PictureBox();
+            this.pbGoods1 = new System.Windows.Forms.PictureBox();
+            this.pbBadges3 = new System.Windows.Forms.PictureBox();
+            this.pbGoods3 = new System.Windows.Forms.PictureBox();
+            this.pbBadges8 = new System.Windows.Forms.PictureBox();
+            this.pbGoods8 = new System.Windows.Forms.PictureBox();
+            this.pbBadges9 = new System.Windows.Forms.PictureBox();
+            this.pbGoods9 = new System.Windows.Forms.PictureBox();
+            this.pbBadges10 = new System.Windows.Forms.PictureBox();
+            this.pbGoods10 = new System.Windows.Forms.PictureBox();
+            this.pbBadges0 = new System.Windows.Forms.PictureBox();
+            this.pbGoods0 = new System.Windows.Forms.PictureBox();
+            this.pbBadges4 = new System.Windows.Forms.PictureBox();
+            this.pbGoods4 = new System.Windows.Forms.PictureBox();
+            this.pbBadges5 = new System.Windows.Forms.PictureBox();
+            this.pbGoods5 = new System.Windows.Forms.PictureBox();
+            this.pbBadges7 = new System.Windows.Forms.PictureBox();
+            this.pbGoods7 = new System.Windows.Forms.PictureBox();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanelGoodsGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lvwOrderItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.GoodsLayoutPanel.SuspendLayout();
             this.p11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBadges11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGoods11)).BeginInit();
             this.p6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBadges6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGoods6)).BeginInit();
             this.p2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBadges2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGoods2)).BeginInit();
             this.p1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBadges1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGoods1)).BeginInit();
             this.p3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBadges3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGoods3)).BeginInit();
             this.p8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBadges8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGoods8)).BeginInit();
             this.p9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBadges9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGoods9)).BeginInit();
             this.p10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBadges10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGoods10)).BeginInit();
             this.p0.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBadges0)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGoods0)).BeginInit();
             this.p4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBadges4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGoods4)).BeginInit();
             this.p5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBadges5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGoods5)).BeginInit();
             this.p7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBadges7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGoods7)).BeginInit();
             this.panelLang.SuspendLayout();
             this.panelWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSlide)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBadges11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGoods11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBadges6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGoods6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBadges2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGoods2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBadges1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGoods1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBadges3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGoods3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBadges8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGoods8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBadges9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGoods9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBadges10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGoods10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBadges0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGoods0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBadges4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGoods4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBadges5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGoods5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBadges7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGoods7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGroupPrev
@@ -348,20 +349,20 @@
             this.btnGoodsPrev.UseVisualStyleBackColor = false;
             this.btnGoodsPrev.Click += new System.EventHandler(this.btnGoodsPrev_Click);
             // 
-            // btnPay
+            // btnPayCard
             // 
-            this.btnPay.BackColor = System.Drawing.Color.Blue;
-            this.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPay.Font = new System.Drawing.Font("맑은 고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnPay.ForeColor = System.Drawing.Color.White;
-            this.btnPay.Location = new System.Drawing.Point(793, 1443);
-            this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(244, 161);
-            this.btnPay.TabIndex = 65;
-            this.btnPay.TabStop = false;
-            this.btnPay.Text = "결제하기";
-            this.btnPay.UseVisualStyleBackColor = false;
-            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
+            this.btnPayCard.BackColor = System.Drawing.Color.Blue;
+            this.btnPayCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPayCard.Font = new System.Drawing.Font("맑은 고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnPayCard.ForeColor = System.Drawing.Color.White;
+            this.btnPayCard.Location = new System.Drawing.Point(793, 1443);
+            this.btnPayCard.Name = "btnPayCard";
+            this.btnPayCard.Size = new System.Drawing.Size(244, 161);
+            this.btnPayCard.TabIndex = 65;
+            this.btnPayCard.TabStop = false;
+            this.btnPayCard.Text = "카드결제";
+            this.btnPayCard.UseVisualStyleBackColor = false;
+            this.btnPayCard.Click += new System.EventHandler(this.btnPayCard_Click);
             // 
             // lblAmountTitle
             // 
@@ -392,62 +393,6 @@
             this.lblAmount.TabIndex = 67;
             this.lblAmount.Text = "_";
             this.lblAmount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // btnJP
-            // 
-            this.btnJP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnJP.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.btnJP.Image = ((System.Drawing.Image)(resources.GetObject("btnJP.Image")));
-            this.btnJP.Location = new System.Drawing.Point(203, 5);
-            this.btnJP.Margin = new System.Windows.Forms.Padding(0);
-            this.btnJP.Name = "btnJP";
-            this.btnJP.Size = new System.Drawing.Size(61, 41);
-            this.btnJP.TabIndex = 0;
-            this.btnJP.TabStop = false;
-            this.btnJP.UseVisualStyleBackColor = true;
-            this.btnJP.Click += new System.EventHandler(this.btnJP_Click);
-            // 
-            // btnCH
-            // 
-            this.btnCH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCH.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.btnCH.Image = ((System.Drawing.Image)(resources.GetObject("btnCH.Image")));
-            this.btnCH.Location = new System.Drawing.Point(137, 5);
-            this.btnCH.Margin = new System.Windows.Forms.Padding(0);
-            this.btnCH.Name = "btnCH";
-            this.btnCH.Size = new System.Drawing.Size(61, 41);
-            this.btnCH.TabIndex = 0;
-            this.btnCH.TabStop = false;
-            this.btnCH.UseVisualStyleBackColor = true;
-            this.btnCH.Click += new System.EventHandler(this.btnCH_Click);
-            // 
-            // btnEN
-            // 
-            this.btnEN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEN.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.btnEN.Image = ((System.Drawing.Image)(resources.GetObject("btnEN.Image")));
-            this.btnEN.Location = new System.Drawing.Point(71, 5);
-            this.btnEN.Margin = new System.Windows.Forms.Padding(0);
-            this.btnEN.Name = "btnEN";
-            this.btnEN.Size = new System.Drawing.Size(61, 41);
-            this.btnEN.TabIndex = 0;
-            this.btnEN.TabStop = false;
-            this.btnEN.UseVisualStyleBackColor = true;
-            this.btnEN.Click += new System.EventHandler(this.btnEN_Click);
-            // 
-            // btnKR
-            // 
-            this.btnKR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKR.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.btnKR.Image = ((System.Drawing.Image)(resources.GetObject("btnKR.Image")));
-            this.btnKR.Location = new System.Drawing.Point(5, 5);
-            this.btnKR.Margin = new System.Windows.Forms.Padding(0);
-            this.btnKR.Name = "btnKR";
-            this.btnKR.Size = new System.Drawing.Size(61, 41);
-            this.btnKR.TabIndex = 0;
-            this.btnKR.TabStop = false;
-            this.btnKR.UseVisualStyleBackColor = true;
-            this.btnKR.Click += new System.EventHandler(this.btnKR_Click);
             // 
             // lvwOrderItem
             // 
@@ -538,16 +483,6 @@
             this.lv_cnt_del.Text = "x";
             this.lv_cnt_del.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // pbLogo
-            // 
-            this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
-            this.pbLogo.Location = new System.Drawing.Point(0, 0);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(1080, 120);
-            this.pbLogo.TabIndex = 70;
-            this.pbLogo.TabStop = false;
-            this.pbLogo.Click += new System.EventHandler(this.pbLogo_Click);
-            // 
             // GoodsLayoutPanel
             // 
             this.GoodsLayoutPanel.ColumnCount = 4;
@@ -608,15 +543,6 @@
             this.lblNotice11.Text = "계절메뉴-봄 가을 겨울";
             this.lblNotice11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pbBadges11
-            // 
-            this.pbBadges11.Image = ((System.Drawing.Image)(resources.GetObject("pbBadges11.Image")));
-            this.pbBadges11.Location = new System.Drawing.Point(180, 5);
-            this.pbBadges11.Name = "pbBadges11";
-            this.pbBadges11.Size = new System.Drawing.Size(56, 24);
-            this.pbBadges11.TabIndex = 75;
-            this.pbBadges11.TabStop = false;
-            // 
             // lblGoodsAmt11
             // 
             this.lblGoodsAmt11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -640,16 +566,6 @@
             this.lblGoodsName11.Size = new System.Drawing.Size(234, 33);
             this.lblGoodsName11.TabIndex = 1;
             this.lblGoodsName11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pbGoods11
-            // 
-            this.pbGoods11.Location = new System.Drawing.Point(0, 0);
-            this.pbGoods11.Margin = new System.Windows.Forms.Padding(0);
-            this.pbGoods11.Name = "pbGoods11";
-            this.pbGoods11.Size = new System.Drawing.Size(240, 240);
-            this.pbGoods11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbGoods11.TabIndex = 0;
-            this.pbGoods11.TabStop = false;
             // 
             // p6
             // 
@@ -696,15 +612,6 @@
             this.lblNotice6.Text = "계절메뉴-봄 가을 겨울";
             this.lblNotice6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pbBadges6
-            // 
-            this.pbBadges6.Image = ((System.Drawing.Image)(resources.GetObject("pbBadges6.Image")));
-            this.pbBadges6.Location = new System.Drawing.Point(180, 5);
-            this.pbBadges6.Name = "pbBadges6";
-            this.pbBadges6.Size = new System.Drawing.Size(56, 24);
-            this.pbBadges6.TabIndex = 75;
-            this.pbBadges6.TabStop = false;
-            // 
             // lblGoodsAmt6
             // 
             this.lblGoodsAmt6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -728,16 +635,6 @@
             this.lblGoodsName6.Size = new System.Drawing.Size(234, 33);
             this.lblGoodsName6.TabIndex = 1;
             this.lblGoodsName6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pbGoods6
-            // 
-            this.pbGoods6.Location = new System.Drawing.Point(0, 0);
-            this.pbGoods6.Margin = new System.Windows.Forms.Padding(0);
-            this.pbGoods6.Name = "pbGoods6";
-            this.pbGoods6.Size = new System.Drawing.Size(240, 240);
-            this.pbGoods6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbGoods6.TabIndex = 0;
-            this.pbGoods6.TabStop = false;
             // 
             // p2
             // 
@@ -770,15 +667,6 @@
             this.lblNotice2.Text = "계절메뉴-봄 가을 겨울";
             this.lblNotice2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pbBadges2
-            // 
-            this.pbBadges2.Image = ((System.Drawing.Image)(resources.GetObject("pbBadges2.Image")));
-            this.pbBadges2.Location = new System.Drawing.Point(180, 5);
-            this.pbBadges2.Name = "pbBadges2";
-            this.pbBadges2.Size = new System.Drawing.Size(56, 24);
-            this.pbBadges2.TabIndex = 75;
-            this.pbBadges2.TabStop = false;
-            // 
             // lblGoodsAmt2
             // 
             this.lblGoodsAmt2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -802,16 +690,6 @@
             this.lblGoodsName2.Size = new System.Drawing.Size(234, 33);
             this.lblGoodsName2.TabIndex = 1;
             this.lblGoodsName2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pbGoods2
-            // 
-            this.pbGoods2.Location = new System.Drawing.Point(0, 0);
-            this.pbGoods2.Margin = new System.Windows.Forms.Padding(0);
-            this.pbGoods2.Name = "pbGoods2";
-            this.pbGoods2.Size = new System.Drawing.Size(240, 240);
-            this.pbGoods2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbGoods2.TabIndex = 0;
-            this.pbGoods2.TabStop = false;
             // 
             // p1
             // 
@@ -844,15 +722,6 @@
             this.lblNotice1.Text = "계절메뉴-봄 가을 겨울";
             this.lblNotice1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pbBadges1
-            // 
-            this.pbBadges1.Image = ((System.Drawing.Image)(resources.GetObject("pbBadges1.Image")));
-            this.pbBadges1.Location = new System.Drawing.Point(180, 5);
-            this.pbBadges1.Name = "pbBadges1";
-            this.pbBadges1.Size = new System.Drawing.Size(56, 24);
-            this.pbBadges1.TabIndex = 74;
-            this.pbBadges1.TabStop = false;
-            // 
             // lblGoodsAmt1
             // 
             this.lblGoodsAmt1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -876,16 +745,6 @@
             this.lblGoodsName1.Size = new System.Drawing.Size(234, 33);
             this.lblGoodsName1.TabIndex = 1;
             this.lblGoodsName1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pbGoods1
-            // 
-            this.pbGoods1.Location = new System.Drawing.Point(0, 0);
-            this.pbGoods1.Margin = new System.Windows.Forms.Padding(0);
-            this.pbGoods1.Name = "pbGoods1";
-            this.pbGoods1.Size = new System.Drawing.Size(240, 240);
-            this.pbGoods1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbGoods1.TabIndex = 0;
-            this.pbGoods1.TabStop = false;
             // 
             // p3
             // 
@@ -918,15 +777,6 @@
             this.lblNotice3.Text = "계절메뉴-봄 가을 겨울";
             this.lblNotice3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pbBadges3
-            // 
-            this.pbBadges3.Image = ((System.Drawing.Image)(resources.GetObject("pbBadges3.Image")));
-            this.pbBadges3.Location = new System.Drawing.Point(180, 5);
-            this.pbBadges3.Name = "pbBadges3";
-            this.pbBadges3.Size = new System.Drawing.Size(56, 24);
-            this.pbBadges3.TabIndex = 75;
-            this.pbBadges3.TabStop = false;
-            // 
             // lblGoodsAmt3
             // 
             this.lblGoodsAmt3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -950,16 +800,6 @@
             this.lblGoodsName3.Size = new System.Drawing.Size(234, 33);
             this.lblGoodsName3.TabIndex = 1;
             this.lblGoodsName3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pbGoods3
-            // 
-            this.pbGoods3.Location = new System.Drawing.Point(0, 0);
-            this.pbGoods3.Margin = new System.Windows.Forms.Padding(0);
-            this.pbGoods3.Name = "pbGoods3";
-            this.pbGoods3.Size = new System.Drawing.Size(240, 240);
-            this.pbGoods3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbGoods3.TabIndex = 0;
-            this.pbGoods3.TabStop = false;
             // 
             // p8
             // 
@@ -992,15 +832,6 @@
             this.lblNotice8.Text = "계절메뉴-봄 가을 겨울";
             this.lblNotice8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pbBadges8
-            // 
-            this.pbBadges8.Image = ((System.Drawing.Image)(resources.GetObject("pbBadges8.Image")));
-            this.pbBadges8.Location = new System.Drawing.Point(180, 5);
-            this.pbBadges8.Name = "pbBadges8";
-            this.pbBadges8.Size = new System.Drawing.Size(56, 24);
-            this.pbBadges8.TabIndex = 75;
-            this.pbBadges8.TabStop = false;
-            // 
             // lblGoodsAmt8
             // 
             this.lblGoodsAmt8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1024,16 +855,6 @@
             this.lblGoodsName8.Size = new System.Drawing.Size(234, 33);
             this.lblGoodsName8.TabIndex = 1;
             this.lblGoodsName8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pbGoods8
-            // 
-            this.pbGoods8.Location = new System.Drawing.Point(0, 0);
-            this.pbGoods8.Margin = new System.Windows.Forms.Padding(0);
-            this.pbGoods8.Name = "pbGoods8";
-            this.pbGoods8.Size = new System.Drawing.Size(240, 240);
-            this.pbGoods8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbGoods8.TabIndex = 0;
-            this.pbGoods8.TabStop = false;
             // 
             // p9
             // 
@@ -1066,15 +887,6 @@
             this.lblNotice9.Text = "계절메뉴-봄 가을 겨울";
             this.lblNotice9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pbBadges9
-            // 
-            this.pbBadges9.Image = ((System.Drawing.Image)(resources.GetObject("pbBadges9.Image")));
-            this.pbBadges9.Location = new System.Drawing.Point(180, 5);
-            this.pbBadges9.Name = "pbBadges9";
-            this.pbBadges9.Size = new System.Drawing.Size(56, 24);
-            this.pbBadges9.TabIndex = 75;
-            this.pbBadges9.TabStop = false;
-            // 
             // lblGoodsAmt9
             // 
             this.lblGoodsAmt9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1098,16 +910,6 @@
             this.lblGoodsName9.Size = new System.Drawing.Size(234, 33);
             this.lblGoodsName9.TabIndex = 1;
             this.lblGoodsName9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pbGoods9
-            // 
-            this.pbGoods9.Location = new System.Drawing.Point(0, 0);
-            this.pbGoods9.Margin = new System.Windows.Forms.Padding(0);
-            this.pbGoods9.Name = "pbGoods9";
-            this.pbGoods9.Size = new System.Drawing.Size(240, 240);
-            this.pbGoods9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbGoods9.TabIndex = 0;
-            this.pbGoods9.TabStop = false;
             // 
             // p10
             // 
@@ -1140,15 +942,6 @@
             this.lblNotice10.Text = "계절메뉴-봄 가을 겨울";
             this.lblNotice10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pbBadges10
-            // 
-            this.pbBadges10.Image = ((System.Drawing.Image)(resources.GetObject("pbBadges10.Image")));
-            this.pbBadges10.Location = new System.Drawing.Point(180, 5);
-            this.pbBadges10.Name = "pbBadges10";
-            this.pbBadges10.Size = new System.Drawing.Size(56, 24);
-            this.pbBadges10.TabIndex = 75;
-            this.pbBadges10.TabStop = false;
-            // 
             // lblGoodsAmt10
             // 
             this.lblGoodsAmt10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1172,16 +965,6 @@
             this.lblGoodsName10.Size = new System.Drawing.Size(234, 33);
             this.lblGoodsName10.TabIndex = 1;
             this.lblGoodsName10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pbGoods10
-            // 
-            this.pbGoods10.Location = new System.Drawing.Point(0, 0);
-            this.pbGoods10.Margin = new System.Windows.Forms.Padding(0);
-            this.pbGoods10.Name = "pbGoods10";
-            this.pbGoods10.Size = new System.Drawing.Size(240, 240);
-            this.pbGoods10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbGoods10.TabIndex = 0;
-            this.pbGoods10.TabStop = false;
             // 
             // p0
             // 
@@ -1214,15 +997,6 @@
             this.lblNotice0.Text = "계절메뉴-봄 가을 겨울";
             this.lblNotice0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pbBadges0
-            // 
-            this.pbBadges0.Image = global::theposw2.Properties.Resources.badges_pick3;
-            this.pbBadges0.Location = new System.Drawing.Point(180, 5);
-            this.pbBadges0.Name = "pbBadges0";
-            this.pbBadges0.Size = new System.Drawing.Size(56, 24);
-            this.pbBadges0.TabIndex = 73;
-            this.pbBadges0.TabStop = false;
-            // 
             // lblGoodsAmt0
             // 
             this.lblGoodsAmt0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1246,16 +1020,6 @@
             this.lblGoodsName0.Size = new System.Drawing.Size(234, 33);
             this.lblGoodsName0.TabIndex = 1;
             this.lblGoodsName0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pbGoods0
-            // 
-            this.pbGoods0.Location = new System.Drawing.Point(0, 0);
-            this.pbGoods0.Margin = new System.Windows.Forms.Padding(0);
-            this.pbGoods0.Name = "pbGoods0";
-            this.pbGoods0.Size = new System.Drawing.Size(240, 240);
-            this.pbGoods0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbGoods0.TabIndex = 0;
-            this.pbGoods0.TabStop = false;
             // 
             // p4
             // 
@@ -1288,15 +1052,6 @@
             this.lblNotice4.Text = "계절메뉴-봄 가을 겨울";
             this.lblNotice4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pbBadges4
-            // 
-            this.pbBadges4.Image = ((System.Drawing.Image)(resources.GetObject("pbBadges4.Image")));
-            this.pbBadges4.Location = new System.Drawing.Point(180, 5);
-            this.pbBadges4.Name = "pbBadges4";
-            this.pbBadges4.Size = new System.Drawing.Size(56, 24);
-            this.pbBadges4.TabIndex = 75;
-            this.pbBadges4.TabStop = false;
-            // 
             // lblGoodsAmt4
             // 
             this.lblGoodsAmt4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1320,16 +1075,6 @@
             this.lblGoodsName4.Size = new System.Drawing.Size(234, 33);
             this.lblGoodsName4.TabIndex = 1;
             this.lblGoodsName4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pbGoods4
-            // 
-            this.pbGoods4.Location = new System.Drawing.Point(0, 0);
-            this.pbGoods4.Margin = new System.Windows.Forms.Padding(0);
-            this.pbGoods4.Name = "pbGoods4";
-            this.pbGoods4.Size = new System.Drawing.Size(240, 240);
-            this.pbGoods4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbGoods4.TabIndex = 0;
-            this.pbGoods4.TabStop = false;
             // 
             // p5
             // 
@@ -1362,15 +1107,6 @@
             this.lblNotice5.Text = "계절메뉴-봄 가을 겨울";
             this.lblNotice5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pbBadges5
-            // 
-            this.pbBadges5.Image = ((System.Drawing.Image)(resources.GetObject("pbBadges5.Image")));
-            this.pbBadges5.Location = new System.Drawing.Point(180, 5);
-            this.pbBadges5.Name = "pbBadges5";
-            this.pbBadges5.Size = new System.Drawing.Size(56, 24);
-            this.pbBadges5.TabIndex = 75;
-            this.pbBadges5.TabStop = false;
-            // 
             // lblGoodsAmt5
             // 
             this.lblGoodsAmt5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1394,16 +1130,6 @@
             this.lblGoodsName5.Size = new System.Drawing.Size(234, 33);
             this.lblGoodsName5.TabIndex = 1;
             this.lblGoodsName5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pbGoods5
-            // 
-            this.pbGoods5.Location = new System.Drawing.Point(0, 0);
-            this.pbGoods5.Margin = new System.Windows.Forms.Padding(0);
-            this.pbGoods5.Name = "pbGoods5";
-            this.pbGoods5.Size = new System.Drawing.Size(240, 240);
-            this.pbGoods5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbGoods5.TabIndex = 0;
-            this.pbGoods5.TabStop = false;
             // 
             // p7
             // 
@@ -1436,15 +1162,6 @@
             this.lblNotice7.Text = "계절메뉴-봄 가을 겨울";
             this.lblNotice7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pbBadges7
-            // 
-            this.pbBadges7.Image = ((System.Drawing.Image)(resources.GetObject("pbBadges7.Image")));
-            this.pbBadges7.Location = new System.Drawing.Point(180, 5);
-            this.pbBadges7.Name = "pbBadges7";
-            this.pbBadges7.Size = new System.Drawing.Size(56, 24);
-            this.pbBadges7.TabIndex = 75;
-            this.pbBadges7.TabStop = false;
-            // 
             // lblGoodsAmt7
             // 
             this.lblGoodsAmt7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1469,16 +1186,6 @@
             this.lblGoodsName7.TabIndex = 1;
             this.lblGoodsName7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pbGoods7
-            // 
-            this.pbGoods7.Location = new System.Drawing.Point(0, 0);
-            this.pbGoods7.Margin = new System.Windows.Forms.Padding(0);
-            this.pbGoods7.Name = "pbGoods7";
-            this.pbGoods7.Size = new System.Drawing.Size(240, 240);
-            this.pbGoods7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbGoods7.TabIndex = 0;
-            this.pbGoods7.TabStop = false;
-            // 
             // panelLang
             // 
             this.panelLang.BackColor = System.Drawing.Color.Transparent;
@@ -1502,6 +1209,25 @@
             this.panelWelcome.TabIndex = 72;
             this.panelWelcome.Visible = false;
             // 
+            // timerWelcome
+            // 
+            this.timerWelcome.Tick += new System.EventHandler(this.timerWelcome_Tick);
+            // 
+            // btnPayKakao
+            // 
+            this.btnPayKakao.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnPayKakao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPayKakao.Font = new System.Drawing.Font("맑은 고딕", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnPayKakao.ForeColor = System.Drawing.Color.White;
+            this.btnPayKakao.Location = new System.Drawing.Point(793, 1620);
+            this.btnPayKakao.Name = "btnPayKakao";
+            this.btnPayKakao.Size = new System.Drawing.Size(244, 101);
+            this.btnPayKakao.TabIndex = 73;
+            this.btnPayKakao.TabStop = false;
+            this.btnPayKakao.Text = "카카오페이";
+            this.btnPayKakao.UseVisualStyleBackColor = false;
+            this.btnPayKakao.Click += new System.EventHandler(this.btnPayKakao_Click);
+            // 
             // picSlide
             // 
             this.picSlide.Image = ((System.Drawing.Image)(resources.GetObject("picSlide.Image")));
@@ -1512,21 +1238,312 @@
             this.picSlide.TabStop = false;
             this.picSlide.Click += new System.EventHandler(this.picSlide_Click);
             // 
-            // timerWelcome
+            // btnKR
             // 
-            this.timerWelcome.Tick += new System.EventHandler(this.timerWelcome_Tick);
+            this.btnKR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKR.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnKR.Image = ((System.Drawing.Image)(resources.GetObject("btnKR.Image")));
+            this.btnKR.Location = new System.Drawing.Point(5, 5);
+            this.btnKR.Margin = new System.Windows.Forms.Padding(0);
+            this.btnKR.Name = "btnKR";
+            this.btnKR.Size = new System.Drawing.Size(61, 41);
+            this.btnKR.TabIndex = 0;
+            this.btnKR.TabStop = false;
+            this.btnKR.UseVisualStyleBackColor = true;
+            this.btnKR.Click += new System.EventHandler(this.btnKR_Click);
+            // 
+            // btnJP
+            // 
+            this.btnJP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnJP.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnJP.Image = ((System.Drawing.Image)(resources.GetObject("btnJP.Image")));
+            this.btnJP.Location = new System.Drawing.Point(203, 5);
+            this.btnJP.Margin = new System.Windows.Forms.Padding(0);
+            this.btnJP.Name = "btnJP";
+            this.btnJP.Size = new System.Drawing.Size(61, 41);
+            this.btnJP.TabIndex = 0;
+            this.btnJP.TabStop = false;
+            this.btnJP.UseVisualStyleBackColor = true;
+            this.btnJP.Click += new System.EventHandler(this.btnJP_Click);
+            // 
+            // btnEN
+            // 
+            this.btnEN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEN.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnEN.Image = ((System.Drawing.Image)(resources.GetObject("btnEN.Image")));
+            this.btnEN.Location = new System.Drawing.Point(71, 5);
+            this.btnEN.Margin = new System.Windows.Forms.Padding(0);
+            this.btnEN.Name = "btnEN";
+            this.btnEN.Size = new System.Drawing.Size(61, 41);
+            this.btnEN.TabIndex = 0;
+            this.btnEN.TabStop = false;
+            this.btnEN.UseVisualStyleBackColor = true;
+            this.btnEN.Click += new System.EventHandler(this.btnEN_Click);
+            // 
+            // btnCH
+            // 
+            this.btnCH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCH.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnCH.Image = ((System.Drawing.Image)(resources.GetObject("btnCH.Image")));
+            this.btnCH.Location = new System.Drawing.Point(137, 5);
+            this.btnCH.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCH.Name = "btnCH";
+            this.btnCH.Size = new System.Drawing.Size(61, 41);
+            this.btnCH.TabIndex = 0;
+            this.btnCH.TabStop = false;
+            this.btnCH.UseVisualStyleBackColor = true;
+            this.btnCH.Click += new System.EventHandler(this.btnCH_Click);
+            // 
+            // pbBadges11
+            // 
+            this.pbBadges11.Image = ((System.Drawing.Image)(resources.GetObject("pbBadges11.Image")));
+            this.pbBadges11.Location = new System.Drawing.Point(180, 5);
+            this.pbBadges11.Name = "pbBadges11";
+            this.pbBadges11.Size = new System.Drawing.Size(56, 24);
+            this.pbBadges11.TabIndex = 75;
+            this.pbBadges11.TabStop = false;
+            // 
+            // pbGoods11
+            // 
+            this.pbGoods11.Location = new System.Drawing.Point(0, 0);
+            this.pbGoods11.Margin = new System.Windows.Forms.Padding(0);
+            this.pbGoods11.Name = "pbGoods11";
+            this.pbGoods11.Size = new System.Drawing.Size(240, 240);
+            this.pbGoods11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbGoods11.TabIndex = 0;
+            this.pbGoods11.TabStop = false;
+            // 
+            // pbBadges6
+            // 
+            this.pbBadges6.Image = ((System.Drawing.Image)(resources.GetObject("pbBadges6.Image")));
+            this.pbBadges6.Location = new System.Drawing.Point(180, 5);
+            this.pbBadges6.Name = "pbBadges6";
+            this.pbBadges6.Size = new System.Drawing.Size(56, 24);
+            this.pbBadges6.TabIndex = 75;
+            this.pbBadges6.TabStop = false;
+            // 
+            // pbGoods6
+            // 
+            this.pbGoods6.Location = new System.Drawing.Point(0, 0);
+            this.pbGoods6.Margin = new System.Windows.Forms.Padding(0);
+            this.pbGoods6.Name = "pbGoods6";
+            this.pbGoods6.Size = new System.Drawing.Size(240, 240);
+            this.pbGoods6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbGoods6.TabIndex = 0;
+            this.pbGoods6.TabStop = false;
+            // 
+            // pbBadges2
+            // 
+            this.pbBadges2.Image = ((System.Drawing.Image)(resources.GetObject("pbBadges2.Image")));
+            this.pbBadges2.Location = new System.Drawing.Point(180, 5);
+            this.pbBadges2.Name = "pbBadges2";
+            this.pbBadges2.Size = new System.Drawing.Size(56, 24);
+            this.pbBadges2.TabIndex = 75;
+            this.pbBadges2.TabStop = false;
+            // 
+            // pbGoods2
+            // 
+            this.pbGoods2.Location = new System.Drawing.Point(0, 0);
+            this.pbGoods2.Margin = new System.Windows.Forms.Padding(0);
+            this.pbGoods2.Name = "pbGoods2";
+            this.pbGoods2.Size = new System.Drawing.Size(240, 240);
+            this.pbGoods2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbGoods2.TabIndex = 0;
+            this.pbGoods2.TabStop = false;
+            // 
+            // pbBadges1
+            // 
+            this.pbBadges1.Image = ((System.Drawing.Image)(resources.GetObject("pbBadges1.Image")));
+            this.pbBadges1.Location = new System.Drawing.Point(180, 5);
+            this.pbBadges1.Name = "pbBadges1";
+            this.pbBadges1.Size = new System.Drawing.Size(56, 24);
+            this.pbBadges1.TabIndex = 74;
+            this.pbBadges1.TabStop = false;
+            // 
+            // pbGoods1
+            // 
+            this.pbGoods1.Location = new System.Drawing.Point(0, 0);
+            this.pbGoods1.Margin = new System.Windows.Forms.Padding(0);
+            this.pbGoods1.Name = "pbGoods1";
+            this.pbGoods1.Size = new System.Drawing.Size(240, 240);
+            this.pbGoods1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbGoods1.TabIndex = 0;
+            this.pbGoods1.TabStop = false;
+            // 
+            // pbBadges3
+            // 
+            this.pbBadges3.Image = ((System.Drawing.Image)(resources.GetObject("pbBadges3.Image")));
+            this.pbBadges3.Location = new System.Drawing.Point(180, 5);
+            this.pbBadges3.Name = "pbBadges3";
+            this.pbBadges3.Size = new System.Drawing.Size(56, 24);
+            this.pbBadges3.TabIndex = 75;
+            this.pbBadges3.TabStop = false;
+            // 
+            // pbGoods3
+            // 
+            this.pbGoods3.Location = new System.Drawing.Point(0, 0);
+            this.pbGoods3.Margin = new System.Windows.Forms.Padding(0);
+            this.pbGoods3.Name = "pbGoods3";
+            this.pbGoods3.Size = new System.Drawing.Size(240, 240);
+            this.pbGoods3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbGoods3.TabIndex = 0;
+            this.pbGoods3.TabStop = false;
+            // 
+            // pbBadges8
+            // 
+            this.pbBadges8.Image = ((System.Drawing.Image)(resources.GetObject("pbBadges8.Image")));
+            this.pbBadges8.Location = new System.Drawing.Point(180, 5);
+            this.pbBadges8.Name = "pbBadges8";
+            this.pbBadges8.Size = new System.Drawing.Size(56, 24);
+            this.pbBadges8.TabIndex = 75;
+            this.pbBadges8.TabStop = false;
+            // 
+            // pbGoods8
+            // 
+            this.pbGoods8.Location = new System.Drawing.Point(0, 0);
+            this.pbGoods8.Margin = new System.Windows.Forms.Padding(0);
+            this.pbGoods8.Name = "pbGoods8";
+            this.pbGoods8.Size = new System.Drawing.Size(240, 240);
+            this.pbGoods8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbGoods8.TabIndex = 0;
+            this.pbGoods8.TabStop = false;
+            // 
+            // pbBadges9
+            // 
+            this.pbBadges9.Image = ((System.Drawing.Image)(resources.GetObject("pbBadges9.Image")));
+            this.pbBadges9.Location = new System.Drawing.Point(180, 5);
+            this.pbBadges9.Name = "pbBadges9";
+            this.pbBadges9.Size = new System.Drawing.Size(56, 24);
+            this.pbBadges9.TabIndex = 75;
+            this.pbBadges9.TabStop = false;
+            // 
+            // pbGoods9
+            // 
+            this.pbGoods9.Location = new System.Drawing.Point(0, 0);
+            this.pbGoods9.Margin = new System.Windows.Forms.Padding(0);
+            this.pbGoods9.Name = "pbGoods9";
+            this.pbGoods9.Size = new System.Drawing.Size(240, 240);
+            this.pbGoods9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbGoods9.TabIndex = 0;
+            this.pbGoods9.TabStop = false;
+            // 
+            // pbBadges10
+            // 
+            this.pbBadges10.Image = ((System.Drawing.Image)(resources.GetObject("pbBadges10.Image")));
+            this.pbBadges10.Location = new System.Drawing.Point(180, 5);
+            this.pbBadges10.Name = "pbBadges10";
+            this.pbBadges10.Size = new System.Drawing.Size(56, 24);
+            this.pbBadges10.TabIndex = 75;
+            this.pbBadges10.TabStop = false;
+            // 
+            // pbGoods10
+            // 
+            this.pbGoods10.Location = new System.Drawing.Point(0, 0);
+            this.pbGoods10.Margin = new System.Windows.Forms.Padding(0);
+            this.pbGoods10.Name = "pbGoods10";
+            this.pbGoods10.Size = new System.Drawing.Size(240, 240);
+            this.pbGoods10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbGoods10.TabIndex = 0;
+            this.pbGoods10.TabStop = false;
+            // 
+            // pbBadges0
+            // 
+            this.pbBadges0.Image = global::theposw2.Properties.Resources.badges_pick3;
+            this.pbBadges0.Location = new System.Drawing.Point(180, 5);
+            this.pbBadges0.Name = "pbBadges0";
+            this.pbBadges0.Size = new System.Drawing.Size(56, 24);
+            this.pbBadges0.TabIndex = 73;
+            this.pbBadges0.TabStop = false;
+            // 
+            // pbGoods0
+            // 
+            this.pbGoods0.Location = new System.Drawing.Point(0, 0);
+            this.pbGoods0.Margin = new System.Windows.Forms.Padding(0);
+            this.pbGoods0.Name = "pbGoods0";
+            this.pbGoods0.Size = new System.Drawing.Size(240, 240);
+            this.pbGoods0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbGoods0.TabIndex = 0;
+            this.pbGoods0.TabStop = false;
+            // 
+            // pbBadges4
+            // 
+            this.pbBadges4.Image = ((System.Drawing.Image)(resources.GetObject("pbBadges4.Image")));
+            this.pbBadges4.Location = new System.Drawing.Point(180, 5);
+            this.pbBadges4.Name = "pbBadges4";
+            this.pbBadges4.Size = new System.Drawing.Size(56, 24);
+            this.pbBadges4.TabIndex = 75;
+            this.pbBadges4.TabStop = false;
+            // 
+            // pbGoods4
+            // 
+            this.pbGoods4.Location = new System.Drawing.Point(0, 0);
+            this.pbGoods4.Margin = new System.Windows.Forms.Padding(0);
+            this.pbGoods4.Name = "pbGoods4";
+            this.pbGoods4.Size = new System.Drawing.Size(240, 240);
+            this.pbGoods4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbGoods4.TabIndex = 0;
+            this.pbGoods4.TabStop = false;
+            // 
+            // pbBadges5
+            // 
+            this.pbBadges5.Image = ((System.Drawing.Image)(resources.GetObject("pbBadges5.Image")));
+            this.pbBadges5.Location = new System.Drawing.Point(180, 5);
+            this.pbBadges5.Name = "pbBadges5";
+            this.pbBadges5.Size = new System.Drawing.Size(56, 24);
+            this.pbBadges5.TabIndex = 75;
+            this.pbBadges5.TabStop = false;
+            // 
+            // pbGoods5
+            // 
+            this.pbGoods5.Location = new System.Drawing.Point(0, 0);
+            this.pbGoods5.Margin = new System.Windows.Forms.Padding(0);
+            this.pbGoods5.Name = "pbGoods5";
+            this.pbGoods5.Size = new System.Drawing.Size(240, 240);
+            this.pbGoods5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbGoods5.TabIndex = 0;
+            this.pbGoods5.TabStop = false;
+            // 
+            // pbBadges7
+            // 
+            this.pbBadges7.Image = ((System.Drawing.Image)(resources.GetObject("pbBadges7.Image")));
+            this.pbBadges7.Location = new System.Drawing.Point(180, 5);
+            this.pbBadges7.Name = "pbBadges7";
+            this.pbBadges7.Size = new System.Drawing.Size(56, 24);
+            this.pbBadges7.TabIndex = 75;
+            this.pbBadges7.TabStop = false;
+            // 
+            // pbGoods7
+            // 
+            this.pbGoods7.Location = new System.Drawing.Point(0, 0);
+            this.pbGoods7.Margin = new System.Windows.Forms.Padding(0);
+            this.pbGoods7.Name = "pbGoods7";
+            this.pbGoods7.Size = new System.Drawing.Size(240, 240);
+            this.pbGoods7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbGoods7.TabIndex = 0;
+            this.pbGoods7.TabStop = false;
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
+            this.pbLogo.Location = new System.Drawing.Point(0, 0);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(1080, 120);
+            this.pbLogo.TabIndex = 70;
+            this.pbLogo.TabStop = false;
+            this.pbLogo.Click += new System.EventHandler(this.pbLogo_Click);
             // 
             // frmSales
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1080, 1920);
+            this.Controls.Add(this.btnPayKakao);
             this.Controls.Add(this.panelWelcome);
             this.Controls.Add(this.panelLang);
             this.Controls.Add(this.lvwOrderItem);
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.lblAmountTitle);
-            this.Controls.Add(this.btnPay);
+            this.Controls.Add(this.btnPayCard);
             this.Controls.Add(this.btnGoodsNext);
             this.Controls.Add(this.btnGoodsPrev);
             this.Controls.Add(this.tableLayoutPanelGoodsGroup);
@@ -1542,59 +1559,59 @@
             this.Text = "Form1";
             this.tableLayoutPanelGoodsGroup.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lvwOrderItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.GoodsLayoutPanel.ResumeLayout(false);
             this.p11.ResumeLayout(false);
             this.p11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBadges11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGoods11)).EndInit();
             this.p6.ResumeLayout(false);
             this.p6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBadges6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGoods6)).EndInit();
             this.p2.ResumeLayout(false);
             this.p2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBadges2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGoods2)).EndInit();
             this.p1.ResumeLayout(false);
             this.p1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBadges1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGoods1)).EndInit();
             this.p3.ResumeLayout(false);
             this.p3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBadges3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGoods3)).EndInit();
             this.p8.ResumeLayout(false);
             this.p8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBadges8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGoods8)).EndInit();
             this.p9.ResumeLayout(false);
             this.p9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBadges9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGoods9)).EndInit();
             this.p10.ResumeLayout(false);
             this.p10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBadges10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGoods10)).EndInit();
             this.p0.ResumeLayout(false);
             this.p0.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBadges0)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGoods0)).EndInit();
             this.p4.ResumeLayout(false);
             this.p4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBadges4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGoods4)).EndInit();
             this.p5.ResumeLayout(false);
             this.p5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBadges5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGoods5)).EndInit();
             this.p7.ResumeLayout(false);
             this.p7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBadges7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGoods7)).EndInit();
             this.panelLang.ResumeLayout(false);
             this.panelWelcome.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picSlide)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBadges11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGoods11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBadges6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGoods6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBadges2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGoods2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBadges1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGoods1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBadges3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGoods3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBadges8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGoods8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBadges9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGoods9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBadges10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGoods10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBadges0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGoods0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBadges4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGoods4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBadges5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGoods5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBadges7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGoods7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1605,7 +1622,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelGoodsGroup;
         private System.Windows.Forms.Button btnGoodsNext;
         private System.Windows.Forms.Button btnGoodsPrev;
-        private System.Windows.Forms.Button btnPay;
+        private System.Windows.Forms.Button btnPayCard;
         private System.Windows.Forms.Label lblAmountTitle;
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.Button btnJP;
@@ -1704,6 +1721,7 @@
         private System.Windows.Forms.Label lblNotice5;
         private System.Windows.Forms.Label lblNotice7;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnPayKakao;
     }
 }
 

@@ -25,7 +25,7 @@ namespace thepos2
             public String value;
             public String memo;
         }
-        Setup[] listSetup = new Setup[18];
+        Setup[] listSetup = new Setup[19];
 
 
         bool isAdd = false;
@@ -82,8 +82,11 @@ namespace thepos2
             // 티켓출력물 추가 텍스트
             setupItem.code = "TicketAddText"; setupItem.name = "티켓출력물 추가텍스트"; setupItem.value = ""; setupItem.memo = ""; listSetup[16] = setupItem;
 
+            // 티켓출력물 추가 텍스트
+            setupItem.code = "BillAddText"; setupItem.name = "영수증출력물 추가텍스트"; setupItem.value = ""; setupItem.memo = ""; listSetup[17] = setupItem;
+
             // 로그레벨 
-            setupItem.code = "AppLogLevel"; setupItem.name = "로그레벨"; setupItem.value = ""; setupItem.memo = ""; listSetup[17] = setupItem;
+            setupItem.code = "AppLogLevel"; setupItem.name = "로그레벨"; setupItem.value = ""; setupItem.memo = ""; listSetup[18] = setupItem;
 
             reload_setup_pos();
 
@@ -183,9 +186,7 @@ namespace thepos2
                 cbValue.Items.Clear();
                 cbValue.Items.Add("");
                 cbValue.Items.Add("POS");
-                cbValue.Items.Add("POS-Ticket");
                 cbValue.Items.Add("PC");
-                cbValue.Items.Add("PC-Ticket");
                 cbValue.Items.Add("KIOSK");
             }
             else if (code == listSetup[1].code)  // 모바일 교환권
@@ -278,14 +279,14 @@ namespace thepos2
                 cbValue.Items.Add("범용");
                 cbValue.Items.Add("인증전용");
             }
-            else if (code == listSetup[16].code)
+            else if (code == listSetup[16].code | code == listSetup[17].code)
             {
                 panelMultiText.Visible = true;
 
                 tbMultiValue.Text = lblValue.Text;
 
             }
-            else if (code == listSetup[17].code)
+            else if (code == listSetup[18].code)
             {
                 cbValue.Visible = true;
 
@@ -389,6 +390,7 @@ namespace thepos2
                 else if (lvwList.Items[i].Tag.ToString() == "CouponDisplayImage") mCouponDisplayImage = lvwList.Items[i].SubItems[1].Text;
 
                 else if (lvwList.Items[i].Tag.ToString() == "TicketAddText") mTicketAddText = lvwList.Items[i].SubItems[1].Text;
+                else if (lvwList.Items[i].Tag.ToString() == "BillAddText") mBillAddText = lvwList.Items[i].SubItems[1].Text;
 
                 else if (lvwList.Items[i].Tag.ToString() == "AppLogLevel")
                 {

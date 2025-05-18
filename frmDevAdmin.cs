@@ -42,8 +42,8 @@ namespace thepos2
                 if (mObj["resultCode"].ToString() == "200")
                 {
                     mSiteId = mObj["siteId"].ToString();
-                    mUserID = "";
-                    mUserName = "";
+                    mUserID = "dev2";
+                    mUserName = "devlogin";
                     mPosNo = mObj["posNo"].ToString();
 
                     //

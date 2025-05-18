@@ -188,35 +188,62 @@ namespace thepos2
 
         }
 
-        public int requestNiceCardCancel(PaymentCard pCardAuth, out PaymentCard pCardCancel)
+
+
+        public int requestNiceEasyAuth(int tAmount, int tFreeAmount, int tTaxAmount, int tTax, int tServiceAmt, String tBarcodeNo, out PaymentEasy pEasy)
         {
-            pCardCancel = pCardAuth;
+            PaymentEasy paymentEasy = new PaymentEasy();
+            pEasy = paymentEasy;
+
+
+            // 나이스는 리더기 스캐너에서 읽는다. 
+            // 다른밴은 확인후 개발해야한다.
+
+            if (tBarcodeNo == "")
+            {
+                byte[] hwType = System.Text.Encoding.GetEncoding(1252).GetBytes("1");
+                byte[] recv_barcode = new byte[2048];
+
+                int ret2 = REQ_BARCODE(hwType, recv_barcode);
+
+                if (ret2 == 1)
+                {
+                    //정상
+                    tBarcodeNo = Encoding.Default.GetString(recv_barcode).Trim('\0');
+                }
+                else
+                {
+                    mErrorMsg = "NICE VCAT 오류.";
+
+                    thepos_app_log(3, "paymentNice", "requestNiceEasyAuth()", mErrorMsg + "REQ_BARCODE() ret=" + ret2);
+
+                    return -1;
+                }
+
+            }
+
+
 
             string FS = ((char)28).ToString();
-            string Halbu = String.Format("{0:00}", pCardAuth.install);
             string SendData = "";
 
 
-            // 은련구분
-            if (pCardAuth.is_cup == "1'")
-            {
-                SendData = "0420" + FS + "UP" + FS + "C" + FS + pCardAuth.amount + FS + pCardAuth.tax + FS + pCardAuth.service_amount + FS + Halbu + FS + pCardAuth.auth_no + FS + pCardAuth.tran_date + FS + "" + FS + FS + FS + FS + "" + FS + FS + FS + FS + "해외은련취소요청" + FS;
-            }
-            else
-            {
-                SendData = "0420" + FS + "10" + FS + "C" + FS + pCardAuth.amount + FS + pCardAuth.tax + FS + pCardAuth.service_amount + FS + Halbu + FS + pCardAuth.auth_no + FS + pCardAuth.tran_date + FS + "" + FS + FS + FS + FS + "" + FS + FS + FS + FS + "신용취소" + FS;
-            }
+            //          SendData = "0200" + FS + "10" + FS + "C" + FS + tAmount + FS + tTax + FS + tServiceAmt + FS + Halbu + FS + "" + FS + "" + FS + "" + FS + FS + FS +              FS + "" +  FS + FS + FS +      FS + "신용승인" + FS;
+            SendData = "0300" + FS + "10" + FS + "L" + FS + tAmount + FS + tTax + FS + tServiceAmt + FS + "00" + FS + "" + FS + "" + FS + "" + FS + FS + FS + tBarcodeNo.Trim() + FS + FS + FS + FS + "" + FS + "" + FS + FS + "PRO" + FS + "" + FS + "" + FS + FS + FS + "" + FS;
 
 
 
             byte[] mSend = System.Text.Encoding.GetEncoding(1252).GetBytes(SendData);
             byte[] mRecv = new byte[2048];
 
-            int ret = NICEVCAT(mSend, mRecv);
+            int ret = NICEVCATB(mSend, mRecv);
 
             if (ret != 1)
             {
                 mErrorMsg = "NICE VCAT 오류.";
+
+                thepos_app_log(3, "paymentNice", "requestNiceEasyAuth()", mErrorMsg + "NICEVCATB() ret=" + ret);
+
                 return -1;
             }
 
@@ -233,13 +260,43 @@ namespace thepos2
             // 정상 응답
             if (ResCd == "0000")
             {
-                pCardCancel.tran_date = mNiceResponse.t승인일시;
+                //
+                paymentEasy.barcode_no = tBarcodeNo;
+                // 마스킹 카드번호
+                paymentEasy.card_no = mNiceResponse.t카드BIN;
+                // 거래번호
+                paymentEasy.tran_serial = mNiceResponse.t거래일련번호;
 
+                // 총거래 금액
+                paymentEasy.amount = int.Parse(mNiceResponse.t거래금액);
+
+                // 거래일시
+                paymentEasy.tran_date = mNiceResponse.t승인일시;
+                // 승인번호
+                paymentEasy.auth_no = mNiceResponse.t승인번호.Trim();
+
+
+                //? 발급사,매입사 코드 -> 공통관리코드로 변환 필요
+                // 매입사 코드
+                paymentEasy.acq_code = mNiceResponse.t매입사코드;
+                // 발급사 코드
+                paymentEasy.isu_code = mNiceResponse.t발급사코드;
+
+
+                // 발급사 명
+                paymentEasy.card_name = mNiceResponse.t발급사명;
+                // 가맹점 번호
+                paymentEasy.merchant_no = mNiceResponse.t가맹점번호;
+                // 기프트잔액
                 if (is_number(mNiceResponse.t잔액))
-                    pCardCancel.gift_change = int.Parse(mNiceResponse.t잔액);
+                    paymentEasy.gift_change = int.Parse(mNiceResponse.t잔액);
                 else
-                    pCardCancel.gift_change = 0;
+                    paymentEasy.gift_change = 0;
 
+                paymentEasy.pay_type2 = mNiceResponse.t기기번호;
+
+
+                pEasy = paymentEasy;
 
                 return 0;
             }
@@ -248,9 +305,8 @@ namespace thepos2
                 mErrorMsg = ResMag;
                 return -1;
             }
+
         }
-
-
 
 
         private NiceResponse parse_response(byte[] mRecv)

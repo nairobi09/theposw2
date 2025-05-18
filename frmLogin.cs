@@ -749,6 +749,7 @@ namespace thepos2
                             else if (arr[i]["setupCode"].ToString() == "CouponDisplayImage") mCouponDisplayImage = arr[i]["setupValue"].ToString();
 
                             else if (arr[i]["setupCode"].ToString() == "TicketAddText") mTicketAddText = arr[i]["setupValue"].ToString();
+                            else if (arr[i]["setupCode"].ToString() == "BillAddText") mBillAddText = arr[i]["setupValue"].ToString();
 
                             else if (arr[i]["setupCode"].ToString() == "AppLogLevel")
                             {

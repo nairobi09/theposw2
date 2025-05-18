@@ -114,9 +114,6 @@ namespace thepos2
             {
                 btnPayRequest.Text = "결제\r\n테스트(SKIP)";
             }
-
-
-
         }
 
         private void btnPayRequest_Click(object sender, EventArgs e)
@@ -162,17 +159,14 @@ namespace thepos2
 
 
             // 테스트모드에서는 그냥 PASS
-            if (mIsTestPayMode != "Test")
+            if (requestCardAuth(tAmount, tFreeAmount, tTaxAmount, tTax, tServiceAmt, install, is_cup, out mPaymentCard) != 0)
             {
-                if (requestCardAuth(tAmount, tFreeAmount, tTaxAmount, tTax, tServiceAmt, install, is_cup, out mPaymentCard) != 0)
-                {
-                    //
-                    thepos_app_log(3, this.Name, "requestCardAuth()", mErrorMsg);
+                //
+                thepos_app_log(3, this.Name, "requestCardAuth()", mErrorMsg);
 
-                    MessageBox.Show(mErrorMsg, "thepos");
+                MessageBox.Show(mErrorMsg, "thepos");
 
-                    return;
-                }
+                return;
             }
 
 

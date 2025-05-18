@@ -79,7 +79,7 @@
             this.lblTitle.Padding = new System.Windows.Forms.Padding(4);
             this.lblTitle.Size = new System.Drawing.Size(570, 30);
             this.lblTitle.TabIndex = 40;
-            this.lblTitle.Text = "결제방법을 선택해주세요";
+            this.lblTitle.Text = "카드결제";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
@@ -237,7 +237,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.Color.DimGray;
+            this.btnClose.BackColor = System.Drawing.Color.Gray;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -271,9 +271,9 @@
             this.panel4.Controls.Add(this.lblMethodTitle);
             this.panel4.Controls.Add(this.btnPayRequest);
             this.panel4.Controls.Add(this.panel1);
-            this.panel4.Location = new System.Drawing.Point(1, 30);
+            this.panel4.Location = new System.Drawing.Point(4, 31);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(568, 719);
+            this.panel4.Size = new System.Drawing.Size(562, 715);
             this.panel4.TabIndex = 73;
             // 
             // frmPayCard

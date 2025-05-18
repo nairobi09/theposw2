@@ -412,6 +412,46 @@ namespace thepos2
         }
         public static List<PaymentCard> mPaymentCards = new List<PaymentCard>();
 
+        public struct PaymentEasy
+        {
+            public String site_id;
+            public String biz_dt;  // yyyyMMdd
+            public string pos_no;
+            public String the_no;   // 결제단위
+            public String ref_no;   // 입장단위
+            public String pay_date;
+            public String pay_time;
+            public String pay_type;     // 결제구분 : 간편결제(ㄸ1)
+            public String tran_type;    // 승인 A 취소 C
+            public String pay_class;
+            public String ticket_no;
+            public int pay_seq;
+            public String tran_date;
+            public int amount;          // 결제금액 과세금액 면세금액 봉사료 세금
+            public int tax_amount;
+            public int tfree_amount;
+            public int service_amount;
+            public int tax;
+
+            public String install;      // 할부개월 00 03
+            public String auth_no;      // 승인번호
+            public String card_no;      // 카드번호
+            public String card_name;    // 카드종류
+            public String isu_code;     // 발급사코드
+            public String acq_code;     // 매입사코드
+            public String merchant_no;  // 가맹점번호
+            public String tran_serial;  // tran_serial -> 취소시 tid입력
+            public String sign_path;
+            public int gift_change;     // 기프트 잔액
+            public String is_cancel;    // 취소여부 : "" or "1"
+            public String van_code;
+
+            public String pay_type2;  // KKP
+
+            public String barcode_no;
+        }
+        public static List<PaymentEasy> mPaymentEasys = new List<PaymentEasy>();
+
 
         public struct PaymentCert
         {
@@ -537,7 +577,7 @@ namespace thepos2
         public static String mCouponMID = "";   // 
 
         public static String mTicketAddText = "";
-
+        public static String mBillAddText = "";
 
         //
         public static String mWaitingDisplay = "";  // 대기화면 사용여부

@@ -56,7 +56,7 @@
             // lblMsg
             // 
             this.lblMsg.BackColor = System.Drawing.Color.LightYellow;
-            this.lblMsg.Font = new System.Drawing.Font("맑은 고딕", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblMsg.Font = new System.Drawing.Font("맑은 고딕", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblMsg.Location = new System.Drawing.Point(33, 156);
             this.lblMsg.Name = "lblMsg";
             this.lblMsg.Size = new System.Drawing.Size(623, 136);

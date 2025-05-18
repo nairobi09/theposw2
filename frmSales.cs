@@ -24,6 +24,7 @@ using theposw2.Properties;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 using static thepos2.thepos;
+using theposw2;
 
 namespace thepos2
 {
@@ -775,20 +776,15 @@ namespace thepos2
                 //
                 timerWelcome.Stop();
 
-
                 frmCoupon1 fForm = new frmCoupon1();
                 fForm.ShowDialog();
 
                 //
                 timerWelcome.Start();
 
-
                 return;
             }
             
-
-
-
 
             //
             mOrderOptionItemList.Clear();
@@ -935,8 +931,10 @@ namespace thepos2
 
             for (int i = 0; i < mOrderItemList.Count; i++)
             {
-                if (code == mOrderItemList[i].goods_code & mOrderItemList[i].option_item_cnt == 0)
-                { return i; }
+                if (code == mOrderItemList[i].goods_code & mOrderItemList[i].orderOptionItemList.SequenceEqual(mOrderOptionItemList))
+                { 
+                    return i; 
+                }
             }
             return -1;
         }
@@ -1333,6 +1331,7 @@ namespace thepos2
                 parameters["orderTime"] = get_today_time();
                 parameters["cnt"] = mOrderItemList.Count + "";
                 parameters["isCancel"] = "";
+                parameters["userId"] = mUserID;
                 if (mRequestPost("orders", parameters))
                 {
                     if (mObj["resultCode"].ToString() == "200")
@@ -2216,6 +2215,21 @@ namespace thepos2
 
                 BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
                 BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
+
+
+                // 티켓 추가 텍스트                
+                if (mBillAddText != "")
+                {
+                    String strPrint = "------------------------------------------";
+                    BytesValue = PrintExtensions.AddBytes(BytesValue, Encoding.Default.GetBytes(strPrint));
+                    BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
+                    BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
+
+                    BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Alignment.Left());
+                    BytesValue = PrintExtensions.AddBytes(BytesValue, Encoding.Default.GetBytes(mBillAddText));
+                }
+
+
                 BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
                 BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
 
@@ -3106,7 +3120,7 @@ namespace thepos2
             lblAmountTitle.Text = mLangAmountTitleArr[mLanguageNo];
 
             // 총금액
-            btnPay.Text = mLangPayCardArr[mLanguageNo];
+            btnPayCard.Text = mLangPayCardArr[mLanguageNo];
 
 
             //
@@ -3196,25 +3210,21 @@ namespace thepos2
         }
 
 
-        private void btnPay_Click(object sender, EventArgs e)
+        private void btnPayCard_Click(object sender, EventArgs e)
         {
             //
-            thepos_app_log(1, this.Name, "btnPay_Click()", "");
-
+            thepos_app_log(1, this.Name, "btnPayCard_Click()", "");
 
             // 샘플 티켓 출력용 - 테스트
             //print_ticket("2501202504180186171301", "100004", "6976680442186471");
 
-
             // 타이머 리셋
             reset_timer_waiting();
-
 
             if (mOrderItemList.Count == 0)
             {
                 return;
             }
-
 
             if (mNetAmount <= 0)
             {
@@ -3246,8 +3256,6 @@ namespace thepos2
             //#
             int select_idx = -1;
 
-
-
             frmPayCard fForm = new frmPayCard(mNetAmount, t과세금액, t면세금액, false, 1, true, select_idx);
             DialogResult ret = fForm.ShowDialog();
 
@@ -3257,17 +3265,73 @@ namespace thepos2
                 mOrderItemList.Clear();
                 lvwOrderItem.SetObjects(mOrderItemList);
                 ReCalculateAmount();
-
             }
-
-
 
             // 타이머 리셋
             reset_timer_waiting();
 
         }
 
+        private void btnPayKakao_Click(object sender, EventArgs e)
+        {
+            //
+            thepos_app_log(1, this.Name, "btnPayKakao_Click()", "");
 
+            // 샘플 티켓 출력용 - 테스트
+            //print_ticket("2501202504180186171301", "100004", "6976680442186471");
+
+            // 타이머 리셋
+            reset_timer_waiting();
+
+            if (mOrderItemList.Count == 0)
+            {
+                return;
+            }
+
+            if (mNetAmount <= 0)
+            {
+                return;
+            }
+
+
+            if (!get_amounts(out int t과세금액, out int t면세금액))
+            {
+                MessageBox.Show("과세금액, 면세금액 계산오류", "thepos");
+                return;
+            }
+
+
+            // 영업일자 등 선체크 
+            if (!isPreCheck(out String error_msg))
+            {
+                MessageBox.Show(error_msg, "thepos");
+                return;
+            }
+
+
+            // 결제창은 타임아웃 없음.
+            timerWelcome.Enabled = false;
+
+
+            countup_the_no();
+
+            //#
+            int select_idx = -1;
+
+            frmPayKakao fForm = new frmPayKakao(mNetAmount, t과세금액, t면세금액, false, 1, true, select_idx);
+            DialogResult ret = fForm.ShowDialog();
+
+            if (ret == DialogResult.OK)
+            {
+                // Cleal All
+                mOrderItemList.Clear();
+                lvwOrderItem.SetObjects(mOrderItemList);
+                ReCalculateAmount();
+            }
+
+            // 타이머 리셋
+            reset_timer_waiting();
+        }
 
         //
         public static int SaveTicketFlow(String ticket_no, String pay_class, String settle_class, int settle_amt)
@@ -3288,81 +3352,81 @@ namespace thepos2
 
                     if (orderItem.ticket == "Y")
                     {
-
-                        if (mTicketType == "IN")  // 입장전용 - 써멀로 한정
+                        if (mTicketType == "IS")  // 입장전용 - 1장으로 출력 : 써멀로 한정
                         {
-                            t_ticket_no = mTheNo;
+                            ticket_seq++;
+                            t_ticket_no = mTheNo + ticket_seq.ToString("00");
+
                             print_bill_ticket(t_ticket_no, orderItem.goods_code, orderItem.cnt, orderItem.coupon_no);
-
                         }
-                        else if (mTicketType == "PA" | mTicketType == "PD")  // 선불, 후불
+                        else if (mTicketType == "IN" | mTicketType == "PA" | mTicketType == "PD")  // 입장전용[개별출력], 선불, 후불
                         {
-
                             for (int k = 0; k < orderItem.cnt; k++)
                             {
                                 ticket_seq++;
 
-                                if (mTicketMedia == "BC")  // 영수증
+                                if (mTicketMedia == "RF")   // 팔찌
+                                {
+                                    //?? 팔찌이면 스케너 입력로직 필요
+                                    //t_ticket_no = "";  //? 스캐너로 읽어서 여기에...
+                                    //?? 임시
+                                    t_ticket_no = mTheNo + ticket_seq.ToString("00");   
+                                }
+                                else   // BC(서멀), TG(전용폼지)
                                 {
                                     t_ticket_no = mTheNo + ticket_seq.ToString("00");
                                 }
-                                else if (mTicketMedia == "TG")  // 띠지
+
+
+                                // ticketFlow POST - 선불, 후불 만
+                                if (mTicketType == "PA" | mTicketType == "PD")
                                 {
-                                    t_ticket_no = mTheNo + ticket_seq.ToString("00");
-                                }
-                                else  // 팔찌
-                                {
-                                    //? 팔찌이면 스케너 입력로직 필요
-                                    MessageBox.Show("스캐너 팔찌 입력을 할 수 없습니다... ");
+                                    Dictionary<string, string> parameters = new Dictionary<string, string>();
+                                    parameters.Clear();
+                                    parameters["siteId"] = mSiteId;
+                                    parameters["bizDt"] = mBizDate;
+                                    parameters["posNo"] = mPosNo;
+                                    parameters["theNo"] = mTheNo;
+                                    parameters["refNo"] = mRefNo;
 
-                                    //t_ticket_no = "";  //? 스캐너로 읽어서 여기에...   theno + 팔찌번호?
-                                    t_ticket_no = mTheNo + ticket_seq.ToString("00");  //? 임시
-                                }
+                                    parameters["ticketNo"] = t_ticket_no;
+                                    parameters["bangleNo"] = "";  //? 팔찌인 경우 - 값변경 필요
+                                    parameters["ticketingDt"] = get_today_date() + get_today_time();
+                                    parameters["chargeDt"] = "";
+                                    parameters["settlementDt"] = "";
 
-                                Dictionary<string, string> parameters = new Dictionary<string, string>();
-                                parameters.Clear();
-                                parameters["siteId"] = mSiteId;
-                                parameters["bizDt"] = mBizDate;
-                                parameters["posNo"] = mPosNo;
-                                parameters["theNo"] = mTheNo;
-                                parameters["refNo"] = mRefNo;
+                                    parameters["pointChargeCnt"] = "0";
+                                    parameters["pointUsageCnt"] = "0";
 
-                                parameters["ticketNo"] = t_ticket_no;
-                                parameters["bangleNo"] = "";  //? 팔찌인 경우 - 값변경 필요
-                                parameters["ticketingDt"] = get_today_date() + get_today_time();
-                                parameters["chargeDt"] = "";
-                                parameters["settlementDt"] = "";
+                                    parameters["pointCharge"] = "0";
+                                    parameters["pointUsage"] = "0";
+                                    parameters["settlePointCharge"] = "0";
+                                    parameters["settlePointUsage"] = "0";
 
-                                parameters["pointChargeCnt"] = "0";
-                                parameters["pointUsageCnt"] = "0";
-
-                                parameters["pointCharge"] = "0";
-                                parameters["pointUsage"] = "0";
-                                parameters["settlePointCharge"] = "0";
-                                parameters["settlePointUsage"] = "0";
-
-                                parameters["goodsCode"] = orderItem.goods_code;
-                                parameters["flowStep"] = "1";               // 발권1 - *충전2 - 사용중3 - 정산(완료)4
-                                parameters["lockerNo"] = "";
-                                parameters["openLocker"] = "1";             // 선불 :  항상 open
-                                                                            // 후불 :  최초 open -> 사용 close -> 정산 open
-                                if (mRequestPost("ticketFlow", parameters))
-                                {
-                                    if (mObj["resultCode"].ToString() == "200")
+                                    parameters["goodsCode"] = orderItem.goods_code;
+                                    parameters["flowStep"] = "1";               // 발권1 - *충전2 - 사용중3 - 정산(완료)4
+                                    parameters["lockerNo"] = "";
+                                    parameters["openLocker"] = "1";             // 선불 :  항상 open
+                                                                                // 후불 :  최초 open -> 사용 close -> 정산 open
+                                    if (mRequestPost("ticketFlow", parameters))
                                     {
+                                        if (mObj["resultCode"].ToString() == "200")
+                                        {
 
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("오류 ticketFlow\n\n" + mObj["resultMsg"].ToString(), "thepos");
+                                            return -1;
+                                        }
                                     }
                                     else
                                     {
-                                        MessageBox.Show("오류 ticketFlow\n\n" + mObj["resultMsg"].ToString(), "thepos");
+                                        MessageBox.Show("시스템오류 ticketFlow\n\n" + mErrorMsg, "thepos");
                                         return -1;
                                     }
                                 }
-                                else
-                                {
-                                    MessageBox.Show("시스템오류 ticketFlow\n\n" + mErrorMsg, "thepos");
-                                    return -1;
-                                }
+
 
                                 //
                                 // 에러발생에 대비해서 인쇄출력은 가능한 마지막에 순서...
@@ -3372,9 +3436,15 @@ namespace thepos2
                                 {
                                     print_bill_ticket(t_ticket_no, orderItem.goods_code, 1, orderItem.coupon_no);
                                 }
-                                else if (mTicketMedia == "TG")  // 띠지
+                                else if (mTicketMedia == "TG")  // 전용폼지(띠지)
                                 {
-                                    MessageBox.Show("띠지 출력을 할 수 없습니다... ");
+                                    //??
+
+
+                                }
+                                else if (mTicketMedia == "RF")   // 팔찌
+                                {
+                                    // SKIP..
                                 }
                             }
                         }
@@ -3557,6 +3627,7 @@ namespace thepos2
                 return;
             }
         }
+
 
     }
 }

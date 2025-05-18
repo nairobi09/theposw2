@@ -106,17 +106,12 @@ namespace thepos2
                 String cpn = tbCouponScan.Text;
                 tbCouponScan.Clear();
 
-                if (cpn.Length < 3)
+                if (cpn.Length < 10)
                 {
                     thepos_app_log(3, this.Name, "scanner", "skip. coupon_no=" + cpn);
                     return;
                 }
 
-                if (cpn.Substring(0,3) == "000")
-                {
-                    thepos_app_log(3, this.Name, "scanner", "skip. coupon_no=" + cpn);
-                    return;
-                }
 
                 request_tm_cert(cpn);
                 
@@ -192,7 +187,7 @@ namespace thepos2
                     String msg = mObj["msg"].ToString();
 
                     // 
-                    thepos_app_log(3, this.Name, "requestTmCertView()", msg + " coupon_no=" + t_coupon_no);
+                    thepos_app_log(3, this.Name, "requestTmCertView()", msg + " coupon_no=[" + t_coupon_no + "]");
 
                     tpMessageBox tpMessageBox = new tpMessageBox(msg);
                     tpMessageBox.ShowDialog();
@@ -211,7 +206,7 @@ namespace thepos2
 
 
             //
-            thepos_app_log(1, this.Name, "requestTmCertView()", "정상. coupon_no=" + t_coupon_no);
+            thepos_app_log(1, this.Name, "requestTmCertView()", "정상. coupon_no=[" + t_coupon_no + "]");
 
 
 
@@ -255,11 +250,6 @@ namespace thepos2
             }
         }
 
-
-        private void tbCouponScan_LostFocus(object sender, EventArgs e)
-        {
-            tbCouponScan.Focus();
-        }
 
         private void btnCouponImage_Click(object sender, EventArgs e)
         {
