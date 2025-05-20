@@ -39,7 +39,7 @@ namespace thepos2
 
 
             //
-            thepos_app_log(2, "theposw2", "start...", "appVersion=TPW2-" + mAppVersion + ", mac=" + mMacAddr);
+            thepos_app_log(2, "theposw2", "start...", "appVersion=" + mAppVersion + ", mac=" + mMacAddr);
         }
 
 
@@ -160,9 +160,10 @@ namespace thepos2
                         mUserID = tbID.Text;
                         mUserName = mObj["userName"].ToString();
                         mPosNo = mObj["posNo"].ToString();
+                        mShopCode = mObj["shopCode"].ToString();
 
                         //
-                        thepos_app_log(2, this.Name, "login", "appVersion=TPW2-" + mAppVersion + ", mac=" + mMacAddr);
+                        thepos_app_log(2, this.Name, "login", "appVersion=" + mAppVersion + ", mac=" + mMacAddr);
                     }
                     else
                     {
@@ -730,15 +731,7 @@ namespace thepos2
                             //
                             else if (arr[i]["setupCode"].ToString() == "WaitingDisplay") mWaitingDisplay = arr[i]["setupValue"].ToString();
                             else if (arr[i]["setupCode"].ToString() == "WaitingDisplayImage") mWaitingDisplayImage = arr[i]["setupValue"].ToString();
-                            else if (arr[i]["setupCode"].ToString() == "WaitingSecond")
-                            {
-                                mWaitingSecond = convert_number(arr[i]["setupValue"].ToString());
-
-                                if (mWaitingSecond == -1)
-                                {
-                                    mWaitingSecond = 30;  // 기본 1분
-                                }
-                            }
+                            else if (arr[i]["setupCode"].ToString() == "WaitingSecond") mWaitingSecond = convert_number(arr[i]["setupValue"].ToString());
 
                             else if (arr[i]["setupCode"].ToString() == "KioskLogoImage") mKioskLogoImage = arr[i]["setupValue"].ToString();
 

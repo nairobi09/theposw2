@@ -1582,6 +1582,7 @@ namespace thepos2
             {
                 parameters.Clear();
                 parameters["siteId"] = mSiteId;
+                parameters["shopCode"] = mShopCode;
                 parameters["posNo"] = mPosNo;
                 parameters["bizDt"] = mBizDate;
                 parameters["theNo"] = mTheNo;
@@ -3006,7 +3007,7 @@ namespace thepos2
 
                 ContextMenuStrip m = new ContextMenuStrip();
 
-                ToolStripMenuItem m0 = new ToolStripMenuItem("TPW2-" + mAppVersion);
+                ToolStripMenuItem m0 = new ToolStripMenuItem(mAppVersion);
                 ToolStripMenuItem m1 = new ToolStripMenuItem("내기기설정");
                 ToolStripMenuItem m2 = new ToolStripMenuItem("기초원장 리로드");
                 ToolStripMenuItem m3 = new ToolStripMenuItem("원격지원");

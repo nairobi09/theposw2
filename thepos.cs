@@ -24,7 +24,7 @@ namespace thepos2
 
         // 배포시 버전관리 - 로그와 연동
 
-        public static String mAppVersion = "2025-007";
+        public static String mAppVersion = "TPW2-2025-008";
 
 
 
@@ -70,6 +70,10 @@ namespace thepos2
         // 콜센터 연락처
         public static String mCallCenterNo = "";
         public static String mServerDbVer = "";
+
+
+        public static String mShopCode = "";       // 내 업장코드
+        public static String mShopName = "";       // 내 업장명
 
         public static String mPosNo = "";       // 내 포스번호
         public static String[] mPosNoList;      // Site내 포스번호 목록
@@ -582,7 +586,7 @@ namespace thepos2
         //
         public static String mWaitingDisplay = "";  // 대기화면 사용여부
         public static String mWaitingDisplayImage = "";         //  대기화면 이미지
-        public static int mWaitingSecond = -1;             //  대기화면 전환시간(초)
+        public static int mWaitingSecond = 30;             //  대기화면 전환시간(초)
 
         public static String mKioskLogoImage = "";       // 키오스크 본화면 상단로고
 

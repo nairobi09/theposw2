@@ -23,12 +23,10 @@ namespace thepos2
             if (cbTest.Checked)
             {
                 mBaseUri = uri_test;
-                DialogResult = DialogResult.Yes;  // TEST
             }
             else
             {
                 mBaseUri = uri_real;
-                DialogResult = DialogResult.OK;  // REAL
             }
 
 
@@ -45,9 +43,19 @@ namespace thepos2
                     mUserID = "dev2";
                     mUserName = "devlogin";
                     mPosNo = mObj["posNo"].ToString();
+                    mShopCode = mObj["shopCode"].ToString();
 
                     //
                     thepos_app_log(2, this.Name, "login", "appVersion=" + mAppVersion + ", mac=" + mMacAddr);
+
+                    if (cbTest.Checked)
+                    {
+                        DialogResult = DialogResult.Yes;  // TEST
+                    }
+                    else
+                    {
+                        DialogResult = DialogResult.OK;  // REAL
+                    }
 
                     Close();
                 }
@@ -93,6 +101,7 @@ namespace thepos2
                     mUserID = tbSiteID.Text;
                     mUserName = mObj["userName"].ToString();
                     mPosNo = mObj["posNo"].ToString();
+                    mShopCode = mObj["shopCode"].ToString();
 
                     //
                     thepos_app_log(1, this.Name, "login", "appVersion=" + mAppVersion + ", mac=" + mMacAddr);
