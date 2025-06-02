@@ -21,6 +21,11 @@ namespace thepos2
         {
             InitializeComponent();
 
+            if (mMobileExchangeType == "알림톡-선택")
+            {
+                btnNo.Visible = true;
+            }
+
             shopOrderPackList = list;
 
         }

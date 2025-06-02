@@ -96,9 +96,9 @@
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnOK.ForeColor = System.Drawing.Color.White;
-            this.btnOK.Location = new System.Drawing.Point(392, 479);
+            this.btnOK.Location = new System.Drawing.Point(359, 479);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(115, 64);
+            this.btnOK.Size = new System.Drawing.Size(175, 64);
             this.btnOK.TabIndex = 58;
             this.btnOK.Text = "입력";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -111,12 +111,13 @@
             this.btnNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNo.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnNo.ForeColor = System.Drawing.Color.Black;
-            this.btnNo.Location = new System.Drawing.Point(275, 479);
+            this.btnNo.Location = new System.Drawing.Point(242, 479);
             this.btnNo.Name = "btnNo";
             this.btnNo.Size = new System.Drawing.Size(111, 64);
             this.btnNo.TabIndex = 59;
             this.btnNo.Text = "건너뛰기";
             this.btnNo.UseVisualStyleBackColor = false;
+            this.btnNo.Visible = false;
             this.btnNo.Click += new System.EventHandler(this.btnNo_Click);
             // 
             // label2

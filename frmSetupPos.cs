@@ -196,6 +196,7 @@ namespace thepos2
                 cbValue.Items.Clear();
                 cbValue.Items.Add(" ");  // 출력없음
                 cbValue.Items.Add("알림톡");  // 알림톡
+                cbValue.Items.Add("알림톡-선택");  // 알림톡
             }
             else if (code == listSetup[2].code)  // 인쇄 교환권
             {
@@ -373,8 +374,13 @@ namespace thepos2
             for (int i = 0; i < lvwList.Items.Count; i++)
             {
                 if (lvwList.Items[i].Tag.ToString() == "PosType") mPosType = lvwList.Items[i].SubItems[1].Text;
+
+                else if (lvwList.Items[i].Tag.ToString() == "MobileExchangeType") mMobileExchangeType = lvwList.Items[i].SubItems[1].Text;
+                else if (lvwList.Items[i].Tag.ToString() == "PrintExchangeType") mPrintExchangeType = lvwList.Items[i].SubItems[1].Text;
+
                 else if (lvwList.Items[i].Tag.ToString() == "BillPrinterPort") mBillPrinterPort = lvwList.Items[i].SubItems[1].Text;
                 else if (lvwList.Items[i].Tag.ToString() == "BillPrinterSpeed") mBillPrinterSpeed = lvwList.Items[i].SubItems[1].Text;
+
                 else if (lvwList.Items[i].Tag.ToString() == "TicketPrinterPort") mTicketPrinterPort = lvwList.Items[i].SubItems[1].Text;
                 else if (lvwList.Items[i].Tag.ToString() == "TicketPrinterSpeed") mTicketPrinterSpeed = lvwList.Items[i].SubItems[1].Text;
                 else if (lvwList.Items[i].Tag.ToString() == "VanTID") mVanTID = lvwList.Items[i].SubItems[1].Text;

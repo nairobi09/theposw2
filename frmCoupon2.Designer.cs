@@ -172,7 +172,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(1080, 1920);
+            this.ClientSize = new System.Drawing.Size(1040, 1880);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lvwCoupon);
             this.Controls.Add(this.pictureBox1);
