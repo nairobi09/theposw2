@@ -340,7 +340,7 @@ namespace thepos2
             PaymentCert mPaymentCert = new PaymentCert();
             mPaymentCert.site_id = mSiteId;
             mPaymentCert.biz_dt = mBizDate;
-            mPaymentCert.pos_no = mPosNo;
+            mPaymentCert.pos_no = myPosNo;
             mPaymentCert.the_no = mTheNo;
             mPaymentCert.ref_no = mRefNo; // 
 

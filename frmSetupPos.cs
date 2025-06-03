@@ -103,7 +103,7 @@ namespace thepos2
             lvwList.HideSelection = true;
 
             lblSiteName.Text = mSiteAlias;
-            lblPosNo.Text = mPosNo;
+            lblPosNo.Text = myPosNo;
 
         }
 
@@ -111,7 +111,7 @@ namespace thepos2
         private void reload_setup_pos()
         {
 
-            String sUrl = "setupPos?siteId=" + mSiteId + "&posNo=" + mPosNo;
+            String sUrl = "setupPos?siteId=" + mSiteId + "&posNo=" + myPosNo;
             if (mRequestGet(sUrl))
             {
                 if (mObj["resultCode"].ToString() == "200")
@@ -333,7 +333,7 @@ namespace thepos2
                     Dictionary<string, string> parameters = new Dictionary<string, string>();
 
                     parameters["siteId"] = mSiteId;
-                    parameters["posNo"] = mPosNo;
+                    parameters["posNo"] = myPosNo;
                     parameters["setupCode"] = lvwList.Items[i].Tag.ToString();
                     parameters["setupName"] = lvwList.Items[i].Text;
 

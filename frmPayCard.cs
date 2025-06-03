@@ -196,7 +196,7 @@ namespace thepos2
             // 서버저장 paymentCard
             mPaymentCard.site_id = mSiteId;
             mPaymentCard.biz_dt = mBizDate;
-            mPaymentCard.pos_no = mPosNo;
+            mPaymentCard.pos_no = myPosNo;
             mPaymentCard.the_no = mTheNo;
             mPaymentCard.ref_no = mRefNo;
             mPaymentCard.pay_date = get_today_date();

@@ -126,7 +126,7 @@ namespace theposw2
                 // 서버저장 paymentEasy
                 mPaymentEasy.site_id = mSiteId;
                 mPaymentEasy.biz_dt = mBizDate;
-                mPaymentEasy.pos_no = mPosNo;
+                mPaymentEasy.pos_no = myPosNo;
                 mPaymentEasy.the_no = mTheNo;
                 mPaymentEasy.ref_no = mRefNo;
 

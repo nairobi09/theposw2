@@ -14,6 +14,7 @@ using System.Drawing;
 using System.Drawing.Text;
 using static thepos2.frmSales;
 using System.Security.Policy;
+using static thepos2.thepos;
 
 
 namespace thepos2
@@ -24,7 +25,7 @@ namespace thepos2
 
         // 배포시 버전관리 - 로그와 연동
 
-        public static String mAppVersion = "TPW2-2025-008";
+        public static String mAppVersion = "TPW2-2025-010";
 
 
 
@@ -72,10 +73,10 @@ namespace thepos2
         public static String mServerDbVer = "";
 
 
-        public static String mShopCode = "";       // 내 업장코드
-        public static String mShopName = "";       // 내 업장명
+        public static String myShopCode = "";       // 내 업장코드
+        //public static String myShopName = "";       // 내 업장명
 
-        public static String mPosNo = "";       // 내 포스번호
+        public static String myPosNo = "";       // 내 포스번호
         public static String[] mPosNoList;      // Site내 포스번호 목록
 
 
@@ -189,9 +190,13 @@ namespace thepos2
             public string group_code;
             public string[] group_name;
             public string soldout;
+            public string cutout;
             public int column;
         }
-        public static GoodsGroup[] mGoodsGroup;
+        public static GoodsGroup[] mGoodsGroup1;
+        public static List<GoodsGroup> mGoodsGroup = new List<GoodsGroup>();
+        
+
 
 
         public struct GoodsItem
@@ -1067,7 +1072,7 @@ namespace thepos2
                     parameters["logTime"] = get_today_time();
                     parameters["logLevel"] = log_input + "";
                     parameters["siteId"] = mSiteId;
-                    parameters["posNo"] = mPosNo;
+                    parameters["posNo"] = myPosNo;
                     parameters["formName"] = form_name;
                     parameters["formAction"] = form_action;
                     parameters["formMemo"] = form_memo;

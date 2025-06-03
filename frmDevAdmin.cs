@@ -42,8 +42,8 @@ namespace thepos2
                     mSiteId = mObj["siteId"].ToString();
                     mUserID = "dev2";
                     mUserName = "devlogin";
-                    mPosNo = mObj["posNo"].ToString();
-                    mShopCode = mObj["shopCode"].ToString();
+                    myPosNo = mObj["posNo"].ToString();
+                    myShopCode = mObj["shopCode"].ToString();
 
                     //
                     thepos_app_log(2, this.Name, "login", "appVersion=" + mAppVersion + ", mac=" + mMacAddr);
@@ -100,8 +100,8 @@ namespace thepos2
                     mSiteId = mObj["siteId"].ToString();
                     mUserID = tbSiteID.Text;
                     mUserName = mObj["userName"].ToString();
-                    mPosNo = mObj["posNo"].ToString();
-                    mShopCode = mObj["shopCode"].ToString();
+                    myPosNo = mObj["posNo"].ToString();
+                    myShopCode = mObj["shopCode"].ToString();
 
                     //
                     thepos_app_log(1, this.Name, "login", "appVersion=" + mAppVersion + ", mac=" + mMacAddr);

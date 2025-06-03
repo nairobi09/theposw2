@@ -159,8 +159,8 @@ namespace thepos2
                         mSiteId = mObj["siteId"].ToString();
                         mUserID = tbID.Text;
                         mUserName = mObj["userName"].ToString();
-                        mPosNo = mObj["posNo"].ToString();
-                        mShopCode = mObj["shopCode"].ToString();
+                        myPosNo = mObj["posNo"].ToString();
+                        myShopCode = mObj["shopCode"].ToString();
 
                         //
                         thepos_app_log(2, this.Name, "login", "appVersion=" + mAppVersion + ", mac=" + mMacAddr);
@@ -415,29 +415,31 @@ namespace thepos2
             // 2. goodsGroup
             if (true)
             {
-                String sUrl = "goodsGroup?siteId=" + mSiteId + "&posNo=" + mPosNo;
+                String sUrl = "goodsGroup?siteId=" + mSiteId + "&posNo=" + myPosNo;
                 if (mRequestGet(sUrl))
                 {
                     if (mObj["resultCode"].ToString() == "200")
                     {
-                        String goods_group = mObj["goodsGroups"].ToString();
-                        JArray arr = JArray.Parse(goods_group);
+                        String data = mObj["goodsGroups"].ToString();
+                        JArray arr = JArray.Parse(data);
 
-                        mGoodsGroup = new GoodsGroup[arr.Count];
+                        mGoodsGroup.Clear();
 
                         for (int i = 0; i < arr.Count; i++)
                         {
-                            mGoodsGroup[i].group_code = arr[i]["groupCode"].ToString();
-
-                            mGoodsGroup[i].group_name = new string[4];
-
-                            mGoodsGroup[i].group_name[0] = arr[i]["groupName"].ToString();
-                            mGoodsGroup[i].group_name[1] = arr[i]["groupNameEn"].ToString();
-                            mGoodsGroup[i].group_name[2] = arr[i]["groupNameCh"].ToString();
-                            mGoodsGroup[i].group_name[3] = arr[i]["groupNameJp"].ToString();
-
-                            mGoodsGroup[i].soldout = arr[i]["soldout"].ToString();
-                            mGoodsGroup[i].column = int.Parse(arr[i]["locateX"].ToString());
+                            if (arr[i]["cutout"].ToString() != "Y")
+                            {
+                                GoodsGroup goodsGroup = new GoodsGroup();
+                                goodsGroup.group_code = arr[i]["groupCode"].ToString();
+                                goodsGroup.group_name = new string[4];
+                                goodsGroup.group_name[0] = arr[i]["groupName"].ToString();
+                                goodsGroup.group_name[1] = arr[i]["groupNameEn"].ToString();
+                                goodsGroup.group_name[2] = arr[i]["groupNameCh"].ToString();
+                                goodsGroup.group_name[3] = arr[i]["groupNameJp"].ToString();
+                                goodsGroup.soldout = arr[i]["soldout"].ToString();
+                                goodsGroup.column = int.Parse(arr[i]["locateX"].ToString());
+                                mGoodsGroup.Add(goodsGroup);
+                            }
                         }
 
                         // 정렬
@@ -449,7 +451,7 @@ namespace thepos2
                         {
                             sort_complete = true;
 
-                            for (int i = 0; i < mGoodsGroup.Length - 1; i++)
+                            for (int i = 0; i < mGoodsGroup.Count - 1; i++)
                             {
                                 if (mGoodsGroup[i].column > mGoodsGroup[i + 1].column)  // ascending
                                 {
@@ -480,7 +482,7 @@ namespace thepos2
             // 3. goodsItemAndGoods
             if (true)
             {
-                String sUrl = "goodsItemAndGoods?siteId=" + mSiteId + "&posNo=" + mPosNo + "&imageYn=Y";
+                String sUrl = "goodsItemAndGoods?siteId=" + mSiteId + "&posNo=" + myPosNo + "&imageYn=Y";
                 if (mRequestGet(sUrl))
                 {
                     if (mObj["resultCode"].ToString() == "200")
@@ -703,7 +705,7 @@ namespace thepos2
             // 6. setupPos
             if (true)
             {
-                String sUrl = "setupPos?siteId=" + mSiteId + "&posNo=" + mPosNo;
+                String sUrl = "setupPos?siteId=" + mSiteId + "&posNo=" + myPosNo;
                 if (mRequestGet(sUrl))
                 {
                     if (mObj["resultCode"].ToString() == "200")

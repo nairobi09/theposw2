@@ -393,7 +393,7 @@ namespace thepos2
             }
 
 
-            int last_no = mGoodsGroup.Length - 1;
+            int last_no = mGoodsGroup.Count - 1;
             int from_no = group_page_no * 5;
             int to_no = group_page_no * 5 + 4;
 
@@ -412,6 +412,9 @@ namespace thepos2
                 mRbGroup[btn_idx].Tag = mGoodsGroup[i].group_code;
 
                 mRbGroup[btn_idx].Text = mGoodsGroup[i].group_name[mLanguageNo].Replace("  ", "\r\n");
+
+
+                // 절판은 로그인다운로드에서 아예 제외시킴.
 
                 // 품절처리
                 if (mGoodsGroup[i].soldout == "Y")
@@ -1073,7 +1076,7 @@ namespace thepos2
         {
             error_msg = "";
 
-            String sUrl = "preCheck?siteId=" + mSiteId + "&posNo=" + mPosNo + "&bizDt=" + mBizDate;
+            String sUrl = "preCheck?siteId=" + mSiteId + "&posNo=" + myPosNo + "&bizDt=" + mBizDate;
 
             try
             {
@@ -1139,7 +1142,7 @@ namespace thepos2
             String seconddiff = ((long)timeSpan.TotalMilliseconds).ToString("00000000").Substring(0, 6);
 
 
-            mTheNo = mSiteId + mBizDate + mPosNo + seconddiff;
+            mTheNo = mSiteId + mBizDate + myPosNo + seconddiff;
 
 
             // 동잀하게 세팅후 -> 이후 필요시 별도세팅
@@ -1322,7 +1325,7 @@ namespace thepos2
             {
                 parameters.Clear();
                 parameters["siteId"] = mSiteId;
-                parameters["posNo"] = mPosNo;
+                parameters["posNo"] = myPosNo;
                 parameters["bizDt"] = mBizDate;
                 parameters["theNo"] = mTheNo;
                 parameters["refNo"] = mRefNo;
@@ -1389,7 +1392,7 @@ namespace thepos2
 
                     parameters.Clear();
                     parameters["siteId"] = mSiteId;
-                    parameters["posNo"] = mPosNo;
+                    parameters["posNo"] = myPosNo;
                     parameters["bizDt"] = mBizDate;
                     parameters["theNo"] = mTheNo;
                     parameters["refNo"] = mRefNo;
@@ -1447,7 +1450,7 @@ namespace thepos2
                 {
                     parameters.Clear();
                     parameters["siteId"] = mSiteId;
-                    parameters["posNo"] = mPosNo;
+                    parameters["posNo"] = myPosNo;
                     parameters["bizDt"] = mBizDate;
                     parameters["theNo"] = mTheNo;
                     parameters["refNo"] = mRefNo;
@@ -1513,7 +1516,7 @@ namespace thepos2
                     {
                         parameters.Clear();
                         parameters["siteId"] = mSiteId;
-                        parameters["posNo"] = mPosNo;
+                        parameters["posNo"] = myPosNo;
                         parameters["bizDt"] = mBizDate;
                         parameters["theNo"] = mTheNo;
                         parameters["refNo"] = mRefNo;
@@ -1582,8 +1585,8 @@ namespace thepos2
             {
                 parameters.Clear();
                 parameters["siteId"] = mSiteId;
-                parameters["shopCode"] = mShopCode;
-                parameters["posNo"] = mPosNo;
+                parameters["shopCode"] = myShopCode;
+                parameters["posNo"] = myPosNo;
                 parameters["bizDt"] = mBizDate;
                 parameters["theNo"] = mTheNo;
                 parameters["refNo"] = mRefNo;
@@ -3386,7 +3389,7 @@ namespace thepos2
                                     parameters.Clear();
                                     parameters["siteId"] = mSiteId;
                                     parameters["bizDt"] = mBizDate;
-                                    parameters["posNo"] = mPosNo;
+                                    parameters["posNo"] = myPosNo;
                                     parameters["theNo"] = mTheNo;
                                     parameters["refNo"] = mRefNo;
 

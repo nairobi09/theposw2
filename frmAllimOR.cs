@@ -43,7 +43,7 @@ namespace thepos2
                 // 알림톡 발송
                 Dictionary<string, string> parameters = new Dictionary<string, string>();
                 parameters["siteId"] = mSiteId;
-                parameters["posNo"] = mPosNo;
+                parameters["posNo"] = myPosNo;
                 parameters["bizDt"] = mBizDate;
                 parameters["theNo"] = mTheNo;
                 parameters["senderProfile"] = mAllimSenderProfile;
