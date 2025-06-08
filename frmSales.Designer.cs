@@ -1520,6 +1520,7 @@
             this.btnPayKakao.TabStop = false;
             this.btnPayKakao.Text = "카카오페이";
             this.btnPayKakao.UseVisualStyleBackColor = false;
+            this.btnPayKakao.Visible = false;
             this.btnPayKakao.Click += new System.EventHandler(this.btnPayKakao_Click);
             // 
             // pbLogo
