@@ -212,6 +212,8 @@ namespace thepos2
             public String ticket; // 일반상품 0. 티켓상품 1
             public String taxfree; // 과세품 0, 면세품 1
             public String shop_code;
+            public String nod_code1;
+            public String nod_code2;
             public String cutout;   // 중지
             public String soldout;  // Y품절
             public String allim;
@@ -291,6 +293,8 @@ namespace thepos2
             public String taxfree;
             public String allim;
             public String shop_code;
+            public String nod_code1;
+            public String nod_code2;
 
             public String dcr_code;     // 
             public String dcr_type;     // type - "A" : 정액, "R" : 정율 

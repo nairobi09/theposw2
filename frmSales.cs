@@ -867,7 +867,8 @@ namespace thepos2
                 orderItem.dcr_des = "";
                 orderItem.dcr_value = 0;
                 orderItem.shop_code = mGoodsItem[goods_index].shop_code;
-
+                orderItem.nod_code1 = mGoodsItem[goods_index].nod_code1;
+                orderItem.nod_code2 = mGoodsItem[goods_index].nod_code2;
 
 
                 //
@@ -1375,6 +1376,7 @@ namespace thepos2
 
                 int order_shop_cnt = 0;
                 String shop_order_no = "";
+                String is_allim = "";
 
                 for (int i = 0; i < shop_code_list.Count; i++)
                 {
@@ -1387,6 +1389,11 @@ namespace thepos2
                         {
                             order_shop_cnt++;
                             shop_order_no = mOrderItemList[k].shop_order_no + "";
+
+                            if (mOrderItemList[k].allim == "Y")
+                            {
+                                is_allim = "Y";
+                            }
                         }
                     }
 
@@ -1402,6 +1409,9 @@ namespace thepos2
                     parameters["isCancel"] = "";
                     parameters["shopCode"] = shop_code_list[i] + "";
                     parameters["shopOrderNo"] = shop_order_no;
+
+                    parameters["allim"] = is_allim;
+
                     parameters["orderAllimType"] = "";
                     parameters["orderAllimStatus"] = "0";
                     parameters["orderAllimMemo"] = "";
@@ -1470,6 +1480,7 @@ namespace thepos2
                     parameters["optionAmt"] = mOrderItemList[i].option_amt + "";   //
                     parameters["ticketYn"] = mOrderItemList[i].ticket;
                     parameters["taxFree"] = mOrderItemList[i].taxfree;
+                    parameters["allim"] = mOrderItemList[i].allim;
                     parameters["dcAmount"] = mOrderItemList[i].dc_amount + "";
                     parameters["dcrType"] = mOrderItemList[i].dcr_type;
                     parameters["dcrDes"] = mOrderItemList[i].dcr_des;
@@ -1478,6 +1489,8 @@ namespace thepos2
                     parameters["ticketNo"] = ticket_no;  //
                     parameters["isCancel"] = "";
                     parameters["shopCode"] = mOrderItemList[i].shop_code;
+                    parameters["nodCode1"] = mOrderItemList[i].nod_code1;
+                    parameters["nodCode2"] = mOrderItemList[i].nod_code2;
 
                     parameters["shopOrderNo"] = mOrderItemList[i].shop_order_no;  // 업장주문번호
                     parameters["optionNo"] = t_option_no;
@@ -1665,7 +1678,32 @@ namespace thepos2
             {
                 if (mOrderItemList[i].dcr_des != "E")  // "E" 전체할인
                 {
-                    shop_order_count++;
+                    //shop_order_count++;
+
+
+                    //???? 임시 하드코딩 : 
+                    if (mSiteId == "2502")
+                    {
+                        if (mOrderItemList[i].shop_code == "FB")
+                        {
+                            if (mOrderItemList[i].nod_code1 == "41")
+                            {
+                                shop_order_count++;
+                            }
+                            else
+                            {
+                                // 레스토랑외 제외
+                            }
+                        }
+                        else
+                        {
+                            shop_order_count++;
+                        }
+                    }
+                    else
+                    {
+                        shop_order_count++;
+                    }
                 }
             }
 
@@ -1679,8 +1717,37 @@ namespace thepos2
             {
                 if (mOrderItemList[i].dcr_des != "E")  // "E" 전체할인
                 {
-                    orderItemArr[t_cnt] = mOrderItemList[i];
-                    t_cnt++;
+
+                    //???? 임시 하드코딩 : 
+                    if (mSiteId == "2502")
+                    {
+                        if (mOrderItemList[i].shop_code == "FB")
+                        {
+                            if (mOrderItemList[i].nod_code1 == "41")
+                            {
+                                orderItemArr[t_cnt] = mOrderItemList[i];
+                                t_cnt++;
+                            }
+                            else
+                            {
+                                // 레스토랑외 제외
+                            }
+                        }
+                        else
+                        {
+                            orderItemArr[t_cnt] = mOrderItemList[i];
+                            t_cnt++;
+                        }
+                    }
+                    else
+                    {
+                        orderItemArr[t_cnt] = mOrderItemList[i];
+                        t_cnt++;
+                    }
+
+                    //orderItemArr[t_cnt] = mOrderItemList[i];
+                    //t_cnt++;
+
                 }
             }
 
