@@ -339,6 +339,7 @@ namespace thepos2
             public string allim;
             public string goods_name;
             public int goods_cnt;
+            public string nod_code1;  //???? 키벤저스 F&B 레스토랑 만 주문서 출력을 위해서 nod_code1=41 만 출력
             public List<string> option_name;
             public List<string> option_item_name;
         }

@@ -22,7 +22,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using theposw2.Properties;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-
+using Newtonsoft.Json;
 using static thepos2.thepos;
 using theposw2;
 
@@ -1486,7 +1486,9 @@ namespace thepos2
                     parameters["dcrDes"] = mOrderItemList[i].dcr_des;
                     parameters["dcrValue"] = mOrderItemList[i].dcr_value + "";
                     parameters["payClass"] = mPayClass;  //
+
                     parameters["ticketNo"] = ticket_no;  //
+
                     parameters["isCancel"] = "";
                     parameters["shopCode"] = mOrderItemList[i].shop_code;
                     parameters["nodCode1"] = mOrderItemList[i].nod_code1;
@@ -1678,10 +1680,11 @@ namespace thepos2
             {
                 if (mOrderItemList[i].dcr_des != "E")  // "E" 전체할인
                 {
-                    //shop_order_count++;
+                    shop_order_count++;
 
 
                     //???? 임시 하드코딩 : 
+                    /*
                     if (mSiteId == "2502")
                     {
                         if (mOrderItemList[i].shop_code == "FB")
@@ -1704,6 +1707,7 @@ namespace thepos2
                     {
                         shop_order_count++;
                     }
+                    */
                 }
             }
 
@@ -1719,6 +1723,7 @@ namespace thepos2
                 {
 
                     //???? 임시 하드코딩 : 
+                    /*
                     if (mSiteId == "2502")
                     {
                         if (mOrderItemList[i].shop_code == "FB")
@@ -1744,9 +1749,10 @@ namespace thepos2
                         orderItemArr[t_cnt] = mOrderItemList[i];
                         t_cnt++;
                     }
+                    */
 
-                    //orderItemArr[t_cnt] = mOrderItemList[i];
-                    //t_cnt++;
+                    orderItemArr[t_cnt] = mOrderItemList[i];
+                    t_cnt++;
 
                 }
             }
@@ -1805,6 +1811,7 @@ namespace thepos2
             orderPack1.goods_code = orderItemArr[0].goods_code;
             orderPack1.allim = orderItemArr[0].allim;
             orderPack1.goods_cnt = orderItemArr[0].cnt;
+            orderPack1.nod_code1 = orderItemArr[0].nod_code1;  //????
 
             for (int k = 0; k < orderItemArr[0].orderOptionItemList.Count; k++)
             {
@@ -1923,13 +1930,20 @@ namespace thepos2
             String printer_name = "";
 
 
+
+            shop_order_pack shopOrderPackPrint = JsonConvert.DeserializeObject<shop_order_pack>(
+                JsonConvert.SerializeObject(shopOrderPack)
+            );
+
+
+
             try
             {
                 if (to_printer == "to_shop")  // 주문서
                 {
                     for (int i = 0; i < mShop.Length; i++)
                     {
-                        if (mShop[i].shop_code == shopOrderPack.shop_code)
+                        if (mShop[i].shop_code == shopOrderPackPrint.shop_code)
                         {
                             printer_type = mShop[i].printer_type;
 
@@ -1941,6 +1955,27 @@ namespace thepos2
                             }
                         }
                     }
+
+                    //???? 하드코딩 : 키벤저스 F&B 주문서 출력 예외처리 - 레스토랑 메뉴만 주방주문서 출력한다.
+                    if (mSiteId == "2502" & shopOrderPackPrint.shop_code == "FB")
+                    {
+                        for (int i = shopOrderPackPrint.orderPackList.Count - 1; i >= 0; i--)
+                        {
+                            if (shopOrderPackPrint.orderPackList[i].nod_code1 + "" != "41")
+                            {
+                                shopOrderPackPrint.orderPackList.RemoveAt(i);
+                            }
+                        }
+                    }
+
+                    if (shopOrderPackPrint.orderPackList.Count == 0)
+                    {
+                        return;
+                    }
+                    //????
+
+
+
                 }
                 else if (to_printer == "to_local")  // 교환권
                 {
@@ -1999,7 +2034,7 @@ namespace thepos2
                 BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
 
                 BytesValue = PrintExtensions.AddBytes(BytesValue, sizeCharLarge());   // 주문번호 크게 인쇄
-                BytesValue = PrintExtensions.AddBytes(BytesValue, Encoding.Default.GetBytes(shopOrderPack.order_no));
+                BytesValue = PrintExtensions.AddBytes(BytesValue, Encoding.Default.GetBytes(shopOrderPackPrint.order_no));
                 BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
                 BytesValue = PrintExtensions.AddBytes(BytesValue, obj.Lf());
 
@@ -2025,16 +2060,16 @@ namespace thepos2
                 BytesValue = PrintExtensions.AddBytes(BytesValue, Encoding.Default.GetBytes(strPrint));
 
 
-                for (int i = 0; i < shopOrderPack.orderPackList.Count; i++)
+                for (int i = 0; i < shopOrderPackPrint.orderPackList.Count; i++)
                 {
                     //
                     BytesValue = PrintExtensions.AddBytes(BytesValue, sizeCharMedium());
 
 
-                    String strName = shopOrderPack.orderPackList[i].goods_name;
-                    String strCnt = shopOrderPack.orderPackList[i].goods_cnt.ToString("N0");     // 수량
+                    String strName = shopOrderPackPrint.orderPackList[i].goods_name;
+                    String strCnt = shopOrderPackPrint.orderPackList[i].goods_cnt.ToString("N0");     // 수량
 
-                    int len = encodelen(shopOrderPack.orderPackList[i].goods_name) + encodelen(strCnt);
+                    int len = encodelen(shopOrderPackPrint.orderPackList[i].goods_name) + encodelen(strCnt);
 
                     if (len > 20)
                     {
@@ -2054,10 +2089,10 @@ namespace thepos2
                     //
                     BytesValue = PrintExtensions.AddBytes(BytesValue, obj.CharSize.Nomarl());
 
-                    for (int k = 0; k < shopOrderPack.orderPackList[i].option_name.Count; k++)
+                    for (int k = 0; k < shopOrderPackPrint.orderPackList[i].option_name.Count; k++)
                     {
-                        strPrint = "     [" + shopOrderPack.orderPackList[i].option_name[k] + "]" + Space(18 - encodelen(shopOrderPack.orderPackList[i].option_name[k]));
-                        String strTmp = shopOrderPack.orderPackList[i].option_item_name[k];     // 수량
+                        strPrint = "     [" + shopOrderPackPrint.orderPackList[i].option_name[k] + "]" + Space(18 - encodelen(shopOrderPackPrint.orderPackList[i].option_name[k]));
+                        String strTmp = shopOrderPackPrint.orderPackList[i].option_item_name[k];     // 수량
                         strPrint += strTmp;
                         strPrint += "\r\n";
 
@@ -2072,7 +2107,7 @@ namespace thepos2
 
 
 
-                strPrint = "주문시간 : " + shopOrderPack.order_dt.Substring(0, 4) + "-" + shopOrderPack.order_dt.Substring(4, 2) + "-" + shopOrderPack.order_dt.Substring(6, 2) + " " + shopOrderPack.order_dt.Substring(8, 2) + ":" + shopOrderPack.order_dt.Substring(10, 2) + "\r\n";
+                strPrint = "주문시간 : " + shopOrderPackPrint.order_dt.Substring(0, 4) + "-" + shopOrderPackPrint.order_dt.Substring(4, 2) + "-" + shopOrderPackPrint.order_dt.Substring(6, 2) + " " + shopOrderPackPrint.order_dt.Substring(8, 2) + ":" + shopOrderPackPrint.order_dt.Substring(10, 2) + "\r\n";
                 BytesValue = PrintExtensions.AddBytes(BytesValue, Encoding.Default.GetBytes(strPrint));
 
 

@@ -159,14 +159,17 @@ namespace thepos2
 
 
             // 테스트모드에서는 그냥 PASS
-            if (requestCardAuth(tAmount, tFreeAmount, tTaxAmount, tTax, tServiceAmt, install, is_cup, out mPaymentCard) != 0)
+            if (mIsTestPayMode != "Test")
             {
-                //
-                thepos_app_log(3, this.Name, "requestCardAuth()", mErrorMsg);
+                if (requestCardAuth(tAmount, tFreeAmount, tTaxAmount, tTax, tServiceAmt, install, is_cup, out mPaymentCard) != 0)
+                {
+                    //
+                    thepos_app_log(3, this.Name, "requestCardAuth()", mErrorMsg);
 
-                MessageBox.Show(mErrorMsg, "thepos");
+                    MessageBox.Show(mErrorMsg, "thepos");
 
-                return;
+                    return;
+                }
             }
 
 
