@@ -54,108 +54,106 @@ namespace thepos2
 
 
             String data = mObj["info"].ToString();
-            JObject info = JObject.Parse(data);
+            JArray info = JArray.Parse(data);
 
-            string coupon_no = info["barcode_no"].ToString();
-            string ustate_code = info["ustate"].ToString();
-            string coupon_name = info["cusitem"].ToString();
-            string coupon_link_no = info["cusitemId"].ToString();   // 상품코드 매칭용   TM + 0000
-            string qty = "1";
-            string cus_nm = info["cusnm"].ToString();
-            string cus_hp = info["cushp"].ToString();
-            string exp_date = info["expdate"].ToString();
-            string state = info["state"].ToString();
-            string ch_name = info["cuschnm"].ToString();
-
-
-            // (0:취소 1: 사용, 2: 미사용)
-            String ustate_name = "";
-            if (ustate_code == "2")
-                ustate_name = "사용가능";
-            else if (ustate_code == "1")
-                ustate_name = "기사용티켓";
-            else if (ustate_code == "0")
-                ustate_name = "취소티켓";
-            else
-                ustate_name = "";
-
-
-            //
-            this.coupon_bar.Renderer = rendererCoupon();
-
-
-            // 쿠폰 -> 상품 매칭
-            for (int i = 0; i < mGoodsItem.Length; i++)
+            for (int i = 0; i < info.Count; i++)
             {
-                if (coupon_link_no == mGoodsItem[i].coupon_link_no)
+
+                string coupon_no = info["barcode_no"].ToString();
+                string ustate_code = info["ustate"].ToString();
+                string coupon_name = info["cusitem"].ToString();
+                string coupon_link_no = info["cusitemId"].ToString();   // 상품코드 매칭용   TM + 0000
+                string qty = "1";
+                string cus_nm = info["cusnm"].ToString();
+                string cus_hp = info["cushp"].ToString();
+                string exp_date = info["expdate"].ToString();
+                string state = info["state"].ToString();
+                string ch_name = info["cuschnm"].ToString();
+
+
+                // (0:취소 1: 사용, 2: 미사용)
+                String ustate_name = "";
+                if (ustate_code == "2")
+                    ustate_name = "사용가능";
+                else if (ustate_code == "1")
+                    ustate_name = "기사용티켓";
+                else if (ustate_code == "0")
+                    ustate_name = "취소티켓";
+                else
+                    ustate_name = "";
+
+
+                //
+                this.coupon_bar.Renderer = rendererCoupon();
+
+
+                // 쿠폰 -> 상품 매칭
+                for (int k = 0; k < mGoodsItem.Length; k++)
                 {
-                    link_goods_idx = i;
+                    if (coupon_link_no == mGoodsItem[k].coupon_link_no)
+                    {
+                        link_goods_idx = k;
+                    }
                 }
-            }
 
 
-            String is_pass = "";
-            int goods_amt = 0;
-            String goods_name = "";
+                String is_pass = "";
+                int goods_amt = 0;
+                String goods_name = "";
 
-            if (link_goods_idx == -1)
-            {
-                is_pass = "N";
-                goods_amt = 0;
-                goods_name = "[쿠폰사용 불가]";
-            }
-            else
-            {
-                // 정상
-                is_pass = "Y";
-                goods_amt = mGoodsItem[link_goods_idx].amt;
-                goods_name = mGoodsItem[link_goods_idx].goods_name[0];
-            }
-
-            
-            coupon couponItem = new coupon();
-            couponItem.is_pass = is_pass;  // 매칭상품코드 찾기
-            couponItem.coupon_no = coupon_no;
-            couponItem.coupon_name = coupon_name;
-            couponItem.coupon_cnt = 1;
-            couponItem.coupon_amt = 0;
-            couponItem.ustate_code = ustate_code;
-            couponItem.ustate_name = ustate_name;
-            couponItem.coupon_link_no = coupon_link_no;
-            couponItem.goods_amt = goods_amt;
-            couponItem.goods_name = goods_name;
-            couponItem.coupon_bar = goods_name + " / @" + goods_amt + " / " + couponItem.coupon_cnt;
-            couponItem.coupon_description = ustate_name + " / " + coupon_no + " / " + coupon_name + " / " + exp_date;
-
-
-            if (is_pass == "Y")
-            {
-                if (ustate_code != "2")
+                if (link_goods_idx == -1)
                 {
-                    couponItem.image_ticket = "ticket_off";
-                    //
-                    thepos_app_log(3, this.Name, "쿠폰조회", couponItem.coupon_bar);
-                    thepos_app_log(3, this.Name, "쿠폰조회", couponItem.coupon_description);
+                    is_pass = "N";
+                    goods_amt = 0;
+                    goods_name = "[쿠폰사용 불가]";
                 }
                 else
                 {
-                    couponItem.image_ticket = "ticket_on";
-                    //
-                    thepos_app_log(1, this.Name, "쿠폰조회", couponItem.coupon_bar);
-                    thepos_app_log(1, this.Name, "쿠폰조회", couponItem.coupon_description);
+                    // 정상
+                    is_pass = "Y";
+                    goods_amt = mGoodsItem[link_goods_idx].amt;
+                    goods_name = mGoodsItem[link_goods_idx].goods_name[0];
                 }
-            }
-            else
-            {
-                couponItem.image_ticket = "ticket_off";
-                //
-                thepos_app_log(3, this.Name, "쿠폰조회", couponItem.coupon_bar);
-                thepos_app_log(3, this.Name, "쿠폰조회", couponItem.coupon_description);
-            }
 
-            mCouponItemList.Add(couponItem);
-            lvwCoupon.SetObjects(mCouponItemList);
 
+                coupon couponItem = new coupon();
+                couponItem.is_pass = is_pass;  // 매칭상품코드 찾기
+                couponItem.coupon_no = coupon_no;
+                couponItem.coupon_name = coupon_name;
+                couponItem.coupon_cnt = 1;
+                couponItem.coupon_amt = 0;
+                couponItem.ustate_code = ustate_code;
+                couponItem.ustate_name = ustate_name;
+                couponItem.coupon_link_no = coupon_link_no;
+                couponItem.goods_amt = goods_amt;
+                couponItem.goods_name = goods_name;
+                couponItem.coupon_bar = goods_name + " / @" + goods_amt + " / " + couponItem.coupon_cnt;
+                couponItem.coupon_description = ustate_name + " / " + coupon_no + " / " + coupon_name + " / " + exp_date;
+
+
+                if (is_pass == "Y")
+                {
+                    if (ustate_code != "2")
+                    {
+                        couponItem.image_ticket = "ticket_off";
+
+                    }
+                    else
+                    {
+                        couponItem.image_ticket = "ticket_on";
+                    }
+                }
+                else
+                {
+                    couponItem.image_ticket = "ticket_off";
+                }
+
+                
+                thepos_app_log(3, this.Name, "쿠폰조회", couponItem.coupon_bar + " " + couponItem.coupon_description);
+
+                mCouponItemList.Add(couponItem);
+                lvwCoupon.SetObjects(mCouponItemList);
+            }
 
         }
 
@@ -165,7 +163,7 @@ namespace thepos2
             DescribedTaskRenderer renderer = new DescribedTaskRenderer();
             renderer.DescriptionAspectName = "coupon_description";
 
-            renderer.TitleFont = new Font(lvwCoupon.Font.FontFamily, 24, FontStyle.Bold);
+            renderer.TitleFont = new Font(lvwCoupon.Font.FontFamily, 20, FontStyle.Bold);
             renderer.DescriptionFont = new Font(lvwCoupon.Font.FontFamily, 13, FontStyle.Regular);
             renderer.DescriptionColor = Color.Blue;
 

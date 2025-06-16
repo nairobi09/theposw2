@@ -153,43 +153,14 @@ namespace thepos2
             {
                 if (mObj["result"].ToString() == "1000")
                 {
-                    // 다음 화면에서 에러날지 미리 해본다..
-                    try
-                    {
-                        String data = mObj["info"].ToString();
-                        JObject info = JObject.Parse(data);
-
-                        string coupon_no = info["barcode_no"].ToString();
-                        string ustate_code = info["ustate"].ToString();
-                        string coupon_name = info["cusitem"].ToString();
-                        string coupon_link_no = info["cusitemId"].ToString();   // 상품코드 매칭용   TM + 0000
-
-                        string cus_nm = info["cusnm"].ToString();
-                        string cus_hp = info["cushp"].ToString();
-                        string exp_date = info["expdate"].ToString();
-
-                        string state = info["state"].ToString();
-                        string ch_name = info["cuschnm"].ToString();
-                    }
-                    catch (Exception e)
-                    {
-                        //
-                        thepos_app_log(3, this.Name, "requestTmCertView()", "쿠폰조회중에 오류가 발생했습니다. " + e.Message);
-
-                        tpMessageBox tpMessageBox = new tpMessageBox("쿠폰조회중에 오류가 발생했습니다.\r\n" + e.Message + "\r\n\r\n관리자에게 문의바랍니다.");
-                        tpMessageBox.ShowDialog();
-                        return;
-                    }
 
                 }
                 else
                 {
-                    String msg = mObj["msg"].ToString();
+                    //
+                    thepos_app_log(3, this.Name, "requestTmCertView()", "오류 " + mObj["msg"].ToString() + " no=" + t_coupon_no);
 
-                    // 
-                    thepos_app_log(3, this.Name, "requestTmCertView()", msg + " coupon_no=[" + t_coupon_no + "]");
-
-                    tpMessageBox tpMessageBox = new tpMessageBox(msg);
+                    tpMessageBox tpMessageBox = new tpMessageBox("오류\r\n" + mObj["msg"].ToString() );
                     tpMessageBox.ShowDialog();
                     return;
                 }
@@ -197,12 +168,48 @@ namespace thepos2
             else
             {
                 //
-                thepos_app_log(3, this.Name, "requestTmCertView()", mErrorMsg);
+                thepos_app_log(3, this.Name, "requestTmCertView()", "쿠폰조회중에 오류가 발생했습니다. " + mErrorMsg);
 
-                tpMessageBox tpMessageBox = new tpMessageBox(mErrorMsg);
+                tpMessageBox tpMessageBox = new tpMessageBox("쿠폰조회중에 오류가 발생했습니다.\r\n" + mErrorMsg + "\r\n\r\n관리자에게 문의바랍니다.");
                 tpMessageBox.ShowDialog();
                 return;
+
             }
+
+
+
+            //
+            String data = mObj["info"].ToString();
+            JArray info = JArray.Parse(data);
+
+            for (int i = 0; i < info.Count; i++)
+            {
+                // 다음 화면에서 에러날지 미리 해본다..
+                try 
+                { 
+                    string coupon_no = info["barcode_no"].ToString();
+                    string ustate_code = info["ustate"].ToString();
+                    string coupon_name = info["cusitem"].ToString();
+                    string coupon_link_no = info["cusitemId"].ToString();   // 상품코드 매칭용   TM + 0000
+
+                    string cus_nm = info["cusnm"].ToString();
+                    string cus_hp = info["cushp"].ToString();
+                    string exp_date = info["expdate"].ToString();
+
+                    string state = info["state"].ToString();
+                    string ch_name = info["cuschnm"].ToString();
+                }
+                catch (Exception e)
+                {
+                    //
+                    thepos_app_log(3, this.Name, "requestTmCertView()", "쿠폰조회중에 오류가 발생했습니다. " + e.Message);
+
+                    tpMessageBox tpMessageBox = new tpMessageBox("쿠폰조회중에 오류가 발생했습니다.\r\n" + e.Message + "\r\n\r\n관리자에게 문의바랍니다.");
+                    tpMessageBox.ShowDialog();
+                    return;
+                }
+            }
+
 
 
             //
