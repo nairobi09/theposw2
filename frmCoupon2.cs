@@ -13,6 +13,7 @@ using theposw2;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static thepos2.thepos;
 using static thepos2.frmSales;
+using System.Reflection;
 
 namespace thepos2
 {
@@ -22,7 +23,7 @@ namespace thepos2
         public struct coupon
         {
             public String is_pass;
-            public String image_ticket;
+            public String image_checked;
             public String coupon_no;
             public String coupon_name;
             public int coupon_cnt;
@@ -36,11 +37,15 @@ namespace thepos2
             public String goods_name;
             public int goods_amt;
 
+            public int link_goods_idx;
+
+            public String result;
+
         }
         public List<coupon> mCouponItemList = new List<coupon>();
 
         
-        int link_goods_idx = -1;
+
 
 
         public frmCoupon2(JObject mObj)
@@ -59,16 +64,16 @@ namespace thepos2
             for (int i = 0; i < info.Count; i++)
             {
 
-                string coupon_no = info["barcode_no"].ToString();
-                string ustate_code = info["ustate"].ToString();
-                string coupon_name = info["cusitem"].ToString();
-                string coupon_link_no = info["cusitemId"].ToString();   // 상품코드 매칭용   TM + 0000
+                string coupon_no = info[i]["barcode_no"].ToString();
+                string ustate_code = info[i]["ustate"].ToString();
+                string coupon_name = info[i]["cusitem"].ToString();
+                string coupon_link_no = info[i]["cusitemId"].ToString();   // 상품코드 매칭용   TM + 0000
                 string qty = "1";
-                string cus_nm = info["cusnm"].ToString();
-                string cus_hp = info["cushp"].ToString();
-                string exp_date = info["expdate"].ToString();
-                string state = info["state"].ToString();
-                string ch_name = info["cuschnm"].ToString();
+                string cus_nm = info[i]["cusnm"].ToString();
+                string cus_hp = info[i]["cushp"].ToString();
+                string exp_date = info[i]["expdate"].ToString();
+                string state = info[i]["state"].ToString();
+                string ch_name = info[i]["cuschnm"].ToString();
 
 
                 // (0:취소 1: 사용, 2: 미사용)
@@ -88,6 +93,8 @@ namespace thepos2
 
 
                 // 쿠폰 -> 상품 매칭
+                int link_goods_idx = -1;
+
                 for (int k = 0; k < mGoodsItem.Length; k++)
                 {
                     if (coupon_link_no == mGoodsItem[k].coupon_link_no)
@@ -129,31 +136,33 @@ namespace thepos2
                 couponItem.goods_name = goods_name;
                 couponItem.coupon_bar = goods_name + " / @" + goods_amt + " / " + couponItem.coupon_cnt;
                 couponItem.coupon_description = ustate_name + " / " + coupon_no + " / " + coupon_name + " / " + exp_date;
+                couponItem.link_goods_idx = link_goods_idx;
 
 
                 if (is_pass == "Y")
                 {
                     if (ustate_code != "2")
                     {
-                        couponItem.image_ticket = "ticket_off";
+                        couponItem.image_checked = "checked_off";
 
                     }
                     else
                     {
-                        couponItem.image_ticket = "ticket_on";
+                        couponItem.image_checked = "checked_on";
                     }
                 }
                 else
                 {
-                    couponItem.image_ticket = "ticket_off";
+                    couponItem.image_checked = "checked_off";
                 }
 
-                
+
                 thepos_app_log(3, this.Name, "쿠폰조회", couponItem.coupon_bar + " " + couponItem.coupon_description);
 
                 mCouponItemList.Add(couponItem);
-                lvwCoupon.SetObjects(mCouponItemList);
             }
+
+            lvwCoupon.SetObjects(mCouponItemList);
 
         }
 
@@ -187,141 +196,198 @@ namespace thepos2
                 return;
             }
 
-            if (mCouponItemList[0].ustate_code != "2")  // 2 사용가능 
-            {
-                //
-                thepos_app_log(3, this.Name, "btnOK", "이 쿠폰은 사용할 수 없습니다.");
 
-                tpMessageBox tpMessageBox = new tpMessageBox("이 쿠폰은 사용할 수 없습니다.");
-                tpMessageBox.ShowDialog();
-                return;
+            int checked_cnt = 0;
+
+            for (int i = 0; i < mCouponItemList.Count; i++)
+            {
+                if (mCouponItemList[i].image_checked == "checked_on")
+                {
+                    checked_cnt++;
+                }
             }
 
-            if (mCouponItemList[0].is_pass != "Y")
+            if (checked_cnt == 0)
             {
-                //
-                thepos_app_log(3, this.Name, "btnOK", "쿠폰에 해당하는 상품정보를 찾을수 없습니다. 관리자 문의 바랍니다.");
-
-                tpMessageBox tpMessageBox = new tpMessageBox("쿠폰에 해당하는 상품정보를 찾을수 없습니다.\r\n관리자 문의 바랍니다.");
-                tpMessageBox.ShowDialog();
                 return;
             }
 
 
 
-            string t_ustate_code = mCouponItemList[0].ustate_code;
-            string t_coupon_no = mCouponItemList[0].coupon_no;
-            String t_coupon_link_no = mCouponItemList[0].coupon_link_no;
+
+
+            for (int i = 0; i < mCouponItemList.Count; i++)
+            {
+                if (mCouponItemList[i].image_checked == "checked_on")
+                {
+                    
+                    string t_coupon_no = mCouponItemList[i].coupon_no;
+
+
+
+
+
+
+
+                    //  임시 테스트중....
+                    //  임시 테스트중....
+                    //  임시 테스트중....
+                    //  임시 테스트중....
+                    //  임시 테스트중....
+                    //  임시 테스트중....
+
+
+
+
+                    coupon cp = mCouponItemList[i];
+                    cp.result = "1";                    // 인증사용 OK
+                    mCouponItemList[i] = cp;
+
+
+
+
+
+                    /*
+                    couponTM p = new couponTM();
+                    int ret = p.requestTmCertAuth(t_coupon_no);
+                    if (ret == 0)
+                    {
+                        if (mObj["result"].ToString() == "1000")
+                        {
+                            //
+                            thepos_app_log(1, this.Name, "requestTmCertAuth()", "정상. coupon_no=" + t_coupon_no);
+
+                            coupon cp = mCouponItemList[i];
+                            cp.result = "1";                    // 인증사용 OK
+                            mCouponItemList[i] = cp;
+
+                        }
+                        else
+                        {
+                            String msg = mObj["msg"].ToString();
+                            //
+                            thepos_app_log(3, this.Name, "requestTmCertAuth()", "오류 " + msg + " coupon_no=" + t_coupon_no);
+
+                        }
+                    }
+                    else
+                    {
+                        //
+                        thepos_app_log(3, this.Name, "requestTmCertAuth()", mErrorMsg);
+                    }
+                    */
+
+
+
+
+                }
+            }
 
 
             //
-            couponTM p = new couponTM();
-            int ret = p.requestTmCertAuth(t_coupon_no);
-
-            if (ret == 0)
+            bool isExist = false;
+            for (int i = 0; i < mCouponItemList.Count; i++)
             {
-                if (mObj["result"].ToString() == "1000")
+                if (mCouponItemList[i].result == "1")
                 {
-                    //
-                    thepos_app_log(1, this.Name, "requestTmCertAuth()", "정상. coupon_no=" + t_coupon_no);
-
-
-                    // 
-                    order_pay_cert(t_coupon_no, link_goods_idx);
-
-
-                    //
-                    frmCoupon3 frm = new frmCoupon3();
-                    frm.ShowDialog();
-
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                }
-                else
-                {
-                    String msg = mObj["msg"].ToString();
-
-                    //
-                    thepos_app_log(3, this.Name, "requestTmCertAuth()", "오류 " + msg + " coupon_no=" + t_coupon_no);
-                    
-
-                    tpMessageBox tpMessageBox = new tpMessageBox("오류\n\n" + msg);
-                    tpMessageBox.ShowDialog();
-                    return;
+                    isExist = true;
                 }
             }
-            else
-            {
-                //
-                thepos_app_log(3, this.Name, "requestTmCertAuth()", mErrorMsg);
 
-                tpMessageBox tpMessageBox = new tpMessageBox(mErrorMsg);
-                tpMessageBox.ShowDialog();
+            if (!isExist)
+            {
                 return;
             }
+
+
+
+            order_pay_cert();
+
+
+            //
+            frmCoupon3 frm = new frmCoupon3();
+            frm.ShowDialog();
+
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+
+
+
         }
 
-        private void order_pay_cert(string t_coupon_no, int link_goods_idx)
+        private void order_pay_cert()
         {
-            //
-            String ticketNo = "";
-            int order_cnt = 1;
-            int mNetAmount = 0;
-
-            //
-            // 옵션항목 목록: frmOrderOption에서 채운다.
-            mOrderOptionItemList.Clear();
-
-
-            MemOrderItem orderItem = new MemOrderItem();
-
-            orderItem.option_name_description = "";   // 리스트뷰 상품항목 아랫줄에 표시
-            orderItem.option_amt_description = "";    // 리스트뷰 단가항목 아랫줄에 표시
-
-            orderItem.option_item_cnt = mOrderOptionItemList.Count;
-            orderItem.option_no = "";
-            orderItem.orderOptionItemList = mOrderOptionItemList.ToList();  // ToList() : 리스트 복사, 참조가 아니고..
-
-            orderItem.order_no = mOrderItemList.Count + 1;
-            orderItem.goods_code = mGoodsItem[link_goods_idx].goods_code.ToString();
-            orderItem.goods_name = mGoodsItem[link_goods_idx].goods_name[0];
-            orderItem.ticket = mGoodsItem[link_goods_idx].ticket;
-            orderItem.taxfree = mGoodsItem[link_goods_idx].taxfree;
-            orderItem.allim = mGoodsItem[link_goods_idx].allim;
-
-            orderItem.cnt = order_cnt;
-            orderItem.amt = mGoodsItem[link_goods_idx].amt;
-            //orderItem.option_amt    // 위에서 세팅
-
-            orderItem.dcr_type = "";
-            orderItem.dcr_des = "";
-            orderItem.dcr_value = 0;
-            orderItem.shop_code = mGoodsItem[link_goods_idx].shop_code;
-
-            orderItem.coupon_no = t_coupon_no;
-
-
-            //
-            //replace_mem_order_item(ref orderItem, "add");
-
-            mOrderItemList.Add(orderItem);
-
-
-            mNetAmount = orderItem.cnt * orderItem.amt;
-
-
-
             //
             countup_the_no();
 
+            mOrderItemList.Clear();
 
+            int mNetAmount = 0;
+
+            for (int i = 0; i < mCouponItemList.Count; i++)
+            {
+                if (mCouponItemList[i].result != "1")
+                {
+                    continue;
+                }
+
+
+                int link_goods_idx = mCouponItemList[i].link_goods_idx;
+
+                // 옵션항목 목록: frmOrderOption에서 채운다.
+                mOrderOptionItemList.Clear();
+
+                MemOrderItem orderItem = new MemOrderItem();
+
+                orderItem.option_name_description = "";   // 리스트뷰 상품항목 아랫줄에 표시
+                orderItem.option_amt_description = "";    // 리스트뷰 단가항목 아랫줄에 표시
+
+                orderItem.option_item_cnt = mOrderOptionItemList.Count;
+                orderItem.option_no = "";
+                orderItem.orderOptionItemList = mOrderOptionItemList.ToList();  // ToList() : 리스트 복사, 참조가 아니고..
+
+                orderItem.order_no = mOrderItemList.Count + 1;
+                orderItem.goods_code = mGoodsItem[link_goods_idx].goods_code.ToString();
+                orderItem.goods_name = mGoodsItem[link_goods_idx].goods_name[0];
+                orderItem.ticket = mGoodsItem[link_goods_idx].ticket;
+                orderItem.taxfree = mGoodsItem[link_goods_idx].taxfree;
+                orderItem.allim = mGoodsItem[link_goods_idx].allim;
+
+                orderItem.cnt = mCouponItemList[i].coupon_cnt;
+                orderItem.amt = mGoodsItem[link_goods_idx].amt;
+                //orderItem.option_amt    // 위에서 세팅
+                orderItem.dcr_type = "";
+                orderItem.dcr_des = "";
+                orderItem.dcr_value = 0;
+                orderItem.shop_code = mGoodsItem[link_goods_idx].shop_code;
+                orderItem.nod_code1 = mGoodsItem[link_goods_idx].nod_code1;
+                orderItem.nod_code2 = mGoodsItem[link_goods_idx].nod_code2;
+                orderItem.coupon_no = mCouponItemList[i].coupon_no;
+                mOrderItemList.Add(orderItem);
+
+                mNetAmount += orderItem.cnt * orderItem.amt;
+
+            }
+
+            
+            if (mSiteId == "2501")  //  동춘
+            {
+                // 1장씩 인증받았지만 동일상품이면 묶는다.
+                get_order_grouping_goods();  // mOrderItemList
+            }
+            
+
+
+
+
+            int order_cnt = 0;
             int dcAmount = 0;
 
             set_shop_order_no_on_orderitem(out dcAmount);
 
 
             // orders, orderItem 
-            order_cnt = SaveOrder(ticketNo);  // order. orderitem  ->  업장주문서 출력은 제외
+            order_cnt = SaveOrder("");  // order. orderitem  ->  업장주문서 출력은 제외
             if (order_cnt == -1)
             {
                 return; // 재로그인 요구
@@ -335,34 +401,45 @@ namespace thepos2
             }
 
 
-            PaymentCert mPaymentCert = new PaymentCert();
-            mPaymentCert.site_id = mSiteId;
-            mPaymentCert.biz_dt = mBizDate;
-            mPaymentCert.pos_no = myPosNo;
-            mPaymentCert.the_no = mTheNo;
-            mPaymentCert.ref_no = mRefNo; // 
 
-            mPaymentCert.pay_date = get_today_date();
-            mPaymentCert.pay_time = get_today_time();
-            mPaymentCert.pay_type = "M0";       // 결제구분 : 쿠폰인증(M0)
-            mPaymentCert.tran_type = "A";       // 승인 A 취소 C
-            mPaymentCert.pay_class = mPayClass;
-
-            mPaymentCert.ticket_no = ticketNo;
-            mPaymentCert.pay_seq = 1; // 
-            mPaymentCert.tran_date = get_today_date() + get_today_time();
-            mPaymentCert.amount = mNetAmount;    // 결제금액
-            mPaymentCert.coupon_no = mOrderItemList[0].coupon_no;   //?  쿠폰인증 멀티 발권가능하도록 할것인가?
-            mPaymentCert.is_cancel = "";         // 취소여부
-            mPaymentCert.van_code = "TM";        // TM : 테이블메니저
-            mPaymentCert.cnt = mOrderItemList[0].cnt;
-            mPaymentCert.coupon_link_no = mCouponItemList[0].coupon_link_no;
-
-            // 결제 항목 저장
-            if (!SavePaymentCert(mPaymentCert))
+            for (int i = 0; i < mCouponItemList.Count; i++)
             {
-                return;
+                if (mCouponItemList[i].result != "1")
+                {
+                    continue;
+                }
+
+                PaymentCert mPaymentCert = new PaymentCert();
+                mPaymentCert.site_id = mSiteId;
+                mPaymentCert.biz_dt = mBizDate;
+                mPaymentCert.pos_no = myPosNo;
+                mPaymentCert.the_no = mTheNo;
+                mPaymentCert.ref_no = mRefNo; // 
+
+                mPaymentCert.pay_date = get_today_date();
+                mPaymentCert.pay_time = get_today_time();
+                mPaymentCert.pay_type = "M0";       // 결제구분 : 쿠폰인증(M0)
+                mPaymentCert.tran_type = "A";       // 승인 A 취소 C
+                mPaymentCert.pay_class = mPayClass;
+
+                mPaymentCert.ticket_no = mTheNo;
+                mPaymentCert.pay_seq = i;           //
+                mPaymentCert.tran_date = get_today_date() + get_today_time();
+                mPaymentCert.amount = mCouponItemList[i].goods_amt;    // 결제금액
+                mPaymentCert.coupon_no = mCouponItemList[i].coupon_no;   //?  쿠폰인증 멀티 발권가능하도록 할것인가?
+                mPaymentCert.is_cancel = "";         // 취소여부
+                mPaymentCert.van_code = "TM";        // TM : 테이블메니저
+                mPaymentCert.cnt = 1;
+                mPaymentCert.coupon_link_no = mCouponItemList[i].coupon_link_no;
+
+                // 결제 항목 저장
+                if (!SavePaymentCert(mPaymentCert))
+                {
+                    //return;
+                }
             }
+
+
 
 
 
@@ -370,7 +447,7 @@ namespace thepos2
 
 
             // 티켓 저장
-            int ticket_cnt = SaveTicketFlow(ticketNo, mPayClass, "US", settel_amt);
+            int ticket_cnt = SaveTicketFlow("", mPayClass, "US", settel_amt);
 
             if (ticket_cnt > 0)
             {
@@ -401,6 +478,28 @@ namespace thepos2
             mOrderItemList.Clear();
             lvwCoupon.SetObjects(mOrderItemList);
         }
+
+
+        private void get_order_grouping_goods()
+        {
+            List<MemOrderItem> result = mOrderItemList
+                .GroupBy(item => item.goods_code)
+                .Select(group =>
+                {
+                    // 첫 번째 항목을 복사해서 사용
+                    MemOrderItem item = group.First();
+                    item.cnt = group.Count(); // 동일한 goods_code 개수로 cnt 설정
+                    return item;
+                })
+                .ToList();
+
+            // 결과를 다시 mOrderItemList에 저장
+            mOrderItemList = result;
+
+        }
+
+
+
 
 
         private bool SavePaymentCert(PaymentCert mPaymentCert)
@@ -498,8 +597,6 @@ namespace thepos2
                 }
             }
 
-
-
         }
 
         private static String get_new_order_no()
@@ -550,6 +647,45 @@ namespace thepos2
 
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+
+        private void lvwCoupon_MouseClick(object sender, MouseEventArgs e)
+        {
+            var olv = sender as ObjectListView;
+
+            var hitTestInfo = olv.OlvHitTest(e.X, e.Y);
+
+
+            if (hitTestInfo?.Item != null)
+            {
+                int index = hitTestInfo.Item.Index;
+
+                coupon cp = mCouponItemList[index];
+
+
+                if (cp.is_pass == "Y" & cp.ustate_code == "2")
+                {
+                    if (cp.image_checked == "checked_off")
+                    {
+                        cp.image_checked = "checked_on";
+                    }
+                    else
+                    {
+                        cp.image_checked = "checked_off";
+                    }
+                }
+                else
+                {
+                    cp.image_checked = "checked_off";
+                }
+
+
+                mCouponItemList[index] = cp;
+                lvwCoupon.SetObjects(mCouponItemList);
+
+            }
+
         }
 
     }

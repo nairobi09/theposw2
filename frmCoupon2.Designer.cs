@@ -32,15 +32,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCoupon2));
             this.btnOK = new System.Windows.Forms.Button();
             this.btnPrev = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnHome = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lvwCoupon = new BrightIdeasSoftware.ObjectListView();
-            this.coupon_bar = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.is_select = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.lvwCoupon = new BrightIdeasSoftware.ObjectListView();
             this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.coupon_bar = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.is_select = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.result = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lvwCoupon)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +51,7 @@
             this.btnOK.BackColor = System.Drawing.Color.Red;
             this.btnOK.Font = new System.Drawing.Font("맑은 고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnOK.ForeColor = System.Drawing.Color.White;
-            this.btnOK.Location = new System.Drawing.Point(344, 1531);
+            this.btnOK.Location = new System.Drawing.Point(344, 1632);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(350, 150);
             this.btnOK.TabIndex = 70;
@@ -73,15 +74,6 @@
             this.btnPrev.TabStop = false;
             this.btnPrev.UseVisualStyleBackColor = true;
             this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "ticket_on");
-            this.imageList1.Images.SetKeyName(1, "ticket_off");
-            this.imageList1.Images.SetKeyName(2, "checked_off");
-            this.imageList1.Images.SetKeyName(3, "checked_on");
             // 
             // btnHome
             // 
@@ -119,51 +111,6 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "쿠폰선택";
             // 
-            // lvwCoupon
-            // 
-            this.lvwCoupon.AllColumns.Add(this.olvColumn1);
-            this.lvwCoupon.AllColumns.Add(this.coupon_bar);
-            this.lvwCoupon.AllColumns.Add(this.is_select);
-            this.lvwCoupon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lvwCoupon.CellEditUseWholeCell = false;
-            this.lvwCoupon.CellPadding = new System.Drawing.Rectangle(3, 3, 3, 3);
-            this.lvwCoupon.CheckBoxes = true;
-            this.lvwCoupon.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.olvColumn1,
-            this.coupon_bar,
-            this.is_select});
-            this.lvwCoupon.CopySelectionOnControlCUsesDragSource = false;
-            this.lvwCoupon.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lvwCoupon.Font = new System.Drawing.Font("맑은 고딕", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lvwCoupon.ForeColor = System.Drawing.Color.Black;
-            this.lvwCoupon.GridLines = true;
-            this.lvwCoupon.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.lvwCoupon.HideSelection = false;
-            this.lvwCoupon.Location = new System.Drawing.Point(70, 788);
-            this.lvwCoupon.MultiSelect = false;
-            this.lvwCoupon.Name = "lvwCoupon";
-            this.lvwCoupon.RowHeight = 100;
-            this.lvwCoupon.SelectAllOnControlA = false;
-            this.lvwCoupon.ShowGroups = false;
-            this.lvwCoupon.ShowImagesOnSubItems = true;
-            this.lvwCoupon.Size = new System.Drawing.Size(928, 713);
-            this.lvwCoupon.SmallImageList = this.imageList1;
-            this.lvwCoupon.TabIndex = 60;
-            this.lvwCoupon.TabStop = false;
-            this.lvwCoupon.TriStateCheckBoxes = true;
-            this.lvwCoupon.UseCompatibleStateImageBehavior = false;
-            this.lvwCoupon.UseHotControls = false;
-            this.lvwCoupon.View = System.Windows.Forms.View.Details;
-            // 
-            // coupon_bar
-            // 
-            this.coupon_bar.AspectName = "coupon_bar";
-            this.coupon_bar.CellPadding = new System.Drawing.Rectangle(0, 16, 0, 0);
-            this.coupon_bar.ImageAspectName = "image_ticket";
-            this.coupon_bar.Text = "쿠폰";
-            this.coupon_bar.Width = 800;
-            this.coupon_bar.WordWrap = true;
-            // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
@@ -175,25 +122,84 @@
             this.textBox1.Size = new System.Drawing.Size(486, 10);
             this.textBox1.TabIndex = 0;
             // 
-            // is_select
+            // imageList1
             // 
-            this.is_select.AspectName = "is_select";
-            this.is_select.CheckBoxes = true;
-            this.is_select.ImageAspectName = "image_checked";
-            this.is_select.Text = "선택";
-            this.is_select.Width = 100;
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "ticket_on");
+            this.imageList1.Images.SetKeyName(1, "ticket_off");
+            this.imageList1.Images.SetKeyName(2, "checked_off");
+            this.imageList1.Images.SetKeyName(3, "checked_on");
+            // 
+            // lvwCoupon
+            // 
+            this.lvwCoupon.AllColumns.Add(this.olvColumn1);
+            this.lvwCoupon.AllColumns.Add(this.is_select);
+            this.lvwCoupon.AllColumns.Add(this.coupon_bar);
+            this.lvwCoupon.AllColumns.Add(this.result);
+            this.lvwCoupon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lvwCoupon.CellEditUseWholeCell = false;
+            this.lvwCoupon.CellPadding = new System.Drawing.Rectangle(3, 3, 3, 3);
+            this.lvwCoupon.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumn1,
+            this.is_select,
+            this.coupon_bar,
+            this.result});
+            this.lvwCoupon.CopySelectionOnControlCUsesDragSource = false;
+            this.lvwCoupon.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lvwCoupon.Font = new System.Drawing.Font("맑은 고딕", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lvwCoupon.ForeColor = System.Drawing.Color.Black;
+            this.lvwCoupon.GridLines = true;
+            this.lvwCoupon.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lvwCoupon.HideSelection = false;
+            this.lvwCoupon.Location = new System.Drawing.Point(57, 759);
+            this.lvwCoupon.MultiSelect = false;
+            this.lvwCoupon.Name = "lvwCoupon";
+            this.lvwCoupon.RowHeight = 80;
+            this.lvwCoupon.SelectAllOnControlA = false;
+            this.lvwCoupon.ShowGroups = false;
+            this.lvwCoupon.ShowImagesOnSubItems = true;
+            this.lvwCoupon.Size = new System.Drawing.Size(928, 847);
+            this.lvwCoupon.SmallImageList = this.imageList1;
+            this.lvwCoupon.TabIndex = 71;
+            this.lvwCoupon.TabStop = false;
+            this.lvwCoupon.TriStateCheckBoxes = true;
+            this.lvwCoupon.UseCompatibleStateImageBehavior = false;
+            this.lvwCoupon.UseHotControls = false;
+            this.lvwCoupon.View = System.Windows.Forms.View.Details;
+            this.lvwCoupon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lvwCoupon_MouseClick);
             // 
             // olvColumn1
             // 
-            this.olvColumn1.Width = 5;
+            this.olvColumn1.Width = 2;
+            // 
+            // coupon_bar
+            // 
+            this.coupon_bar.AspectName = "coupon_bar";
+            this.coupon_bar.CellPadding = new System.Drawing.Rectangle(0, 10, 0, 0);
+            this.coupon_bar.ImageAspectName = "";
+            this.coupon_bar.Text = "쿠폰";
+            this.coupon_bar.Width = 750;
+            this.coupon_bar.WordWrap = true;
+            // 
+            // is_select
+            // 
+            this.is_select.AspectName = "is_select";
+            this.is_select.ImageAspectName = "image_checked";
+            this.is_select.Text = "선택";
+            this.is_select.Width = 120;
+            // 
+            // result
+            // 
+            this.result.Width = 0;
             // 
             // frmCoupon2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(1040, 1880);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lvwCoupon);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.label1);
@@ -214,14 +220,15 @@
 
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnPrev;
-        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private BrightIdeasSoftware.ObjectListView lvwCoupon;
-        private BrightIdeasSoftware.OLVColumn coupon_bar;
         private System.Windows.Forms.TextBox textBox1;
-        private BrightIdeasSoftware.OLVColumn is_select;
+        private System.Windows.Forms.ImageList imageList1;
+        private BrightIdeasSoftware.ObjectListView lvwCoupon;
         private BrightIdeasSoftware.OLVColumn olvColumn1;
+        private BrightIdeasSoftware.OLVColumn coupon_bar;
+        private BrightIdeasSoftware.OLVColumn is_select;
+        private BrightIdeasSoftware.OLVColumn result;
     }
 }

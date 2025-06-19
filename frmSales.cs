@@ -3546,7 +3546,6 @@ namespace thepos2
                                 {
                                     //??
 
-
                                 }
                                 else if (mTicketMedia == "RF")   // 팔찌
                                 {
