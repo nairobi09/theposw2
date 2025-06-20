@@ -225,29 +225,16 @@ namespace thepos2
 
 
 
-
-
-
-
-                    //  임시 테스트중....
-                    //  임시 테스트중....
-                    //  임시 테스트중....
-                    //  임시 테스트중....
-                    //  임시 테스트중....
-                    //  임시 테스트중....
-
-
-
+                    /*
 
                     coupon cp = mCouponItemList[i];
                     cp.result = "1";                    // 인증사용 OK
                     mCouponItemList[i] = cp;
 
 
+                    */
 
 
-
-                    /*
                     couponTM p = new couponTM();
                     int ret = p.requestTmCertAuth(t_coupon_no);
                     if (ret == 0)
@@ -275,9 +262,6 @@ namespace thepos2
                         //
                         thepos_app_log(3, this.Name, "requestTmCertAuth()", mErrorMsg);
                     }
-                    */
-
-
 
 
                 }
