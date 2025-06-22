@@ -157,7 +157,7 @@ namespace thepos2
                 }
 
 
-                thepos_app_log(3, this.Name, "쿠폰조회", couponItem.coupon_bar + " " + couponItem.coupon_description);
+                thepos_app_log(1, this.Name, "쿠폰조회", couponItem.coupon_bar + " " + couponItem.coupon_description);
 
                 mCouponItemList.Add(couponItem);
             }
