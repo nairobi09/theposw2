@@ -1375,6 +1375,7 @@ namespace thepos2
 
 
                 int order_shop_cnt = 0;
+                int allim_cnt = 0;
                 String shop_order_no = "";
                 String is_allim = "";
 
@@ -1382,6 +1383,7 @@ namespace thepos2
                 {
                     order_shop_cnt = 0;
                     shop_order_no = "";
+                    allim_cnt = 0;
 
                     for (int k = 0; k < mOrderItemList.Count; k++)
                     {
@@ -1393,6 +1395,7 @@ namespace thepos2
                             if (mOrderItemList[k].allim == "Y")
                             {
                                 is_allim = "Y";
+                                allim_cnt++;
                             }
                         }
                     }
@@ -1405,7 +1408,8 @@ namespace thepos2
                     parameters["refNo"] = mRefNo;
                     parameters["orderDate"] = get_today_date();
                     parameters["orderTime"] = get_today_time();
-                    parameters["cnt"] = order_shop_cnt + "";
+                    parameters["order_cnt"] = order_shop_cnt + "";
+                    parameters["cnt"] = allim_cnt + "";
                     parameters["isCancel"] = "";
                     parameters["shopCode"] = shop_code_list[i] + "";
                     parameters["shopOrderNo"] = shop_order_no;
@@ -1613,19 +1617,26 @@ namespace thepos2
                 parameters["netAmount"] = amount + "";
 
 
+                String is_cash = "0", is_card = "0", is_easy = "0", is_point = "0", is_cert = "0";
                 int amount_cash = 0, amount_card = 0, amount_easy = 0, amount_point = 0, amount_cert = 0;
 
-                if (payType == "Cash") amount_cash = amount;
-                else if (payType == "Card") amount_card = amount;
-                else if (payType == "Easy") amount_easy = amount;
-                else if (payType == "Point") amount_point = amount;
-                else if (payType == "Cert") amount_cert = amount;
+                if (payType == "Cash") { is_cash = "1"; amount_cash = amount; }
+                else if (payType == "Card") { is_card = "1"; amount_card = amount; }
+                else if (payType == "Easy") { is_easy = "1"; amount_easy = amount; }
+                else if (payType == "Point") { is_point = "1"; amount_point = amount; }
+                else if (payType == "Cert") { is_cert = "1"; amount_cert = amount; }
 
                 parameters["amountCash"] = amount_cash + "";
                 parameters["amountCard"] = amount_card + "";
                 parameters["amountEasy"] = amount_easy + "";
                 parameters["amountPoint"] = amount_point + "";
                 parameters["amountCert"] = amount_cert + "";
+
+                parameters["isCash"] = is_cash;
+                parameters["isCard"] = is_card;
+                parameters["isEasy"] = is_easy;
+                parameters["isPoint"] = is_point;
+                parameters["isCert"] = is_cert;
 
                 parameters["dcAmount"] = dcAmount + "";
                 parameters["isCancel"] = "";
