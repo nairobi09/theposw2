@@ -129,6 +129,12 @@
     <Compile Include="frmPayKakao.Designer.cs">
       <DependentUpon>frmPayKakao.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSalesCombo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalesCombo.Designer.cs">
+      <DependentUpon>frmSalesCombo.cs</DependentUpon>
+    </Compile>
     <Compile Include="tpMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,11 +172,11 @@
     <Compile Include="frmPayCard.Designer.cs">
       <DependentUpon>frmPayCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSales.cs">
+    <Compile Include="frmSalesMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSales.Designer.cs">
-      <DependentUpon>frmSales.cs</DependentUpon>
+    <Compile Include="frmSalesMenu.Designer.cs">
+      <DependentUpon>frmSalesMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSetupPos.cs">
       <SubType>Form</SubType>
@@ -233,8 +239,11 @@
     <EmbeddedResource Include="frmPayKakao.resx">
       <DependentUpon>frmPayKakao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSales.resx">
-      <DependentUpon>frmSales.cs</DependentUpon>
+    <EmbeddedResource Include="frmSalesCombo.resx">
+      <DependentUpon>frmSalesCombo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSalesMenu.resx">
+      <DependentUpon>frmSalesMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSetupPos.resx">
       <DependentUpon>frmSetupPos.cs</DependentUpon>

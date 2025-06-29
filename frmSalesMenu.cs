@@ -28,7 +28,7 @@ using theposw2;
 
 namespace thepos2
 {
-    public partial class frmSales : Form
+    public partial class frmSalesMenu : Form
     {
 
         RadioButton[] mRbGroup = new RadioButton[5];
@@ -89,7 +89,7 @@ namespace thepos2
 
 
 
-        public frmSales()
+        public frmSalesMenu()
         {
             InitializeComponent();
 
@@ -3303,7 +3303,7 @@ namespace thepos2
             // 떠있는 창있으면 강제 Close
             for (int i = Application.OpenForms.Count - 1; i >= 0; i += -1)
             {
-                if (Application.OpenForms[i].Name != "frmSales" & Application.OpenForms[i].Name != "frmLogin")
+                if (Application.OpenForms[i].Name != "frmSalesMenu" & Application.OpenForms[i].Name != "frmLogin")
                 {
                     Application.OpenForms[i].Close();
                 }

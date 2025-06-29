@@ -245,9 +245,14 @@ namespace thepos2
                 frmCoupon frm = new frmCoupon();
                 frm.ShowDialog();
             }
+            else if (mKioskType.Equals("콤보"))
+            {
+                frmSalesCombo frm = new frmSalesCombo();
+                frm.ShowDialog();
+            }
             else
             {
-                frmSales frm = new frmSales();
+                frmSalesMenu frm = new frmSalesMenu();
                 frm.ShowDialog();
             }
 
@@ -549,7 +554,6 @@ namespace thepos2
             }
 
 
-
             // 3-1. optionTemplate
             if (true)
             {
@@ -765,6 +769,11 @@ namespace thepos2
                     }
                 }
             }
+
+
+
+
+
 
         }
 

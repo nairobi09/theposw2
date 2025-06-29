@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using theposw2;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static thepos2.thepos;
-using static thepos2.frmSales;
+using static thepos2.frmSalesMenu;
 using System.Reflection;
 
 namespace thepos2

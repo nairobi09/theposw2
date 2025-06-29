@@ -279,6 +279,7 @@ namespace thepos2
                 cbValue.Items.Clear();
                 cbValue.Items.Add("범용");
                 cbValue.Items.Add("인증전용");
+                cbValue.Items.Add("콤보");
             }
             else if (code == listSetup[16].code | code == listSetup[17].code)
             {

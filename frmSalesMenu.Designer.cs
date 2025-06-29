@@ -1,6 +1,6 @@
 ﻿namespace thepos2
 {
-    partial class frmSales
+    partial class frmSalesMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSales));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSalesMenu));
             this.btnGroupPrev = new System.Windows.Forms.Button();
             this.btnGroupNext = new System.Windows.Forms.Button();
             this.tableLayoutPanelGoodsGroup = new System.Windows.Forms.TableLayoutPanel();

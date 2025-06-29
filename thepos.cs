@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using System.Drawing;
 using System.Drawing.Text;
-using static thepos2.frmSales;
+using static thepos2.frmSalesMenu;
 using System.Security.Policy;
 using static thepos2.thepos;
 
@@ -225,6 +225,27 @@ namespace thepos2
             public String coupon_link_no;
         }
         public static GoodsItem[] mGoodsItem;
+
+        public struct Goods
+        {
+            public string goods_code;
+            public string goods_name;
+            public int amt;
+            public String online_coupon;
+            public String ticket; // 일반상품 0. 티켓상품 1
+            public String taxfree; // 과세품 0, 면세품 1
+            public String shop_code;
+            public String nod_code1;
+            public String nod_code2;
+            public String cutout;   // 중지
+            public String soldout;  // Y품절
+            public String allim;
+            public String bar_code;
+        }
+        public static List<Goods> mGoodsBarcodeList;
+
+
+
 
         /*
         public struct GoodsOption

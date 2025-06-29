@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static thepos2.thepos;
-using static thepos2.frmSales;
+using static thepos2.frmSalesMenu;
 using thepos2;
 
 namespace theposw2

@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using static thepos2.thepos;
-using static thepos2.frmSales;
+using static thepos2.frmSalesMenu;
 using static thepos2.ClsWin32Api;
 
 namespace thepos2

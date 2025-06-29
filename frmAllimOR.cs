@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static thepos2.frmSales;
+using static thepos2.frmSalesMenu;
 using static thepos2.thepos;
 
 namespace thepos2
