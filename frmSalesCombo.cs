@@ -25,6 +25,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Newtonsoft.Json;
 using static thepos2.thepos;
 using theposw2;
+using thepos;
 
 namespace thepos2
 {
@@ -177,7 +178,6 @@ namespace thepos2
 
 
 
-
             // 대기화면
             if (mWaitingDisplay == "Y")
             {
@@ -205,6 +205,9 @@ namespace thepos2
 
             }
 
+
+            tbBarcodeScan.Text = "";
+            tbBarcodeScan.Focus();
         }
 
 
@@ -218,18 +221,15 @@ namespace thepos2
 
             display_goodsgroup(disp_group_page_no);
 
-
             mRbGroup[0].Checked = true;
 
 
-            //String groupcode = mRbGroup[0].Tag.ToString();
-            //ClickedGoodsGroup(groupcode, "Y");
+            String groupcode = mRbGroup[0].Tag.ToString();
+            ClickedGoodsGroup(groupcode, "Y");
 
 
             // 바코드 상품 로드
             load_goods_barcode();
-
-
 
 
 
@@ -3164,6 +3164,7 @@ namespace thepos2
                 ToolStripMenuItem m1 = new ToolStripMenuItem("내기기설정");
                 ToolStripMenuItem m2 = new ToolStripMenuItem("기초원장 리로드");
                 ToolStripMenuItem m3 = new ToolStripMenuItem("원격지원");
+                ToolStripMenuItem mBizClose = new ToolStripMenuItem("정산");
                 ToolStripMenuItem m4 = new ToolStripMenuItem("종료");
 
                 ToolStripSeparator separator = new ToolStripSeparator();
@@ -3205,6 +3206,18 @@ namespace thepos2
                     timerWelcome.Enabled = false;
                 };
 
+                mBizClose.Font = new System.Drawing.Font("정산", 20F);
+                mBizClose.Click += (senders, es) =>
+                {
+                    // 설정창은 타임아웃 없다.
+                    timerWelcome.Enabled = false;
+
+                    frmBizClose frm = new frmBizClose();
+                    frm.ShowDialog();
+
+                    reset_timer_waiting();
+                };
+
                 m4.Font = new System.Drawing.Font("종료", 30F);
                 m4.Click += (senders, es) =>
                 {
@@ -3219,6 +3232,7 @@ namespace thepos2
                 m.Items.Add(m1);
                 m.Items.Add(m2);
                 m.Items.Add(m3);
+                m.Items.Add(mBizClose);
                 m.Items.Add(separator);
                 m.Items.Add(m4);
 

@@ -1193,7 +1193,7 @@
             this.tbBarcodeScan.Location = new System.Drawing.Point(388, 910);
             this.tbBarcodeScan.Name = "tbBarcodeScan";
             this.tbBarcodeScan.Size = new System.Drawing.Size(300, 14);
-            this.tbBarcodeScan.TabIndex = 74;
+            this.tbBarcodeScan.TabIndex = 0;
             this.tbBarcodeScan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbBarcodeScan.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbBarcodeScan_KeyDown);
             this.tbBarcodeScan.Leave += new System.EventHandler(this.tbBarcodeScan_Leave);
@@ -1201,9 +1201,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(318, 980);
+            this.pictureBox1.Location = new System.Drawing.Point(314, 964);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(93, 147);
+            this.pictureBox1.Size = new System.Drawing.Size(116, 169);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 75;
             this.pictureBox1.TabStop = false;
@@ -1211,10 +1211,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(615, 980);
+            this.pictureBox2.Location = new System.Drawing.Point(622, 996);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(172, 147);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.Size = new System.Drawing.Size(162, 121);
             this.pictureBox2.TabIndex = 76;
             this.pictureBox2.TabStop = false;
             // 

@@ -33,6 +33,8 @@
             this.tbValue = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panelMultiText = new System.Windows.Forms.Panel();
+            this.tbMultiValue = new System.Windows.Forms.TextBox();
             this.panelImage = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnX = new System.Windows.Forms.Button();
@@ -49,7 +51,6 @@
             this.lblSiteName = new System.Windows.Forms.Label();
             this.lblPosNo = new System.Windows.Forms.Label();
             this.btnLoad = new System.Windows.Forms.Button();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.memo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.change = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -59,13 +60,12 @@
             this.ischange = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnClose = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.panelMultiText = new System.Windows.Forms.Panel();
-            this.tbMultiValue = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
+            this.panelMultiText.SuspendLayout();
             this.panelImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panelMultiText.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblMemo
@@ -116,10 +116,29 @@
             this.panel2.Controls.Add(this.lblValueTitle2);
             this.panel2.Controls.Add(this.lblName);
             this.panel2.Controls.Add(this.lblValue);
-            this.panel2.Location = new System.Drawing.Point(581, 202);
+            this.panel2.Location = new System.Drawing.Point(580, 220);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(251, 413);
+            this.panel2.Size = new System.Drawing.Size(251, 406);
             this.panel2.TabIndex = 52;
+            // 
+            // panelMultiText
+            // 
+            this.panelMultiText.Controls.Add(this.tbMultiValue);
+            this.panelMultiText.Location = new System.Drawing.Point(12, 96);
+            this.panelMultiText.Name = "panelMultiText";
+            this.panelMultiText.Size = new System.Drawing.Size(225, 178);
+            this.panelMultiText.TabIndex = 52;
+            this.panelMultiText.Visible = false;
+            // 
+            // tbMultiValue
+            // 
+            this.tbMultiValue.Font = new System.Drawing.Font("굴림", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbMultiValue.Location = new System.Drawing.Point(0, 0);
+            this.tbMultiValue.Multiline = true;
+            this.tbMultiValue.Name = "tbMultiValue";
+            this.tbMultiValue.Size = new System.Drawing.Size(217, 174);
+            this.tbMultiValue.TabIndex = 0;
+            this.tbMultiValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panelImage
             // 
@@ -239,7 +258,7 @@
             this.panel1.Controls.Add(this.lblSiteName);
             this.panel1.Controls.Add(this.lblPosNo);
             this.panel1.Controls.Add(this.btnLoad);
-            this.panel1.Location = new System.Drawing.Point(580, 63);
+            this.panel1.Location = new System.Drawing.Point(579, 78);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(252, 133);
             this.panel1.TabIndex = 51;
@@ -316,23 +335,13 @@
             this.btnLoad.UseVisualStyleBackColor = false;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblTitle.Location = new System.Drawing.Point(24, 27);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(69, 12);
-            this.lblTitle.TabIndex = 53;
-            this.lblTitle.Text = "내기기 설정";
-            // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(694, 622);
+            this.btnSave.Location = new System.Drawing.Point(693, 632);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(138, 52);
@@ -376,11 +385,11 @@
             this.lvwList.GridLines = true;
             this.lvwList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvwList.HideSelection = false;
-            this.lvwList.Location = new System.Drawing.Point(19, 63);
+            this.lvwList.Location = new System.Drawing.Point(21, 77);
             this.lvwList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lvwList.MultiSelect = false;
             this.lvwList.Name = "lvwList";
-            this.lvwList.Size = new System.Drawing.Size(547, 611);
+            this.lvwList.Size = new System.Drawing.Size(547, 606);
             this.lvwList.TabIndex = 49;
             this.lvwList.TabStop = false;
             this.lvwList.UseCompatibleStateImageBehavior = false;
@@ -398,7 +407,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnClose.ForeColor = System.Drawing.Color.Black;
-            this.btnClose.Location = new System.Drawing.Point(582, 623);
+            this.btnClose.Location = new System.Drawing.Point(581, 633);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(106, 50);
             this.btnClose.TabIndex = 54;
@@ -411,33 +420,28 @@
             // 
             this.openFileDialog.FileName = "openFileDialog1";
             // 
-            // panelMultiText
+            // label1
             // 
-            this.panelMultiText.Controls.Add(this.tbMultiValue);
-            this.panelMultiText.Location = new System.Drawing.Point(12, 96);
-            this.panelMultiText.Name = "panelMultiText";
-            this.panelMultiText.Size = new System.Drawing.Size(225, 178);
-            this.panelMultiText.TabIndex = 52;
-            this.panelMultiText.Visible = false;
-            // 
-            // tbMultiValue
-            // 
-            this.tbMultiValue.Font = new System.Drawing.Font("굴림", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tbMultiValue.Location = new System.Drawing.Point(0, 0);
-            this.tbMultiValue.Multiline = true;
-            this.tbMultiValue.Name = "tbMultiValue";
-            this.tbMultiValue.Size = new System.Drawing.Size(217, 174);
-            this.tbMultiValue.TabIndex = 0;
-            this.tbMultiValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(17, 19);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(5);
+            this.label1.Size = new System.Drawing.Size(815, 40);
+            this.label1.TabIndex = 129;
+            this.label1.Text = "내기기 설정";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmSetupPos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(850, 700);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lvwList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -447,15 +451,14 @@
             this.Text = "frmSetupPos";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panelMultiText.ResumeLayout(false);
+            this.panelMultiText.PerformLayout();
             this.panelImage.ResumeLayout(false);
             this.panelImage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panelMultiText.ResumeLayout(false);
-            this.panelMultiText.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -476,7 +479,6 @@
         private System.Windows.Forms.Label lblSiteName;
         private System.Windows.Forms.Label lblPosNo;
         private System.Windows.Forms.Button btnLoad;
-        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.ColumnHeader memo;
         private System.Windows.Forms.ColumnHeader change;
@@ -492,5 +494,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.Panel panelMultiText;
         private System.Windows.Forms.TextBox tbMultiValue;
+        private System.Windows.Forms.Label label1;
     }
 }
