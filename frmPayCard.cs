@@ -186,14 +186,14 @@ namespace thepos2
             order_cnt = SaveOrder("");  // order. orderitem  ->  업장주문서 출력은 제외
             if (order_cnt == -1)
             {
-                return; // 재로그인 요구
+                //return; // 재로그인 요구
             }
 
 
             //  payment
             if (!SavePayment(1, "Card", netAmount, 0))
             {
-                return;
+                //return;
             }
 
             // 서버저장 paymentCard
@@ -217,7 +217,7 @@ namespace thepos2
             // 밴에서 응답으로 받은건 payChannel 모듈에서 세팅
             if (!SavePaymentCard_Server(mPaymentCard))
             {
-                return;
+                //return;
             }
 
 

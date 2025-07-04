@@ -222,8 +222,8 @@ namespace thepos2
             mRbGroup[0].Checked = true;
 
 
-            //String groupcode = mRbGroup[0].Tag.ToString();
-            //ClickedGoodsGroup(groupcode, "Y");
+            String groupcode = mRbGroup[0].Tag.ToString();
+            ClickedGoodsGroup(groupcode, "Y");
 
 
             // 주문아이템
@@ -3153,6 +3153,8 @@ namespace thepos2
                 m2.Font = new System.Drawing.Font("기초원장 리로드", 20F);
                 m2.Click += (senders, es) =>
                 {
+                    sync_data_server_to_memory();
+
                     init_reload();
 
                     MessageBox.Show("기초원장 리로드 완료.", "thepos");

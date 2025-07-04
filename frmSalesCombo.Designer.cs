@@ -1201,7 +1201,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(314, 964);
+            this.pictureBox1.Location = new System.Drawing.Point(302, 964);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(116, 169);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1211,7 +1211,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(622, 996);
+            this.pictureBox2.Location = new System.Drawing.Point(629, 996);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(162, 121);
             this.pictureBox2.TabIndex = 76;
@@ -1220,20 +1220,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(235, 1149);
+            this.label2.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(166, 1153);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(266, 28);
+            this.label2.Size = new System.Drawing.Size(318, 32);
             this.label2.TabIndex = 77;
             this.label2.Text = "위 상품메뉴를 클릭하시거나";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(570, 1149);
+            this.label3.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(577, 1153);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(273, 28);
+            this.label3.Size = new System.Drawing.Size(326, 32);
             this.label3.TabIndex = 77;
             this.label3.Text = "아래 바코드를 인식해 주세요";
             // 
