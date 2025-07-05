@@ -799,6 +799,17 @@ namespace thepos2
                 }
             }
 
+
+
+            for (int i = 0; i < mGoodsBarcodeList.Count; i++)
+            {
+                if (mGoodsBarcodeList[i].goods_code == code)
+                {
+                    return mGoodsBarcodeList[i].goods_name;
+                }
+            }
+
+
             return code;
         }
 
