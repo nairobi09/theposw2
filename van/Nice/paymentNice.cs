@@ -113,8 +113,32 @@ namespace thepos2
 
                 if (ret != 1)
                 {
+                    if (ret == -1) mErrorMsg = "NVCAT 실행 중이 아님";
+                    else if (ret == -2) mErrorMsg = "거래금액이 존재하지 않음";
+                    else if (ret == -6) mErrorMsg = "카드리딩 타임아웃";
+                    else if (ret == -7) mErrorMsg = "사용자 및 리더기 요청 취소";
+                    else if (ret == -8) mErrorMsg = "FALLBACK 거래 요청 필요";
+                    else if (ret == -9) mErrorMsg = "기타 오류";
 
-                    mErrorMsg = "NICE VCAT 오류.";
+                    else if (ret == -10) mErrorMsg = "IC 우선 거래 요청 필요 (IC카드 MS리딩시)";
+                    else if (ret == -11) mErrorMsg = "FALLBACK 거래 아님";
+                    else if (ret == -12) mErrorMsg = "거래 불가 카드";
+                    else if (ret == -13) mErrorMsg = "서명 요청 오류";
+
+                    else if (ret == -15) mErrorMsg = "카드리더 PORT OPEN 오류";
+                    else if (ret == -16) mErrorMsg = "직전거래 망상취소 불가";
+                    else if (ret == -17) mErrorMsg = "중복 요청 불가";
+                    else if (ret == -18) mErrorMsg = "지원되지 않는 카드";
+                    else if (ret == -19) mErrorMsg = "현금IC카드 복수계좌 미지원";
+
+                    else if (ret == -20) mErrorMsg = "TIT 카드 리더기 오류";
+                    else if (ret == -21) mErrorMsg = "NVCAT 내부 망상취소 실패 (해당 카드사 확인요망)";
+
+                    else if (ret == -26) mErrorMsg = "리더기 응답데이터 수신 실패 (결제 재요청 필요)";
+                    else if (ret == -27) mErrorMsg = "리더기 요청 실패 (결제 재요청 필요)";
+                    else if (ret == -28) mErrorMsg = "서버 연결 실패 (결제 재요청 필요)";
+                    else if (ret == -29) mErrorMsg = "요청 전문 송신 실패 (결제 재요청 필요)";
+                    else mErrorMsg = "NICE VCAT 오류.";
 
                     thepos_app_log(3, "paymentNice", "requestNiceCardAuth()", mErrorMsg + " ret=" + ret);
 
@@ -184,10 +208,7 @@ namespace thepos2
                 mErrorMsg = e.Message;
                 return -1;
             }
-
-
         }
-
 
 
         public int requestNiceEasyAuth(int tAmount, int tFreeAmount, int tTaxAmount, int tTax, int tServiceAmt, String tBarcodeNo, out PaymentEasy pEasy)

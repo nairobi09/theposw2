@@ -109,15 +109,14 @@ namespace thepos2
             btnPayRequest.Text = mLangOKArr[mLanguageNo];
             btnClose.Text = mLangCloseArr[mLanguageNo];
 
-
-            if (mIsTestPayMode == "Test")
-            {
-                btnPayRequest.Text = "결제\r\n테스트(SKIP)";
-            }
         }
 
         private void btnPayRequest_Click(object sender, EventArgs e)
         {
+
+            // 이중 클릭방지를 위해
+            btnPayRequest.Enabled = false;
+
 
             String t할부 = "00";
 
@@ -157,21 +156,18 @@ namespace thepos2
             tFreeAmount = t면세금액;
 
 
-
-            // 테스트모드에서는 그냥 PASS
-            if (mIsTestPayMode != "Test")
+            //
+            if (requestCardAuth(tAmount, tFreeAmount, tTaxAmount, tTax, tServiceAmt, install, is_cup, out mPaymentCard) != 0)
             {
-                if (requestCardAuth(tAmount, tFreeAmount, tTaxAmount, tTax, tServiceAmt, install, is_cup, out mPaymentCard) != 0)
-                {
-                    //
-                    thepos_app_log(3, this.Name, "requestCardAuth()", mErrorMsg);
+                //
+                MessageBox.Show(mErrorMsg, "thepos");
 
-                    MessageBox.Show(mErrorMsg, "thepos");
 
-                    return;
-                }
+                // 다시 버튼 사용가능
+                btnPayRequest.Enabled = true;
+
+                return;
             }
-
 
 
             //정상승인
