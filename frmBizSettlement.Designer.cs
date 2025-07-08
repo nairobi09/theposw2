@@ -1,6 +1,6 @@
 ﻿namespace thepos
 {
-    partial class frmBizClose
+    partial class frmBizSettlement
     {
         /// <summary>
         /// Required designer variable.

@@ -1141,7 +1141,7 @@ namespace thepos2
                     // 설정창은 타임아웃 없다.
                     timerWelcome.Enabled = false;
 
-                    frmBizClose frm = new frmBizClose();
+                    frmBizSettlement frm = new frmBizSettlement();
                     frm.ShowDialog();
 
                     reset_timer_waiting();

@@ -16,7 +16,7 @@ using static thepos2.thepos;
 
 namespace thepos
 {
-    public partial class frmBizClose : Form
+    public partial class frmBizSettlement : Form
     {
         int cash_cnt = 0;
         int card_cnt = 0;
@@ -42,7 +42,7 @@ namespace thepos
         int net_amount = 0;
 
 
-        public frmBizClose()
+        public frmBizSettlement()
         {
             InitializeComponent();
 
@@ -605,7 +605,7 @@ namespace thepos
 
 
             // 현금매출액
-            str_amount = cash_amount.ToString("N0");
+            str_amount = (cash_amount - cash_amount_cncl).ToString("N0");
             space_cnt = 28 - encodelen("현금매출액"); str_body += "현금매출액" + Space(space_cnt);
             space_cnt = 14 - encodelen(str_amount); str_body += Space(space_cnt) + str_amount;
 
@@ -621,7 +621,7 @@ namespace thepos
 
 
             // 현금 과부족
-            str_amount = (real_cash_amount - (cash_amount + cash_starting)).ToString("N0");
+            str_amount = (real_cash_amount - (cash_amount - cash_amount_cncl + cash_starting)).ToString("N0");
             space_cnt = 28 - encodelen("현금과부족"); str_body += "현금과부족" + Space(space_cnt);
             space_cnt = 14 - encodelen(str_amount); str_body += Space(space_cnt) + str_amount;
 

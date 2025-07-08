@@ -105,11 +105,11 @@
     <Compile Include="frmAllimOR.Designer.cs">
       <DependentUpon>frmAllimOR.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBizClose.cs">
+    <Compile Include="frmBizSettlement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBizClose.Designer.cs">
-      <DependentUpon>frmBizClose.cs</DependentUpon>
+    <Compile Include="frmBizSettlement.Designer.cs">
+      <DependentUpon>frmBizSettlement.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCoupon1.cs">
       <SubType>Form</SubType>
@@ -218,8 +218,8 @@
     <EmbeddedResource Include="frmAllimOR.resx">
       <DependentUpon>frmAllimOR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBizClose.resx">
-      <DependentUpon>frmBizClose.cs</DependentUpon>
+    <EmbeddedResource Include="frmBizSettlement.resx">
+      <DependentUpon>frmBizSettlement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCoupon1.resx">
       <DependentUpon>frmCoupon1.cs</DependentUpon>
