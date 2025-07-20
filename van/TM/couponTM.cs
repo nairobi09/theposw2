@@ -25,6 +25,8 @@ namespace thepos2
             {
                 Dictionary<string, string> parameters = new Dictionary<string, string>();
                 parameters["barcode_no"] = tCouponNo;
+                parameters["page"] = "1";
+                parameters["pageSize"] = "100";
 
                 var json = JsonConvert.SerializeObject(parameters);
                 var data = new StringContent(json, Encoding.UTF8, "application/json");

@@ -213,7 +213,7 @@ namespace thepos2
 
 
             //
-            thepos_app_log(1, this.Name, "requestTmCertView()", "정상. coupon_no=[" + t_coupon_no + "]");
+            thepos_app_log(1, this.Name, "requestTmCertView()", "정상. coupon_no=[" + t_coupon_no + "] info.Count=" + info.Count);
 
 
 
