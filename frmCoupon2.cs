@@ -354,12 +354,12 @@ namespace thepos2
             }
 
             
-            if (mSiteId == "2501")  //  동춘
-            {
-                // 1장씩 인증받았지만 동일상품이면 묶는다.
-                get_order_grouping_goods();  // mOrderItemList
-            }
+
             
+
+            //
+            // 1장씩 인증받았지만 동일상품이면 묶는다.
+            get_order_grouping_goods();  // mOrderItemList
 
 
 
