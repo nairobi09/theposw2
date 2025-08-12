@@ -3577,7 +3577,8 @@ namespace thepos2
 
         public static byte[] CutPage()
         {
-            byte[] partial_cut = new byte[3] { 0x1D, 0x56, 0x00 };
+            byte[] partial_cut = new byte[3] { 0x1D, 0x56, 0x00 };  // 완전컷
+            //byte[] partial_cut = new byte[3] { 0x1D, 0x56, 0x01 };  // 부분컷??? 안됨?
             return partial_cut;
         }
 
