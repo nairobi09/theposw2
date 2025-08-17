@@ -539,26 +539,26 @@ namespace thepos2
             lstGoodsIndex.Clear();
 
 
-            for (int i = 0; i < mGoodsItem.Length; i++)
+            for (int i = 0; i < myGoodsItem.Length; i++)
             {
-                if (groupcode == mGoodsItem[i].group_code)
+                if (groupcode == myGoodsItem[i].group_code)
                 {
-                    lstNo.Add(mGoodsItem[i].column);
-                    lstGoodsCode.Add(mGoodsItem[i].goods_code);
+                    lstNo.Add(myGoodsItem[i].layout_no);
+                    lstGoodsCode.Add(myGoodsItem[i].goods_code);
 
-                    lstGoodsName.Add(mGoodsItem[i].goods_name[0]);
-                    lstGoodsNameEn.Add(mGoodsItem[i].goods_name[1]);
-                    lstGoodsNameCh.Add(mGoodsItem[i].goods_name[2]);
-                    lstGoodsNameJp.Add(mGoodsItem[i].goods_name[3]);
+                    lstGoodsName.Add(myGoodsItem[i].goods_name[0]);
+                    lstGoodsNameEn.Add(myGoodsItem[i].goods_name[1]);
+                    lstGoodsNameCh.Add(myGoodsItem[i].goods_name[2]);
+                    lstGoodsNameJp.Add(myGoodsItem[i].goods_name[3]);
 
-                    lstGoodsNotice.Add(mGoodsItem[i].goods_notice);
+                    lstGoodsNotice.Add(myGoodsItem[i].goods_notice);
 
-                    lstBadgesId.Add(mGoodsItem[i].badges_id);
+                    lstBadgesId.Add(myGoodsItem[i].badges_id);
 
-                    lstGoodsAmt.Add(mGoodsItem[i].amt);
-                    lstImage.Add(mGoodsItem[i].image_path);
-                    lstCutout.Add(mGoodsItem[i].cutout);
-                    lstSoldout.Add(mGoodsItem[i].soldout);
+                    lstGoodsAmt.Add(myGoodsItem[i].amt);
+                    lstImage.Add(myGoodsItem[i].image_path);
+                    lstCutout.Add(myGoodsItem[i].cutout);
+                    lstSoldout.Add(myGoodsItem[i].soldout);
                     lstGoodsIndex.Add(i);
                 }
             }
@@ -774,7 +774,7 @@ namespace thepos2
         {
             //
             // 온라인 쿠폰 인증 화면
-            if (mGoodsItem[goods_index].online_coupon  == "Y")
+            if (myGoodsItem[goods_index].online_coupon  == "Y")
             {
                 //
                 timerWelcome.Stop();
@@ -794,9 +794,9 @@ namespace thepos2
 
             int order_cnt = 1;
 
-            if (mGoodsItem[goods_index].option_template_id != "")
+            if (myGoodsItem[goods_index].option_template_id != "")
             {
-                frmOrderOption fForm = new frmOrderOption(mGoodsItem[goods_index]);
+                frmOrderOption fForm = new frmOrderOption(myGoodsItem[goods_index]);
                 DialogResult ret = fForm.ShowDialog();
 
                 if (ret == DialogResult.Cancel)
@@ -812,7 +812,7 @@ namespace thepos2
 
 
             MemOrderItem orderItem = new MemOrderItem();
-            int lv_idx = (get_lvitem_idx(mGoodsItem[goods_index].goods_code));  // 이미  동일 상품이 주문리스트뷰에 있는지
+            int lv_idx = (get_lvitem_idx(myGoodsItem[goods_index].goods_code));  // 이미  동일 상품이 주문리스트뷰에 있는지
 
             if (lv_idx == -1)
             {
@@ -850,25 +850,25 @@ namespace thepos2
                 orderItem.orderOptionItemList = mOrderOptionItemList.ToList();  // ToList() : 리스트 복사, 참조가 아니고..
 
                 orderItem.order_no = mOrderItemList.Count + 1;
-                orderItem.goods_code = mGoodsItem[goods_index].goods_code.ToString();
-                orderItem.goods_name = mGoodsItem[goods_index].goods_name[mLanguageNo];
+                orderItem.goods_code = myGoodsItem[goods_index].goods_code.ToString();
+                orderItem.goods_name = myGoodsItem[goods_index].goods_name[mLanguageNo];
 
-                orderItem.ticket = mGoodsItem[goods_index].ticket;
-                orderItem.taxfree = mGoodsItem[goods_index].taxfree;
-                orderItem.allim = mGoodsItem[goods_index].allim;
+                orderItem.ticket = myGoodsItem[goods_index].ticket;
+                orderItem.taxfree = myGoodsItem[goods_index].taxfree;
+                orderItem.allim = myGoodsItem[goods_index].allim;
 
 
                 orderItem.cnt = order_cnt;
 
-                orderItem.amt = mGoodsItem[goods_index].amt;
+                orderItem.amt = myGoodsItem[goods_index].amt;
                 //orderItem.option_amt    // 위에서 세팅
 
                 orderItem.dcr_type = "";
                 orderItem.dcr_des = "";
                 orderItem.dcr_value = 0;
-                orderItem.shop_code = mGoodsItem[goods_index].shop_code;
-                orderItem.nod_code1 = mGoodsItem[goods_index].nod_code1;
-                orderItem.nod_code2 = mGoodsItem[goods_index].nod_code2;
+                orderItem.shop_code = myGoodsItem[goods_index].shop_code;
+                orderItem.nod_code1 = myGoodsItem[goods_index].nod_code1;
+                orderItem.nod_code2 = myGoodsItem[goods_index].nod_code2;
 
 
                 //

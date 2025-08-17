@@ -95,9 +95,9 @@ namespace thepos2
                 // 쿠폰 -> 상품 매칭
                 int link_goods_idx = -1;
 
-                for (int k = 0; k < mGoodsItem.Length; k++)
+                for (int k = 0; k < mGoodsList.Count; k++)
                 {
-                    if (coupon_link_no == mGoodsItem[k].coupon_link_no)
+                    if (coupon_link_no == mGoodsList[k].coupon_link_no)
                     {
                         link_goods_idx = k;
                     }
@@ -118,8 +118,8 @@ namespace thepos2
                 {
                     // 정상
                     is_pass = "Y";
-                    goods_amt = mGoodsItem[link_goods_idx].amt;
-                    goods_name = mGoodsItem[link_goods_idx].goods_name[0];
+                    goods_amt = mGoodsList[link_goods_idx].amt;
+                    goods_name = mGoodsList[link_goods_idx].goods_name;
                 }
 
 
@@ -331,21 +331,21 @@ namespace thepos2
                 orderItem.orderOptionItemList = mOrderOptionItemList.ToList();  // ToList() : 리스트 복사, 참조가 아니고..
 
                 orderItem.order_no = mOrderItemList.Count + 1;
-                orderItem.goods_code = mGoodsItem[link_goods_idx].goods_code.ToString();
-                orderItem.goods_name = mGoodsItem[link_goods_idx].goods_name[0];
-                orderItem.ticket = mGoodsItem[link_goods_idx].ticket;
-                orderItem.taxfree = mGoodsItem[link_goods_idx].taxfree;
-                orderItem.allim = mGoodsItem[link_goods_idx].allim;
+                orderItem.goods_code = mGoodsList[link_goods_idx].goods_code.ToString();
+                orderItem.goods_name = mGoodsList[link_goods_idx].goods_name;
+                orderItem.ticket = mGoodsList[link_goods_idx].ticket;
+                orderItem.taxfree = mGoodsList[link_goods_idx].taxfree;
+                orderItem.allim = mGoodsList[link_goods_idx].allim;
 
                 orderItem.cnt = mCouponItemList[i].coupon_cnt;
-                orderItem.amt = mGoodsItem[link_goods_idx].amt;
+                orderItem.amt = mGoodsList[link_goods_idx].amt;
                 //orderItem.option_amt    // 위에서 세팅
                 orderItem.dcr_type = "";
                 orderItem.dcr_des = "";
                 orderItem.dcr_value = 0;
-                orderItem.shop_code = mGoodsItem[link_goods_idx].shop_code;
-                orderItem.nod_code1 = mGoodsItem[link_goods_idx].nod_code1;
-                orderItem.nod_code2 = mGoodsItem[link_goods_idx].nod_code2;
+                orderItem.shop_code = mGoodsList[link_goods_idx].shop_code;
+                orderItem.nod_code1 = mGoodsList[link_goods_idx].nod_code1;
+                orderItem.nod_code2 = mGoodsList[link_goods_idx].nod_code2;
                 orderItem.coupon_no = mCouponItemList[i].coupon_no;
                 mOrderItemList.Add(orderItem);
 

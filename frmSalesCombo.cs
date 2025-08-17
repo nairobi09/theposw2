@@ -229,7 +229,7 @@ namespace thepos2
 
 
             // 바코드 상품 로드
-            load_goods_barcode();
+            //oad_goods_barcode();
 
 
 
@@ -362,58 +362,6 @@ namespace thepos2
 
         }
 
-
-
-        private void load_goods_barcode()
-        {
-            String sUrl = "goods?siteId=" + mSiteId;
-            if (mRequestGet(sUrl))
-            {
-                if (mObj["resultCode"].ToString() == "200")
-                {
-                    String data = mObj["goods"].ToString();
-                    JArray arr = JArray.Parse(data);
-
-                    mGoodsBarcodeList = new List<Goods>();
-                    mGoodsBarcodeList.Clear();
-
-                    for (int i = 0; i < arr.Count; i++)
-                    {
-                        if (arr[i]["barCode"].ToString().Trim() != "")
-                        {
-                            Goods goods = new Goods();
-                            goods.goods_code = arr[i]["goodsCode"].ToString();
-                            goods.goods_name = arr[i]["goodsName"].ToString();
-                            goods.amt = int.Parse(arr[i]["amt"].ToString());
-                            goods.online_coupon = arr[i]["onlineCoupon"].ToString();
-                            goods.ticket = arr[i]["ticketYn"].ToString();
-                            goods.taxfree = arr[i]["taxFree"].ToString();
-                            goods.shop_code = arr[i]["shopCode"].ToString();
-                            goods.nod_code1 = arr[i]["nodCode1"].ToString();
-                            goods.nod_code2 = arr[i]["nodCode2"].ToString();
-                            goods.cutout = arr[i]["cutout"].ToString();
-                            goods.soldout = arr[i]["soldout"].ToString();
-                            goods.allim = arr[i]["allim"].ToString();
-                            goods.bar_code = arr[i]["barCode"].ToString().Trim();
-                            mGoodsBarcodeList.Add(goods);
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("상품정보 오류. goods\n\n" + mObj["resultMsg"].ToString(), "thepos");
-                    return;
-                }
-            }
-            else
-            {
-                MessageBox.Show("시스템오류\n\n" + mErrorMsg, "thepos");
-                return;
-            }
-
-
-
-        }
 
 
 
@@ -576,26 +524,26 @@ namespace thepos2
             lstGoodsIndex.Clear();
 
 
-            for (int i = 0; i < mGoodsItem.Length; i++)
+            for (int i = 0; i < myGoodsItem.Length; i++)
             {
-                if (groupcode == mGoodsItem[i].group_code)
+                if (groupcode == myGoodsItem[i].group_code)
                 {
-                    lstNo.Add(mGoodsItem[i].column);
-                    lstGoodsCode.Add(mGoodsItem[i].goods_code);
+                    lstNo.Add(myGoodsItem[i].layout_no);
+                    lstGoodsCode.Add(myGoodsItem[i].goods_code);
 
-                    lstGoodsName.Add(mGoodsItem[i].goods_name[0]);
-                    lstGoodsNameEn.Add(mGoodsItem[i].goods_name[1]);
-                    lstGoodsNameCh.Add(mGoodsItem[i].goods_name[2]);
-                    lstGoodsNameJp.Add(mGoodsItem[i].goods_name[3]);
+                    lstGoodsName.Add(myGoodsItem[i].goods_name[0]);
+                    lstGoodsNameEn.Add(myGoodsItem[i].goods_name[1]);
+                    lstGoodsNameCh.Add(myGoodsItem[i].goods_name[2]);
+                    lstGoodsNameJp.Add(myGoodsItem[i].goods_name[3]);
 
-                    lstGoodsNotice.Add(mGoodsItem[i].goods_notice);
+                    lstGoodsNotice.Add(myGoodsItem[i].goods_notice);
 
-                    lstBadgesId.Add(mGoodsItem[i].badges_id);
+                    lstBadgesId.Add(myGoodsItem[i].badges_id);
 
-                    lstGoodsAmt.Add(mGoodsItem[i].amt);
-                    lstImage.Add(mGoodsItem[i].image_path);
-                    lstCutout.Add(mGoodsItem[i].cutout);
-                    lstSoldout.Add(mGoodsItem[i].soldout);
+                    lstGoodsAmt.Add(myGoodsItem[i].amt);
+                    lstImage.Add(myGoodsItem[i].image_path);
+                    lstCutout.Add(myGoodsItem[i].cutout);
+                    lstSoldout.Add(myGoodsItem[i].soldout);
                     lstGoodsIndex.Add(i);
                 }
             }
@@ -811,7 +759,7 @@ namespace thepos2
         {
             //
             // 온라인 쿠폰 인증 화면
-            if (mGoodsItem[goods_index].online_coupon  == "Y")
+            if (myGoodsItem[goods_index].online_coupon  == "Y")
             {
                 //
                 timerWelcome.Stop();
@@ -831,9 +779,9 @@ namespace thepos2
 
             int order_cnt = 1;
 
-            if (mGoodsItem[goods_index].option_template_id != "")
+            if (myGoodsItem[goods_index].option_template_id != "")
             {
-                frmOrderOption fForm = new frmOrderOption(mGoodsItem[goods_index]);
+                frmOrderOption fForm = new frmOrderOption(myGoodsItem[goods_index]);
                 DialogResult ret = fForm.ShowDialog();
 
                 if (ret == DialogResult.Cancel)
@@ -849,7 +797,7 @@ namespace thepos2
 
 
             MemOrderItem orderItem = new MemOrderItem();
-            int lv_idx = (get_lvitem_idx(mGoodsItem[goods_index].goods_code));  // 이미  동일 상품이 주문리스트뷰에 있는지
+            int lv_idx = (get_lvitem_idx(myGoodsItem[goods_index].goods_code));  // 이미  동일 상품이 주문리스트뷰에 있는지
 
             if (lv_idx == -1)
             {
@@ -887,25 +835,25 @@ namespace thepos2
                 orderItem.orderOptionItemList = mOrderOptionItemList.ToList();  // ToList() : 리스트 복사, 참조가 아니고..
 
                 orderItem.order_no = mOrderItemList.Count + 1;
-                orderItem.goods_code = mGoodsItem[goods_index].goods_code.ToString();
-                orderItem.goods_name = mGoodsItem[goods_index].goods_name[mLanguageNo];
+                orderItem.goods_code = myGoodsItem[goods_index].goods_code.ToString();
+                orderItem.goods_name = myGoodsItem[goods_index].goods_name[mLanguageNo];
 
-                orderItem.ticket = mGoodsItem[goods_index].ticket;
-                orderItem.taxfree = mGoodsItem[goods_index].taxfree;
-                orderItem.allim = mGoodsItem[goods_index].allim;
+                orderItem.ticket = myGoodsItem[goods_index].ticket;
+                orderItem.taxfree = myGoodsItem[goods_index].taxfree;
+                orderItem.allim = myGoodsItem[goods_index].allim;
 
 
                 orderItem.cnt = order_cnt;
 
-                orderItem.amt = mGoodsItem[goods_index].amt;
+                orderItem.amt = myGoodsItem[goods_index].amt;
                 //orderItem.option_amt    // 위에서 세팅
 
                 orderItem.dcr_type = "";
                 orderItem.dcr_des = "";
                 orderItem.dcr_value = 0;
-                orderItem.shop_code = mGoodsItem[goods_index].shop_code;
-                orderItem.nod_code1 = mGoodsItem[goods_index].nod_code1;
-                orderItem.nod_code2 = mGoodsItem[goods_index].nod_code2;
+                orderItem.shop_code = myGoodsItem[goods_index].shop_code;
+                orderItem.nod_code1 = myGoodsItem[goods_index].nod_code1;
+                orderItem.nod_code2 = myGoodsItem[goods_index].nod_code2;
 
 
                 //
@@ -1738,9 +1686,9 @@ namespace thepos2
 
             int barcode_idx = -1;
 
-            for (int i = 0; i < mGoodsBarcodeList.Count; i++)
+            for (int i = 0; i < mGoodsList.Count; i++)
             {
-                if (mGoodsBarcodeList[i].bar_code == input_barcode)
+                if (mGoodsList[i].bar_code == input_barcode)
                 {
                     barcode_idx = i;
                     break;
@@ -1766,7 +1714,7 @@ namespace thepos2
 
 
                 MemOrderItem orderItem = new MemOrderItem();
-                int lv_idx = (get_lvitem_idx(mGoodsBarcodeList[barcode_idx].goods_code));  // 이미  동일 상품이 주문리스트뷰에 있는지
+                int lv_idx = (get_lvitem_idx(mGoodsList[barcode_idx].goods_code));  // 이미  동일 상품이 주문리스트뷰에 있는지
 
                 if (lv_idx == -1)
                 {
@@ -1799,25 +1747,25 @@ namespace thepos2
                     orderItem.orderOptionItemList = mOrderOptionItemList.ToList();  // ToList() : 리스트 복사, 참조가 아니고..
 
                     orderItem.order_no = mOrderItemList.Count + 1;
-                    orderItem.goods_code = mGoodsBarcodeList[barcode_idx].goods_code.ToString();
-                    orderItem.goods_name = mGoodsBarcodeList[barcode_idx].goods_name;
+                    orderItem.goods_code = mGoodsList[barcode_idx].goods_code.ToString();
+                    orderItem.goods_name = mGoodsList[barcode_idx].goods_name;
 
-                    orderItem.ticket = mGoodsBarcodeList[barcode_idx].ticket;
-                    orderItem.taxfree = mGoodsBarcodeList[barcode_idx].taxfree;
-                    orderItem.allim = mGoodsBarcodeList[barcode_idx].allim;
+                    orderItem.ticket = mGoodsList[barcode_idx].ticket;
+                    orderItem.taxfree = mGoodsList[barcode_idx].taxfree;
+                    orderItem.allim = mGoodsList[barcode_idx].allim;
 
 
                     orderItem.cnt = 1;
 
-                    orderItem.amt = mGoodsBarcodeList[barcode_idx].amt;
+                    orderItem.amt = mGoodsList[barcode_idx].amt;
                     //orderItem.option_amt    // 위에서 세팅
 
                     orderItem.dcr_type = "";
                     orderItem.dcr_des = "";
                     orderItem.dcr_value = 0;
-                    orderItem.shop_code = mGoodsBarcodeList[barcode_idx].shop_code;
-                    orderItem.nod_code1 = mGoodsBarcodeList[barcode_idx].nod_code1;
-                    orderItem.nod_code2 = mGoodsBarcodeList[barcode_idx].nod_code2;
+                    orderItem.shop_code = mGoodsList[barcode_idx].shop_code;
+                    orderItem.nod_code1 = mGoodsList[barcode_idx].nod_code1;
+                    orderItem.nod_code2 = mGoodsList[barcode_idx].nod_code2;
 
 
                     //

@@ -30,7 +30,7 @@ namespace thepos2
 
         // 배포시 버전관리 - 로그와 연동
 
-        public static String mAppVersion = "TPW2-2025-012";
+        public static String mAppVersion = "TPW2-2025-013";
 
 
 
@@ -196,7 +196,7 @@ namespace thepos2
             public string[] group_name;
             public string soldout;
             public string cutout;
-            public int column;
+            public int layout_no;
         }
         public static GoodsGroup[] mGoodsGroup1;
         public static List<GoodsGroup> mGoodsGroup = new List<GoodsGroup>();
@@ -222,14 +222,11 @@ namespace thepos2
             public String cutout;   // 중지
             public String soldout;  // Y품절
             public String allim;
-            public int column;
-            public int row;
-            public int columnspan;
-            public int rowspan;
+            public int layout_no;
             public String option_template_id;
-            public String coupon_link_no;
+            //public String coupon_link_no;
         }
-        public static GoodsItem[] mGoodsItem;
+        public static GoodsItem[] myGoodsItem;
 
         public struct Goods
         {
@@ -246,8 +243,9 @@ namespace thepos2
             public String soldout;  // Y품절
             public String allim;
             public String bar_code;
+            public String coupon_link_no;
         }
-        public static List<Goods> mGoodsBarcodeList;
+        public static List<Goods> mGoodsList = new List<Goods>();
 
 
 
@@ -778,9 +776,9 @@ namespace thepos2
 
         public static int get_goods_index(String code)
         {
-            for (int i = 0; i < mGoodsItem.Length; i++)
+            for (int i = 0; i < mGoodsList.Count; i++)
             {
-                if (mGoodsItem[i].goods_code == code)
+                if (mGoodsList[i].goods_code == code)
                 {
                     return i;
                 }
@@ -794,24 +792,13 @@ namespace thepos2
             if (code == "CHARGE")
                 return "충전";
 
-            for (int i = 0; i < mGoodsItem.Length; i++)
+            for (int i = 0; i < mGoodsList.Count; i++)
             {
-                if (mGoodsItem[i].goods_code == code)
+                if (mGoodsList[i].goods_code == code)
                 {
-                    return mGoodsItem[i].goods_name[0];
+                    return mGoodsList[i].goods_name;
                 }
             }
-
-
-
-            for (int i = 0; i < mGoodsBarcodeList.Count; i++)
-            {
-                if (mGoodsBarcodeList[i].goods_code == code)
-                {
-                    return mGoodsBarcodeList[i].goods_name;
-                }
-            }
-
 
             return code;
         }
@@ -820,11 +807,11 @@ namespace thepos2
         {
             String goods_template_id = "";
 
-            for (int i = 0; i < mGoodsItem.Length; i++)
+            for (int i = 0; i < myGoodsItem.Length; i++)
             {
-                if (mGoodsItem[i].goods_code == goods_code)
+                if (myGoodsItem[i].goods_code == goods_code)
                 {
-                    goods_template_id =  mGoodsItem[i].option_template_id;
+                    goods_template_id = myGoodsItem[i].option_template_id;
                     break;
                 }
             }
@@ -845,11 +832,11 @@ namespace thepos2
         {
             String goods_template_id = "";
 
-            for (int i = 0; i < mGoodsItem.Length; i++)
+            for (int i = 0; i < myGoodsItem.Length; i++)
             {
-                if (mGoodsItem[i].goods_code == goods_code)
+                if (myGoodsItem[i].goods_code == goods_code)
                 {
-                    goods_template_id = mGoodsItem[i].option_template_id;
+                    goods_template_id = myGoodsItem[i].option_template_id;
                     break;
                 }
             }
@@ -1185,10 +1172,10 @@ namespace thepos2
             }
 
 
-            // 2. goodsGroup
+            // 2. kioskGoodsGroup
             if (true)
             {
-                String sUrl = "goodsGroup?siteId=" + mSiteId + "&posNo=" + myPosNo;
+                String sUrl = "kioskGoodsGroup?siteId=" + mSiteId + "&shopCode=" + myShopCode;
                 if (mRequestGet(sUrl))
                 {
                     if (mObj["resultCode"].ToString() == "200")
@@ -1210,7 +1197,7 @@ namespace thepos2
                                 goodsGroup.group_name[2] = arr[i]["groupNameCh"].ToString();
                                 goodsGroup.group_name[3] = arr[i]["groupNameJp"].ToString();
                                 goodsGroup.soldout = arr[i]["soldout"].ToString();
-                                goodsGroup.column = int.Parse(arr[i]["locateX"].ToString());
+                                goodsGroup.layout_no = int.Parse(arr[i]["layoutNo"].ToString());
                                 mGoodsGroup.Add(goodsGroup);
                             }
                         }
@@ -1226,7 +1213,7 @@ namespace thepos2
 
                             for (int i = 0; i < mGoodsGroup.Count - 1; i++)
                             {
-                                if (mGoodsGroup[i].column > mGoodsGroup[i + 1].column)  // ascending
+                                if (mGoodsGroup[i].layout_no > mGoodsGroup[i + 1].layout_no)  // ascending
                                 {
                                     goodsGroupTemp = mGoodsGroup[i];
                                     mGoodsGroup[i] = mGoodsGroup[i + 1];
@@ -1240,7 +1227,7 @@ namespace thepos2
                     }
                     else
                     {
-                        MessageBox.Show("상품그룹정보 오류. goodsGroup\n\n" + mObj["resultMsg"].ToString(), "thepos");
+                        MessageBox.Show("상품그룹정보 오류. kioskGoodsGroup\n\n" + mObj["resultMsg"].ToString(), "thepos");
                         return;
                     }
                 }
@@ -1252,10 +1239,10 @@ namespace thepos2
             }
 
 
-            // 3. goodsItemAndGoods
+            // 3. kioskGoodsItem
             if (true)
             {
-                String sUrl = "goodsItemAndGoods?siteId=" + mSiteId + "&posNo=" + myPosNo + "&imageYn=Y";
+                String sUrl = "kioskGoodsItem?siteId=" + mSiteId + "&shopCode=" + myShopCode;
                 if (mRequestGet(sUrl))
                 {
                     if (mObj["resultCode"].ToString() == "200")
@@ -1263,54 +1250,19 @@ namespace thepos2
                         String goods_item = mObj["goodsItems"].ToString();
                         JArray arr = JArray.Parse(goods_item);
 
-                        mGoodsItem = new GoodsItem[arr.Count];
+                        myGoodsItem = new GoodsItem[arr.Count];
 
                         for (int i = 0; i < arr.Count; i++)
                         {
-                            mGoodsItem[i].group_code = arr[i]["groupCode"].ToString();
-                            mGoodsItem[i].goods_code = arr[i]["goodsCode"].ToString();
-
-                            mGoodsItem[i].goods_name = new string[4];
-
-                            mGoodsItem[i].goods_name[0] = arr[i]["goodsName"].ToString();
-                            mGoodsItem[i].goods_name[1] = arr[i]["goodsNameEn"].ToString();
-                            mGoodsItem[i].goods_name[2] = arr[i]["goodsNameCh"].ToString();
-                            mGoodsItem[i].goods_name[3] = arr[i]["goodsNameJp"].ToString();
-
-                            mGoodsItem[i].goods_notice = arr[i]["goodsNotice"].ToString();
-                            mGoodsItem[i].badges_id = arr[i]["badgesId"].ToString();
-
-                            mGoodsItem[i].shop_code = arr[i]["shopCode"].ToString();
-                            mGoodsItem[i].nod_code1 = arr[i]["nodCode1"].ToString();
-                            mGoodsItem[i].nod_code2 = arr[i]["nodCode2"].ToString();
-
-                            mGoodsItem[i].amt = int.Parse(arr[i]["amt"].ToString());
-                            mGoodsItem[i].online_coupon = arr[i]["onlineCoupon"].ToString();
-                            mGoodsItem[i].ticket = arr[i]["ticketYn"].ToString();
-                            mGoodsItem[i].taxfree = arr[i]["taxFree"].ToString();
-                            mGoodsItem[i].cutout = arr[i]["cutout"].ToString();
-                            mGoodsItem[i].soldout = arr[i]["soldout"].ToString();
-                            mGoodsItem[i].allim = arr[i]["allim"].ToString();
-                            mGoodsItem[i].column = int.Parse(arr[i]["locateX"].ToString());  // 배치순번
-                            mGoodsItem[i].option_template_id = arr[i]["optionTemplateId"].ToString();
-                            mGoodsItem[i].coupon_link_no = arr[i]["couponLinkNo"].ToString();
-
-                            mGoodsItem[i].image_path = arr[i]["imagePath"].ToString();
-
-                            // 면세상픔은 상품명앞에 *을 붙인다.
-                            if (mGoodsItem[i].taxfree == "1")
-                            {
-                                mGoodsItem[i].goods_name[0] = "*" + mGoodsItem[i].goods_name[0];
-                                mGoodsItem[i].goods_name[1] = "*" + mGoodsItem[i].goods_name[1];
-                                mGoodsItem[i].goods_name[2] = "*" + mGoodsItem[i].goods_name[2];
-                                mGoodsItem[i].goods_name[3] = "*" + mGoodsItem[i].goods_name[3];
-                            }
+                            myGoodsItem[i].group_code = arr[i]["groupCode"].ToString();
+                            myGoodsItem[i].goods_code = arr[i]["goodsCode"].ToString();
+                            myGoodsItem[i].layout_no = int.Parse(arr[i]["layoutNo"].ToString());  // 배치순번
 
                         }
                     }
                     else
                     {
-                        MessageBox.Show("상품정보 오류. goodsItemAndGoods\n\n" + mObj["resultMsg"].ToString(), "thepos");
+                        MessageBox.Show("상품정보 오류. kioskGoodsItem\n\n" + mObj["resultMsg"].ToString(), "thepos");
                         return;
                     }
                 }
@@ -1320,6 +1272,96 @@ namespace thepos2
                     return;
                 }
             }
+
+
+
+            // 3. goods
+            if (true)
+            {
+                String sUrl = "goods?siteId=" + mSiteId + "&imageYn=Y";
+                if (mRequestGet(sUrl))
+                {
+                    if (mObj["resultCode"].ToString() == "200")
+                    {
+                        String data = mObj["goods"].ToString();
+                        JArray arr = JArray.Parse(data);
+
+                        mGoodsList.Clear();
+
+                        for (int i = 0; i < arr.Count; i++)
+                        {
+                            String t_goods_code = arr[i]["goodsCode"].ToString();
+
+                            for (int k = 0; k < myGoodsItem.Length; k++)
+                            {
+                                if (myGoodsItem[k].goods_code == t_goods_code)
+                                {
+                                    myGoodsItem[k].goods_name = new string[4];
+                                    
+                                    myGoodsItem[k].goods_name[0] = arr[i]["goodsName"].ToString();
+                                    myGoodsItem[k].goods_name[1] = arr[i]["goodsNameEn"].ToString();
+                                    myGoodsItem[k].goods_name[2] = arr[i]["goodsNameCh"].ToString();
+                                    myGoodsItem[k].goods_name[3] = arr[i]["goodsNameJp"].ToString();
+
+                                    myGoodsItem[k].shop_code = arr[i]["shopCode"].ToString();
+                                    myGoodsItem[k].nod_code1 = arr[i]["nodCode1"].ToString();
+                                    myGoodsItem[k].nod_code2 = arr[i]["nodCode2"].ToString();
+                                    myGoodsItem[k].amt = int.Parse(arr[i]["amt"].ToString());
+                                    myGoodsItem[k].online_coupon = arr[i]["onlineCoupon"].ToString();
+                                    myGoodsItem[k].ticket = arr[i]["ticketYn"].ToString();
+                                    myGoodsItem[k].taxfree = arr[i]["taxFree"].ToString();
+                                    myGoodsItem[k].cutout = arr[i]["cutout"].ToString();
+                                    myGoodsItem[k].soldout = arr[i]["soldout"].ToString();
+                                    myGoodsItem[k].allim = arr[i]["allim"].ToString();
+                                    myGoodsItem[k].option_template_id = arr[i]["optionTemplateId"].ToString();
+                                    myGoodsItem[k].image_path = arr[i]["imagePath"].ToString();
+                                    //myGoodsItem[k].coupon_link_no = arr[i]["couponLinkNo"].ToString();
+                                    //myGoodsItem[k].bar_code = arr[i]["barCode"].ToString();
+
+                                    // 면세상픔은 상품명앞에 *을 붙인다.
+                                    if (myGoodsItem[k].taxfree == "1")
+                                    {
+                                        myGoodsItem[k].goods_name[0] = "*" + myGoodsItem[k].goods_name[0];
+                                        myGoodsItem[k].goods_name[1] = "*" + myGoodsItem[k].goods_name[1];
+                                        myGoodsItem[k].goods_name[2] = "*" + myGoodsItem[k].goods_name[2];
+                                        myGoodsItem[k].goods_name[3] = "*" + myGoodsItem[k].goods_name[3];
+                                    }
+                                }
+                            }
+
+
+                            //
+                            Goods goods = new Goods();
+                            goods.goods_code = arr[i]["goodsCode"].ToString();
+                            goods.goods_name = arr[i]["goodsName"].ToString();
+                            goods.amt = int.Parse(arr[i]["amt"].ToString());
+                            goods.online_coupon = arr[i]["onlineCoupon"].ToString();
+                            goods.ticket = arr[i]["ticketYn"].ToString();
+                            goods.taxfree = arr[i]["taxFree"].ToString();
+                            goods.shop_code = arr[i]["shopCode"].ToString();
+                            goods.nod_code1 = arr[i]["nodCode1"].ToString();
+                            goods.nod_code2 = arr[i]["nodCode2"].ToString();
+                            goods.cutout = arr[i]["cutout"].ToString();
+                            goods.soldout = arr[i]["soldout"].ToString();
+                            goods.allim = arr[i]["allim"].ToString();
+                            goods.bar_code = arr[i]["barCode"].ToString().Trim();
+                            goods.coupon_link_no = arr[i]["couponLinkNo"].ToString();
+                            mGoodsList.Add(goods);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("상품정보 오류. goods\n\n" + mObj["resultMsg"].ToString(), "thepos");
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("시스템오류\n\n" + mErrorMsg, "thepos");
+                    return;
+                }
+            }
+
 
 
             // 3-1. optionTemplate
@@ -2700,6 +2742,7 @@ namespace thepos2
                 parameters["bizDt"] = mBizDate;
                 parameters["theNo"] = mTheNo;
                 parameters["refNo"] = mRefNo;
+                parameters["pointTheNo"] = mTheNo;
                 parameters["tranType"] = "A";
                 parameters["orderDate"] = get_today_date();
                 parameters["orderTime"] = get_today_time();
@@ -2776,6 +2819,7 @@ namespace thepos2
                     parameters["bizDt"] = mBizDate;
                     parameters["theNo"] = mTheNo;
                     parameters["refNo"] = mRefNo;
+                    parameters["pointTheNo"] = mTheNo;
                     parameters["orderDate"] = get_today_date();
                     parameters["orderTime"] = get_today_time();
                     parameters["order_cnt"] = order_shop_cnt + "";
@@ -2838,6 +2882,7 @@ namespace thepos2
                     parameters["bizDt"] = mBizDate;
                     parameters["theNo"] = mTheNo;
                     parameters["refNo"] = mRefNo;
+                    parameters["pointTheNo"] = mTheNo;
                     parameters["tranType"] = "A";
                     parameters["orderDate"] = get_today_date();
                     parameters["orderTime"] = get_today_time();
@@ -2909,6 +2954,7 @@ namespace thepos2
                         parameters["bizDt"] = mBizDate;
                         parameters["theNo"] = mTheNo;
                         parameters["refNo"] = mRefNo;
+                        parameters["pointTheNo"] = mTheNo;
                         parameters["optionNo"] = t_option_no;
 
                         parameters["orderDate"] = get_today_date();
