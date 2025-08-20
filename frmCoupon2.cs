@@ -64,28 +64,18 @@ namespace thepos2
             for (int i = 0; i < info.Count; i++)
             {
 
-                string coupon_no = info[i]["barcode_no"].ToString();
-                string ustate_code = info[i]["ustate"].ToString();
-                string coupon_name = info[i]["cusitem"].ToString();
-                string coupon_link_no = info[i]["cusitemId"].ToString();   // 상품코드 매칭용   TM + 0000
-                string qty = "1";
+                //string coupon_no = info[i]["barcode_no"].ToString();
+                //string ustate_code = info[i]["ustate"].ToString();
+                string view_state_code = "";
+                string view_state_str = info[i]["state"].ToString();
+                string coupon_name = info[i]["item"].ToString();
+                string coupon_link_no = info[i]["itemmt_id"].ToString();   // 상품코드 매칭용   TM + 0000
                 string cus_nm = info[i]["cusnm"].ToString();
                 string cus_hp = info[i]["cushp"].ToString();
                 string exp_date = info[i]["expdate"].ToString();
-                string state = info[i]["state"].ToString();
-                string ch_name = info[i]["cuschnm"].ToString();
+                string ch_name = info[i]["channel"].ToString();
+                string qty = "1";
 
-
-                // (0:취소 1: 사용, 2: 미사용)
-                String ustate_name = "";
-                if (ustate_code == "2")
-                    ustate_name = "사용가능";
-                else if (ustate_code == "1")
-                    ustate_name = "기사용티켓";
-                else if (ustate_code == "0")
-                    ustate_name = "취소티켓";
-                else
-                    ustate_name = "";
 
 
                 //
@@ -104,62 +94,134 @@ namespace thepos2
                 }
 
 
-                String is_pass = "";
+                
+
                 int goods_amt = 0;
                 String goods_name = "";
 
                 if (link_goods_idx == -1)
                 {
-                    is_pass = "N";
+
                     goods_amt = 0;
                     goods_name = "[쿠폰사용 불가]";
                 }
                 else
                 {
                     // 정상
-                    is_pass = "Y";
                     goods_amt = mGoodsList[link_goods_idx].amt;
                     goods_name = mGoodsList[link_goods_idx].goods_name;
                 }
 
 
-                coupon couponItem = new coupon();
-                couponItem.is_pass = is_pass;  // 매칭상품코드 찾기
-                couponItem.coupon_no = coupon_no;
-                couponItem.coupon_name = coupon_name;
-                couponItem.coupon_cnt = 1;
-                couponItem.coupon_amt = 0;
-                couponItem.ustate_code = ustate_code;
-                couponItem.ustate_name = ustate_name;
-                couponItem.coupon_link_no = coupon_link_no;
-                couponItem.goods_amt = goods_amt;
-                couponItem.goods_name = goods_name;
-                couponItem.coupon_bar = goods_name + " / @" + goods_amt + " / " + couponItem.coupon_cnt;
-                couponItem.coupon_description = ustate_name + " / " + coupon_no + " / " + coupon_name + " / " + exp_date;
-                couponItem.link_goods_idx = link_goods_idx;
 
+                String data1 = info[i]["couponno_no"].ToString();
+                JArray couponno_no = JArray.Parse(data1);
 
-                if (is_pass == "Y")
+                for (int k = 0; k < couponno_no.Count; k++)
                 {
-                    if (ustate_code != "2")
-                    {
-                        couponItem.image_checked = "checked_off";
+                    string coupon_no = couponno_no[k]["value"].ToString();
+                    string used = couponno_no[k]["used"].ToString();
 
+
+                    String is_pass = "Y";  //
+
+                    if (link_goods_idx == -1)
+                    {
+                        is_pass = "N";
+                    }
+
+
+                    // (0:취소 1: 사용, 2: 미사용)
+                    String state_name = "";
+                    String auth_state_code = "X";   //   X 사용불가,  0 (인증전) 1 인증 2 발권 
+
+
+                    if (used == "N")   // N:미사용 -> 쿠폰사용가능
+                    {
+                        if (view_state_str == "예약완료")
+                        {
+                            if (link_goods_idx == -1)
+                            {
+                                state_name = "사용불가";
+                                view_state_code = "9";
+                                is_pass = "N";
+                            }
+                            else
+                            {
+                                state_name = "사용가능";
+                                auth_state_code = "0";
+                                view_state_code = "2";
+                            }
+                        }
+                        else if (view_state_str == "취소")
+                        {
+                            state_name = "취소";
+                            view_state_code = "9";
+                            auth_state_code = "0";
+                            is_pass = "N";
+                        }
+                        else
+                        {
+                            state_name = "사용불가";
+                            view_state_code = "9";
+                            auth_state_code = "0";
+                            is_pass = "N";
+                        }
+
+                    }
+                    else if (used == "Y")
+                    {
+                        state_name = "기사용";
+                        is_pass = "N";
+                    }
+                    else
+                    { 
+                        state_name = "기타(" + used + ")";
+                        is_pass = "N";
+                    }
+
+
+
+
+                    coupon couponItem = new coupon();
+                    couponItem.is_pass = is_pass;  // 매칭상품코드 찾기
+                    couponItem.coupon_no = coupon_no;
+                    couponItem.coupon_name = coupon_name;
+                    couponItem.coupon_cnt = 1;
+                    couponItem.coupon_amt = 0;
+                    couponItem.ustate_code = view_state_code;
+                    couponItem.ustate_name = state_name;
+                    couponItem.coupon_link_no = coupon_link_no;
+                    couponItem.goods_amt = goods_amt;
+                    couponItem.goods_name = goods_name;
+                    couponItem.coupon_bar = goods_name + " / @" + goods_amt + " / " + couponItem.coupon_cnt;
+                    couponItem.coupon_description = state_name + " / " + coupon_no + " / " + coupon_name + " / " + exp_date;
+                    couponItem.link_goods_idx = link_goods_idx;
+
+
+                    if (is_pass == "Y")
+                    {
+                        if (view_state_code != "2")
+                        {
+                            couponItem.image_checked = "checked_off";
+
+                        }
+                        else
+                        {
+                            couponItem.image_checked = "checked_on";
+                        }
                     }
                     else
                     {
-                        couponItem.image_checked = "checked_on";
+                        couponItem.image_checked = "checked_off";
                     }
+
+
+                    thepos_app_log(1, this.Name, "쿠폰조회", i + "-" + k + " " + couponItem.coupon_bar + " " + couponItem.coupon_description);
+
+                    mCouponItemList.Add(couponItem);
                 }
-                else
-                {
-                    couponItem.image_checked = "checked_off";
-                }
 
-
-                thepos_app_log(1, this.Name, "쿠폰조회", couponItem.coupon_bar + " " + couponItem.coupon_description);
-
-                mCouponItemList.Add(couponItem);
             }
 
             lvwCoupon.SetObjects(mCouponItemList);
@@ -665,8 +727,19 @@ namespace thepos2
                 }
 
 
+
+                // 현재 스크롤의 첫 번째 아이템 기억
+                var topItemIndex = lvwCoupon.TopItem?.Index ?? 0;
+
+
                 mCouponItemList[index] = cp;
                 lvwCoupon.SetObjects(mCouponItemList);
+
+
+                // 스크롤 위치 복원
+                if (lvwCoupon.Items.Count > topItemIndex)
+                    lvwCoupon.TopItem = lvwCoupon.Items[topItemIndex];
+
 
             }
 

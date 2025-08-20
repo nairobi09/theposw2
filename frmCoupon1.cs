@@ -187,17 +187,17 @@ namespace thepos2
                 // 다음 화면에서 에러날지 미리 해본다..
                 try 
                 { 
-                    string coupon_no = info[i]["barcode_no"].ToString();
-                    string ustate_code = info[i]["ustate"].ToString();
-                    string coupon_name = info[i]["cusitem"].ToString();
-                    string coupon_link_no = info[i]["cusitemId"].ToString();   // 상품코드 매칭용   TM + 0000
+                    //string coupon_no = info[i]["barcode_no"].ToString();
+                    //string ustate_code = info[i]["ustate"].ToString();
+                    string coupon_name = info[i]["item"].ToString();
+                    string coupon_link_no = info[i]["itemmt_id"].ToString();   // 상품코드 매칭용   TM + 0000
 
                     string cus_nm = info[i]["cusnm"].ToString();
                     string cus_hp = info[i]["cushp"].ToString();
                     string exp_date = info[i]["expdate"].ToString();
 
                     string state = info[i]["state"].ToString();
-                    string ch_name = info[i]["cuschnm"].ToString();
+                    string ch_name = info[i]["channel"].ToString();
                 }
                 catch (Exception e)
                 {
