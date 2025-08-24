@@ -107,7 +107,7 @@ namespace thepos2
 
 
 
-            // 데이터 로드 및 초기화 작업, 기초원장 리로드도 동일하게
+            // 데이터 로드 및 초기화 작업, 원장로드도 동일하게
             init_reload();
 
 
@@ -1089,7 +1089,7 @@ namespace thepos2
 
                 ToolStripMenuItem m0 = new ToolStripMenuItem(mAppVersion);
                 ToolStripMenuItem m1 = new ToolStripMenuItem("내기기설정");
-                ToolStripMenuItem m2 = new ToolStripMenuItem("기초원장 리로드");
+                ToolStripMenuItem m2 = new ToolStripMenuItem("원장로드");
                 ToolStripMenuItem m3 = new ToolStripMenuItem("원격지원");
                 ToolStripMenuItem mBizClose = new ToolStripMenuItem("정산");
                 ToolStripMenuItem m4 = new ToolStripMenuItem("종료");
@@ -1114,14 +1114,14 @@ namespace thepos2
 
                 };
 
-                m2.Font = new System.Drawing.Font("기초원장 리로드", 20F);
+                m2.Font = new System.Drawing.Font("원장로드", 20F);
                 m2.Click += (senders, es) =>
                 {
                     sync_data_server_to_memory();
 
                     init_reload();
 
-                    MessageBox.Show("기초원장 리로드 완료.", "thepos");
+                    MessageBox.Show("원장로드 완료.", "thepos");
 
                     timerWelcome.Enabled = true;
                 };
