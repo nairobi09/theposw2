@@ -296,7 +296,7 @@ namespace thepos
 
             if (MessageBox.Show("일정산 리포트 3종 출력.\r\n\r\n- 정산표\r\n- 카드사별 매출\r\n- 품목별 매출", "thepos", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-
+                thepos_app_log(1, this.Name, "일정산 리포트 3종 출력", "");
             }
             else
             {

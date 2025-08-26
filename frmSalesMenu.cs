@@ -1530,13 +1530,18 @@ namespace thepos2
                                 parameters.Clear();
                                 parameters["siteId"] = mSiteId;
                                 parameters["bizDt"] = mBizDate;
-                                parameters["posNo"] = myPosNo;
                                 parameters["theNo"] = mTheNo;
                                 parameters["refNo"] = mRefNo;
+
+                                parameters["goodsCode"] = orderItem.goods_code;
+                                parameters["goodsCnt"] = orderItem.cnt + "";
+                                parameters["ticketNo"] = t_ticket_no;
+                                parameters["lockerNo"] = "";  //? 팔찌인 경우 - 값변경 필요
 
                                 parameters["ticketNo"] = t_ticket_no;
                                 parameters["bangleNo"] = "";  //? 팔찌인 경우 - 값변경 필요
                                 parameters["ticketingDt"] = get_today_date() + get_today_time();
+                                parameters["entryDt"] = get_today_date() + get_today_time();  // 이후 입장게이트가 있으면 거기서 덮어쓰기
                                 parameters["chargeDt"] = "";
                                 parameters["settlementDt"] = "";
 
@@ -1548,11 +1553,8 @@ namespace thepos2
                                 parameters["settlePointCharge"] = "0";
                                 parameters["settlePointUsage"] = "0";
 
-                                parameters["goodsCode"] = orderItem.goods_code;
-                                parameters["flowStep"] = "1";               // 발권1 - *충전2 - 사용중3 - 정산(완료)4
-                                parameters["lockerNo"] = "";
-                                parameters["openLocker"] = "1";             // 선불 :  항상 open
-                                                                            // 후불 :  최초 open -> 사용 close -> 정산 open
+                                parameters["flowStep"] = "1";               // 발권0 - 입장1 - 충전2 - 사용중3 - 퇴장4 - 정산(완료)9
+
                                 if (mRequestPost("ticketFlow", parameters))
                                 {
                                     if (mObj["resultCode"].ToString() == "200")
