@@ -1,4 +1,4 @@
-﻿namespace thepos2
+﻿namespace thepos
 {
     partial class frmSalesCombo
     {
@@ -820,7 +820,7 @@
             // 
             // pbBadges0
             // 
-            this.pbBadges0.Image = global::theposw2.Properties.Resources.badges_pick3;
+            this.pbBadges0.Image = global::thepos.Properties.Resources.badges_pick3;
             this.pbBadges0.Location = new System.Drawing.Point(180, 5);
             this.pbBadges0.Name = "pbBadges0";
             this.pbBadges0.Size = new System.Drawing.Size(56, 24);

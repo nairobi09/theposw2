@@ -1,4 +1,4 @@
-﻿namespace thepos2
+﻿namespace thepos
 {
     partial class frmCoupon2
     {

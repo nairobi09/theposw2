@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace thepos2
+namespace thepos
 {
     internal static class Program
     {

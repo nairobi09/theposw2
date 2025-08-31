@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0740E492-3212-4D3F-997E-3793834C727C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>theposw2</RootNamespace>
+    <RootNamespace>thepos</RootNamespace>
     <AssemblyName>theposw2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -24,10 +24,10 @@
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>http://thepos.co.kr/setup/theposw2/</InstallUrl>
-    <MinimumRequiredVersion>1.0.0.43</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.44</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>44</ApplicationRevision>
+    <ApplicationRevision>45</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -104,6 +104,18 @@
     </Compile>
     <Compile Include="frmAllimOR.Designer.cs">
       <DependentUpon>frmAllimOR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPayCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPayCancel.Designer.cs">
+      <DependentUpon>frmPayCancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPayManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPayManager.Designer.cs">
+      <DependentUpon>frmPayManager.cs</DependentUpon>
     </Compile>
     <Compile Include="frmBizSettlement.cs">
       <SubType>Form</SubType>
@@ -217,6 +229,12 @@
     <Compile Include="van\Nice\paymentNice.cs" />
     <EmbeddedResource Include="frmAllimOR.resx">
       <DependentUpon>frmAllimOR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPayCancel.resx">
+      <DependentUpon>frmPayCancel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPayManager.resx">
+      <DependentUpon>frmPayManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBizSettlement.resx">
       <DependentUpon>frmBizSettlement.cs</DependentUpon>

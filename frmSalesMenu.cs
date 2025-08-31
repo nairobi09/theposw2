@@ -20,14 +20,13 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using theposw2.Properties;
+using thepos.Properties;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Newtonsoft.Json;
-using static thepos2.thepos;
-using theposw2;
+using static thepos.thepos;
 using thepos;
 
-namespace thepos2
+namespace thepos
 {
     public partial class frmSalesMenu : Form
     {
@@ -688,17 +687,17 @@ namespace thepos2
                 if (lstBadgesId[i] == "new")
                 {
                     mPbBadges[btn_idx].Visible = true;
-                    mPbBadges[btn_idx].Image = theposw2.Properties.Resources.badges_new3;
+                    mPbBadges[btn_idx].Image = Properties.Resources.badges_new3;
                 }
                 else if(lstBadgesId[i] == "best")
                 {
                     mPbBadges[btn_idx].Visible = true;
-                    mPbBadges[btn_idx].Image = theposw2.Properties.Resources.badges_best3;
+                    mPbBadges[btn_idx].Image = Properties.Resources.badges_best3;
                 }
                 else if (lstBadgesId[i] == "pick")
                 {
                     mPbBadges[btn_idx].Visible = true;
-                    mPbBadges[btn_idx].Image = theposw2.Properties.Resources.badges_pick3;
+                    mPbBadges[btn_idx].Image = Properties.Resources.badges_pick3;
                 }
                 else
                 {
@@ -1087,20 +1086,21 @@ namespace thepos2
 
                 ContextMenuStrip m = new ContextMenuStrip();
 
-                ToolStripMenuItem m0 = new ToolStripMenuItem(mAppVersion);
-                ToolStripMenuItem m1 = new ToolStripMenuItem("내기기설정");
-                ToolStripMenuItem m2 = new ToolStripMenuItem("원장로드");
-                ToolStripMenuItem m3 = new ToolStripMenuItem("원격지원");
-                ToolStripMenuItem mBizClose = new ToolStripMenuItem("정산");
-                ToolStripMenuItem m4 = new ToolStripMenuItem("종료");
+                ToolStripMenuItem mVersion = new ToolStripMenuItem(mAppVersion);
+                ToolStripMenuItem mSetup = new ToolStripMenuItem("내기기설정");
+                ToolStripMenuItem mDataLoad = new ToolStripMenuItem("원장로드");
+                ToolStripMenuItem mSupport = new ToolStripMenuItem("원격지원");
+                ToolStripMenuItem mBizCancel = new ToolStripMenuItem("결재취소");
+                ToolStripMenuItem mBizSettlement = new ToolStripMenuItem("정산");
+                ToolStripMenuItem mExit = new ToolStripMenuItem("종료");
 
                 ToolStripSeparator separator = new ToolStripSeparator();
 
 
-                m0.Font = new System.Drawing.Font("v1.02K", 12F);
+                mVersion.Font = new System.Drawing.Font("v1.02K", 12F);
 
-                m1.Font = new System.Drawing.Font("내기기설정", 20F);
-                m1.Click += (senders, es) =>
+                mSetup.Font = new System.Drawing.Font("내기기설정", 20F);
+                mSetup.Click += (senders, es) =>
                 {
                     // 설정창은 타임아웃 없다.
                     timerWelcome.Enabled = false;
@@ -1114,10 +1114,12 @@ namespace thepos2
 
                 };
 
-                m2.Font = new System.Drawing.Font("원장로드", 20F);
-                m2.Click += (senders, es) =>
+                mDataLoad.Font = new System.Drawing.Font("원장로드", 20F);
+                mDataLoad.Click += (senders, es) =>
                 {
+
                     sync_data_server_to_memory();
+
 
                     init_reload();
 
@@ -1126,8 +1128,8 @@ namespace thepos2
                     timerWelcome.Enabled = true;
                 };
 
-                m3.Font = new System.Drawing.Font("원격지원", 20F);
-                m3.Click += (senders, es) =>
+                mSupport.Font = new System.Drawing.Font("원격지원", 20F);
+                mSupport.Click += (senders, es) =>
                 {
                     //원격지원
                     System.Diagnostics.Process.Start("http://786.co.kr");
@@ -1135,10 +1137,22 @@ namespace thepos2
                     timerWelcome.Enabled = false;
                 };
 
-                mBizClose.Font = new System.Drawing.Font("원격지원", 20F);
-                mBizClose.Click += (senders, es) =>
+                mBizCancel.Font = new System.Drawing.Font("결재취소", 20F);
+                mBizCancel.Click += (senders, es) =>
                 {
-                    // 설정창은 타임아웃 없다.
+                    // 타임아웃 없다.
+                    timerWelcome.Enabled = false;
+
+                    frmPayManager frm = new frmPayManager();
+                    frm.ShowDialog();
+
+                    reset_timer_waiting();
+                };
+
+                mBizSettlement.Font = new System.Drawing.Font("정산", 20F);
+                mBizSettlement.Click += (senders, es) =>
+                {
+                    // 타임아웃 없다.
                     timerWelcome.Enabled = false;
 
                     frmBizSettlement frm = new frmBizSettlement();
@@ -1147,8 +1161,8 @@ namespace thepos2
                     reset_timer_waiting();
                 };
 
-                m4.Font = new System.Drawing.Font("종료", 30F);
-                m4.Click += (senders, es) =>
+                mExit.Font = new System.Drawing.Font("종료", 30F);
+                mExit.Click += (senders, es) =>
                 {
                     //
                     thepos_app_log(2, this.Name, "Close", "appVersion=TPW2-" + mAppVersion + ", mac=" + mMacAddr);
@@ -1157,13 +1171,15 @@ namespace thepos2
                 };
 
 
-                m.Items.Add(m0);
-                m.Items.Add(m1);
-                m.Items.Add(m2);
-                m.Items.Add(m3);
-                m.Items.Add(mBizClose);
+                m.Items.Add(mVersion);
+                m.Items.Add(mSetup);
+                m.Items.Add(mDataLoad);
+                m.Items.Add(mSupport);
                 m.Items.Add(separator);
-                m.Items.Add(m4);
+                m.Items.Add(mBizCancel);
+                m.Items.Add(mBizSettlement);
+                m.Items.Add(separator);
+                m.Items.Add(mExit);
 
 
                 Point p = new Point(pbLogo.Location.X + 20, pbLogo.Location.Y);

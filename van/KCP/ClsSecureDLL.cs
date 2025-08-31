@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace thepos2
+namespace thepos
 {
     public class PublicEventArgs : EventArgs
     {

@@ -1,4 +1,4 @@
-﻿namespace theposw2
+﻿namespace thepos
 {
     partial class tpMessageBox
     {

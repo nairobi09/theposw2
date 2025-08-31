@@ -11,11 +11,11 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Forms;
-using theposw2;
+using thepos;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static thepos2.thepos;
+using static thepos.thepos;
 
-namespace thepos2
+namespace thepos
 {
     public partial class frmCoupon1 : Form
     {

@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static thepos2.frmSalesMenu;
-using static thepos2.thepos;
+using static thepos.frmSalesMenu;
+using static thepos.thepos;
 
-namespace thepos2
+namespace thepos
 {
     public partial class frmAllimOR : Form
     {

@@ -12,10 +12,10 @@ using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static thepos2.ClsWin32Api;
-using static thepos2.thepos;
+using static thepos.ClsWin32Api;
+using static thepos.thepos;
 
-namespace thepos2
+namespace thepos
 {
     public partial class frmLogin : Form
     {
@@ -180,10 +180,11 @@ namespace thepos2
                 else
                 {
                     //
-                    thepos_app_log(3, this.Name, "login", "시스템오류. " + mErrorMsg);
-
+                    //thepos_app_log(3, this.Name, "login", "시스템오류. " + mErrorMsg);
+                    //thepos_app_log(3, this.Name, "login", "네트워크 오류 인터넷 연결을 확인바랍니다");
                     //
-                    MessageBox.Show("시스템오류\n\n" + mErrorMsg, "thepos");
+                    //MessageBox.Show("시스템오류\n\n" + mErrorMsg, "thepos");
+                    MessageBox.Show("네트워크 오류\n\n\n\n인터넷 연결을 확인바랍니다." + mErrorMsg, "thepos");
                     return;
                 }
             }

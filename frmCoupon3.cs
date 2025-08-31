@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static thepos2.ClsWin32Api;
-using static thepos2.thepos;
+using static thepos.ClsWin32Api;
+using static thepos.thepos;
 
-namespace theposw2
+namespace thepos
 {
     public partial class frmCoupon3: Form
     {

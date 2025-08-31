@@ -12,9 +12,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using static System.Net.Mime.MediaTypeNames;
-using static thepos2.thepos;
+using static thepos.thepos;
 
-namespace thepos2
+namespace thepos
 {
     public partial class frmSetupPos : Form
     {

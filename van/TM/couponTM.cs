@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
-using static thepos2.thepos;
+using static thepos.thepos;
 
-namespace thepos2
+namespace thepos
 {
     internal class couponTM
     {

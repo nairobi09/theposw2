@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace thepos2
+namespace thepos
 {
     public static class ClsString
     {

@@ -12,9 +12,9 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using System.Drawing;
 using System.Drawing.Text;
-using static thepos2.frmSalesMenu;
+using static thepos.frmSalesMenu;
 using System.Security.Policy;
-using static thepos2.thepos;
+using static thepos.thepos;
 using System.IO;
 using System.Collections;
 using PrinterUtility;
@@ -22,7 +22,7 @@ using System.IO.Ports;
 using System.Net.Sockets;
 
 
-namespace thepos2
+namespace thepos
 {
     public class thepos
     {
@@ -395,6 +395,7 @@ namespace thepos2
         {
             public String site_id;
             public String biz_dt;  // yyyyMMdd
+            public String shop_code;
             public string pos_no;
             public String the_no;   // 결제단위
             public String ref_no;   // 입장단위
@@ -408,6 +409,13 @@ namespace thepos2
             public int amount_card;
             public int amount_easy;
             public int amount_point;
+            public int amount_cert;
+            public String is_cash;
+            public String is_card;
+            public String is_easy;
+            public String is_point;
+            public String is_cert;
+
             public int dc_amount;       // 할인금액
             public String is_cancel;   // 취소여부 : 미취소"", 취소중0, 취소1
         }
@@ -682,12 +690,13 @@ namespace thepos2
 
         public static String get_pay_type_group_name(String group)
         {
-            //is_cash + is_card + is_point + is_easy;
-            if (group == "1000") return "현금";
-            else if (group == "0100") return "카드";
-            else if (group == "0010") return "포인트";
-            else if (group == "0001") return "간편";
-            else if (group == "0000") return "";
+            //is_cash + is_card + is_point + is_easy + coupon
+            if (group == "10000") return "현금";
+            else if (group == "01000") return "카드";
+            else if (group == "00100") return "포인트";
+            else if (group == "00010") return "간편";
+            else if (group == "00001") return "쿠폰";
+            else if (group == "00000") return "";
             else return "복합";
         }
 
@@ -703,6 +712,7 @@ namespace thepos2
             else if (code == "PA") name = "포인트선불";
             else if (code == "PD") name = "포인트후불";
             else if (code == "E1") name = "간편";
+            else if (code == "M0") name = "쿠폰";
             else name = code;
 
             return name;
@@ -3608,7 +3618,14 @@ namespace thepos2
 
         public static string Space(int count)
         {
-            return new String(' ', count);
+            if (count < 1)
+            {
+                return "";
+            }
+            else
+            {
+                return new String(' ', count);
+            }
         }
 
         public static string CharCount(char c, int count)

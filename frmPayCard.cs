@@ -8,11 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static thepos2.thepos;
-using static thepos2.frmSalesMenu;
-using static thepos2.ClsWin32Api;
+using static thepos.thepos;
+using static thepos.frmSalesMenu;
+using static thepos.ClsWin32Api;
 
-namespace thepos2
+namespace thepos
 {
     public partial class frmPayCard : Form
     {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace theposw2
+namespace thepos
 {
     public partial class tpMessageBox : Form
     {

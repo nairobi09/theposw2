@@ -8,10 +8,10 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using theposw2.Properties;
-using static thepos2.thepos;
+using thepos.Properties;
+using static thepos.thepos;
 
-namespace thepos2
+namespace thepos
 {
     public partial class frmOrderOption : Form
     {

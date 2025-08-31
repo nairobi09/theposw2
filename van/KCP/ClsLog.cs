@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace thepos2
+namespace thepos
 {
     internal class ClsLog
     {
