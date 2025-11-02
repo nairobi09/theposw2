@@ -1076,7 +1076,7 @@ namespace thepos
                 ToolStripMenuItem mSetup = new ToolStripMenuItem("내기기설정");
                 ToolStripMenuItem mDataLoad = new ToolStripMenuItem("원장로드");
                 ToolStripMenuItem mSupport = new ToolStripMenuItem("원격지원");
-                ToolStripMenuItem mBizCancel = new ToolStripMenuItem("결재취소");
+                ToolStripMenuItem mPayManager = new ToolStripMenuItem("결제관리");
                 ToolStripMenuItem mBizSettlement = new ToolStripMenuItem("정산");
                 ToolStripMenuItem mExit = new ToolStripMenuItem("종료");
 
@@ -1123,8 +1123,8 @@ namespace thepos
                     timerWelcome.Enabled = false;
                 };
 
-                mBizCancel.Font = new System.Drawing.Font("결재취소", 20F);
-                mBizCancel.Click += (senders, es) =>
+                mPayManager.Font = new System.Drawing.Font("결제관리", 20F);
+                mPayManager.Click += (senders, es) =>
                 {
                     // 타임아웃 없다.
                     timerWelcome.Enabled = false;
@@ -1162,7 +1162,7 @@ namespace thepos
                 m.Items.Add(mDataLoad);
                 m.Items.Add(mSupport);
                 m.Items.Add(separator);
-                m.Items.Add(mBizCancel);
+                m.Items.Add(mPayManager);
                 m.Items.Add(mBizSettlement);
                 m.Items.Add(separator);
                 m.Items.Add(mExit);

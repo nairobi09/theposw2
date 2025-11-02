@@ -344,6 +344,40 @@ namespace thepos
 
         }
 
+
+        private void btnBill_Click(object sender, EventArgs e)
+        {
+            if (lvwPayManager.SelectedItems.Count < 1)
+            {
+                return;
+            }
+
+            String tTheNo = lvwPayManager.SelectedItems[0].Tag.ToString();
+            String pay_keep = lvwPayManager.SelectedItems[0].SubItems[lvwPayManager.Columns.IndexOf(paykeep)].Text;
+
+
+            // 취소된 건을 선택하면 취소전표를 출력한다.. 위와 동일
+            String isCancel = lvwPayManager.SelectedItems[0].SubItems[lvwPayManager.Columns.IndexOf(cancel_code)].Text;
+
+            String tran_type = "A";
+            if (isCancel == "Y" | isCancel == "y")
+            {
+                tran_type = "C";
+            }
+
+
+            String[] order_no_from_to = new String[2];
+
+            order_no_from_to[0] = "";
+            order_no_from_to[1] = "";
+
+
+            // 영수증 출력
+            print_bill(tTheNo, tran_type, "", pay_keep, false, order_no_from_to); // card
+        }
+
+
+
         public static void reviewList(String biz_date, String pos_no, String the_no, int select_index)
         {
             String t_theNo = "";
@@ -501,5 +535,6 @@ namespace thepos
             mLvwPayManager.EnsureVisible(select_index);
 
         }
+
     }
 }

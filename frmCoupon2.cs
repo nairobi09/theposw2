@@ -253,6 +253,7 @@ namespace thepos
             thepos_app_log(1, this.Name, "btnOK", "");
 
 
+
             if (mCouponItemList.Count == 0)
             {
                 return;

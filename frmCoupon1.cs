@@ -106,9 +106,23 @@ namespace thepos
                 String cpn = tbCouponScan.Text;
                 tbCouponScan.Clear();
 
+
+
                 if (cpn.Length < 10)
                 {
                     thepos_app_log(3, this.Name, "scanner", "skip. coupon_no=" + cpn);
+                    return;
+                }
+
+
+
+
+                // 영업일자 등 선체크 
+                if (!isPreCheck(out String error_msg))
+                {
+                    thepos_app_log(3, this.Name, "isPreCheck", error_msg);
+
+                    MessageBox.Show(error_msg, "thepos");
                     return;
                 }
 

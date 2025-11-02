@@ -30,7 +30,7 @@ namespace thepos
 
         // 배포시 버전관리 - 로그와 연동
 
-        public static String mAppVersion = "TPW2-2025-015";
+        public static String mAppVersion = "TPW2-2025-016";
 
 
 
@@ -2530,13 +2530,13 @@ namespace thepos
                     }
                     else
                     {
-                        error_msg = "관리자 문의바랍니다.\r\n시스템오류. 영업개시 검증 오류";
+                        error_msg = "관리자 문의바랍니다.\r\n영업개시 검증 오류";
                         return false;
                     }
                 }
                 else
                 {
-                    error_msg = "관리자 문의바랍니다.\r\n시스템오류. 영업개시 검증 오류";
+                    error_msg = "관리자 문의바랍니다.\r\n영업개시 검증 오류";
                     return false;
                 }
             }

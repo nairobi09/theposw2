@@ -48,6 +48,7 @@
             this.pay_calss = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cancel_code = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnBill = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -61,7 +62,7 @@
             this.lblTitle.Padding = new System.Windows.Forms.Padding(5);
             this.lblTitle.Size = new System.Drawing.Size(648, 40);
             this.lblTitle.TabIndex = 128;
-            this.lblTitle.Text = "결재취소";
+            this.lblTitle.Text = "결제관리";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lvwPayOrder
@@ -112,9 +113,9 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(554, 597);
+            this.btnCancel.Location = new System.Drawing.Point(553, 597);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(112, 85);
+            this.btnCancel.Size = new System.Drawing.Size(114, 71);
             this.btnCancel.TabIndex = 130;
             this.btnCancel.TabStop = false;
             this.btnCancel.Text = "결제취소";
@@ -209,10 +210,11 @@
             // 
             // btnClose
             // 
+            this.btnClose.BackColor = System.Drawing.SystemColors.Control;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnClose.Location = new System.Drawing.Point(554, 701);
+            this.btnClose.Location = new System.Drawing.Point(554, 785);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(112, 48);
             this.btnClose.TabIndex = 181;
@@ -220,11 +222,26 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnBill
+            // 
+            this.btnBill.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBill.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnBill.Location = new System.Drawing.Point(554, 677);
+            this.btnBill.Name = "btnBill";
+            this.btnBill.Size = new System.Drawing.Size(112, 68);
+            this.btnBill.TabIndex = 182;
+            this.btnBill.Text = "영수증";
+            this.btnBill.UseVisualStyleBackColor = false;
+            this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
+            // 
             // frmPayManager
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(681, 855);
+            this.Controls.Add(this.btnBill);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lvwPayOrder);
             this.Controls.Add(this.btnCancel);
@@ -259,5 +276,6 @@
         private System.Windows.Forms.ColumnHeader pay_calss;
         private System.Windows.Forms.ColumnHeader cancel_code;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnBill;
     }
 }
