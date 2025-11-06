@@ -141,6 +141,17 @@ namespace thepos
                 return;
             }
 
+            
+            // 영업일자 등 선체크 
+            if (!isPreCheck(out String error_msg))
+            {
+                thepos_app_log(3, this.Name, "isPreCheck", error_msg);
+
+                MessageBox.Show(error_msg, "thepos");
+                return;
+            }
+
+
             request_tm_cert(lblCouponText.Text);
 
         }
